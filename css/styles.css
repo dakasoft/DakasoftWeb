@@ -1,11 +1,8 @@
 
-
 /* custom */
 html, body {
    height: 100%;
   font-family: arial, sans-serif;
- 
-
 }
 
 
@@ -30,8 +27,8 @@ html, body {
 
 }
 .logo{
-margin:40px;
-width:200px;
+  margin:40px;
+  width:200px;
 }
 .headerhome{
   background:url(../img/content/body-tail.gif) center top repeat;
@@ -40,10 +37,10 @@ width:200px;
   box-shadow: 7px 11px 8px 1px rgba(0, 0, 0, 0.25);
 }
 .logohome{
-float: left;
-margin-left:3em;
-padding:8px;
-width:20%;
+  float: left;
+  margin-left:3em;
+  padding:8px;
+  width:20%;
 } 
 .nav{
   float:right;
@@ -56,17 +53,17 @@ width:20%;
    display: inline-block;  
 }
 li a{
-border-left:1px solid #E0E0E0;
-color: #2e368f;
-font-size:15px;
-letter-spacing: -1px;
-line-height: 2em;
- text-transform: uppercase;
+  border-left:1px solid #E0E0E0;
+  color: #2e368f;
+  font-size:15px;
+  letter-spacing: -1px;
+  line-height: 2em;
+   text-transform: uppercase;
  
 }
 .nav li a:hover {
-background-color: #fff; 
-text-decoration: none;
+  background-color: #fff; 
+  text-decoration: none;
 }
 
 .cf:before,
@@ -82,9 +79,9 @@ text-decoration: none;
   clear: both;
 }
 .border-bot {
-width: 100%;
-padding-bottom: 32px;
-background: url(../img/content/border-bot.gif) left bottom repeat-x;
+  width: 100%;
+  padding-bottom: 32px;
+  background: url(../img/content/border-bot.gif) left bottom repeat-x;
 }
 .body{
   padding-top:70px;
@@ -92,6 +89,6 @@ background: url(../img/content/border-bot.gif) left bottom repeat-x;
   margin:0 auto;
 }
 body{
-
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#a32068), color-stop(100%,#2e368f))
 }
 
