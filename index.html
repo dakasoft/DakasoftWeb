@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Tarea 1</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/styles.css" rel="stylesheet">
-	</head>
-<body>
-<div class="wrapper">
-<div class = "header">
-         <img src="img/content/logo.png" class="logo "alt="Logo de U Cenfotec">
-         </div>
-         <div class="logInBox">
-             <form role="form" method="post" action="hola.php">
-                <div class="form-group">
-                     <label class="sr-only" for="ejemplo_email_2">Email</label>
-                     <input type="email" class="form-control" id="ejemplo_email_2"placeholder="Introduce tu usuario"></div>
-                <div class="form-group">
-                    <label class="sr-only" for="ejemplo_password_2">Contraseña</label>
-                     <input type="password" class="form-control" id="ejemplo_password_2" placeholder="Contraseña"> </div>
-                <div class="checkbox">
-                 <label>
-                      <input type="checkbox"> No cerrar sesión
-                 </label>
-                </div>
-                 <button type="submit" class="btn btn-default">Entrar</button>
-            </form>
-
-         </div>
-       
- </div>
-            <!-- /main -->
-	<!-- script references -->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>DakaSoft login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body class="gradientBG">
+      <header>
+       <img src="img/content/logo.png" class="logo "alt="Logo de U Cenfotec">
+     </header>
+      <section class="logInBox">
+       <form role="form" method="post" action="hola.php">
+        <div class="form-group">
+         <label class="sr-only" for="user">User</label>
+         <input type="text" class="form-control" id="user"placeholder="Introduce tu usuario" required></div>
+         <div class="form-group">
+           <label class="sr-only" for="pass">Contraseña</label>
+           <input type="password" class="form-control" id="pass" placeholder="Contraseña" required></div>
+           <div class="checkbox">
+             <label>
+              <input type="checkbox"> No cerrar sesión
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Entrar</button>
+        </form>
+      </section>
     <script type="text/javascript" src="js/angular.min.js"></script>
-   <script type="text/javascript" src="js/app.js"></script>
-</body>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
 </html>
