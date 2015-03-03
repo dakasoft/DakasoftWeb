@@ -1,6 +1,13 @@
 
 body {
     background-image: url("../img/fondo.png");
-    
-  
+   
+}
+header{
+width:100%;
+padding:2%;
+}
+.logo{
+     width:24%;
+
 }
