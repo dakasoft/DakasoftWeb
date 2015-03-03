@@ -3,7 +3,7 @@ body {
     background-image: url("../img/fondo.png");
    
 }
-header{
+header{ /* header contiene el logo*/
 width:100%;
 padding:2%;
 }
@@ -12,7 +12,7 @@ padding:2%;
 
 }
 
-.menuList li{
+.menuList li{   /* Estilos del menu*/
 	text-decoration: none;
 	list-style:none;
 	display:inline;
