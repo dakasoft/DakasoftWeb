@@ -1,0 +1,30 @@
+{
+	"users": {
+		"username": "acordero",
+		"password": "acordero",
+		"name": "Alvaro",
+		"lastname": "Cordero",
+		"role": "profesor"
+	},
+	"carreras": [
+		{
+			"id": "ddw",
+			"name": "Diseño y Desarrollo Web",
+			"cursos": [
+			]
+		}
+	],
+	"cursos": [
+		{
+			"id": "pdw1",
+			"name": "Proyecto de Desarrollo Web 1",
+			"areas": [
+			],
+			"grupos": [
+				{
+
+				}
+			]
+		}
+	],
+}
