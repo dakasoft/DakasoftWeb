@@ -11,3 +11,9 @@ padding:2%;
      width:24%;
 
 }
+
+.menuList li{
+	text-decoration: none;
+	list-style:none;
+	display:inline;
+}
