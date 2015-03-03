@@ -8,7 +8,7 @@ width:100%;
 padding:2%;
 }
 .logo{
-     width:24%;
+     width:22em;
 
 }
 
@@ -16,4 +16,8 @@ padding:2%;
 	text-decoration: none;
 	list-style:none;
 	display:inline;
+}
+.menuList{
+	width :60%;
+	margin: 0 auto;
 }
