@@ -22,8 +22,9 @@ app.directive('menu', function(){
 	return{
 		restrict: 'E',
 		templateUrl: 'templates/parcials/menu.html',
-		controller:function($scope){
+		controller:function($scope,$location){
 			$scope.mensaje ="soy el menu";
+			$scope.go = function ( path ) { $location.path( path ); };
 		},
 		controllerAs: 'menuCtrl'
 	};
