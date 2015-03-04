@@ -11,9 +11,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
   // Now set up the states
   $stateProvider
     .state('home', {
-     Path :"/home",
       url: "/home",
       templateUrl: "templates/home.html"
+    })
+
+    .state('portafolio',{
+    	 url: "/portafolio",
+        templateUrl:"templates/portafolio.html",
+         controller: function($scope) {
+   
+            }
+
     });
 
 });
@@ -26,18 +34,10 @@ app.directive('menu', function(){
 		controller:function($scope,$location){
 			$scope.mensaje ="soy el menu";
 			//$scope.go = function ( path ) { $location.path( path ); };
-			$scope.hoverIn = function($event){
-    		this.hoverEdit = true;
-			};
-
-			$scope.hoverOut = function(){
-    		this.hoverEdit = false;
-			};
-			
-
 		},
 		controllerAs: 'menuCtrl'
 	};
 });
+
 
 })();
