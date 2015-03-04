@@ -114,30 +114,3 @@ footer div p{
 	margin-right:50px;
 	text-align:right;
 }
-/*************************************Portafolio******************************************************/
-.foto img{
-	width:20%;
-}
-.tittle{
-	
-}
-
-.container-fluid
-{
-	width:60%;
-	float:left;
-   background: #f5f5f5;
-  background-color: white;
-  padding: 1em;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #c5c5c5;
-  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
-  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-form{
-	display:inline;
-}
