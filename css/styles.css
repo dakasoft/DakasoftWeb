@@ -3,9 +3,19 @@ body {
     background-image: url("../img/fondo.png");
    
 }
-header{ /* header contiene el logo*/
-width:70%;
-padding:2%;
+.usuario{ /* header contiene el logo*/
+ background: #f5f5f5;
+ width:20%;
+ float:right;
+ text-align:center;
+
+}
+.usuario .btn{ /* header contiene el logo*/
+ width:100px;
+ font-size:12px;
+}
+header img{ /* header contiene el logo*/
+float:left;
 
 }
 .logo{
@@ -92,6 +102,17 @@ padding:2%;
 
 .cf:after{
   clear: both;
+}
+
+footer div{
+	margin-top:75px;
+	height:27px;
+	 background: #f5f5f5;
+	 padding:3px;
+}
+footer div p{
+	margin-right:50px;
+	text-align:right;
 }
 /*************************************Portafolio******************************************************/
 .foto img{
