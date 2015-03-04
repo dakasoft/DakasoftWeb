@@ -47,3 +47,6 @@ padding:2%;
 	color:white;
 	text-decoration:none;
 }
+.subMenu li a:hover{
+   text-decoration: underline;
+}
