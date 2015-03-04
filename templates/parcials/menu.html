@@ -1,6 +1,25 @@
 <ul class="menuList">
-  <li><a href='#' ><img ng-click="go('/home')" ng-src="img/configuracion.png"></img></a></li>
-  <li><a href='#' ><img ng-click="go('/home')"ng-src="img/administracion.png"></img></a></li>
-  <li><a href='#' ><img ng-click="go('/home')"ng-src="img/portafolio.png"></img></a></li>
-   <li><a href='#' ><img ng-click="go('/home')"ng-src="img/reportes.png"></img></a></li>
+  <li ng-mouseover="var1=true" ng-mouseleave="var1=false" ><a href='#' ><img ng-src="img/configuracion.png"></img></a>
+     <ul class="subMenu" ng-show="var1">
+     <li><a  href='#' ng-click="" >Usuario</a></li>
+     <li><a href='#' ng-click="" >Carrera</a></li>
+     <li><a  href='#' ng-click="">Curso</a></li>
+     <li><a  href='#' ng-click="">Parametros</a></li>
+     </ul>
+  </li>
+  <li ng-mouseover="var2=true" ng-mouseleave="var2=false" ><a href='#' ><img ng-src="img/administracion.png"></img></a>
+   <ul class="subMenu" ng-show="var2" >
+     <li><a href='#' ng-click="">Ver Cursos</a></li>
+     </ul>
+  </li>
+  <li><a href='#' ><img ng-src="img/portafolio.png"></img></a></li>
+   <li ng-mouseover="var3=true" ng-mouseleave="var3=false" ><a href='#' ><img ng-src="img/reportes.png"></img></a>
+        <ul class="subMenu" ng-show="var3">
+          <li><a href='#' ng-click="">Reporte Notas</a></li>
+         <li><a href='#' ng-click="">Historial Acádemico</a></li>
+
+        </ul>
+   </li>
+
+   </li>
 </ul>

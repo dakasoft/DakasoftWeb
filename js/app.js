@@ -11,6 +11,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   // Now set up the states
   $stateProvider
     .state('home', {
+     Path :"/home",
       url: "/home",
       templateUrl: "templates/home.html"
     });
@@ -24,7 +25,16 @@ app.directive('menu', function(){
 		templateUrl: 'templates/parcials/menu.html',
 		controller:function($scope,$location){
 			$scope.mensaje ="soy el menu";
-			$scope.go = function ( path ) { $location.path( path ); };
+			//$scope.go = function ( path ) { $location.path( path ); };
+			$scope.hoverIn = function($event){
+    		this.hoverEdit = true;
+			};
+
+			$scope.hoverOut = function(){
+    		this.hoverEdit = false;
+			};
+			
+
 		},
 		controllerAs: 'menuCtrl'
 	};

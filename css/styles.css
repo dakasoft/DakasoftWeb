@@ -12,12 +12,38 @@ padding:2%;
 
 }
 
-.menuList li{   /* Estilos del menu*/
+.menuList > li{   /* Estilos del menu*/
 	text-decoration: none;
 	list-style:none;
 	display:inline;
+	float:left;
+	 margin-left:27px;
+
 }
+
 .menuList{
-	width :60%;
+	width :69%;
 	margin: 0 auto;
+}
+
+.subMenu {
+	background:linear-gradient(135deg, #a32068 0%,#2e368f 100%);
+	opacity:0.8;
+    width:10em;
+    margin:0 auto;
+    padding-top:10px;
+    padding-bottom:10px;
+    line-height:1.6em;
+}
+
+.subMenu li:last-child{
+     width:16em;
+}
+.subMenu li{
+    display:block;   
+     text-indent: -30px;
+}
+.subMenu li a{
+	color:white;
+	text-decoration:none;
 }
