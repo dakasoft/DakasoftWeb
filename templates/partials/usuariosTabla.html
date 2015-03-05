@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3"></div>
+		<div class="col-xs-12 col-sm-7">
+			<div class="table-header">
+				<div class="col-xs-12 col-sm-6">
+						<p>Usuarios</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+						<p><i class="fa fa-plus"></i>Agregar</p>
+				</div>
+			</div>
+			<table ng-table class="table">
+			    <tr ng-repeat="user in usuarios">
+			        <td data-title="'Nombre'">{{user.name}}</td>
+			        <td data-title="'Apellido'">{{user.lastname}}</td>
+			        <td data-title="'Rol'">{{user.role}}</td>
+			        <td data-title="'Acciones'">Borar,editar</td>
+			    </tr>
+			</table>
+		</div>
+		<div class="col-xs-12 col-sm-2"></div>
+</div>

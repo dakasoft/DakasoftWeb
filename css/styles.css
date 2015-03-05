@@ -244,9 +244,14 @@ nav ul {
 	}
 }
 
-
 .logomovile{
-    width: 30px;
-  
-float:left;
+  width: 30px;
+  float:left;
+}
+
+.table, .table-header{
+  text-align: center;
+}
+.table-header .fa-plus{
+  color: white;
 }
