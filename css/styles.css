@@ -316,3 +316,6 @@ nav ul {
 	vertical-align: middle;
 	border-top: 0;
 }
+#user-table .fa-times-circle{
+	margin-left: 12px;
+}
