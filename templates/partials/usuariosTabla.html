@@ -7,15 +7,18 @@
 						<p>Usuarios</p>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-						<p><i class="fa fa-plus"></i>Agregar</p>
+						<p><a href="asd"><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
 				</div>
 			</div>
-			<table ng-table class="table">
+			<table id="user-table" ng-table class="table">
 			    <tr ng-repeat="user in usuarios">
 			        <td data-title="'Nombre'">{{user.name}}</td>
 			        <td data-title="'Apellido'">{{user.lastname}}</td>
 			        <td data-title="'Rol'">{{user.role}}</td>
-			        <td data-title="'Acciones'">Borar,editar</td>
+			        <td data-title="'Acciones'">
+			        	<a><i class="fa fa-pencil-square-o fa-2x"></i></a>
+			        	<a><i class="fa fa-times-circle fa-2x"></i></a>
+			        </td>
 			    </tr>
 			</table>
 		</div>
