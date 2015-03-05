@@ -1,18 +1,20 @@
-
+/*index*/
 body {
-    background-image: url("../img/fondo.png");
-   
+  background-image: url("../img/fondo.png");
+
 }
 .container-fluid{
-min-height:400px;
+  min-height:400px;
 }
+
+/*usuario actual*/
 .usuario{ /* header contiene el logo*/
- background: #722d7b;
- width:15%;
- float:right;
- text-align:center;
- color:white;
- opacity:0.9;
+  background: #722d7b;
+  width:15%;
+  float:right;
+  text-align:center;
+  color:white;
+  opacity:0.9;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
   -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
   box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
@@ -22,50 +24,52 @@ min-height:400px;
 
 }
 .usuario .btn{ /* header contiene el logo*/
- width:100px;
- font-size:12px;
- transition: all 0.3s ease 0s;
+  width:100px;
+  font-size:12px;
+  transition: all 0.3s ease 0s;
   opacity: 1;
+  margin-bottom: 10px;
 }
 .usuario .btn:hover{
-	 opacity: 0.9;
+  opacity: 0.9;
   box-shadow: inset 0 0 0 5px #f1f1f1;
 }
 header img{ /* header contiene el logo*/
-float:left;
+  float:left;
 
 }
 .logo{
-     width:17em;
+  width:17em;
 
 }
 
-.menuList > li{   /* Estilos del menu*/
-	text-decoration: none;
-	list-style:none;
-	display:inline;
-	float:left;
-	 margin-left:27px;
+/* Estilos del menu*/
+.menuList > li{   
+  text-decoration: none;
+  list-style:none;
+  display:inline;
+  float:left;
+  margin-left:27px;
 
 }
 
 .menuList{
-	width :69%;
-	margin: 0 auto;
-	transition: all 0.3s ease 0s;
+  width :69%;
+  margin: 0 auto;
+  transition: all 0.3s ease 0s;
 }
 
 
 
 .subMenu {
-	background:linear-gradient(135deg, #a32068 0%,#2e368f 100%);
-	opacity:0.8;
-    width:10em;
-    margin:0 auto;
-    padding-top:10px;
-    padding-bottom:10px;
-    line-height:1.6em;
-    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  background:linear-gradient(135deg, #a32068 0%,#2e368f 100%);
+  opacity:0.8;
+  width:10em;
+  margin:0 auto;
+  padding-top:10px;
+  padding-bottom:10px;
+  line-height:1.6em;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
   -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
   box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
   -webkit-border-radius: 3px;
@@ -74,76 +78,76 @@ float:left;
 }
 
 .subMenu li:last-child{
-     width:16em;
+  width:16em;
 }
 .subMenu li{
-    display:block;   
-     text-indent: -30px;
+  display:block;   
+  text-indent: -30px;
 }
 .subMenu li a{
-	color:white;
-	text-decoration:none;
+  color:white;
+  text-decoration:none;
 }
 .subMenu li a:hover{
-   text-decoration: underline;
+  text-decoration: underline;
 }
 #configuracion ul,#administracion ul ,#portafolio ul ,#reportes ul  {
   display: none;
 }
 
 #configuracion:hover ul,#administracion:hover ul,#portafolio:hover ul,#reportes:hover ul {
-    display:block;
+  display:block;
 }
 
 .menuList img:hover,.menuVertical img:hover{
-	 opacity: 0.8;
-	-webkit-transform: rotate(25deg);
-transform: rotate(25deg);
+  opacity: 0.8;
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
 
 }
 
 .menuVertical{
-	padding:0px;
-	text-decoration: none;
-	list-style:none;
-	display:block;
-	float:left; 
-	transition: all 0.3s ease 0s;
+  padding:0px;
+  text-decoration: none;
+  list-style:none;
+  display:block;
+  float:left; 
+  transition: all 0.3s ease 0s;
 }
 .menuVertical img{
-    height:100px;
-   
-   
+  height:100px;
+
+
 }
 .menuVertical li>ul{
-	float:right;
-	background:linear-gradient(135deg, #a32068 0%,#2e368f 100%);
-	opacity:0.8;
-    width:8em;
-    margin:0 auto;
-    line-height:1.6em;
+  float:right;
+  background:linear-gradient(135deg, #a32068 0%,#2e368f 100%);
+  opacity:0.8;
+  width:8em;
+  margin:0 auto;
+  line-height:1.6em;
 
 }
 .menuVertical> li{
-   margin-bottom:10px;
+  margin-bottom:10px;
 }
 .cf:before, .cf:after{
-  	content: '';
-	display: table;
+  content: '';
+  display: table;
 }
 
 .cf:after{
   clear: both;
 }
-
+/*Estilos del footer*/
 footer div{
-	margin-top:75px;
-	height:27px;
-	 background: #722d7b;
-	 padding:3px;
-	 color:white;
+  margin-top:75px;
+  height:27px;
+  background: #722d7b;
+  padding:3px;
+  color:white;
 }
 footer div p{
-	margin-right:50px;
-	text-align:right;
+  margin-right:50px;
+  text-align:right;
 }
