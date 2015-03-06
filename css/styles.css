@@ -240,3 +240,69 @@ nav ul {
 	background: white;
 	opacity:0.8;
 }
+
+
+/****************************************Carreras*****************************************************/
+/*Estilos para la tabla de carreras*/
+.table-header div{
+	background-color: #80297b;
+	color: white;
+	font-weight: 600;
+}
+
+.table-header i{
+	margin-right: 4px;
+}
+
+.table-header p{
+	margin: 5px 0 5px 0;
+}
+
+.table-header a{
+	color: white;
+	font-weight: 600;
+}
+
+.table-header a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+
+#carreras-table, .table-header{
+	text-align: center;
+}
+
+#carreras-table a{
+	color: #80297b;
+	cursor: pointer;
+}
+
+#carreras-table a:hover{
+	color: black;
+}
+
+#carreras-table th
+{
+	font-weight: 300;
+	color: #80297b;
+	border-bottom: 1px solid #80297b;
+}
+#carreras-table{
+	border: 1px solid #80297b;
+}
+
+#carreras-table tr
+{
+	border-bottom: 1px solid #80297b;
+}
+
+#carreras-table td
+{
+	padding: 4px;
+	vertical-align: middle;
+	border-top: 0;
+}
+#carreras-table .fa-times-circle{
+	margin-left: 12px;
+}
