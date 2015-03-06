@@ -15,27 +15,36 @@
           <div class="col-xs-2 pull-left">
             <a href="#"><img class="logo cf" src="img/logo.png"/></a>
          </div>
-          <div class="col-xs-12 col-sm-2 pull-right">
+          <div class="col-xs-12 col-sm-3 col-md-2 pull-right" ng-class=" $root.currentStateName=='home' ? '' : 'hidden-sm hidden-xs'">
             <div class="usuario pull-right"><p>Yee Vargas</p>
              <button type="button" class="btn btn-default btn-xs">Cerrar Sesión</button>
             </div>
           </div>
         </header>
+    </div>
 
-      <div class="col-xs-12-col-sm-12">
-      <div ui-view></div>  
+    <div class="menu-content col-xs-12">
+      <menu></menu>
+    </div>
+
+    <div ng-show="$root.currentStateName!='home'" class="menu-mobile visible-sm visible-xs">
+      <menu-mobile></menu-mobile>
+    </div>
+
+    <div ng-show="$root.currentStateName!='home'" class="row">
+      <div class="col-xs-12 col-md-10 col-md-offset-2 col-lg-8">
+        <div ui-view class="testing">
+ 
+        </div>  
       </div>
+    </div>  
 
-    </div> 
-      <div class="row">
-        <div class="col-xs-12 col-sm-2 pull-left menu-content">
-          <menu></menu>
-        </div>      
-        <div id="footer" class="col-xs-12">
-          <footer>
-            <div><p>Cenfotec 2015</p></div>
-          </footer>
-        </div>
+      <div class="row">  
+          <div id="footer" class="col-xs-12">
+            <footer>
+              <div><p>Cenfotec 2015</p></div>
+            </footer>
+          </div>
       </div>
     </div>
 

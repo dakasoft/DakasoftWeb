@@ -12,10 +12,6 @@ body {
 	position:relative;
 }
 
-.menu-content {
-	padding-bottom:29px; 
-}
-
 #footer {
 	padding: 0;
 	background:#ffab62;
@@ -61,7 +57,16 @@ header img{ /* header contiene el logo*/
 }
 
 /* Estilos del menu*/
-.menuList > li{   
+menu{
+	padding: 0;
+}
+
+.menu-mobile{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.menuList div > li{   
+	padding-top: 10%;
   text-decoration: none;
   list-style:none;
   display:inline;
@@ -71,7 +76,8 @@ header img{ /* header contiene el logo*/
 }
 
 .menuList{
-  width :69%;
+	margin-top: 50%;
+  width: 800px;
   margin: 0 auto;
   transition: all 0.3s ease 0s;
 }
@@ -91,10 +97,10 @@ header img{ /* header contiene el logo*/
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-
-.subMenu li:last-child{
-  width:16em;
+.subMenu-lg{
+	width:11em !important;
 }
+
 .subMenu li{
   display:block;   
   text-indent: -30px;
@@ -134,7 +140,7 @@ header img{ /* header contiene el logo*/
 
 
 }
-.menuVertical li>ul{
+.menuVertical div > li>ul{
   float:right;
   background:linear-gradient(135deg, #a32068 0%,#2e368f 100%);
   opacity:0.8;
@@ -143,7 +149,7 @@ header img{ /* header contiene el logo*/
   line-height:1.6em;
 
 }
-.menuVertical> li{
+.menuVertical div > li{
   margin-bottom:10px;
 }
 .cf:before, .cf:after{
@@ -163,4 +169,47 @@ footer div{
 footer div p{
   margin-right:50px;
   text-align:right;
+}
+
+@media (min-width: 992px){
+
+	.menuVertical{
+		z-index: 10;
+		position: absolute;
+		left: 0;
+	}
+
+}
+
+@media (max-width: 992px){
+
+	.menuVertical{
+		display: none;
+	}
+}
+
+@media (max-width: 767px){
+
+	.menuList{
+		padding-top: 0;
+		width: 100%;
+	}
+	.col1{
+		width: 400px;
+		height: 250px;
+		margin: auto;
+	}
+	.col2{
+		width: 400px;
+		height: 250px;
+		margin: auto;
+	}
+	.subMenu {
+		position: absolute;
+	}
+}
+
+.testing{
+	height: 600px;
+	background: red;
 }

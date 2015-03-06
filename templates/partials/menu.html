@@ -1,5 +1,6 @@
-<ul class="menuVertical">
-  <li id="configuracion"><a href='#' ><img ng-src="img/configuracion.png"/></a>
+<ul ng-class=" $root.currentStateName=='home' ? 'menuList' : 'menuVertical'">
+  <div class="col1">
+      <li id="configuracion"><a href='#' ><img ng-src="img/configuracion.png"/></a>
      <ul class="subMenu cf">
      <li><a  href='#' ng-click="" >Usuario</a></li>
      <li><a href='#' ng-click="" >Carrera</a></li>
@@ -12,11 +13,15 @@
      <li><a href='#' ng-click="">Ver Cursos</a></li>
      </ul>
   </li>
-  <li id="portafolio"><a href='#portafolio' ><img ng-src="img/portafolio.png"/></a></li>
-  <li id="reportes"><a href='#' ><img ng-src="img/reportes.png"/></a>
-    <ul class="subMenu">
-   		<li><a href='#' ng-click="">Reporte Notas</a></li>
-   		<li><a href='#' ng-click="">Historial Acádemico</a></li>
-  	</ul>
-   </li> 
+  </div>
+  <div class="col2">
+      <li id="portafolio"><a href='#portafolio' ><img ng-src="img/portafolio.png"/></a></li>
+      <li id="reportes"><a href='#' ><img ng-src="img/reportes.png"/></a>
+        <ul class="subMenu subMenu-lg">
+          <li><a href='#' ng-click="">Reporte Notas</a></li>
+          <li><a href='#' ng-click="">Historial Acádemico</a></li>
+        </ul>
+      </li> 
+  </div>
+
 </ul>
