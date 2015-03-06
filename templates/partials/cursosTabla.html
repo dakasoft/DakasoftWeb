@@ -26,12 +26,12 @@
 
 
 
-<div ng-show="showModal" class="mod">
+<div ng-show="showModal" class="modC">
  <div class="modal-dialog">
    <div class="modal-content">
      <div class="Cmodal-header">
 
-       <h4 class="">Agregar Carrera</h4>
+       <h4 class="">Agregar Curso</h4>
      </div>
      <div class="modal-body cf">
 
@@ -39,7 +39,7 @@
         <input type="text" class="form-control" placeholder="Nombre" aria-describedby="basic-addon2">
       
       </form>
-       <table  ng-table class=" col-xs-12 col-sm-6">
+       <table  ng-table class="estudiantes col-xs-12 col-sm-6">
 			    <tr ng-repeat="carrera in carreras">
 			        <td data-title="'Cursos'">{{carrera.nombre}}</td>
 			        <td data-title="'Código'">{{carrera.cod}}</td>
@@ -48,6 +48,16 @@
 			        </td>
 			    </tr>
 			</table>
+			 <table  ng-table class="profesores col-xs-12 col-sm-6">
+			    <tr ng-repeat="carrera in carreras">
+			        <td data-title="'Cursos'">{{carrera.nombre}}</td>
+			        <td data-title="'Código'">{{carrera.cod}}</td>
+			        <td data-title="''">
+			        	<a><i class="fa fa-times-circle fa-2x"></i></a>
+			        </td>
+			    </tr>
+			</table>
+
 
 
     </div>
