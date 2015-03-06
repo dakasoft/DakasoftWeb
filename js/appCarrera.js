@@ -10,6 +10,7 @@
         $http.get('json/carreras.json').success(function (data) {
           $scope.carreras = data;
         });
+        
       }],
       controllerAs: 'carreras'
     };

@@ -1,14 +1,30 @@
 [
     {
         "nombre":"Diseño y Desarrollo Web",
-        "cod":"web232"
+        "cod":"web232",
+      "cursos": [
+                 {
+            "id": "pdw1",
+            "name": "Proyecto de Desarrollo Web 1"
+               },
+               {
+                 "id": "pdw2",
+                "name": "Proyecto de Desarrollo Web 2"
+               }
+            ]
     },
     {
        "nombre":"Desarrollo de Software",
-        "cod":"soft220"
+        "cod":"soft220",
+          "cursos": [
+            
+            ]
     },
     {
        "nombre":"Tecnologias",
-        "cod":"Bitic"
+        "cod":"Bitic",
+          "cursos": [
+                
+            ]
     }
 ]

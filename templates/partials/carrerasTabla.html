@@ -12,11 +12,11 @@
 			</div>
 			<table id="carreras-table" ng-table class="table">
 			    <tr ng-repeat="carrera in carreras">
-			        <td data-title="'Nombre'">{{carrera.nombre}}</td>
-			        <td data-title="'Código'">{{carrera.cod}}</td>
-			        <td data-title="'Acciones'">
-			        	<a><i class="fa fa-pencil-square-o fa-2x"></i></a>
-			        	<a><i class="fa fa-times-circle fa-2x"></i></a>
+			        <td data-title="'Nombre'" ng-hide="hola">{{carrera.nombre}}</td>
+			        <td data-title="'Código'" ng-hide="hola">{{carrera.cod}}</td>
+			        <td data-title="'Acciones'"ng-hide="hola" >
+			        	<a href="" ><i class="fa fa-pencil-square-o fa-2x"></i></a>
+			        	<a ng-click="hola=true"><i class="fa fa-times-circle fa-2x"></i></a>
 			        </td>
 			    </tr>
 			</table>
@@ -25,20 +25,28 @@
 
 
 
-<div ng-show="showModal" class="mod">
+<div ng-show="showModal" class="modC">
  <div class="modal-dialog">
    <div class="modal-content">
-     <div class="Cmodal-header">
+     <div class="modal-header">
 
        <h4 class="">Agregar Carrera</h4>
      </div>
      <div class="modal-body cf">
 
-      <form class="carrerasForm  col-xs-12 col-sm-6" ng-submit="">
-        <input type="text" class="form-control" placeholder="Nombre" aria-describedby="basic-addon2">
+      <form class="carrerasForm  col-xs-12 col-sm-6" ng-submit="" ng-submit="">
+        <input type="text" class="form-control" placeholder="Nombre" aria-describedby="basic-addon2" ng-model="carrera.nombre" >
+      
+ 
+  <select class=""  ng-model="carrera.curso"  >
+     <option value=""></option>
+     <option value=""></option>
+     <option value=""></option>
+     <option value=""></option>
+  </select>
       
       </form>
-       <table  ng-table class=" col-xs-12 col-sm-6">
+       <table  ng-table class="col-xs-12 col-sm-6">
 			    <tr ng-repeat="carrera in carreras">
 			        <td data-title="'Cursos'">{{carrera.nombre}}</td>
 			        <td data-title="'Código'">{{carrera.cod}}</td>
@@ -51,7 +59,7 @@
 
     </div>
     <div class="modal-footer cf">
-    	  <button type="button" ng-click="ShowModal=false;" class="btn btn-default" >Close</button>
+    	  <button type="button" ng-click="showModal=false;" class="btn btn-default" >Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
 
     </div>
