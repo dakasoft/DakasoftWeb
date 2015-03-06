@@ -16,14 +16,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('portafolio',{
-    	url: "/portafolio",
-      templateUrl:"templates/portafolio.html",
-    });
 
+  $stateProvider
     .state('carreras', {
       url: "/carreras",
-      templateUrl: "templates/carreras.html",
+      templateUrl: "templates/carreras.html"
     });
 
 
