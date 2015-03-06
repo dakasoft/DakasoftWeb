@@ -17,7 +17,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
 
-  $stateProvider
+ $stateProvider
     .state('carreras', {
       url: "/carreras",
       templateUrl: "templates/carreras.html"

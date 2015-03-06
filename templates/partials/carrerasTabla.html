@@ -1,3 +1,26 @@
 <div class="container-fluid">
-	<p>dkf</p>
+	<div class="row">
+		<div class="col-xs-12 col-sm-3"></div>
+		<div class="col-xs-12 col-sm-7">
+			<div class="table-header">
+				<div class="col-xs-12 col-sm-6">
+					<p>Usuarios</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p><a href="asd"><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+				</div>
+			</div>
+			<table id="user-table" ng-table class="table">
+			    <tr ng-repeat="user in usuarios">
+			        <td data-title="'Nombre'">{{user.name}}</td>
+			        <td data-title="'Apellido'">{{user.lastname}}</td>
+			        <td data-title="'Rol'">{{user.role}}</td>
+			        <td data-title="'Acciones'">
+			        	<a><i class="fa fa-pencil-square-o fa-2x"></i></a>
+			        	<a><i class="fa fa-times-circle fa-2x"></i></a>
+			        </td>
+			    </tr>
+			</table>
+		</div>
+		<div class="col-xs-12 col-sm-2"></div>
 </div>
