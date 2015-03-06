@@ -182,7 +182,33 @@ footer div p{
 }
 
 @media (max-width: 992px){
+.logo{
+    display:none;
+}
+.logo2{
+    width:150px;
+    float:left;
+}
+nav li a{
+	color:#a32068;
 
+}
+.subMenuMovil >li> a{
+	transition: background-color 0.8s ease;
+
+}
+.subMenuMovil>li> a:hover{
+	opacity:0.9;
+	color:white;
+	background-color:#2e368f ;
+	border-left: 3px solid #2e668f;
+}
+nav li a:hover{
+	color:#2e368f;
+}
+nav ul {
+	padding-top:20px;
+}
 	.menuVertical{
 		display: none;
 	}
@@ -211,5 +237,6 @@ footer div p{
 
 .testing{
 	height: 600px;
-	background: red;
+	background: white;
+	opacity:0.8;
 }
