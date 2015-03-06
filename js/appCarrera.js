@@ -1,5 +1,5 @@
 (function () { // define funcionalidad
-  var app = angular.module('carrera', ["ui.router"]);
+  var app = angular.module('carreras', ["ui.router"]);
 
   app.directive('carrerasTabla',function ($http) {
     return {
@@ -11,7 +11,7 @@
           $scope.usuarios = data;
         });
       }],
-      controllerAs: 'carrera'
+      controllerAs: 'carreras'
 
       
     };
