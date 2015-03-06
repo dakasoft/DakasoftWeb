@@ -1,17 +1,34 @@
-/*index*/
+/*basic styles*/
+/*keep the footer in the bottom of the page*/
+html,
 body {
-  background-image: url("../img/fondo.png");
-
+	margin:0;
+	padding:0;
+	height:100%;
+	background-image: url("../img/fondo.png");
 }
-.container-fluid{
-  min-height:400px;
+.wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+.menu-content {
+	padding-bottom:29px; 
+}
+
+#footer {
+	padding: 0;
+	background:#ffab62;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
 }
 
 /*usuario actual*/
-.usuario{ /* header contiene el logo*/
+.usuario{ 
   background: #722d7b;
-  width:15%;
-  float:right;
+  width:100%;
   text-align:center;
   color:white;
   opacity:0.9;
@@ -58,8 +75,6 @@ header img{ /* header contiene el logo*/
   margin: 0 auto;
   transition: all 0.3s ease 0s;
 }
-
-
 
 .subMenu {
   background:linear-gradient(135deg, #a32068 0%,#2e368f 100%);
@@ -141,8 +156,6 @@ header img{ /* header contiene el logo*/
 }
 /*Estilos del footer*/
 footer div{
-  margin-top:75px;
-  height:27px;
   background: #722d7b;
   padding:3px;
   color:white;

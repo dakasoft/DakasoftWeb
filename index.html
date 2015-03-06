@@ -8,18 +8,36 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
-      <header class="cf">
-        <a href="#"><img class="logo cf" src="img/logo.png"/></a>
-        <div class="usuario"><p>Yee Vargas</p>
-          <button type="button" class="btn btn-default btn-xs">Cerrar Sesión</button>
-        </div>
-      </header>
-     <menu></menu>
-    <div class="container-fluid cf" ui-view></div>
+  <div class="container-fluid wrapper">
 
-    <footer>
-      <div><p>Cenfotec 2015</p></div>
-    </footer>
+    <div class="row">
+        <header >     
+          <div class="col-xs-2 pull-left">
+            <a href="#"><img class="logo cf" src="img/logo.png"/></a>
+         </div>
+          <div class="col-xs-12 col-sm-2 pull-right">
+            <div class="usuario pull-right"><p>Yee Vargas</p>
+             <button type="button" class="btn btn-default btn-xs">Cerrar Sesión</button>
+            </div>
+          </div>
+        </header>
+
+      <div class="col-xs-12-col-sm-12">
+      <div ui-view></div>  
+      </div>
+
+    </div> 
+      <div class="row">
+        <div class="col-xs-12 col-sm-2 pull-left menu-content">
+          <menu></menu>
+        </div>      
+        <div id="footer" class="col-xs-12">
+          <footer>
+            <div><p>Cenfotec 2015</p></div>
+          </footer>
+        </div>
+      </div>
+    </div>
 
     <script src="js/angular.min.js"></script> 
     <script src="js/angular-ui-router.js"></script> 
