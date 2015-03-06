@@ -21,10 +21,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/portafolio.html",
     });
 
-    $stateProvider
     .state('carreras', {
       url: "/carreras",
-      templateUrl: "templates/carreras.html"
+      templateUrl: "templates/carreras.html",
     });
 
 
