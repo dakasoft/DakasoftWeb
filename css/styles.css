@@ -307,3 +307,6 @@ nav ul {
 #carreras-table .fa-times-circle{
 	margin-left: 12px;
 }
+.carrerasForm{
+   float:left;
+}
