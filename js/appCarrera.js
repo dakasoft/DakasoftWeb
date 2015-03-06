@@ -7,8 +7,8 @@
       templateUrl: 'templates/partials/carrerasTabla.html',
       controller: ['$scope','$http',function ($scope,$http) {
       $scope.usuarios = [];
-        $http.get('json/usuarios.json').success(function (data) {
-          $scope.usuarios = data;
+        $http.get('json/carreras.json').success(function (data) {
+          $scope.carreras = data;
         });
       }],
       controllerAs: 'carreras'

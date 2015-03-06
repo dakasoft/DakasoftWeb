@@ -248,6 +248,7 @@ nav ul {
 	background-color: #80297b;
 	color: white;
 	font-weight: 600;
+	text-align:center;
 }
 
 .table-header i{
@@ -269,8 +270,8 @@ nav ul {
 }
 
 
-#carreras-table, .table-header{
-	text-align: center;
+#carreras-table,{
+	text-align: justify;
 }
 
 #carreras-table a{
