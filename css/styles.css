@@ -246,7 +246,10 @@ nav ul {
 
 
 .logomovile{
-    width: 30px;
-  
-float:left;
+  width: 30px; 
+	float:left;
+}
+
+.mainContent{
+	margin-bottom: 60px;
 }
