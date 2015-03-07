@@ -281,43 +281,48 @@ nav ul {
   color: white;
 }
 
-#user-table, .table-header{
+#custom-table, .table-header{
 	text-align: center;
 }
 
-#user-table a{
+#custom-table a{
 	color: #722d7b;
 	cursor: pointer;
 }
 
-#user-table a:hover{
+#custom-table a:hover{
 	color: black;
 }
 
-#user-table th
+#custom-table th
 {
 	font-weight: 300;
 	color: #722d7b;
 	border-bottom: 1px solid #722d7b;
 }
-#user-table{
+#custom-table{
 	border: 1px solid #722d7b;
 }
 
-#user-table tr
+#custom-table tr
 {
 	border-bottom: 1px solid #722d7b;
 }
 
-#user-table td
+#custom-table td
 {
 	padding: 4px;
 	vertical-align: middle;
 	border-top: 0;
 }
-#user-table .fa-times-circle{
+#custom-table .fa-times-circle{
 	margin-left: 12px;
 }
+
+#custom-table{
+	background: white;
+}
+
 .add{
 	cursor: pointer;
 }
