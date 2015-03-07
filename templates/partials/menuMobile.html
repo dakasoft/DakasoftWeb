@@ -1,32 +1,43 @@
 <div>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-<a href="#"><img class="logo2 cf" src="img/logo.png"/></a>
-  <div class="container">
-
-       <ul class="nav nav-tabs">
-       	<li id="configuracion"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Configuración<span class="caret"></span></a>
-    		 <ul class="subMenuMovil dropdown-menu cf">
-     		 <li><a  href='#' ng-click="" >Usuario</a></li>
-    		 <li><a href='#' ng-click="" >Carrera</a></li>
-     		 <li><a  href='#' ng-click="">Curso</a></li>
-    		 <li><a  href='#' ng-click="">Parametros</a></li>
+  <div class="container-fluid">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+       <a class="navbar-brand" href="#"><img class="logomovile" src="img/logomovile.png"/></a>   
+    </div>
+     <div class="collapse navbar-collapse" id="myNavbar">
+       <ul class="nav navbar-nav">
+       	<li id="configuracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Configuración<span class="caret"></span></a>
+    		 <ul class="subMenuMovil dropdown-menu">
+     		 <li><a  href='#'>Usuario</a></li>
+    		 <li><a href='#' >Carrera</a></li>
+     		 <li><a  href='#'>Curso</a></li>
+    		 <li><a  href='#'>Parametros</a></li>
      		 </ul>
         </li>
-        		<li id="administracion"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Administración<span class="caret"></span></a>
+        		<li id="administracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administración<span class="caret"></span></a>
     		 <ul class="subMenuMovil dropdown-menu cf">
-     		 <li><a  href='#' ng-click="" >Ver Cursos</a></li>
+     		 <li><a  href='#'>Ver Cursos</a></li>
 
      		 </ul>
         </li>
-        	<li id="portafolio"><a href="#" >Portafolio <span ></span></a>
+        	<li id="portafolioM"><a href="#" >Portafolio <span ></span></a>
             </li>
-        	<li id="reportes"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Reporte <span class="caret"></span></a>
+        	<li id="reportesM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span></a>
     		 <ul class="subMenuMovil dropdown-menu cf">
      		 <li><a  href='#' ng-click="" >Reporte Notas</a></li>
     		 <li><a href='#' ng-click="" >Historial Académico</a></li>
      		 </ul>
         </li>
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Cerrar Seción</a></li>
+      
       </ul>
   </div>
 </nav>

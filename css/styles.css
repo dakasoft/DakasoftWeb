@@ -185,24 +185,29 @@ footer div p{
 .logo{
     display:none;
 }
-.logo2{
-    width:150px;
-    float:left;
+.navbar-default .navbar-nav>li>a {
+ color:#a32068;
 }
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+color: black;
+}
+
+
 nav li a{
 	color:#a32068;
 
 }
-.subMenuMovil >li> a{
-	transition: background-color 0.8s ease;
+.subMenuMovil li> a{
+  transition: background-color 0.8s ease;
 
 }
-.subMenuMovil>li> a:hover{
-	opacity:0.9;
-	color:white;
-	background-color:#2e368f ;
-	border-left: 3px solid #2e668f;
+.subMenuMovil li> a:hover{
+  opacity:0.9;
+  color:white;
+  background-color:#2e368f ;
+  border-left: 3px solid #2e668f;
 }
+
 nav li a:hover{
 	color:#2e368f;
 }
@@ -239,4 +244,10 @@ nav ul {
 	height: 600px;
 	background: white;
 	opacity:0.8;
+}
+
+.logomovile{
+    width: 30px;
+  
+float:left;
 }
