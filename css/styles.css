@@ -370,7 +370,7 @@ button.close{
 	border-top: none;
 }
 
-.form-horizontal .control-label {
+.form-horizontal .control-label, .form-group label {
 	text-align: center;
 	color: #722d7b;
 }
@@ -383,7 +383,6 @@ button.close{
 .form-control:focus {
 	border-color: #722d7b;
 	outline: 0;
-
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0),0 0 3px rgba(135, 13, 148, 0.34);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0),0 0 3px rgba(135, 13, 148, 0.34);
 }
@@ -391,3 +390,35 @@ button.close{
 .mainContent{
 	margin-bottom: 60px;
 }
+
+
+/*Grupos y sus modals,form y demas*/
+.list-group-item{
+	color: #722d7b;
+	padding: 0 10px;
+}
+
+.list-g-header{
+	color:white;
+	background:#722d7b;
+}
+
+.list-group{
+	height: 120px;
+}
+
+.listaProfesores{
+	margin-bottom: 0;
+}
+
+.listaEstudiantes{
+	margin-bottom: 52px;
+}
+
+.modal-header{
+	background:#722d7b; 
+	border: none;
+	text-align: center;
+	color: white;
+}
+

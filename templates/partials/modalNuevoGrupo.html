@@ -1,0 +1,55 @@
+<div class="modal fade" id="nuevoGrupoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">    
+    <div class="modal-header">
+      <h4>Nuevo grupo</h4>
+    </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <form class="form-vertical">
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+              <label for="nombreGrupo">Nombre Grupo</label>
+              <input type="text" class="form-control" id="nombreGrupo">
+            </div>
+              <div class="form-group">
+                <label for="estudiantes">Estudiantes</label>
+                <input type="text" class="form-control" id="estudiantes">
+            </div>
+              <div class="form-group">
+                <label for="profesores">Profesores</label>
+                <input type="text" class="form-control" id="profesores">
+              </div>
+              <div class="form-group">
+                <label for="encargado">Profesor Encargado</label>
+                <input type="text" class="form-control" id="encargado">
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <ul class="list-group listaEstudiantes">
+                <li class="list-group-item list-g-header">Estudiantes</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+              <ul class="list-group listaProfesores">
+                <li class="list-group-item list-g-header">Profesores</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row modal-footer">
+            <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
