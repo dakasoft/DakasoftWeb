@@ -31,7 +31,10 @@
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Role</label>  
           <div class="col-xs-8">
-            <input type="text" ng-model="role" class="form-control input-md"> 
+            <select ng-model="role" ng-options="obj.id as obj.label for obj in roles">
+              <option value="">--Roles--</option>
+            </select>
+            <!-- <input type="text" ng-model="role" class="form-control input-md">  -->
           </div>
         </div>
         </form>
