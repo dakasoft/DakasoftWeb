@@ -29,11 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.directive('menu', function(){
 	return{
 		restrict: 'E',
-		templateUrl: 'templates/partials/menu.html',
-		controller:function($scope,$location){
-			//$scope.menu = true;
-		},
-		controllerAs: 'menuCtrl'
+		templateUrl: 'templates/partials/menu.html'
 	};
 });
 
