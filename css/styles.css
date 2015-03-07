@@ -244,10 +244,143 @@ nav ul {
 	}
 }
 
-
 .logomovile{
-  width: 30px; 
-	float:left;
+  width: 30px;
+  float:left;
+}
+
+/*Estilos para la tabla de usuarios*/
+.table-header div{
+	background-color: #722d7b;
+	color: white;
+	font-weight: 600;
+}
+
+.table-header i{
+	margin-right: 4px;
+}
+
+.table-header p{
+	margin: 5px 0 5px 0;
+}
+
+.table-header a{
+	color: white;
+	font-weight: 600;
+}
+
+.table-header a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+.table, .table-header{
+  text-align: center;
+}
+.table-header .fa-plus{
+  color: white;
+}
+
+#user-table, .table-header{
+	text-align: center;
+}
+
+#user-table a{
+	color: #722d7b;
+	cursor: pointer;
+}
+
+#user-table a:hover{
+	color: black;
+}
+
+#user-table th
+{
+	font-weight: 300;
+	color: #722d7b;
+	border-bottom: 1px solid #722d7b;
+}
+#user-table{
+	border: 1px solid #722d7b;
+}
+
+#user-table tr
+{
+	border-bottom: 1px solid #722d7b;
+}
+
+#user-table td
+{
+	padding: 4px;
+	vertical-align: middle;
+	border-top: 0;
+}
+#user-table .fa-times-circle{
+	margin-left: 12px;
+}
+.add{
+	cursor: pointer;
+}
+
+/*Estilos del modal*/
+button.close{
+	-webkit-appearance: none;
+	padding: 0;
+	cursor: pointer;
+	background: 0 0;
+	border: 0;
+	position: absolute;
+	z-index: 999;
+	float: right;
+	right: -15px;
+	width: 30px;
+	height: 30px;
+	background: #722d7b;
+	color: white;
+	opacity: 1;
+	border-radius: 50px;
+	top: -15px;
+}
+.close:hover {
+	color: #FFF;
+}
+
+.modal-content{
+	border: 2px solid #722d7b;
+}
+
+.btn-custom{
+	color:white;
+	background: #722d7b;
+}
+
+.btn-custom:hover{
+	color:white;
+	opacity: 0.8;
+}
+
+.modal-footer {
+	padding: 15px;
+	text-align: center;
+	border-top: none;
+}
+
+.form-horizontal .control-label {
+	text-align: center;
+	color: #722d7b;
+}
+
+.form-control {
+	background-color: #e5d5e4;
+	border: none;
+	color: #722d7b
+}
+.form-control:focus {
+	border-color: #722d7b;
+	outline: 0;
+
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0),0 0 3px rgba(135, 13, 148, 0.34);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0),0 0 3px rgba(135, 13, 148, 0.34);
 }
 
 .mainContent{

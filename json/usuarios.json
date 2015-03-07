@@ -1,0 +1,802 @@
+[
+    {
+        "id": 1,
+        "name": "Cody",
+        "lastname": "Gamble",
+        "email": "Nunc.mauris@etlaciniavitae.org",
+        "password": "8536",
+        "role": "Decano"
+    },
+    {
+        "id": 2,
+        "name": "Kiara",
+        "lastname": "Thomas",
+        "email": "lectus@ipsumPhasellusvitae.ca",
+        "password": "1222",
+        "role": "Profesor"
+    },
+    {
+        "id": 3,
+        "name": "Autumn",
+        "lastname": "Stone",
+        "email": "per.inceptos.hymenaeos@nislsem.com",
+        "password": "2314",
+        "role": "Profesor"
+    },
+    {
+        "id": 4,
+        "name": "Tobias",
+        "lastname": "Roth",
+        "email": "tincidunt@iaculislacus.co.uk",
+        "password": "8508",
+        "role": "Decano"
+    },
+    {
+        "id": 5,
+        "name": "Kaye",
+        "lastname": "Acosta",
+        "email": "nulla.Donec@faucibusleoin.edu",
+        "password": "3102",
+        "role": "Director académico"
+    },
+    {
+        "id": 6,
+        "name": "Gloria",
+        "lastname": "Tate",
+        "email": "sed.pede.Cum@egestasAliquamfringilla.co.uk",
+        "password": "8586",
+        "role": "Profesor"
+    },
+    {
+        "id": 7,
+        "name": "Ashton",
+        "lastname": "Mueller",
+        "email": "diam.Proin.dolor@diamSeddiam.edu",
+        "password": "8186",
+        "role": "Decano"
+    },
+    {
+        "id": 8,
+        "name": "Noelle",
+        "lastname": "Barnes",
+        "email": "imperdiet.non@ullamcorpervelit.co.uk",
+        "password": "4889",
+        "role": "Decano"
+    },
+    {
+        "id": 9,
+        "name": "Karina",
+        "lastname": "Massey",
+        "email": "sed@incursuset.net",
+        "password": "6692",
+        "role": "Decano"
+    },
+    {
+        "id": 10,
+        "name": "Walter",
+        "lastname": "Kirkland",
+        "email": "arcu.et.pede@euultrices.edu",
+        "password": "3140",
+        "role": "Director académico"
+    },
+    {
+        "id": 11,
+        "name": "Catherine",
+        "lastname": "Hutchinson",
+        "email": "elementum.lorem@nonleoVivamus.co.uk",
+        "password": "6369",
+        "role": "Profesor"
+    },
+    {
+        "id": 12,
+        "name": "Alice",
+        "lastname": "Rodriguez",
+        "email": "luctus@lacusNullatincidunt.edu",
+        "password": "7124",
+        "role": "Profesor"
+    },
+    {
+        "id": 13,
+        "name": "Erich",
+        "lastname": "Donaldson",
+        "email": "non@Suspendissedui.com",
+        "password": "7560",
+        "role": "Estudiante"
+    },
+    {
+        "id": 14,
+        "name": "Ciaran",
+        "lastname": "Clayton",
+        "email": "in.hendrerit.consectetuer@vitae.org",
+        "password": "1522",
+        "role": "Decano"
+    },
+    {
+        "id": 15,
+        "name": "Kirby",
+        "lastname": "Roberts",
+        "email": "facilisis@vitaeeratvel.org",
+        "password": "9885",
+        "role": "Director académico"
+    },
+    {
+        "id": 16,
+        "name": "Anika",
+        "lastname": "Howe",
+        "email": "massa.non.ante@maurisInteger.net",
+        "password": "4291",
+        "role": "Decano"
+    },
+    {
+        "id": 17,
+        "name": "Whilemina",
+        "lastname": "Joseph",
+        "email": "mauris.Integer.sem@maurisblanditmattis.ca",
+        "password": "3470",
+        "role": "Estudiante"
+    },
+    {
+        "id": 18,
+        "name": "Neil",
+        "lastname": "Valdez",
+        "email": "adipiscing.lacus.Ut@vitaesodalesat.net",
+        "password": "1818",
+        "role": "Director académico"
+    },
+    {
+        "id": 19,
+        "name": "Aretha",
+        "lastname": "Simpson",
+        "email": "Duis.a@Crasinterdum.com",
+        "password": "4363",
+        "role": "Profesor"
+    },
+    {
+        "id": 20,
+        "name": "Kaye",
+        "lastname": "Simpson",
+        "email": "placerat.augue@nonenim.net",
+        "password": "4180",
+        "role": "Decano"
+    },
+    {
+        "id": 21,
+        "name": "Kirsten",
+        "lastname": "Hatfield",
+        "email": "elit.Curabitur@loremeu.ca",
+        "password": "9141",
+        "role": "Estudiante"
+    },
+    {
+        "id": 22,
+        "name": "Garrett",
+        "lastname": "Knowles",
+        "email": "malesuada@arcueuodio.org",
+        "password": "2091",
+        "role": "Profesor"
+    },
+    {
+        "id": 23,
+        "name": "Burton",
+        "lastname": "Madden",
+        "email": "pretium.aliquet@penatibus.edu",
+        "password": "1575",
+        "role": "Decano"
+    },
+    {
+        "id": 24,
+        "name": "Ursa",
+        "lastname": "Sweet",
+        "email": "sed.turpis.nec@Aliquamgravida.ca",
+        "password": "1700",
+        "role": "Decano"
+    },
+    {
+        "id": 25,
+        "name": "Ashely",
+        "lastname": "Calderon",
+        "email": "eget@Duis.net",
+        "password": "3983",
+        "role": "Estudiante"
+    },
+    {
+        "id": 26,
+        "name": "Breanna",
+        "lastname": "Lloyd",
+        "email": "et.magnis@suscipit.co.uk",
+        "password": "8495",
+        "role": "Decano"
+    },
+    {
+        "id": 27,
+        "name": "Quon",
+        "lastname": "Vasquez",
+        "email": "Sed.nunc@euismodurnaNullam.co.uk",
+        "password": "7066",
+        "role": "Decano"
+    },
+    {
+        "id": 28,
+        "name": "Kyla",
+        "lastname": "Guzman",
+        "email": "Nullam@magnaCras.co.uk",
+        "password": "1121",
+        "role": "Profesor"
+    },
+    {
+        "id": 29,
+        "name": "Demetria",
+        "lastname": "Moon",
+        "email": "cursus.Integer.mollis@penatibus.co.uk",
+        "password": "9214",
+        "role": "Profesor"
+    },
+    {
+        "id": 30,
+        "name": "Aurora",
+        "lastname": "Rivers",
+        "email": "et@tempor.net",
+        "password": "5351",
+        "role": "Estudiante"
+    },
+    {
+        "id": 31,
+        "name": "Jared",
+        "lastname": "Fuentes",
+        "email": "nascetur.ridiculus.mus@idrisus.net",
+        "password": "4242",
+        "role": "Director académico"
+    },
+    {
+        "id": 32,
+        "name": "Palmer",
+        "lastname": "Knowles",
+        "email": "nibh.dolor.nonummy@tempus.com",
+        "password": "9101",
+        "role": "Director académico"
+    },
+    {
+        "id": 33,
+        "name": "Chaim",
+        "lastname": "Delacruz",
+        "email": "nec@scelerisquesed.co.uk",
+        "password": "9546",
+        "role": "Director académico"
+    },
+    {
+        "id": 34,
+        "name": "Adena",
+        "lastname": "Mccray",
+        "email": "massa.Vestibulum@ut.co.uk",
+        "password": "1609",
+        "role": "Profesor"
+    },
+    {
+        "id": 35,
+        "name": "Adria",
+        "lastname": "Stone",
+        "email": "massa.lobortis@luctus.co.uk",
+        "password": "2994",
+        "role": "Decano"
+    },
+    {
+        "id": 36,
+        "name": "Kristen",
+        "lastname": "Acosta",
+        "email": "Donec@interdum.ca",
+        "password": "8386",
+        "role": "Profesor"
+    },
+    {
+        "id": 37,
+        "name": "Lareina",
+        "lastname": "Douglas",
+        "email": "sagittis.augue.eu@necurna.edu",
+        "password": "7668",
+        "role": "Estudiante"
+    },
+    {
+        "id": 38,
+        "name": "Gay",
+        "lastname": "Newton",
+        "email": "porttitor@massaInteger.edu",
+        "password": "1765",
+        "role": "Estudiante"
+    },
+    {
+        "id": 39,
+        "name": "Graiden",
+        "lastname": "Bradford",
+        "email": "sapien.imperdiet.ornare@eu.net",
+        "password": "8068",
+        "role": "Director académico"
+    },
+    {
+        "id": 40,
+        "name": "Riley",
+        "lastname": "Adkins",
+        "email": "consequat@Donec.edu",
+        "password": "8091",
+        "role": "Profesor"
+    },
+    {
+        "id": 41,
+        "name": "Brendan",
+        "lastname": "Parsons",
+        "email": "at@ipsumdolorsit.ca",
+        "password": "6241",
+        "role": "Estudiante"
+    },
+    {
+        "id": 42,
+        "name": "Darius",
+        "lastname": "Mcfarland",
+        "email": "dis.parturient@Duiselementum.com",
+        "password": "5594",
+        "role": "Decano"
+    },
+    {
+        "id": 43,
+        "name": "Riley",
+        "lastname": "Robinson",
+        "email": "mi@semeget.co.uk",
+        "password": "7692",
+        "role": "Director académico"
+    },
+    {
+        "id": 44,
+        "name": "Jackson",
+        "lastname": "Meyer",
+        "email": "Donec.dignissim@amet.com",
+        "password": "8556",
+        "role": "Decano"
+    },
+    {
+        "id": 45,
+        "name": "Joan",
+        "lastname": "Flores",
+        "email": "Suspendisse.tristique@tinciduntadipiscingMauris.net",
+        "password": "9539",
+        "role": "Estudiante"
+    },
+    {
+        "id": 46,
+        "name": "Noel",
+        "lastname": "Cox",
+        "email": "Curabitur.ut@sapien.ca",
+        "password": "1862",
+        "role": "Estudiante"
+    },
+    {
+        "id": 47,
+        "name": "Robin",
+        "lastname": "Dean",
+        "email": "nisl@nuncidenim.ca",
+        "password": "9102",
+        "role": "Profesor"
+    },
+    {
+        "id": 48,
+        "name": "Zenia",
+        "lastname": "Hebert",
+        "email": "congue.elit@acarcuNunc.co.uk",
+        "password": "9130",
+        "role": "Decano"
+    },
+    {
+        "id": 49,
+        "name": "Phelan",
+        "lastname": "Lancaster",
+        "email": "tellus.id@Integereu.com",
+        "password": "3103",
+        "role": "Decano"
+    },
+    {
+        "id": 50,
+        "name": "Ayanna",
+        "lastname": "Mcgowan",
+        "email": "semper.cursus@mollisDuis.org",
+        "password": "6312",
+        "role": "Estudiante"
+    },
+    {
+        "id": 51,
+        "name": "Lee",
+        "lastname": "Lynch",
+        "email": "nulla.vulputate.dui@vel.ca",
+        "password": "2709",
+        "role": "Decano"
+    },
+    {
+        "id": 52,
+        "name": "Ella",
+        "lastname": "Conrad",
+        "email": "ac@ipsumSuspendisse.ca",
+        "password": "4201",
+        "role": "Decano"
+    },
+    {
+        "id": 53,
+        "name": "Wayne",
+        "lastname": "Sparks",
+        "email": "vestibulum@enimdiam.co.uk",
+        "password": "4992",
+        "role": "Decano"
+    },
+    {
+        "id": 54,
+        "name": "Hedda",
+        "lastname": "Kerr",
+        "email": "erat.Vivamus@sitametdiam.edu",
+        "password": "3767",
+        "role": "Profesor"
+    },
+    {
+        "id": 55,
+        "name": "Ann",
+        "lastname": "Morrison",
+        "email": "eleifend.vitae@cursusdiamat.net",
+        "password": "8467",
+        "role": "Estudiante"
+    },
+    {
+        "id": 56,
+        "name": "Adara",
+        "lastname": "Spence",
+        "email": "turpis.egestas@velsapienimperdiet.net",
+        "password": "3150",
+        "role": "Director académico"
+    },
+    {
+        "id": 57,
+        "name": "Eugenia",
+        "lastname": "Frank",
+        "email": "mauris@dolorNulla.ca",
+        "password": "7571",
+        "role": "Decano"
+    },
+    {
+        "id": 58,
+        "name": "Melodie",
+        "lastname": "Mcgowan",
+        "email": "velit.egestas.lacinia@Nam.org",
+        "password": "8602",
+        "role": "Profesor"
+    },
+    {
+        "id": 59,
+        "name": "Judith",
+        "lastname": "Coffey",
+        "email": "lectus@diameu.co.uk",
+        "password": "7621",
+        "role": "Decano"
+    },
+    {
+        "id": 60,
+        "name": "Regina",
+        "lastname": "Rosario",
+        "email": "Quisque.varius@eratvolutpat.net",
+        "password": "1829",
+        "role": "Director académico"
+    },
+    {
+        "id": 61,
+        "name": "Gail",
+        "lastname": "Berg",
+        "email": "Quisque.porttitor.eros@dolornonummyac.org",
+        "password": "2519",
+        "role": "Estudiante"
+    },
+    {
+        "id": 62,
+        "name": "Trevor",
+        "lastname": "Hunt",
+        "email": "hendrerit.a@loremipsum.co.uk",
+        "password": "8528",
+        "role": "Director académico"
+    },
+    {
+        "id": 63,
+        "name": "Cruz",
+        "lastname": "Rivera",
+        "email": "semper@diam.com",
+        "password": "3631",
+        "role": "Estudiante"
+    },
+    {
+        "id": 64,
+        "name": "Isabella",
+        "lastname": "Oliver",
+        "email": "Phasellus.dapibus@atvelitCras.net",
+        "password": "9556",
+        "role": "Decano"
+    },
+    {
+        "id": 65,
+        "name": "Amy",
+        "lastname": "Valentine",
+        "email": "dis@scelerisquemollisPhasellus.org",
+        "password": "6473",
+        "role": "Director académico"
+    },
+    {
+        "id": 66,
+        "name": "Iola",
+        "lastname": "Trevino",
+        "email": "amet@quam.ca",
+        "password": "2730",
+        "role": "Director académico"
+    },
+    {
+        "id": 67,
+        "name": "Eugenia",
+        "lastname": "Montgomery",
+        "email": "malesuada.Integer@vulputatevelit.co.uk",
+        "password": "8575",
+        "role": "Estudiante"
+    },
+    {
+        "id": 68,
+        "name": "Kibo",
+        "lastname": "Moore",
+        "email": "ac@felisadipiscing.net",
+        "password": "2622",
+        "role": "Estudiante"
+    },
+    {
+        "id": 69,
+        "name": "Thor",
+        "lastname": "Riggs",
+        "email": "nulla@nisl.co.uk",
+        "password": "1771",
+        "role": "Director académico"
+    },
+    {
+        "id": 70,
+        "name": "Palmer",
+        "lastname": "Reed",
+        "email": "Pellentesque.habitant.morbi@eget.co.uk",
+        "password": "2651",
+        "role": "Profesor"
+    },
+    {
+        "id": 71,
+        "name": "Abigail",
+        "lastname": "Meadows",
+        "email": "Fusce@odiovelest.edu",
+        "password": "1262",
+        "role": "Decano"
+    },
+    {
+        "id": 72,
+        "name": "Dahlia",
+        "lastname": "Byrd",
+        "email": "congue@sit.net",
+        "password": "8271",
+        "role": "Estudiante"
+    },
+    {
+        "id": 73,
+        "name": "Tate",
+        "lastname": "Lara",
+        "email": "enim.Suspendisse.aliquet@mauris.edu",
+        "password": "7449",
+        "role": "Profesor"
+    },
+    {
+        "id": 74,
+        "name": "Hop",
+        "lastname": "Berry",
+        "email": "ligula@Donecconsectetuer.net",
+        "password": "3904",
+        "role": "Estudiante"
+    },
+    {
+        "id": 75,
+        "name": "Jarrod",
+        "lastname": "Kaufman",
+        "email": "enim@euodiotristique.org",
+        "password": "5163",
+        "role": "Profesor"
+    },
+    {
+        "id": 76,
+        "name": "Adena",
+        "lastname": "Mcguire",
+        "email": "Suspendisse@odioPhasellus.ca",
+        "password": "9228",
+        "role": "Estudiante"
+    },
+    {
+        "id": 77,
+        "name": "Jena",
+        "lastname": "Schultz",
+        "email": "Mauris@dictumeu.net",
+        "password": "1288",
+        "role": "Estudiante"
+    },
+    {
+        "id": 78,
+        "name": "Kelsey",
+        "lastname": "Howard",
+        "email": "diam.eu@fringilla.ca",
+        "password": "7082",
+        "role": "Director académico"
+    },
+    {
+        "id": 79,
+        "name": "Sloane",
+        "lastname": "Vazquez",
+        "email": "laoreet.posuere.enim@acfacilisis.co.uk",
+        "password": "6004",
+        "role": "Profesor"
+    },
+    {
+        "id": 80,
+        "name": "Bert",
+        "lastname": "Duncan",
+        "email": "eget.nisi@metus.co.uk",
+        "password": "8650",
+        "role": "Decano"
+    },
+    {
+        "id": 81,
+        "name": "Kyle",
+        "lastname": "Hodge",
+        "email": "aliquet.sem@Curabitursedtortor.com",
+        "password": "3293",
+        "role": "Decano"
+    },
+    {
+        "id": 82,
+        "name": "Glenna",
+        "lastname": "Hyde",
+        "email": "a.aliquet@atortorNunc.ca",
+        "password": "6286",
+        "role": "Director académico"
+    },
+    {
+        "id": 83,
+        "name": "Carl",
+        "lastname": "Torres",
+        "email": "Mauris.blandit.enim@ac.net",
+        "password": "9291",
+        "role": "Profesor"
+    },
+    {
+        "id": 84,
+        "name": "Aurora",
+        "lastname": "Klein",
+        "email": "tincidunt@malesuada.edu",
+        "password": "8376",
+        "role": "Estudiante"
+    },
+    {
+        "id": 85,
+        "name": "Berk",
+        "lastname": "Todd",
+        "email": "vitae@egestasSed.co.uk",
+        "password": "5516",
+        "role": "Decano"
+    },
+    {
+        "id": 86,
+        "name": "Guy",
+        "lastname": "Reid",
+        "email": "congue@laoreetposuereenim.net",
+        "password": "7194",
+        "role": "Director académico"
+    },
+    {
+        "id": 87,
+        "name": "Sade",
+        "lastname": "Wolf",
+        "email": "felis.Nulla.tempor@dolordapibus.ca",
+        "password": "1932",
+        "role": "Director académico"
+    },
+    {
+        "id": 88,
+        "name": "Herrod",
+        "lastname": "Kaufman",
+        "email": "massa.Integer.vitae@aliquetdiamSed.co.uk",
+        "password": "1665",
+        "role": "Decano"
+    },
+    {
+        "id": 89,
+        "name": "Quintessa",
+        "lastname": "Reynolds",
+        "email": "et@lobortistellusjusto.ca",
+        "password": "4658",
+        "role": "Estudiante"
+    },
+    {
+        "id": 90,
+        "name": "Boris",
+        "lastname": "Odonnell",
+        "email": "feugiat@facilisisnon.org",
+        "password": "4427",
+        "role": "Profesor"
+    },
+    {
+        "id": 91,
+        "name": "Autumn",
+        "lastname": "Holmes",
+        "email": "leo@nequeseddictum.co.uk",
+        "password": "1398",
+        "role": "Director académico"
+    },
+    {
+        "id": 92,
+        "name": "Adrienne",
+        "lastname": "Gould",
+        "email": "eu.metus.In@Maurisblandit.co.uk",
+        "password": "2401",
+        "role": "Decano"
+    },
+    {
+        "id": 93,
+        "name": "Lesley",
+        "lastname": "Lawson",
+        "email": "aliquet.metus.urna@urnaet.ca",
+        "password": "2589",
+        "role": "Estudiante"
+    },
+    {
+        "id": 94,
+        "name": "Sydney",
+        "lastname": "Osborn",
+        "email": "ut.dolor@aliquamarcu.edu",
+        "password": "5150",
+        "role": "Director académico"
+    },
+    {
+        "id": 95,
+        "name": "Jeremy",
+        "lastname": "Kerr",
+        "email": "felis.Donec.tempor@egestas.co.uk",
+        "password": "5362",
+        "role": "Decano"
+    },
+    {
+        "id": 96,
+        "name": "Kenyon",
+        "lastname": "Monroe",
+        "email": "Phasellus.vitae.mauris@dolorsitamet.ca",
+        "password": "6354",
+        "role": "Profesor"
+    },
+    {
+        "id": 97,
+        "name": "Gwendolyn",
+        "lastname": "Stevens",
+        "email": "vel.arcu.eu@Innec.net",
+        "password": "3729",
+        "role": "Decano"
+    },
+    {
+        "id": 98,
+        "name": "Aiko",
+        "lastname": "Morrow",
+        "email": "in@afelis.ca",
+        "password": "3107",
+        "role": "Director académico"
+    },
+    {
+        "id": 99,
+        "name": "Xandra",
+        "lastname": "Whitfield",
+        "email": "lacinia@urnaUt.org",
+        "password": "5284",
+        "role": "Director académico"
+    },
+    {
+        "id": 100,
+        "name": "Kaseem",
+        "lastname": "Hendricks",
+        "email": "nibh@imperdiet.co.uk",
+        "password": "5694",
+        "role": "Decano"
+    }
+]
