@@ -1,0 +1,29 @@
+[
+        {
+            "name": "Yee Vargas",
+            "id":1,
+            "foto":"img/foto.png",
+            "correo": "yvargasv@ucenfotac.ac.cr",
+            "telefono": "2093 0293",
+            "proyectos": [{"nombre":"proyecto I","foto": "img/project1.jpg"},{"nombre":"proyecto II","foto": "img/project2.jpg"},{"nombre":"proyecto II","foto": "img/project1.jpg"}],
+            "OtraInfo": "rem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.cuando un impresor (N. del T. persona que se dedica a la imprenta)"
+        },
+        {
+            "name": "Pamela Solano",
+            "id":2,
+            "foto":"img/lasuertedejim.jpg",
+            "correo": "psolanod@ucenfotac.ac.cr",
+            "telefono": "2233 0993",
+            "proyectos": [{"nombre":"proyecto II","foto": "img/project2.jpg"},{"nombre":"proyecto I","foto": "img/project1.jpg"}],
+            "OtraInfo": "rem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.cuando un impresor (N. del T. persona que se dedica a la imprenta)"
+        },
+        {
+            "name": "Esteban Salas",
+            "id":3,
+            "foto":"img/karma.jpg",
+            "correo": "esalasv@ucenfotac.ac.cr",
+            "telefono": "2163 2043",
+             "proyectos": [{"nombre":"proyecto II","foto": "img/project1.jpg"}],
+            "OtraInfo":"rem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.cuando un impresor (N. del T. persona que se dedica a la imprenta)"
+        }
+    ]
