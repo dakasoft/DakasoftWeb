@@ -1,0 +1,44 @@
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="">Nombre</label>  
+          <div class="col-xs-8">
+            <input type="text" ng-model="nombre" class="form-control input-md"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="">Primer Apellido</label>  
+          <div class="col-xs-8">
+            <input type="text" ng-model="apellido" class="form-control input-md"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="">Email</label>  
+          <div class="col-xs-8">
+            <input type="email" ng-model="email" class="form-control input-md"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="">Contraseña</label>  
+          <div class="col-xs-8">
+            <input type="password" ng-model="pass" class="form-control input-md"> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="">Role</label>  
+          <div class="col-xs-8">
+            <input type="text" ng-model="role" class="form-control input-md"> 
+          </div>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
