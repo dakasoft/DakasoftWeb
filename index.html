@@ -5,15 +5,54 @@
     <title>DakaSoft</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
+  <div class="container-fluid wrapper">
 
-    <div ui-view></div>
-    
+    <div class="row">
+        <header >     
+          <div class="col-xs-2 pull-left">
+            <a href="#"><img class="logo cf" src="img/logo.png"/></a>
+         </div>
+          <div class="col-xs-12 col-sm-3 col-md-2 pull-right" ng-class=" $root.currentStateName=='home' ? '' : 'hidden-sm hidden-xs'">
+            <div class="usuario pull-right"><p>Yee Vargas</p>
+             <button type="button" class="btn btn-default btn-xs">Cerrar Sesión</button>
+            </div>
+          </div>
+        </header>
+    </div>
+
+    <div class="menu-content col-xs-12">
+      <menu></menu>
+    </div>
+
+    <div ng-show="$root.currentStateName!='home'" class="styleM menu-mobile visible-sm visible-xs">
+      <menu-mobile></menu-mobile>
+    </div>
+
+    <div ng-show="$root.currentStateName!='home'" class="row">
+      <div class="col-xs-12 col-md-10 col-md-offset-2 col-lg-8">
+        <div ui-view class="">
+ 
+        </div>  
+      </div>
+    </div>  
+
+      <div class="row">  
+          <div id="footer" class="col-xs-12">
+            <footer>
+              <div><p>Cenfotec 2015</p></div>
+            </footer>
+          </div>
+      </div>
+    </div>
+
     <script src="js/angular.min.js"></script> 
     <script src="js/angular-ui-router.js"></script> 
     <script src="js/app.js"></script> 
     <script src="js/jquery.js"></script> 
     <script src="js/bootstrap.min.js"></script> 
+
   </body>
 </html>

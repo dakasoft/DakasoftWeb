@@ -2,31 +2,48 @@
 var app = angular.module('universidad', ["ui.router"]);
 /*Quitar el hashtag en el browser*/
 
-
 /* manejador de rutas*/
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise("/home");
-
   // Now set up the states
   $stateProvider
     .state('home', {
       url: "/home",
-      templateUrl: "templates/home.html"
+      templateUrl: "templates/home.html",
+      controller: function($rootScope,$state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
+
+    .state('portafolio',{
+    	url: "/portafolio",
+      templateUrl:"templates/portafolio.html",
     });
 
 });
+
+
 
 /*Directiva para el menu*/
 app.directive('menu', function(){
 	return{
 		restrict: 'E',
-		templateUrl: 'templates/parcials/menu.html',
-		controller:function($scope){
-			$scope.mensaje ="soy el menu";
+		templateUrl: 'templates/partials/menu.html',
+		controller:function($scope,$location){
+			//$scope.menu = true;
 		},
 		controllerAs: 'menuCtrl'
 	};
 });
+
+app.directive('menuMobile', function(){
+	return{
+		restrict: 'E',
+		templateUrl: 'templates/partials/menuMobile.html'
+	};
+});
+
+
 
 })();
