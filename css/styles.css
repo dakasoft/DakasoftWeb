@@ -170,6 +170,9 @@ footer div p{
   margin-right:50px;
   text-align:right;
 }
+.styleM{
+  margin-top:90px;
+}
 
 @media (min-width: 992px){
 
@@ -241,11 +244,6 @@ nav ul {
 	}
 }
 
-.testing{
-	height: 600px;
-	background: white;
-	opacity:0.8;
-}
 
 .logomovile{
     width: 30px;
