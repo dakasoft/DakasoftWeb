@@ -55,6 +55,15 @@
         $scope.guardar = function(){
           if($scope.editableUser != ""){
             $scope.editableUser.name = $scope.nombre;
+            $scope.editableUser.lastname = $scope.apellido;
+            $scope.editableUser.email = $scope.email;
+            $scope.editableUser.pass = $scope.pass;
+
+            angular.forEach($scope.roles, function(value, key) {
+              if(value.id == $scope.role){
+                $scope.editableUser.role = value.label;
+              }
+            });
           }else{
             var lastUser = $scope.usuarios[$scope.usuarios.length - 1];
             var newId =  lastUser.id+1;

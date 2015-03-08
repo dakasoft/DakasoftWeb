@@ -19,9 +19,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('portafolio',{
     	url: "/portafolio",
       templateUrl:"templates/portafolio.html",
-    });
+    })
 
-      $stateProvider
     .state('usuarios', {
       url: "/usuarios",
       templateUrl: "templates/usuarios.html"
