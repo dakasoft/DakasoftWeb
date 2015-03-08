@@ -3,7 +3,8 @@
 	<ul class="list-group">
 		<li ng-repeat="estudiante in estudiantes">
 			<div class="divNombre">
-				<h3>{{ estudiante.nombre}}  {{estudiante.apellido }}</h3>
+				<h3>{{ estudiante.nombre}}</h3>
+				<p>{{estudiante.apellido}}</p>
 			</div>
 				
 			<div class="alumno">
@@ -19,11 +20,7 @@
 			</div>
 			
 
-			<!-- <ul>
-				<li ng-repeat="profesor in estudiante.profesor">
-					<p><b>profesor:</b>{{profesor.nombre}}</p>
-				</li>
-			</ul> -->
+			
 		</li>
 	</ul>
 </div>
