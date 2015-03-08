@@ -28,15 +28,13 @@
         });
 
         $scope.editar = function(grupo){
-          console.log(grupo);
           $scope.editableGrupo = grupo;
           $scope.nombreGrupo = grupo.nombre;
           $scope.curso = grupo.cursoId;
-          //$scope.cursoId = grupo.cursoId;
-          $scope.profesoresSeleccionados = grupo.profesores;
-          //$scope.estudiantesSeleccionados = grupo.estudiantes;
+          $scope.profesoresSeleccionados = angular.copy(grupo.profesores);
+          $scope.estudiantesSeleccionados = angular.copy(grupo.estudiantes);
           $scope.encargado  = grupo.encargadoId;
-          //$scope.encargadoId  = grupo.encargadoId;
+          $scope.profesor = 0;
         };
 
         $scope.borrar = function(grupo){
@@ -71,26 +69,55 @@
             $scope.profesoresSeleccionados.push({id: $scope.profesorId, nombre: $scope.profesor, apellido:$scope.profesorApellido });
             $scope.profesor = "";
           }
+        };
 
+        $scope.editarEstudiantes = function(grupo){
+          /*$scope.editableGrupo = grupo;
+          $scope.nombreGrupo = grupo.nombre;
+          $scope.curso = grupo.cursoId;
+          $scope.profesoresSeleccionados = grupo.profesores;
+          $scope.estudiantesSeleccionados = grupo.estudiantes;
+          $scope.encargado  = grupo.encargadoId;*/
+        }
+
+        $scope.agregarEstudiante = function(estudiante){
+
+          angular.forEach($scope.estudiantes, function(value, key) {
+            if(value.id == estudiante.id){
+              $scope.estudiante = estudiante.name;
+              $scope.estudiantesId = estudiante.id;
+              $scope.estudiantesApellido = estudiante.lastname;
+            }
+          });
+          if($scope.estudiante){
+            $scope.estudiantesSeleccionados.push({id: $scope.estudiantesId, nombre: $scope.estudiante, apellido:$scope.estudiantesApellido });
+            $scope.estudiante = "";
+          }
         };
 
         $scope.quitarProfesor = function(profe){
-          console.log("eliminando"+profe.id);
-          $scope.profesores = [];
+          //$scope.profesores = [];
           angular.forEach($scope.profesoresSeleccionados, function(value, key) {
             if(value.id == profe.id){
-              console.log(value.id);
               $scope.profesoresSeleccionados.splice(key, 1);
             }
           });
         };
 
+        $scope.quitarEstudiante = function(estudiante){
+          angular.forEach($scope.estudiantesSeleccionados, function(value, key) {
+            if(value.id == estudiante.id){
+              $scope.estudiantesSeleccionados.splice(key, 1);
+            }
+          });
+        };
+
         $scope.guardar = function(){
-          console.log($scope.editableGrupo);
-          if($scope.editableGrupo != ""){ // faltan agregar los demas
-            $scope.editableGrupo.nombre = $scope.nombreGrupo;
-          }else{
-            angular.forEach($scope.cursos, function(value, key) {
+
+          //$scope.profesoresdeGrupo = $scope.profesoresSeleccionados;
+          /*buscamos los roles correspondientes*/
+
+          angular.forEach($scope.cursos, function(value, key) {
               if(value.id == $scope.curso){
                 $scope.curso = value.nombre;
                 $scope.cursoId = value.id;
@@ -104,6 +131,17 @@
                 $scope.encargadoApellido = value.lastname;
               }
             }); 
+
+          if($scope.editableGrupo != ""){ 
+            $scope.editableGrupo.nombre = $scope.nombreGrupo;
+            $scope.editableGrupo.curso = $scope.curso;
+            $scope.editableGrupo.cursoId = $scope.cursoId;
+            $scope.editableGrupo.encargado = $scope.encargado;
+            $scope.editableGrupo.encargadoId = $scope.encargadoId;
+            $scope.editableGrupo.profesores = $scope.profesoresSeleccionados;
+            $scope.editableGrupo.estudiantes = $scope.estudiantesSeleccionados;
+            console.log($scope.grupos);
+          }else{
 
             var lastGrupo = $scope.grupos[$scope.grupos.length - 1];
             var newId =  lastGrupo.id+1;
@@ -119,12 +157,13 @@
               estudiantes: []
             });
             console.log($scope.grupos);
+
           }
           $scope.nombreGrupo = "";
           $scope.estudiantesSeleccionados = [];
-          //$scope.encargado = "";
-          //$scope.curso = "";
+          $scope.profesoresSeleccionados = [];
 
+          $("#estudiantesGrupoModal").modal('hide');
           $("#nuevoGrupoModal").modal('hide');
         };
       }],
@@ -137,11 +176,6 @@
       restrict: 'E',
       templateUrl: 'templates/partials/modalNuevoGrupo.html',
       controller: ['$scope','$http',function ($scope,$http) {
-        /*
-        $scope.roles = [{id:'1', label:'Admin'},{id:'2', label:'Decano'},
-          {id:'3', label:'Director académico'},{id:'4', label:'Profesor'},
-          {id:'5', label:'Estudiante'}
-        ];*/
 
       }],
       controllerAs: 'modalGrupoCntrl'
@@ -153,10 +187,11 @@
       restrict: 'E',
       templateUrl: 'templates/partials/modalEstudiantesGrupo.html',
       controller: ['$scope','$http',function ($scope,$http) {
-
       }],
       controllerAs: 'modalEstudianteGrupoCntrl'
     };
   });
 
+
 })();
+

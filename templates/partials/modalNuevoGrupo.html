@@ -5,7 +5,7 @@
     <div class="modal-header">
       <h4>Nuevo grupo</h4>
     </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" ng-click="cerrarModalGrupo()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
         <form class="form-vertical">
           <div class="col-xs-12 col-sm-6">
@@ -15,7 +15,7 @@
             </div>
               <div class="form-group">
                 <label for="profesor">Profesor</label>  
-                <select id="profesor" ng-model="profesor" class="form-control plus-add" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
+                <select id="profesor" ng-model="profesor" ng-init="profesor" class="form-control plus-add" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
                   <option value="">--Profesor--</option>
                 </select>
                 <i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarProfesor()"></i>

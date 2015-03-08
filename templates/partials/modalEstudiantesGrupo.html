@@ -5,15 +5,16 @@
     <div class="modal-header">
       <h4>{{ nombreGrupo }}</h4>
     </div>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" ng-click="closeModalGrupo();"aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
         <form class="form-vertical">
           <div class="col-xs-12 col-sm-6">
               <div class="form-group">
-                <table id="custom-table" ng-table="tableParams"  class="table selectedTable">
-                  <tr ng-repeat="estudiante in estudiantes | filter:'estudiante'">
-                    <td data-title="'Nombre'">{{ estudiante.name }}</td>
-                    <td data-title="'Apellido'">{{ estudiante.lastname }}</td>
+                <table id="custom-table" class="table selectedTable">
+                <tr><th colspan="2" class="search-parent">Nombre<input type="text" ng-model="searchEstudiante" class="form-control search"><i class="fa fa-search search-icon"></i></th></tr>
+                  <tr ng-repeat="estudiante in estudiantes | filter:'estudiante' | filter: searchEstudiante">
+                    <td>{{ estudiante.name }} {{ estudiante.lastname }}</td>
+                    <td> <i class="fa fa-plus fa-lg plus-add-icon pull-right" ng-click="agregarEstudiante(estudiante)"></i></td>
                   </tr>
                 </table>               
               </div>
@@ -24,7 +25,7 @@
                 <li class="list-group-item list-g-header">Estudiantes en grupo</li>
                 <li class="list-group-item" ng-repeat="estudiantesS in estudiantesSeleccionados">
                   {{ estudiantesS.nombre }} {{ estudiantesS.apellido }}
-                  <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(estudiantesS)"></i>
+                  <i class="fa fa-times-circle pull-right" ng-click="quitarEstudiante(estudiantesS)"></i>
                 <li>
               </ul>
             </div>
