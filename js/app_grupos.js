@@ -14,6 +14,7 @@
         $scope.estudiantesSeleccionados = [];
         $scope.editableGrupo = "";
 
+
         $http.get('json/usuarios.json').success(function (data) {
           $scope.profesores = data;
           $scope.estudiantes = data;
@@ -70,15 +71,6 @@
             $scope.profesor = "";
           }
         };
-
-        $scope.editarEstudiantes = function(grupo){
-          /*$scope.editableGrupo = grupo;
-          $scope.nombreGrupo = grupo.nombre;
-          $scope.curso = grupo.cursoId;
-          $scope.profesoresSeleccionados = grupo.profesores;
-          $scope.estudiantesSeleccionados = grupo.estudiantes;
-          $scope.encargado  = grupo.encargadoId;*/
-        }
 
         $scope.agregarEstudiante = function(estudiante){
 
@@ -144,7 +136,11 @@
           }else{
 
             var lastGrupo = $scope.grupos[$scope.grupos.length - 1];
-            var newId =  lastGrupo.id+1;
+            if(lastGrupo){
+              var newId =  lastGrupo.id+1;
+            }else{
+              var newId =  1;
+            }
 
             $scope.grupos.push({
               id:newId,
@@ -166,6 +162,7 @@
           $("#estudiantesGrupoModal").modal('hide');
           $("#nuevoGrupoModal").modal('hide');
         };
+
       }],
       controllerAs: 'grupoCntrl'
     };

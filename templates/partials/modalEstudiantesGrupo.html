@@ -12,7 +12,7 @@
               <div class="form-group">
                 <table id="custom-table" class="table selectedTable">
                 <tr><th colspan="2" class="search-parent">Nombre<input type="text" ng-model="searchEstudiante" class="form-control search"><i class="fa fa-search search-icon"></i></th></tr>
-                  <tr ng-repeat="estudiante in estudiantes | filter:'estudiante' | filter: searchEstudiante">
+                  <tr ng-repeat="estudiante in estudiantes | filter:'estudiante' | filter:'true' | filter: searchEstudiante">
                     <td>{{ estudiante.name }} {{ estudiante.lastname }}</td>
                     <td> <i class="fa fa-plus fa-lg plus-add-icon pull-right" ng-click="agregarEstudiante(estudiante)"></i></td>
                   </tr>
