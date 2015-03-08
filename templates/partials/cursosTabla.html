@@ -7,14 +7,13 @@
 					<p>Cursos</p>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<p><a href="" data-toggle="modal" data-target="#editModal" ng-click="agregar(carrera)" href=""><i class="fa fa-plus fa-lg"><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+					<p><a href="" data-toggle="modal" data-target="#editModal" ng-click="agregar(curso)" href=""><i class="fa fa-plus fa-lg"><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
 				</div>
 			</div>
-			<table id="carreras-table" ng-table class="table">
-			    <tr ng-repeat="carrera in carreras">
-			        <td data-title="'Nombre'">{{carrera.nombre}}</td>
-			        <td data-title="'Código'">{{carrera.cod}}</td>
-			        <td data-title="'Profesor'">{{carrera.cod}}</td>
+			<table id="cursos-table" ng-table class="table">
+			    <tr ng-repeat="curso in cursos">
+			        <td data-title="'Nombre'">{{curso.nombre}}</td>
+			        <td data-title="'Código'">{{curso.cod}}</td>
 			        <td data-title="'Acciones'">
 			        	<a><i class="fa fa-pencil-square-o fa-2x"></i></a>
 			        	<a><i class="fa fa-times-circle fa-2x"></i></a>
