@@ -458,3 +458,41 @@ position:absolute;
 
 }
 
+/*Grupos y sus modals,form y demas*/
+.listaEstudiantes .list-group-item{
+	color: #722d7b;
+	padding: 0 10px;
+}
+
+.list-g-header{
+	color:white;
+	background:#722d7b;
+}
+
+.listaProfesores .list-group{
+	height: 210px;
+}
+
+.listaProfesores{
+	margin-bottom: 0;
+}
+
+.listaEstudiantes{
+	margin-bottom: 52px;
+}
+
+.modal-header{
+	background:#722d7b; 
+	border: none;
+	text-align: center;
+	color: white;
+}
+
+.plus-add{
+	width: 90%;
+	display: inline-block;
+}
+
+.listaProfesores li:last-child{
+	display: none;
+}

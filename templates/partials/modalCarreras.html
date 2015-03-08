@@ -3,7 +3,8 @@
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-vertical">
+        <div class="col-xs-12 col-sm-6">
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Nombre</label>  
           <div class="col-xs-8">
@@ -22,18 +23,22 @@
             <select ng-model="curso" ng-options="obj.id as obj.nombre for obj in cursos">
               <option value="">--Cursos--</option>
             </select>
-            <a class="add" ng-click="agregarC(carrera)" href=""><i class="fa fa-plus fa-lg"></i></a>
+            <i class="fa fa-plus" ng-click="agregarCurso()"></i>
           </div>
         </div>
-        <table id="carreras-table" ng-table class="table">
-          <tr ng-repeat="curso in cursos">
-              <td data-title="'Nombre'" >{{curso.nombre}}</td>
-              <td data-title="'Codigo'" >{{curso.cod}}</td>
-              <td data-title="'Acciones'">
-                <a><i class="fa fa-times-circle fa-2x" ng-click="borrar(carrera)"></i></a>
-              </td>
-          </tr>
-      </table>
+        </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <ul class="list-group listaProfesores">
+                <li class="list-group-item list-g-header">Cursos</li>
+                <li class="list-group-item" ng-repeat="curso in cursosSeleccionados">
+                  {{ curso.nombre }}
+                  <a><i class="fa fa-times-circle fa" ng-click="borrarCurso(curso)"></i></a> 
+                <li>
+              </ul>
+            </div>
+          </div>
+        
         </form>
       </div>
       <div class="modal-footer">
