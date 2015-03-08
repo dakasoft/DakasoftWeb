@@ -64,6 +64,7 @@
                 $scope.role = value.label;
               }
             });
+
             console.log($scope.role);
             $scope.usuarios.push({id:newId,name: $scope.nombre, lastname: $scope.apellido,
               email: $scope.email, password: $scope.pass, role: $scope.role

@@ -393,7 +393,7 @@ button.close{
 
 
 /*Grupos y sus modals,form y demas*/
-.list-group-item{
+.listaEstudiantes .list-group-item{
 	color: #722d7b;
 	padding: 0 10px;
 }
@@ -403,8 +403,8 @@ button.close{
 	background:#722d7b;
 }
 
-.list-group{
-	height: 120px;
+.listaProfesores .list-group{
+	height: 210px;
 }
 
 .listaProfesores{
@@ -422,3 +422,11 @@ button.close{
 	color: white;
 }
 
+.plus-add{
+	width: 90%;
+	display: inline-block;
+}
+
+.listaProfesores li:last-child{
+	display: none;
+}

@@ -8,6 +8,12 @@
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
         $scope.grupos = [];
         $scope.cursos = [];
+        $scope.profesores = [];
+        $scope.profesoresSeleccionados = [];
+
+        $http.get('json/usuarios.json').success(function (data) {
+          $scope.profesores = data;
+        });
         
         $http.get('json/grupos.json').success(function (data) {
           $scope.grupos = data;
@@ -27,6 +33,20 @@
 
         $scope.agregar = function(){
    
+        };
+
+        $scope.agregarProfesor = function(){
+
+
+          angular.forEach($scope.profesores, function(value, key) {
+            if(value.id == $scope.profesor){
+              $scope.profesor = value.name;
+              $scope.profesorId = value.id;
+              $scope.profesorApellido = value.lastname;
+            }
+          });
+          $scope.profesoresSeleccionados.push({id: $scope.profesorId, nombre: $scope.profesor, apellido:$scope.profesorApellido });
+          console.log($scope.profesoresSeleccionados);
         };
 
         $scope.guardar = function(){
