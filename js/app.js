@@ -2,8 +2,9 @@
 var app = angular.module('universidad', ["ui.router","ngTable","usuarios","loginU"]);
 /*Quitar el hashtag en el browser*/
 
-app.controller('mainController', ['$scope','$http', '$state', function ($scope, $http, $state) {
+app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state,$rootScope) {
     var main = this;
+    $rootScope.usuarioActual = "";
 
     main.currentUser = {};
     main.bLoggedIn = false;
@@ -39,6 +40,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('portafolio',{
     	url: "/portafolio",
       templateUrl:"templates/portafolio.html",
+      controller: function($rootScope){
+        if($rootScope.usuarioActual == ""){
+          //$state.go('login');
+        }
+      }
     })
 
     .state('usuarios', {

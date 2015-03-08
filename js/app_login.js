@@ -5,7 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/login.html',
-      controller: ['$scope', '$http', '$state', function ($scope, $http, $state) {
+      controller: ['$scope', '$http', '$state','$rootScope', function ($scope, $http, $state,$rootScope) {
         var login = this,
             sSuccessState = 'home';
 
@@ -14,7 +14,7 @@
           if (login.loginRequest.email && login.loginRequest.password) {
             $http.get('json/usuarios.json')
               .success(function (data) {
-                var aUsers = data.users,
+                var aUsers = data,
                     sEmail = login.loginRequest.email,
                     sPassword = login.loginRequest.password,
                     bRememberMe = login.loginRequest.rememberMe
@@ -69,6 +69,7 @@
           };
 
           pMain.currentUser = poUser;
+          $rootScope.usuarioActual = poUser;
           pMain.bLoggedIn = true;
           $state.go(sSuccessState);
         }
