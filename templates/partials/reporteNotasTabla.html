@@ -8,11 +8,14 @@
 			<div class="alumno">
 				<ul class="list-group">
 					<li ng-repeat="curso in estudiante.cursos">
-						<p><b>Curso:</b>{{curso.nombre}}</p>
-						<p><b>Nota :</b>{{curso.nota}}</p>
 						
-						<p><b>Profesor:</b>{{curso.profesor}}</p>
+						<p><b>Curso:</b>{{curso.nombre}}</p>
 						<p><b>Equipo:</b>{{curso.equipo}}</p>
+						<p><b>Nota :</b>{{curso.nota}}</p>
+						<p><b>Profesor:</b>{{curso.profesor}}</p>
+						<a href="">
+				    	  	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow">
+				    	 </a>
 					</li>
 				</ul>
 			</div>
