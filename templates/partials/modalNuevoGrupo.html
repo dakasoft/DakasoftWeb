@@ -11,24 +11,24 @@
           <div class="col-xs-12 col-sm-6">
             <div class="form-group">
               <label for="nombreGrupo">Nombre Grupo</label>
-              <input type="text" class="form-control" id="nombreGrupo">
+              <input type="text" class="form-control" id="nombreGrupo" ng-model="nombreGrupo">
             </div>
               <div class="form-group">
                 <label for="profesor">Profesor</label>  
-                <select id="profesor" ng-model="profesor" class="form-control plus-add" ng-options="obj.id as obj.name+obj.lastname for obj in profesores | filter: 'profesor'">
+                <select id="profesor" ng-model="profesor" class="form-control plus-add" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
                   <option value="">--Profesor--</option>
                 </select>
-                <i class="fa fa-plus" ng-click="agregarProfesor()"></i>
+                <i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarProfesor()"></i>
               </div>
               <div class="form-group">
-                <label for="encargado">Profesor encargado</label>  
-                <select id="encargado" class="form-control" ng-model="encargado" ng-options="obj.id as obj.name for obj in profesores | filter: 'profesor'">
+                <label for="encargado">Profesor encargado</label> 
+                <select id="encargado" class="form-control" ng-model="encargado" ng-init="encargado" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
                   <option value="">--Profesor--</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="cursos">Curso</label>  
-                <select id="cursos" class="form-control" ng-model="curso" ng-options="obj.id as obj.nombre for obj in cursos">
+                <select id="cursos" class="form-control" ng-model="curso" ng-init="curso" ng-options="obj.id as obj.nombre for obj in cursos">
                   <option value="">--Cursos--</option>
                 </select>
               </div>      
@@ -39,7 +39,8 @@
               <ul class="list-group listaProfesores">
                 <li class="list-group-item list-g-header">Profesores</li>
                 <li class="list-group-item" ng-repeat="profesorS in profesoresSeleccionados">
-                  {{ profesorS.nombre }} {{ profesorS.apellido }} 
+                  {{ profesorS.nombre }} {{ profesorS.apellido }}
+                  <i class="fa fa-times-circle" ng-click="quitarProfesor(profesorS)"></i>
                 <li>
               </ul>
             </div>

@@ -315,8 +315,12 @@ nav ul {
 	vertical-align: middle;
 	border-top: 0;
 }
-#custom-table .fa-times-circle{
+#custom-table .fa-times-circle {
 	margin-left: 12px;
+}
+
+#custom-table .fa-user-plus {
+	margin-right: 12px;
 }
 
 #custom-table{
@@ -401,6 +405,7 @@ button.close{
 .list-g-header{
 	color:white;
 	background:#722d7b;
+	border: none;
 }
 
 .listaProfesores .list-group{
@@ -425,6 +430,16 @@ button.close{
 .plus-add{
 	width: 90%;
 	display: inline-block;
+}
+
+.plus-add-icon{
+	color:#722d7b;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.plus-add-icon:hover{
+	opacity: 0.8;
 }
 
 .listaProfesores li:last-child{

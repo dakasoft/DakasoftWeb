@@ -13,7 +13,8 @@
 				<tr ng-repeat="grupo in grupos">
 					<td data-title="'Nombre'">{{grupo.nombre}}</td>
 					<td data-title="'Curso'">{{grupo.curso}}</td>
-					<td data-title="'Acciones'">
+					<td data-title="'Acciones'">						
+						<a data-toggle="modal" data-target="#nuevoGrupoModal" ><i class="fa fa-user-plus fa-2x" ng-click="agregarEstudiante(grupo)"></i></a>
 						<a data-toggle="modal" data-target="#nuevoGrupoModal" ng-click="editar(grupo)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 						<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(grupo)"></i></a>
 					</td>
