@@ -2,36 +2,48 @@
   {
     "id": 1,
     "nombre": "Proyecto web 1",
-    "cod": "web1M"
+    "cod": "web1M",
+    "area":[
+    {"nombre":"proceso"},
+    {"nombre":"tecnico"}
+    ]
   },
   {
     "id": 2,
     "nombre": "Proyecto web 2",
-      "cod": "web2T"
+      "cod": "web2T",
+    "area":[
+    {"nombre":"tecnico"}
+    ]
   },
   {
     "id": 3,
     "nombre": "Proyecto web 3",
-    "cod": "web3N"
+    "cod": "web3N",
+    "area":[]
   },
   {
     "id": 4,
     "nombre": "Proyecto software 1",
-    "cod": "webS1N"
+    "cod": "webS1N",
+    "area":[]
   },
   {
     "id": 5,
     "nombre": "Proyecto software 2",
-    "cod": "webS2N"
+    "cod": "webS2N",
+    "area":[]
   },
   {
     "id": 6,
     "nombre": "Proyecto software 3",
-    "cod": "web3M"
+    "cod": "web3M",
+    "area":[]
   },
   {
     "id": 7,
     "nombre": "Proyecto software ",
-    "cod": "webS2N"
+    "cod": "webS2N",
+    "area":[]
   }
 ]

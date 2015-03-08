@@ -8,6 +8,7 @@
       controller: ['$scope','$http',function ($scope,$http) {
       $scope.cursos = [];
       $scope.codigoSeleccionado= [];
+      $scope.areasSeleccionadas= [];
       $scope.editableC = "";
 
         $http.get('json/cursos.json').success(function (data) {
@@ -36,7 +37,19 @@
           $scope.nombre = "";
           $scope.codigo = ""; 
         };
-           
+            $scope.agregarArea = function(area){
+          $scope.areasSeleccionadas.push({nombre: area});
+          $scope.area="";
+    
+        };
+         $scope.borrarArea = function(area){
+          angular.forEach($scope.areasSeleccionadas, function(value, key) {
+               console.log(value);
+            if(value.nombre == area.nombre){
+             $scope.areasSeleccionadas.splice(key, 1);
+            }
+          });
+        };
 
           $scope.guardar = function(){
           
