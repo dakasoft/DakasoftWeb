@@ -1,5 +1,5 @@
 (function(){ // define funcionalidad
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos"]);
 /*Quitar el hashtag en el browser*/
 
 /* manejador de rutas*/
@@ -15,15 +15,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
         $rootScope.currentStateName = $state.current.name;
       }
     })
-
     .state('portafolio',{
     	url: "/portafolio",
-      templateUrl:"templates/portafolio.html",
+      templateUrl:"templates/portafolio.html"
     })
 
     .state('usuarios', {
       url: "/usuarios",
       templateUrl: "templates/usuarios.html"
+    })
+     .state('grupos',{
+      url: "/grupos",
+      templateUrl:"templates/grupos.html"
     });
 
 });

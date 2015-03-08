@@ -315,8 +315,12 @@ nav ul {
 	vertical-align: middle;
 	border-top: 0;
 }
-#custom-table .fa-times-circle{
+#custom-table .fa-times-circle {
 	margin-left: 12px;
+}
+
+#custom-table .fa-user-plus {
+	margin-right: 12px;
 }
 
 #custom-table{
@@ -370,7 +374,7 @@ button.close{
 	border-top: none;
 }
 
-.form-horizontal .control-label {
+.form-horizontal .control-label, .form-group label {
 	text-align: center;
 	color: #722d7b;
 }
@@ -383,11 +387,112 @@ button.close{
 .form-control:focus {
 	border-color: #722d7b;
 	outline: 0;
-
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0),0 0 3px rgba(135, 13, 148, 0.34);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0),0 0 3px rgba(135, 13, 148, 0.34);
 }
 
 .mainContent{
 	margin-bottom: 60px;
+}
+
+
+/*Grupos y sus modals,form y demas*/
+
+.list-g-header{
+	color:white;
+	background:#722d7b;
+	border: none;
+}
+
+.listaProfesores .list-group{
+	height: 210px;
+}
+
+.listaProfesores{
+	margin-bottom: 0;
+}
+
+.modal-header{
+	background:#722d7b; 
+	border: none;
+	text-align: center;
+	color: white;
+}
+.fa-times-circle{
+	cursor: pointer;
+}
+.plus-add{
+	width: 90%;
+	display: inline-block;
+}
+
+.plus-add-icon{
+	color:#722d7b;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.plus-add-icon:hover{
+	opacity: 0.8;
+}
+
+.listaProfesores li:last-child, .listaEstudiantes li:last-child{
+	display: none;
+}
+
+.selectedTable{
+	margin-top: 2px;
+}
+
+.selectedTable tr:last-child{
+	border-bottom: none !important;
+}
+
+table.selectedTable {
+        display: table;
+        width: 100%;
+}
+table.selectedTable thead, table.selectedTable tbody {
+    float: left;
+    width: 100%;
+}
+table.selectedTable tbody {
+    overflow: auto;
+    height: 173px;
+}
+table.selectedTable tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+table.selectedTable th, table.selectedTable td {
+    width: 33%;
+}
+
+.search{
+	border: 1px solid #ccc;
+	background: white;
+	height: 30px;
+	width: 80%;
+	margin-left: 5%;
+	display: inline-block;
+	padding-right: 35px;
+}
+
+.search-icon{
+	position: absolute;
+	right: 25px;
+	bottom: 17px;
+}
+
+.search-parent{
+	position: relative;
+}
+
+.li-select{
+	width: 40%;
+	display: inline-block;
+	height: 20px;
+	padding: 0px 0 0 10px;
+	margin-left: 4%;
 }
