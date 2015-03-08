@@ -391,3 +391,40 @@ button.close{
 .mainContent{
 	margin-bottom: 60px;
 }
+
+
+/************************************Log In *******************************************************/
+.divForm{
+     background-color: #a32068;
+     padding:20px;
+     opacity:1;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  color:white;
+
+}
+.divForm input{
+    background-color:white;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+.divForm input{
+    background-color:white;
+}
+.divForm input:hover{
+   border:1px solid white;
+    opacity:0.9;
+}
+.aForgotPass{
+   color:white;
+}
+.aForgotPass:hover{
+   color:white;
+   opacity:1;
+  
+}
