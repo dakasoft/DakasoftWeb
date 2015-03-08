@@ -1,0 +1,8 @@
+
+
+
+
+<ul><li ng-repeat="estudiante in estudiantes">
+	{{ estudiante.nombre }}
+	<ul><li ng-repeat="curso in estudiante.cursos">{{curso.nombre}} {{curso.nota}}</li></ul>
+</li></ul>

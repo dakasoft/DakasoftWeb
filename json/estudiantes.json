@@ -1,0 +1,42 @@
+[    
+	{
+    "id": 1,
+    "nombre": "Aaron",
+    "apellido": "Chavarría",
+    "email": "aronchj7@live.com",
+    "password": "pass123",
+    "role": "Estudiante",
+    "cursos":[
+    	{
+    		"id":1,
+    		"nombre":"Proyecto web 1",
+    		"nota": 100
+    	},
+    	{
+    		"id":1,
+    		"nombre":"Proyecto web 2",
+    		"nota": 100
+    	}
+    ]
+   },
+	{
+    "id": 2,
+    "nombre": "Luis",
+    "apellido": "Mendez",
+    "email": "luismendez@live.com",
+    "password": "pass123",
+    "role": "Estudiante",
+    "cursos":[
+    	{
+    		"id":1,
+    		"nombre":"Proyecto web 1",
+    		"nota": 98
+    	},
+    	{
+    		"id":1,
+    		"nombre":"Proyecto web 2",
+    		"nota": 98
+    	}
+    ]
+   }
+]
