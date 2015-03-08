@@ -7,7 +7,7 @@
 					<p>Cursos</p>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<p><a href="" ng-click="showModal=true"><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+					<p><a href="" data-toggle="modal" data-target="#editModal" ng-click="agregar(carrera)" href=""><i class="fa fa-plus fa-lg"><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
 				</div>
 			</div>
 			<table id="carreras-table" ng-table class="table">
@@ -23,51 +23,4 @@
 			</table>
 		</div>
 		<div class="col-xs-12 col-sm-2"></div>
-
-
-
-<div ng-show="showModal" class="modC">
- <div class="modal-dialog">
-   <div class="modal-content">
-     <div class="Cmodal-header">
-
-       <h4 class="">Agregar Curso</h4>
-     </div>
-     <div class="modal-body cf">
-
-      <form class="carrerasForm  col-xs-12 col-sm-6" ng-submit="">
-        <input type="text" class="form-control" placeholder="Nombre" aria-describedby="basic-addon2">
-      
-      </form>
-       <table  ng-table class="estudiantes col-xs-12 col-sm-6">
-			    <tr ng-repeat="carrera in carreras">
-			        <td data-title="'Cursos'">{{carrera.nombre}}</td>
-			        <td data-title="'Código'">{{carrera.cod}}</td>
-			        <td data-title="''">
-			        	<a><i class="fa fa-times-circle fa-2x"></i></a>
-			        </td>
-			    </tr>
-			</table>
-			 <table  ng-table class="profesores col-xs-12 col-sm-6">
-			    <tr ng-repeat="carrera in carreras">
-			        <td data-title="'Cursos'">{{carrera.nombre}}</td>
-			        <td data-title="'Código'">{{carrera.cod}}</td>
-			        <td data-title="''">
-			        	<a><i class="fa fa-times-circle fa-2x"></i></a>
-			        </td>
-			    </tr>
-			</table>
-
-
-
-    </div>
-    <div class="modal-footer cf">
-    	  <button type="button" ng-click="ShowModal=false;" class="btn btn-default" >Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-
-    </div>
-
-  </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 </div>
