@@ -391,16 +391,3 @@ button.close{
 .mainContent{
 	margin-bottom: 60px;
 }
-
-/*************************************LOGIN******************************************/
-div#divLoginForm {
-	background-color: #a32068;
-	padding: 1em 5%;
-	border-radius: 15px;
-}
-div#divLoginForm label, a {
-	color: white;
-}
-div#divLoginLogo {
-	margin: 15% 0 0 0;
-}
