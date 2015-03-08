@@ -31,7 +31,7 @@
           $scope.nombreGrupo = grupo.nombre;
           $scope.curso = grupo.cursoId;
           //$scope.cursoId = grupo.cursoId;
-          //$scope.profesoresSeleccionados = grupo.profesores;
+          $scope.profesoresSeleccionados = grupo.profesores;
           //$scope.estudiantesSeleccionados = grupo.estudiantes;
           $scope.encargado  = grupo.encargadoId;
           //$scope.encargadoId  = grupo.encargadoId;
@@ -119,6 +119,7 @@
             console.log($scope.grupos);
           }
           $scope.nombreGrupo = "";
+          $scope.estudiantesSeleccionados = [];
           //$scope.encargado = "";
           //$scope.curso = "";
 
