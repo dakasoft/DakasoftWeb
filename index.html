@@ -19,7 +19,7 @@
          </div>
           <div class="col-xs-12 col-sm-3 col-md-2 pull-right" ng-show="main.bLoggedIn" ng-class=" $root.currentStateName=='home' ? '' : 'hidden-sm hidden-xs'">
             <div class="usuario pull-right"><p>{{main.currentUser.name}}</p>
-             <button type="button" class="btn btn-default btn-xs">Cerrar Sesión</button>
+             <button type="button" class="btn btn-default btn-xs" ng-click="main.logOut()">Cerrar Sesión</button>
             </div>
           </div>
         </header>
@@ -33,7 +33,7 @@
       <menu-mobile></menu-mobile>
     </div>
 
-    <div ng-show="$root.currentStateName!='home'" class="row">
+    <div ng-show="$root.currentStateName!='home' || $root.currentStateName!='login'" class="row">
       <div class="col-xs-12 col-md-10 col-md-offset-2 col-lg-8">
         <div class="mainContent" ui-view class="">
  

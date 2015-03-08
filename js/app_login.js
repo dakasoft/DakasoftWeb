@@ -14,7 +14,7 @@
           if (login.loginRequest.email && login.loginRequest.password) {
             $http.get('json/usuarios.json')
               .success(function (data) {
-                var aUsers = data.users,
+                var aUsers = data,
                     sEmail = login.loginRequest.email,
                     sPassword = login.loginRequest.password,
                     bRememberMe = login.loginRequest.rememberMe
