@@ -8,10 +8,17 @@ app.directive('portafolio', function(){
         
        controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
       $scope.estudiantes = [];
+       $scope.video= "";
        $scope.editableUser = "";
         $http.get('json/portafolio.json').success(function (data) {
           $scope.estudiantes = data;
         });
+
+
+
+        $scope.video = function(proyecto){
+          $scope.video =proyecto.video;
+        };
 
          $scope.editar = function(estudiante){
           $scope.editableUser = estudiante;
