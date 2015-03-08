@@ -24,7 +24,7 @@
    <div class="line cf col-xs-11 col-sm-11"></div>
 
    <div class="ih-item square new effect6 from_top_and_bottom col-xs-12 col-sm-4" ng-repeat="proyecto in estudiante.proyectos">
-    <a data-toggle="modal" ng-click="video(proyecto)"  data-target="#editModalV"><div class="img"><img class="img-responsive" ng-src="{{proyecto.foto}}"/></div>
+    <a data-toggle="modal" ng-click="seleccionar(proyecto)"  data-target="#editModalV"><div class="img"><img class="img-responsive" ng-src="{{proyecto.foto}}"/></div>
      <div class="info"> <h3>{{ proyecto.nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
    </a>
   </div>

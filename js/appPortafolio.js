@@ -16,9 +16,19 @@ app.directive('portafolio', function(){
 
 
 
-        $scope.video = function(proyecto){
+        $scope.seleccionar = function(proyecto){
           $scope.video =proyecto.video;
+          $("#video").attr("src", $scope.video); /* dinamic iframe */
+          $scope.video = "";
+          //console.log($scope.video);
         };
+
+        //hermoso jquery//
+        $('#editModalV').on('hidden.bs.modal', function (e) {
+          $("#video").attr("src", $scope.video);
+          $scope.video = "";
+        })
+
 
          $scope.editar = function(estudiante){
           $scope.editableUser = estudiante;
