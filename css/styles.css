@@ -393,9 +393,10 @@ button.close{
 }
 
 /*HISTORIAL DE REPORTES*/
-.divNombre{background:#722d7b;padding:2px 10px;}
+.divNombre{background:#722d7b;padding:2px 10px;margin-top:20px}
 .divNombre h3{color:#fff;}
 
+.alumno{background: #fff;padding: 20px}
 .alumno p:nth-child(-n+4){display: inline-block;margin-right:30px }
 .alumno b{color:#722d7b;}
 /*quita el estilo de los ul*/

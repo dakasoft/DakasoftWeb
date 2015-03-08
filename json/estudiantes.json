@@ -11,13 +11,15 @@
     		"id":1,
     		"nombre":"Proyecto web 1",
     		"nota": 100,
-            "profesor":"Antonio Luna" 
+            "profesor":"Antonio Luna",
+            "equipo":"Dakasoft" 
     	},
     	{
     		"id":1,
     		"nombre":"Proyecto web 2",
     		"nota": 100,
-            "profesor":"Mauricio Poveda" 
+            "profesor":"Mauricio Poveda",
+            "equipo":"Dakasoft" 
     	}
     ],
     "profesor":[
@@ -38,13 +40,16 @@
     		"id":1,
     		"nombre":"Proyecto web 1",
     		"nota": 98,
-            "profesor":"Antonio Luna" 
+            "profesor":"Antonio Luna",
+            "equipo":"Dakasoft"
+
     	},
     	{
     		"id":1,
     		"nombre":"Proyecto web 2",
     		"nota": 98,
-            "profesor":"Antonio Luna" 
+            "profesor":"Antonio Luna",
+            "equipo":"Dakasoft" 
     	}
     ],
     "profesor":[
