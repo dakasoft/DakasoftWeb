@@ -39,27 +39,24 @@
            $scope.guardar = function(){
           
           if($scope.editableC != ""){
-                angular.forEach($scope.cursos, function(value, key) {
+                angular.forEach($scope.codigo, function(value, key) {
               if(value.id == $scope.codigo){
-                  console.log(value.label);
-                    console.log(value.name);
-                  console.log($scope.cod);
                 $scope.codigo = value.label;
               }
             });
             $scope.editableC.nombre = $scope.nombre;
             $scope.editableC.cod = $scope.codigo;
-          }else{
+          }
+
+          else{
             var lastUser = $scope.cursos[$scope.cursos.length - 1];
             var newId =  lastUser.id+1;
-            /* each temporal para mostrar rol*/
-               console.log(curso.cod);
              angular.forEach($scope.codigo, function(value, key) {
               if(value.id == $scope.codigo){
-                $scope.codigo = value.label;
+                $scope.cursos = value.label;
               }
             });
-            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,codigo :$scope.codigoSeleccionado
+            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo
             });
           
           }
