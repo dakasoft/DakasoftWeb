@@ -19,6 +19,8 @@
           $scope.editableC = curso;
           $scope.nombre = curso.nombre;
           $scope.codigo = curso.cod;
+          $scope.area = curso.area.nombre;
+          $scope.areasSeleccionadas = angular.copy(curso.area);
         };
 
         $scope.borrar = function(curso){
@@ -30,9 +32,9 @@
             }
           });
         };
-         
           $scope.agregar = function(){
-           
+           $scope.area="";
+            $scope.areasSeleccionadas=[];
           $scope.editableC = "";
           $scope.nombre = "";
           $scope.codigo = ""; 
@@ -61,6 +63,7 @@
             });
             $scope.editableC.nombre = $scope.nombre;
             $scope.editableC.cod = $scope.codigo;
+            $scope.editableC.area =$scope.areasSeleccionadas;
           }
 
           else{
@@ -71,7 +74,7 @@
                 $scope.cursos = value.label;
               }
             });
-            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo
+            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,area :$scope.areasSeleccionadas
             });
           
           }
