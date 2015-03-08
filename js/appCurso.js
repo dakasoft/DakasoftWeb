@@ -7,6 +7,7 @@
       templateUrl: 'templates/partials/cursosTabla.html',
       controller: ['$scope','$http',function ($scope,$http) {
       $scope.cursos = [];
+      $scope.codigoSeleccionado= [];
         $http.get('json/cursos.json').success(function (data) {
           $scope.cursos = data;
         });
@@ -42,7 +43,7 @@
             var lastUser = $scope.cursos[$scope.cursos.length - 1];
             var newId =  lastUser.id+1;
             /* each temporal para mostrar rol*/
-            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
+            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,codigo :$scope.codigoSeleccionado
             });
           
           }
