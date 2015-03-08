@@ -5,18 +5,19 @@
 			<div class="divNombre">
 				<h3>{{ estudiante.nombre}}</h3>
 				<p>{{estudiante.apellido}}</p>
+				<p>mmmmmm</p>
 			</div>
 				
 			<div class="alumno">
-			<ul class="list-group">
-				<li ng-repeat="curso in estudiante.cursos">
-					<p><b>Curso:</b>{{curso.nombre}}</p>
-					<p><b>Nota :</b>{{curso.nota}}</p>
-					
-					<p><b>Profesor:</b>{{curso.profesor}}</p>
-					<p><b>Equipo:</b>{{curso.equipo}}</p>
-				</li>
-			</ul>
+				<ul class="list-group">
+					<li ng-repeat="curso in estudiante.cursos">
+						<p><b>Curso:</b>{{curso.nombre}}</p>
+						<p><b>Nota :</b>{{curso.nota}}</p>
+						
+						<p><b>Profesor:</b>{{curso.profesor}}</p>
+						<p><b>Equipo:</b>{{curso.equipo}}</p>
+					</li>
+				</ul>
 			</div>
 			
 
