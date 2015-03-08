@@ -14,8 +14,6 @@ app.directive('portafolio', function(){
           $scope.estudiantes = data;
         });
 
-
-
         $scope.seleccionar = function(proyecto){
           $scope.video =proyecto.video;
           $("#video").attr("src", $scope.video); /* dinamic iframe */
