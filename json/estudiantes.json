@@ -20,7 +20,8 @@
     		"nombre":"Proyecto web 2",
     		"nota": 100,
             "profesor":"Mauricio Poveda",
-            "equipo":"Dakasoft" 
+            "equipo":"Dakasoft",
+            "logoEquipo":"img/logoEquipo1.png" 
     	}
     ],
     "profesor":[
