@@ -67,8 +67,22 @@
             }
           });
           if($scope.profesor){
-            $scope.profesoresSeleccionados.push({id: $scope.profesorId, nombre: $scope.profesor, apellido:$scope.profesorApellido });
-            $scope.profesor = "";
+            
+            var ingresar = true;
+
+            angular.forEach($scope.profesoresSeleccionados,function(value,key){
+              if(value.id == $scope.profesorId){
+                ingresar = false;
+              }
+            });
+
+            if(ingresar || $scope.profesoresSeleccionados.length == 0){
+              $scope.profesoresSeleccionados.push({id: $scope.profesorId, nombre: $scope.profesor, apellido:$scope.profesorApellido });
+              $scope.profesor = "";
+            }
+
+
+
           }
         };
 
@@ -81,10 +95,22 @@
               $scope.estudiantesApellido = estudiante.lastname;
             }
           });
+
           if($scope.estudiante){
-            $scope.estudiantesSeleccionados.push({id: $scope.estudiantesId, nombre: $scope.estudiante, apellido:$scope.estudiantesApellido });
-            $scope.estudiante = "";
+            var ingresar = true;
+
+            angular.forEach($scope.estudiantesSeleccionados,function(value,key){
+              if(value.id == $scope.estudiantesId){
+                ingresar = false;
+              }
+            });
+
+            if(ingresar || $scope.estudiantesSeleccionados.length == 0){
+              $scope.estudiantesSeleccionados.push({id: $scope.estudiantesId, nombre: $scope.estudiante, apellido:$scope.estudiantesApellido });
+              $scope.estudiante = "";
+            }
           }
+
         };
 
         $scope.quitarProfesor = function(profe){
@@ -132,7 +158,6 @@
             $scope.editableGrupo.encargadoId = $scope.encargadoId;
             $scope.editableGrupo.profesores = $scope.profesoresSeleccionados;
             $scope.editableGrupo.estudiantes = $scope.estudiantesSeleccionados;
-            console.log($scope.grupos);
           }else{
 
             var lastGrupo = $scope.grupos[$scope.grupos.length - 1];
