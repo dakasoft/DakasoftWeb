@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Proyecto web 1"
+  },
+  {
+    "id": 2,
+    "nombre": "Proyecto web 2"
+  },
+  {
+    "id": 3,
+    "nombre": "Proyecto web 3"
+  },
+  {
+    "id": 4,
+    "nombre": "Proyecto software 1"
+  },
+  {
+    "id": 5,
+    "nombre": "Proyecto software 2"
+  },
+  {
+    "id": 6,
+    "nombre": "Proyecto software 3"
+  },
+  {
+    "id": 7,
+    "nombre": "Proyecto software "
+  }
+]

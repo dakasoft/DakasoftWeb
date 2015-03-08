@@ -19,12 +19,21 @@
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Cursos</label>  
           <div class="col-xs-8">
-            <select ng-model="curso" ng-options="obj.id as obj.label for obj in roles">
+            <select ng-model="curso" ng-options="obj.id as obj.nombre for obj in cursos">
               <option value="">--Cursos--</option>
             </select>
-            <!-- <input type="text" ng-model="role" class="form-control input-md">  -->
+            <a class="add" ng-click="agregarC(carrera)" href=""><i class="fa fa-plus fa-lg"></i></a>
           </div>
         </div>
+        <table id="carreras-table" ng-table class="table">
+          <tr ng-repeat="curso in cursos">
+              <td data-title="'Nombre'" >{{curso.nombre}}</td>
+              <td data-title="'Codigo'" >{{curso.cod}}</td>
+              <td data-title="'Acciones'">
+                <a><i class="fa fa-times-circle fa-2x" ng-click="borrar(carrera)"></i></a>
+              </td>
+          </tr>
+      </table>
         </form>
       </div>
       <div class="modal-footer">

@@ -7,9 +7,14 @@
       templateUrl: 'templates/partials/carrerasTabla.html',
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
         $scope.carrera = [];
+        $scope.cursos = []
         $scope.editableC = "";
         $http.get('json/carreras.json').success(function (data) {
           $scope.carreras = data;
+
+        });
+        $http.get('json/cursos.json').success(function (data) {
+          $scope.cursos = data;
         });
          $scope.editar = function(carrera){
           $scope.editableC = carrera;
@@ -31,6 +36,7 @@
           $scope.nombre = "";
           $scope.codigo = ""; 
         };
+        
 
            $scope.guardar = function(){
           if($scope.editableC != ""){
