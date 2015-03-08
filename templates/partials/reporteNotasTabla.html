@@ -2,7 +2,10 @@
 
 <ul>
 	<li ng-repeat="estudiante in estudiantes">
-		<p><b>Nombre : </b>{{ estudiante.nombre }}</p>
+		<div class="divNombre">
+			<p><b>Nombre : </b>{{ estudiante.nombre }}</p>
+			
+		</div>
 		
 		<ul>
 			<li ng-repeat="curso in estudiante.cursos">
