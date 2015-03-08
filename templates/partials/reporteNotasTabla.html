@@ -1,13 +1,13 @@
 
 
-<ul>
+<ul class="list-group">
 	<li ng-repeat="estudiante in estudiantes">
 		<div class="divNombre">
 			<p><b>Nombre : </b>{{ estudiante.nombre }}</p>
 			
 		</div>
 		
-		<ul>
+		<ul class="list-group">
 			<li ng-repeat="curso in estudiante.cursos">
 				<p><b>Curso:</b>{{curso.nombre}}</p>
 				<p><b>Nota :</b>{{curso.nota}}</p>

@@ -394,3 +394,5 @@ button.close{
 
 /*HISTORIAL DE REPORTES*/
 .divNombre{background: #ccc}
+/*quita el estilo de los ul*/
+ol,ul,ul {list-style:none} 
