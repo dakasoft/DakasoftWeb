@@ -393,6 +393,7 @@ button.close{
 }
 
 /*HISTORIAL DE REPORTES*/
-.divNombre{background: #ccc}
+.divNombre{background:#722d7b;padding:2px;}
+.divNombre h3{color:#fff;}
 /*quita el estilo de los ul*/
 ol,ul,ul {list-style:none} 

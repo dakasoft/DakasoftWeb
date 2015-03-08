@@ -1,24 +1,26 @@
 
-
-<ul class="list-group">
-	<li ng-repeat="estudiante in estudiantes">
-		<div class="divNombre">
-			<p><b>Nombre : </b>{{ estudiante.nombre }}</p>
+<div class="col-xs-12 col-sm-8 col-offset-sm-2">
+	<ul class="list-group">
+		<li ng-repeat="estudiante in estudiantes">
+			<div class="divNombre">
+				<h3>{{ estudiante.nombre }}</h3>
+			</div>
+				
 			
-		</div>
-		
-		<ul class="list-group">
-			<li ng-repeat="curso in estudiante.cursos">
-				<p><b>Curso:</b>{{curso.nombre}}</p>
-				<p><b>Nota :</b>{{curso.nota}}</p>
-				<p><b>Profesor :</b>{{curso.profesor}}</p>
-			</li>
-		</ul>
+			<ul class="list-group">
+				<li ng-repeat="curso in estudiante.cursos">
+					<p><b>Curso:</b>{{curso.nombre}}</p>
+					<p><b>Nota :</b>{{curso.nota}}</p>
+					<p><b>Profesor :</b>{{curso.profesor}}</p>
+				</li>
+			</ul>
 
-		<!-- <ul>
-			<li ng-repeat="profesor in estudiante.profesor">
-				<p><b>profesor:</b>{{profesor.nombre}}</p>
-			</li>
-		</ul> -->
-	</li>
-</ul>
+			<!-- <ul>
+				<li ng-repeat="profesor in estudiante.profesor">
+					<p><b>profesor:</b>{{profesor.nombre}}</p>
+				</li>
+			</ul> -->
+		</li>
+	</ul>
+</div>
+	
