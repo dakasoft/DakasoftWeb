@@ -397,10 +397,6 @@ button.close{
 
 
 /*Grupos y sus modals,form y demas*/
-.listaEstudiantes .list-group-item{
-	color: #722d7b;
-	padding: 0 10px;
-}
 
 .list-g-header{
 	color:white;
@@ -416,17 +412,15 @@ button.close{
 	margin-bottom: 0;
 }
 
-.listaEstudiantes{
-	margin-bottom: 52px;
-}
-
 .modal-header{
 	background:#722d7b; 
 	border: none;
 	text-align: center;
 	color: white;
 }
-
+.fa-times-circle{
+	cursor: pointer;
+}
 .plus-add{
 	width: 90%;
 	display: inline-block;
@@ -442,6 +436,35 @@ button.close{
 	opacity: 0.8;
 }
 
-.listaProfesores li:last-child{
+.listaProfesores li:last-child, .listaEstudiantes li:last-child{
 	display: none;
+}
+
+.selectedTable{
+	margin-top: 2px;
+}
+
+.selectedTable tr:last-child{
+	border-bottom: none !important;
+}
+
+table.selectedTable {
+        display: table;
+        width: 100%;
+}
+table.selectedTable thead, table.selectedTable tbody {
+    float: left;
+    width: 100%;
+}
+table.selectedTable tbody {
+    overflow: auto;
+    height: 173px;
+}
+table.selectedTable tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+table.selectedTable th, table.selectedTable td {
+    width: 33%;
 }

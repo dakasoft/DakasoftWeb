@@ -1,0 +1,40 @@
+<div class="modal fade" id="estudiantesGrupoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">    
+    <div class="modal-header">
+      <h4>{{ nombreGrupo }}</h4>
+    </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <form class="form-vertical">
+          <div class="col-xs-12 col-sm-6">
+              <div class="form-group">
+                <table id="custom-table" ng-table="tableParams"  class="table selectedTable">
+                  <tr ng-repeat="estudiante in estudiantes | filter:'estudiante'">
+                    <td data-title="'Nombre'">{{ estudiante.name }}</td>
+                    <td data-title="'Apellido'">{{ estudiante.lastname }}</td>
+                  </tr>
+                </table>               
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <ul class="list-group listaEstudiantes">
+                <li class="list-group-item list-g-header">Estudiantes en grupo</li>
+                <li class="list-group-item" ng-repeat="estudiantesS in estudiantesSeleccionados">
+                  {{ estudiantesS.nombre }} {{ estudiantesS.apellido }}
+                  <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(estudiantesS)"></i>
+                <li>
+              </ul>
+            </div>
+          </div>
+          <div class="row modal-footer">
+            <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

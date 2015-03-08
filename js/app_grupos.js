@@ -9,12 +9,14 @@
         $scope.grupos = [];
         $scope.cursos = [];
         $scope.profesores = [];
+        $scope.estudiantes = [];
         $scope.profesoresSeleccionados = [];
         $scope.estudiantesSeleccionados = [];
         $scope.editableGrupo = "";
 
         $http.get('json/usuarios.json').success(function (data) {
           $scope.profesores = data;
+          $scope.estudiantes = data;
         });
         
         $http.get('json/grupos.json').success(function (data) {
@@ -143,6 +145,17 @@
 
       }],
       controllerAs: 'modalGrupoCntrl'
+    };
+  });
+
+  app.directive('modalEstudianteGrupo',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalEstudiantesGrupo.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+
+      }],
+      controllerAs: 'modalEstudianteGrupoCntrl'
     };
   });
 
