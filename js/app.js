@@ -19,6 +19,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     	url: "/portafolio",
       templateUrl:"templates/portafolio.html"
     })
+
     .state('usuarios', {
       url: "/usuarios",
       templateUrl: "templates/usuarios.html"
