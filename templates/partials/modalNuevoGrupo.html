@@ -32,7 +32,6 @@
                   <option value="">--Cursos--</option>
                 </select>
               </div>      
-
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6">
@@ -40,6 +39,9 @@
                 <li class="list-group-item list-g-header">Profesores</li>
                 <li class="list-group-item" ng-repeat="profesorS in profesoresSeleccionados">
                   {{ profesorS.nombre }} {{ profesorS.apellido }}
+                  <select class="form-control li-select" ng-model="profesorS.area" ng-init="profesorS.area" ng-change="cambiarArea(profesorS,profesorS.area)" ng-init="profesorS.area" ng-options="obj.id as obj.nombre for obj in areasG">
+                      <option value="">--Área--</option>
+                  </select>
                   <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(profesorS)"></i>
                 <li>
               </ul>
@@ -54,3 +56,5 @@
     </div>
   </div>
 </div>
+
+

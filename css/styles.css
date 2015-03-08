@@ -488,3 +488,11 @@ table.selectedTable th, table.selectedTable td {
 .search-parent{
 	position: relative;
 }
+
+.li-select{
+	width: 40%;
+	display: inline-block;
+	height: 20px;
+	padding: 0px 0 0 10px;
+	margin-left: 4%;
+}

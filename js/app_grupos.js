@@ -10,6 +10,7 @@
         $scope.cursos = [];
         $scope.profesores = [];
         $scope.estudiantes = [];
+        $scope.areasG = [];
         $scope.profesoresSeleccionados = [];
         $scope.estudiantesSeleccionados = [];
         $scope.editableGrupo = "";
@@ -26,6 +27,10 @@
 
         $http.get('json/cursos.json').success(function (data) {
           $scope.cursos = data;
+        });
+
+        $http.get('json/areas.json').success(function (data) {
+          $scope.areasG = data;
         });
 
         $scope.editar = function(grupo){
@@ -58,7 +63,6 @@
         };
 
         $scope.agregarProfesor = function(){
-
           angular.forEach($scope.profesores, function(value, key) {
             if(value.id == $scope.profesor){
               $scope.profesor = value.name;
@@ -67,7 +71,7 @@
             }
           });
           if($scope.profesor){
-            
+
             var ingresar = true;
 
             angular.forEach($scope.profesoresSeleccionados,function(value,key){
@@ -77,17 +81,24 @@
             });
 
             if(ingresar || $scope.profesoresSeleccionados.length == 0){
-              $scope.profesoresSeleccionados.push({id: $scope.profesorId, nombre: $scope.profesor, apellido:$scope.profesorApellido });
+              $scope.profesoresSeleccionados.push({id: $scope.profesorId, nombre: $scope.profesor, apellido:$scope.profesorApellido, area:""});
               $scope.profesor = "";
             }
-
-
-
           }
         };
 
-        $scope.agregarEstudiante = function(estudiante){
+        $scope.cambiarArea = function(profe,selectedArea){
+          profe.area = selectedArea; 
 
+          angular.forEach($scope.profesoresSeleccionados,function(value,key){
+            if(value.id == profe.id){
+              value.area = profe.area;
+            }
+          });
+
+        };
+
+        $scope.agregarEstudiante = function(estudiante){
           angular.forEach($scope.estudiantes, function(value, key) {
             if(value.id == estudiante.id){
               $scope.estudiante = estudiante.name;
@@ -110,11 +121,9 @@
               $scope.estudiante = "";
             }
           }
-
         };
 
         $scope.quitarProfesor = function(profe){
-          //$scope.profesores = [];
           angular.forEach($scope.profesoresSeleccionados, function(value, key) {
             if(value.id == profe.id){
               $scope.profesoresSeleccionados.splice(key, 1);
