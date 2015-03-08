@@ -11,18 +11,17 @@
           $scope.cursos = data;
         });
          $scope.editar = function(curso){
-
-          $scope.editableC = carrera;
-          $scope.nombre = carrera.nombre;
-          $scope.codigo = carrera.cod;
+          $scope.editableC = curso;
+          $scope.nombre = curso.nombre;
+          $scope.codigo = curso.cod;
         };
 
         $scope.borrar = function(curso){
           
-          angular.forEach($scope.carreras, function(value, key) {
-            if(value.id == carrera.id){
+          angular.forEach($scope.cursos, function(value, key) {
+            if(value.id == curso.id){
                console.log(value.id);
-              $scope.carreras.splice(key, 1);
+              $scope.cursos.splice(key, 1);
             }
           });
         };
@@ -40,10 +39,10 @@
             $scope.editableC.nombre = $scope.nombre;
             $scope.editableC.cod = $scope.codigo;
           }else{
-            var lastUser = $scope.carreras[$scope.carreras.length - 1];
+            var lastUser = $scope.cursos[$scope.cursos.length - 1];
             var newId =  lastUser.id+1;
             /* each temporal para mostrar rol*/
-            $scope.carreras.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
+            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
             });
           
           }
@@ -54,15 +53,15 @@
     };
   });
 
-    app.directive('modalCursos',function ($http) {
+    app.directive('modalCurso',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalCarreras.html',
+      templateUrl: 'templates/partials/modalCursos.html',
       controller: ['$scope','$http',function ($scope,$http) {
        
         
       }],
-        controllerAs: 'modalC'
+        controllerAs: 'modalCurso'
     };
 });
 
