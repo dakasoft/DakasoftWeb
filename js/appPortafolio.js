@@ -24,7 +24,7 @@ app.directive('portafolio', function(){
           if($scope.editableUser != ""){
             $scope.editableUser.correo =$scope.correo;
              $scope.editableUser.telefono =$scope.telefono;
-              $scope.editableUser = $scope.OtraInfo;
+              $scope.editableUser.OtraInfo = $scope.OtraInfo;
           }
         $("#editModal").modal('hide');
         };
@@ -45,6 +45,16 @@ app.directive('portafolio', function(){
         controllerAs: 'modalPortafolioCtrl'
     };
 });
+  app.directive('modalVideo',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalVideo.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+       
+      }],
+      controllerAs: 'modalVCntrl'
+    };
+  });
 
 
 })();

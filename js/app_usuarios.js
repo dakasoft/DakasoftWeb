@@ -34,14 +34,6 @@
           $scope.role = user.role;
         };
 
-        $scope.borrar = function(user){
-          angular.forEach($scope.usuarios, function(value, key) {
-            console.log(user.id);
-            if(value.id == user.id){
-              $scope.usuarios.splice(key, 1);
-            }
-          });
-        };
 
         $scope.agregar = function(){
           $scope.editableUser = "";
@@ -89,5 +81,6 @@
       controllerAs: 'modalCntrl'
     };
   });
+  
 
 })();

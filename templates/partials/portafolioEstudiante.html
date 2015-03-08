@@ -1,7 +1,6 @@
 <div class="container-fluid">
  <div class="row">
   <div class="col-xs-12 containerP">
-  <div  class=" head col-xs-12 col-sm-12"><h2>Portafolio</h2><button data-toggle="modal"  data-target="#editModal" ng-click="editar(user)" class="conf fa fa-cog"></button></div>
   <form class="navbar-form buscador cf " role="search">
     <div class="form-group">
       <input type="text" class="form-control " placeholder="Search" ng-model="palabra">
@@ -9,6 +8,7 @@
     </div>
   </form> 
 <div ng-repeat="estudiante in estudiantes | filter:palabra | limitTo: 1">
+  <div  class=" head col-xs-12 col-sm-12"><h2>Portafolio</h2><button data-toggle="modal"  data-target="#editModal" ng-click="editar(estudiante)" class="conf fa fa-cog"></button></div>
   <div class="fotoI col-xs-12 col-sm-3" >
    <img ng-src="{{estudiante.foto}}" class="img-responsive img-circle"/>      
  </div>
@@ -24,7 +24,7 @@
    <div class="line cf col-xs-11 col-sm-11"></div>
 
    <div class="ih-item square new effect6 from_top_and_bottom col-xs-12 col-sm-4" ng-repeat="proyecto in estudiante.proyectos">
-    <a href="#"><div class="img"><img class="img-responsive" ng-src="{{proyecto.foto}}"/></div>
+    <a data-toggle="modal"  data-target="#editModalV"><div class="img"><img class="img-responsive" ng-src="{{proyecto.foto}}"/></div>
      <div class="info"> <h3>{{ proyecto.nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
    </a>
   </div>
