@@ -9,9 +9,11 @@
       $scope.cursos = [];
       $scope.codigoSeleccionado= [];
       $scope.editableC = "";
+
         $http.get('json/cursos.json').success(function (data) {
           $scope.cursos = data;
         });
+
          $scope.editar = function(curso){
           $scope.editableC = curso;
           $scope.nombre = curso.nombre;
@@ -36,11 +38,11 @@
         };
            
 
-           $scope.guardar = function(){
+          $scope.guardar = function(){
           
           if($scope.editableC != ""){
-                angular.forEach($scope.codigo, function(value, key) {
-              if(value.id == $scope.codigo){
+              angular.forEach($scope.cursos, function(value, key) {
+              if(value.id == $scope.cursos.id){
                 $scope.codigo = value.label;
               }
             });

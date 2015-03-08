@@ -1,14 +1,16 @@
 [
-    {
+    {   "id":1,
         "nombre":"Diseño y Desarrollo Web",
         "cod":"web232"
     },
     {
-       "nombre":"Desarrollo de Software",
+        "id":2,
+        "nombre":"Desarrollo de Software",
         "cod":"soft220"
     },
     {
-       "nombre":"Tecnologias",
+        "id":3,
+        "nombre":"Tecnologias",
         "cod":"Bitic"
     }
 ]
