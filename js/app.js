@@ -2,16 +2,14 @@
 var app = angular.module('universidad', ["ui.router","ngTable","usuarios","loginU"]);
 /*Quitar el hashtag en el browser*/
 
-app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state,$rootScope) {
+app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
     var main = this;
-    $rootScope.usuarioActual = "";
-
-    main.currentUser = {};
-    main.bLoggedIn = false;
+    $rootScope.currentUser = {};
+    $rootScope.bLoggedIn = false;
 
     main.logOut = function () {
-      main.currentUser = {};
-      main.bLoggedIn = false;
+      $rootScope.currentUser = {};
+      $rootScope.bLoggedIn = false;
       $state.go('login');
     }
     
@@ -27,7 +25,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: "/home",
       templateUrl: "templates/home.html",
-      controller: function($rootScope,$state){
+      controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
       }
     })
@@ -40,16 +38,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('portafolio',{
     	url: "/portafolio",
       templateUrl:"templates/portafolio.html",
-      controller: function($rootScope){
-        if($rootScope.usuarioActual == ""){
-          //$state.go('login');
+      controller: function ($rootScope, $state) {
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
         }
       }
     })
 
     .state('usuarios', {
       url: "/usuarios",
-      templateUrl: "templates/usuarios.html"
+      templateUrl: "templates/usuarios.html",
+      controller: function ($rootScope, $state) {
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
+      }
     });
 
 });

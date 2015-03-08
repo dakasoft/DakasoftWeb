@@ -14,22 +14,22 @@
 
     <div class="row">
         <header >     
-          <div class="col-xs-2 pull-left" ng-show="main.bLoggedIn">
+          <div class="col-xs-2 pull-left" ng-show="$root.bLoggedIn">
             <a href="#"><img class="logo cf" src="img/logo.png"/></a>
          </div>
-          <div class="col-xs-12 col-sm-3 col-md-2 pull-right" ng-show="main.bLoggedIn" ng-class=" $root.currentStateName=='home' ? '' : 'hidden-sm hidden-xs'">
-            <div class="usuario pull-right"><p>{{main.currentUser.name}}</p>
-             <button type="button" class="btn btn-default btn-xs">Cerrar Sesión</button>
+          <div class="col-xs-12 col-sm-3 col-md-2 pull-right" ng-show="$root.bLoggedIn" ng-class=" $root.currentStateName=='home' ? '' : 'hidden-sm hidden-xs'">
+            <div class="usuario pull-right"><p ng-bind="">{{$root.currentUser.name}}</p>
+             <button type="button" class="btn btn-default btn-xs" ng-click="main.logOut()">Cerrar Sesión</button>
             </div>
           </div>
         </header>
     </div>
 
-    <div class="menu-content col-xs-12" ng-show="main.bLoggedIn">
+    <div class="menu-content col-xs-12" ng-show="$root.bLoggedIn">
       <menu></menu>
     </div>
 
-    <div ng-show="$root.currentStateName!='home' && main.bLoggedIn" class="styleM menu-mobile visible-sm visible-xs">
+    <div ng-show="$root.currentStateName!='home' && $root.bLoggedIn" class="styleM menu-mobile visible-sm visible-xs">
       <menu-mobile></menu-mobile>
     </div>
 
