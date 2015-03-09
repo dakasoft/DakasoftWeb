@@ -14,6 +14,15 @@
             "profesor":"Antonio Luna",
             "equipo":"Dakasoft",
             "logoEquipo":"img/logoEquipo1.png" 
+            {
+                "integrantes":[
+                {
+                  "integrante1":"Karolina Munnoz",
+                  "integrante2":"Luis Daniel Morales",
+                  "integrante3":"Carolina Azofeifa"
+                }
+              ]
+            }
     	}
     ],
      "curso2":[
@@ -26,13 +35,7 @@
             "logoEquipo":"img/logoEquipo1.png" 
         }
     ],
-    "integrantes":[
-        {
-            "integrante1":"Karolina Munnoz",
-            "integrante2":"Luis Daniel Morales",
-            "integrante3":"Carolina Azofeifa"
-        }
-    ]
+    
    },
 	{
     "id": 2,
