@@ -11,18 +11,17 @@
     		"id":1,
     		"nombre":"Proyecto web 1",
     		"nota": 100,
-            "profesor":"Antonio Luna",
-            "equipo":"Dakasoft",
-            "logoEquipo":"img/logoEquipo1.png" 
-            {
-                "integrantes":[
-                {
-                  "integrante1":"Karolina Munnoz",
-                  "integrante2":"Luis Daniel Morales",
-                  "integrante3":"Carolina Azofeifa"
-                }
-              ]
-            }
+        "profesor":"Antonio Luna",
+        "equipo":"Dakasoft",
+        "logoEquipo":"img/logoEquipo1.png", 
+        "integrantes":[
+          {
+            "integrante1":"Karolina Munnoz",
+            "integrante2":"Luis Daniel Morales",
+            "integrante3":"Carolina Azofeifa"
+          }
+        ],
+            
     	}
     ],
      "curso2":[
