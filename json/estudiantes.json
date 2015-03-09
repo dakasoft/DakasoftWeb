@@ -6,20 +6,12 @@
     "email": "aronchj7@live.com",
     "password": "pass123",
     "role": "Estudiante",
-    "cursos":[
+    "curso1":[
     	{
     		"id":1,
     		"nombre":"Proyecto web 1",
     		"nota": 100,
             "profesor":"Antonio Luna",
-            "equipo":"Dakasoft",
-            "logoEquipo":"img/logoEquipo1.png" 
-    	},
-    	{
-    		"id":1,
-    		"nombre":"Proyecto web 2",
-    		"nota": 100,
-            "profesor":"Mauricio Poveda",
             "equipo":"Dakasoft",
             "logoEquipo":"img/logoEquipo1.png" 
     	}
