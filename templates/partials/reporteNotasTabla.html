@@ -15,7 +15,7 @@
 				
 				<div class="divCursosAlumnos clearfix">
 					<ul class="list-group" ng-repeat="curso in estudiante.curso1">
-						<li >
+						<li>
 							<a href="">
 					    	<img ng-src="{{curso.logoEquipo}}" class="pull-right imgLogo">
 					    </a>
@@ -27,14 +27,14 @@
 						<li><b>integrante1:</b>{{curso.integrantes[0].integrante1}}</li>
 						<li><b>integrante2:</b>{{curso.integrantes[0].integrante2}}</li>
 						<li><b>integrante3:</b>{{curso.integrantes[0].integrante3}}</li>						
-					
 					</ul>
+				</div>
+					
 					
 				
-				</div>
 				<div class="divCursosAlumnos clearfix">
-					<ul class="list-group">
-						<li ng-repeat="curso in estudiante.curso2">
+					<ul class="list-group" ng-repeat="curso in estudiante.curso2">
+						<li>
 							<a href="">
 					    	<img ng-src="{{curso.logoEquipo}}" class="pull-right imgLogo">
 					    </a>
@@ -43,12 +43,13 @@
 							<p><b>Nota :</b>{{curso.nota}}</p>
 							<p><b>Profesor:</b>{{curso.profesor}}</p>
 						</li>
-					</ul>
-					<ul ng-repeat="curso in estudiante.curso2" class="ulIntegrantes">
 						<li><b>integrante1:</b>{{curso.integrantes[0].integrante1}}</li>
 						<li><b>integrante2:</b>{{curso.integrantes[0].integrante2}}</li>
 						<li><b>integrante3:</b>{{curso.integrantes[0].integrante3}}</li>						
+					
 					</ul>
+					
+					
 				</div>
 			
 			</li>
