@@ -43,7 +43,8 @@
     		"nombre":"Proyecto web 1",
     		"nota": 98,
             "profesor":"Antonio Luna",
-            "equipo":"Dakasoft"
+            "equipo":"Dakasoft",
+            "logoEquipo":"img/logoEquipo1.png" 
 
     	},
     	{
@@ -51,7 +52,8 @@
     		"nombre":"Proyecto web 2",
     		"nota": 98,
             "profesor":"Antonio Luna",
-            "equipo":"Dakasoft" 
+            "equipo":"Dakasoft",
+            "logoEquipo":"img/logoEquipo1.png"  
     	}
     ],
     "profesor":[

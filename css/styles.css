@@ -401,3 +401,10 @@ button.close{
 .alumno b{color:#722d7b;}
 /*quita el estilo de los ul*/
 ol,ul,ul {list-style:none} 
+/*.imgLogo:last-child{margin-top:20px}*/
+
+/*Estilo del input busador*/
+.divInput{background:#722e7b;padding:10px;position:relative;border-radius:4px;}
+.divInput p{color:#fff;float:left;margin:4px 20px 0 0; }
+.txtSearcher{width:400px;}
+.search2{position:absolute;top:10px;left:520px; }
