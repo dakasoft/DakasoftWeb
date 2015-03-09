@@ -6,7 +6,7 @@ var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupo
 app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
     var main = this;
     $rootScope.currentUser = {};
-    $rootScope.bLoggedIn = false;
+    $rootScope.bLoggedIn = true;
 
     main.logOut = function () {
       $rootScope.currentUser = {};
@@ -23,24 +23,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/login");
   // Now set up the states
   $stateProvider
-    .state('home', {
-      url: "/home",
-      templateUrl: "templates/home.html",
+    .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
       }
     })
 
-
-    .state('login', {
-        url: "/login",
-        templateUrl: "templates/login.html"
+    .state('home', {
+        url: "/home",
+        templateUrl: "templates/home.html",
+        controller: function($rootScope, $state){
+          $rootScope.currentStateName = $state.current.name;
+        }
       })
 
     .state('portafolio',{
     	url: "/portafolio",
       templateUrl:"templates/portafolio.html",
       controller: function ($rootScope, $state) {
+        $rootScope.currentStateName = $state.current.name;
         if (!$rootScope.bLoggedIn) {
           $state.go('login');
         }
@@ -51,6 +54,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/usuarios",
       templateUrl: "templates/usuarios.html",
       controller: function ($rootScope, $state) {
+        $rootScope.currentStateName = $state.current.name;
+        console.log("wtf?");
         if (!$rootScope.bLoggedIn) {
           $state.go('login');
         }
@@ -59,7 +64,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('grupos',{
       url: "/grupos",
-      templateUrl:"templates/grupos.html"
+      templateUrl:"templates/grupos.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
     });
 
 });

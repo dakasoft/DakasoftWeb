@@ -429,8 +429,11 @@ button.close{
 }
 .aForgotPass:hover{
    color:white;
-   opacity:1;
-  
+   opacity:1; 
+}
+
+.rememberPass{
+	color: white !important;
 }
 
 /*Grupos y sus modals,form y demas*/
