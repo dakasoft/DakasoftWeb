@@ -1,0 +1,83 @@
+[
+  {
+    "id": 68,
+    "nombre": "Kibo",
+    "apellido": "Moore",
+    "email": "ac@felisadipiscing.net",
+    "password": "2622",
+    "role": "Estudiante",
+    "cursos":
+    [
+     	{
+		 		"id": 1,
+		 		"nombre": "Proyecto web 1",
+		 		"equipo":
+		 		[
+		 			{
+		 				"nombre":"prueba",
+		 				"integrantes":
+		 				[
+			 				{
+			 					"nombre":"Aaron Chavarría",
+			 					"rol":"Desarrollo"
+			 				},
+							{
+			 					"nombre":"Karo Muñoz",
+			 					"rol":"Coordinadora"
+			 				}
+		 				],
+		 				"vision":"",
+		 				"mision":""
+		 			}
+		 		]
+		 	},
+		  {
+		    "id": 2,
+		    "nombre": "Proyecto web 2",
+		 		"equipo":
+		 		[
+		 			{
+		 				"nombre":"",
+		 				"integrantes":
+		 				[
+			 				{
+			 					"nombre":"Aaron Chavarría",
+			 					"rol":"Desarrollo"
+			 				},
+							{
+			 					"nombre":"Karo Muñoz",
+			 					"rol":"Coordinadora"
+			 				}
+		 				],
+		 				"vision":"",
+		 				"mision":""
+		 			}
+		 		]
+		  },
+		  {
+		    "id": 3,
+		    "nombre": "Proyecto web 3",
+		 		"equipo":
+		 		[
+		 			{
+		 				"nombre":"",
+		 				"integrantes":
+		 				[
+			 				{
+			 					"nombre":"Aaron Chavarría",
+			 					"rol":"Desarrollo"
+			 				},
+							{
+			 					"nombre":"Karo Muñoz",
+			 					"rol":"Coordinadora"
+			 				}
+		 				],
+		 				"vision":"",
+		 				"mision":""
+		 			}
+		 		]
+		  }
+    ]
+  }
+]
+

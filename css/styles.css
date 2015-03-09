@@ -496,3 +496,74 @@ table.selectedTable th, table.selectedTable td {
 	padding: 0px 0 0 10px;
 	margin-left: 4%;
 }
+
+/*Mis Cursos*/
+.nav-cursos-user{
+	background: #722d7b;
+	border:none;
+}
+
+.nav-cursos-user a{
+	color:white;
+	border:none;
+}
+
+.nav-cursos-user > li > a:hover{
+	border:none;
+	color: white;
+	background: #a32068;
+}
+
+.nav-cursos-user > li > a:focus{
+	border:none;
+	color: white;
+	background: #a32068;
+}
+
+
+.equipoContent{
+	background: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.equipoContent .control-label{
+	padding-left: 0px;
+	text-align: left;
+}
+
+.equipoContent label{
+	text-align: left;
+}
+
+.single-nav{
+	margin-bottom: 40px;
+}
+
+.pencil-parent{
+	position: relative;
+}
+.pencil-input{
+	padding-right: 30px;
+}
+.pencil-icon{
+	position: absolute;
+	top: 4px;
+	right: 20px;
+	color: #722d7b;
+}
+
+.ul-list-integrantes{
+	list-style: none;
+	padding-left: 20px;
+}
+
+.input-xs{
+	height: 25px;
+}
+
+.row-xs{
+	width: 80%;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
