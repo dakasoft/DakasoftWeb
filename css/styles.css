@@ -406,5 +406,5 @@ ol,ul,ul {list-style:none}
 /*Estilo del input busador*/
 .divInput{background:#722e7b;padding:10px;position:relative;border-radius:4px;}
 .divInput p{color:#fff;float:left;margin:4px 20px 0 0; }
-.txtSearcher{width:400px;}
-.search2{position:absolute;top:10px;left:520px; }
+.txtSearcher{width:70.1754%;}
+.search2{position:absolute;top:10px;left:91.2280%;/* 520px*/ }
