@@ -26,9 +26,11 @@
             "logoEquipo":"img/logoEquipo1.png" 
         }
     ],
-    "profesor":[
+    "integrantes":[
         {
-           "nombre":"Antonio Luna" 
+            "integrante1":"Karolina Munnoz",
+            "integrante2":"Luis Daniel Morales",
+            "integrante3":"Carolina Azofeifa"
         }
     ]
    },
