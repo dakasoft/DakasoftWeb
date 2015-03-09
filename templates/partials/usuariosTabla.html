@@ -10,16 +10,16 @@
 				</div>
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table">
-			    <tr ng-repeat="user in usuarios">
-			        <td data-title="'Nombre'">{{user.name}}</td>
-			        <td data-title="'Apellido'">{{user.lastname}}</td>
-			        <td data-title="'Rol'">{{user.role}}</td>
-			        <td data-title="'Acciones'">
-			        	<a data-toggle="modal" data-target="#editModal" ng-click="editar(user)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
-			        	<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(user)"></i></a>
-			        </td>
-			    </tr>
+				<tr ng-repeat="user in usuarios">
+					<td data-title="'Nombre'">{{user.name}}</td>
+					<td data-title="'Apellido'">{{user.lastname}}</td>
+					<td data-title="'Rol'">{{user.role}}</td>
+					<td data-title="'Acciones'">
+						<a data-toggle="modal" data-target="#editModal" ng-click="editar(user)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+						<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(user)"></i></a>
+					</td>
+				</tr>
 			</table>
 		</div>
-		<div class="col-xs-12 col-sm-2"></div>
+	</div>
 </div>
