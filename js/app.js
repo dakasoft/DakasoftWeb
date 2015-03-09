@@ -6,7 +6,7 @@ var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupo
 app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
     var main = this;
     $rootScope.currentUser = {};
-    $rootScope.bLoggedIn = true;
+    $rootScope.bLoggedIn = true; //cambiar para deslogear
 
     main.logOut = function () {
       $rootScope.currentUser = {};
