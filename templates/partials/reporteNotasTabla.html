@@ -13,7 +13,7 @@
 					<h3>{{ estudiante.nombre}} {{estudiante.apellido}}</h3>
 				</div>
 				
-				<div class="alumno">
+				<div class="divCursosAlumnos">
 					<ul class="list-group">
 						<li ng-repeat="curso in estudiante.curso1">
 							<a href="">
@@ -26,6 +26,20 @@
 						</li>
 					</ul>
 				</div>
+				<div class="divCursosAlumnos">
+					<ul class="list-group">
+						<li ng-repeat="curso in estudiante.curso2">
+							<a href="">
+					    	<img ng-src="{{curso.logoEquipo}}" class="pull-right imgLogo">
+					    </a>
+							<p><b>Curso:</b>{{curso.nombre}}</p>
+							<p><b>Equipo:</b>{{curso.equipo}}</p>
+							<p><b>Nota :</b>{{curso.nota}}</p>
+							<p><b>Profesor:</b>{{curso.profesor}}</p>
+						</li>
+					</ul>
+				</div>
+			
 			</li>
 		</ul>
 	</div>
