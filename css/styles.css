@@ -517,7 +517,7 @@ table.selectedTable th, table.selectedTable td {
 .nav-cursos-user > li > a:focus{
 	border:none;
 	color: white;
-	background: #a32068;
+	background: transparent;
 }
 
 
@@ -566,4 +566,11 @@ table.selectedTable th, table.selectedTable td {
 	width: 80%;
 	margin-left: 20px;
 	margin-bottom: 10px;
+}
+
+.tab-active{
+	background: #a32068;
+}
+.tab-no-active{
+	background: #722d7b;
 }

@@ -17,6 +17,14 @@ app.controller('misCursos', ['$scope','$http', function($scope,$http) {
   	console.log(curso);
   }
 
+  $scope.toogleInfo = function(estado){
+  	if(estado)
+  	{
+  		return false;
+  	}
+  	return true;
+  }
+
 }]);
 
 app.directive('navCursos',function ($http) {
