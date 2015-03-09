@@ -26,10 +26,10 @@
 						</li>
 					
 					</ul>
-					<ul>
-						<li ng-repeat="curso in estudiante.curso1.integrantes">
-							<p><b>integrante1:</b>{{curso.integrantes.integrante1}}</p>						
-						</li>
+					<ul ng-repeat="curso in estudiante.curso1">
+						<li><b>integrante1:</b>{{curso.integrantes[0].integrante1}}</li>
+						<li><b>integrante2:</b>{{curso.integrantes[0].integrante2}}</li>
+						<li><b>integrante3:</b>{{curso.integrantes[0].integrante3}}</li>						
 					</ul>
 				</div>
 				<div class="divCursosAlumnos">
@@ -43,6 +43,11 @@
 							<p><b>Nota :</b>{{curso.nota}}</p>
 							<p><b>Profesor:</b>{{curso.profesor}}</p>
 						</li>
+					</ul>
+					<ul ng-repeat="curso in estudiante.curso2">
+						<li><b>integrante1:</b>{{curso.integrantes[0].integrante1}}</li>
+						<li><b>integrante2:</b>{{curso.integrantes[0].integrante2}}</li>
+						<li><b>integrante3:</b>{{curso.integrantes[0].integrante3}}</li>						
 					</ul>
 				</div>
 			
