@@ -5,10 +5,11 @@
 		<div class="divInput">
 			<p>Estudiante</p>
 			<input type="text" class="form-control txtSearcher" placeholder="Buscar estudiante">
-			<img src="img/search4.png" alt="" class="pull-right search2"><!-- font awesome muy pronto -->
+			<img src="img/search4.png" alt="" class="pull-right search2" ng-model="estudiantes.search.nombre">
+			<!-- font awesome muy pronto -->
 		</div>
 		<ul class="list-group">
-			<li ng-repeat="estudiante in estudiantes">
+			<li ng-repeat="estudiante in estudiantes | filter:estudiantes.search:nombre">
 				<div class="divNombre">
 					<h3>{{ estudiante.nombre}} {{estudiante.apellido}}</h3>
 				</div>
