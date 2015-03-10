@@ -2,9 +2,9 @@
  <div class="row">
   <div class="col-xs-12 containerP">
   <form class="navbar-form buscador cf " role="search">
-    <div class="form-group">
-      <input type="text" class="form-control " placeholder="Search" ng-model="palabra">
-      <button type="submit" class="btn btn-default agregar"><span class="glyphicon glyphicon-search"></span></button> 
+    <div class="form-group search-parent">
+      <input type="text" class="form-control normal-search" placeholder="Search" ng-model="palabra">
+      <i class="fa fa-search normal-search-icon"></i>
     </div>
   </form> 
 <div ng-repeat="estudiante in estudiantes | filter:palabra | limitTo: 1">
