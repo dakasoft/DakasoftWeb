@@ -7,17 +7,12 @@
       restrict: 'E',
       templateUrl: 'templates/partials/reporteNotasTabla.html',
       controller: ['$scope','$http',function ($scope,$http) {
-      $scope.estudiantes = [];
+        $scope.estudiantes = [];
 
-      $http.get('json/estudiantes.json').success(function (data) {
-
-        $scope.estudiantes = data;
-        console.log(data);
-
-
-        
-      }); 
-
+        $http.get('json/estudiantes.json').success(function (data) {
+          $scope.estudiantes = data;
+          console.log(data);
+        }); 
       }],
       controllerAs: 'modalCntrl'
       }

@@ -12,39 +12,26 @@
 				<div class="divNombre">
 					<h3>{{ estudiante.nombre}} {{estudiante.apellido}}</h3>
 				</div>
-				<div class="divCursosAlumnos clearfix">
-					<ul class="list-group" ng-repeat="curso in estudiante.curso1">
-						<li>
-							<a href="">
-					    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow">
-					    </a>
-							<p><b>Curso:</b>{{curso.nombre}}</p>
-							<p><b>Equipo:</b>{{curso.equipo}}</p>
-							<p><b>Nota :</b>{{curso.nota}}</p>
-							<p><b>Profesor:</b>{{curso.profesor}}</p>
-						</li>
+				<div class="divCursosAlumnos clearfix" ng-repeat="curso in estudiante.cursos">
+					<div class="row">
+						<ul class="list-group">
+							<li>
+								<a href="">
+						    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow">
+						    </a>
+								<p><b>Curso:</b>{{curso.nombre}}</p>
+								<p><b>Equipo:</b>{{curso.equipo}}</p>
+								<p><b>Nota :</b>{{curso.nota}}</p>
+								<p><b>Profesor:</b>{{curso.profesor}}</p>
+							</li>
+						</ul>
+					</div>
+					<div class="row">
 						<p><b>Integrantes</b></p>
-						<li>{{curso.integrantes[0].integrante1}}</li>
-						<li>{{curso.integrantes[0].integrante2}}</li>
-						<li>{{curso.integrantes[0].integrante3}}</li>						
-					</ul>
-				</div>
-				<div class="divCursosAlumnos clearfix">
-					<ul class="list-group" ng-repeat="curso in estudiante.curso2">
-						<li>
-							<a href="">
-					    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow">
-					    </a>
-							<p><b>Curso:</b>{{curso.nombre}}</p>
-							<p><b>Equipo:</b>{{curso.equipo}}</p>
-							<p><b>Nota :</b>{{curso.nota}}</p>
-							<p><b>Profesor:</b>{{curso.profesor}}</p>
-						</li>
-						<p><b>Integrantes</b></p>
-						<li>{{curso.integrantes[0].integrante1}}</li>
-						<li>{{curso.integrantes[0].integrante2}}</li>
-						<li>{{curso.integrantes[0].integrante3}}</li>						
-					</ul>
+						<ul>
+							<li ng-repeat="integrante in curso.integrantes">{{integrante}}</li>
+						</ul>
+					</div>
 				</div>
 			</li>
 		</ul>

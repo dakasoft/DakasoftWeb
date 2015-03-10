@@ -1,95 +1,78 @@
 [    
 	{
-    "id": 1,
-    "nombre": "Aaron",
-    "apellido": "Chavarría",
-    "email": "aronchj7@live.com",
-    "password": "pass123",
-    "role": "Estudiante",
-    "curso1":[
-    	{
-    	"id":1,
-    	"nombre":"Proyecto web 1",
-    	"nota": 100,
-        "profesor":"Antonio Luna",
-        "equipo":"Dakasoft",
-        "logoEquipo":"img/logoEquipo1.png",
-        "integrantes":[
-              {
-                "integrante1":"Karolina Munnoz",
-                "integrante2":"Luis Daniel Morales",
-                "integrante3":"Carolina Azofeifa"
-              }
+        "id": 1,
+        "nombre": "Aaron",
+        "apellido": "Chavarría",
+        "email": "aronchj7@live.com",
+        "password": "pass123",
+        "role": "Estudiante",
+        "cursos":[
+        	{
+            	"id":1,
+            	"nombre":"Proyecto web 1",
+            	"nota": 100,
+                "profesor":"Antonio Luna",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo1.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]
+            },
+            {
+                "id":2,
+                "nombre":"Proyecto web 2",
+                "nota": 70,
+                "profesor":"Luna Antonio",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo2.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ] 
+            }
+        ]
+    },
+	{
+        "id": 2,
+        "nombre": "Luis",
+        "apellido": "Morales",
+        "email": "luismendez@live.com",
+        "password": "pass123",
+        "role": "Estudiante",
+        "cursos":[
+            {
+        		"id":1,
+        		"nombre":"Proyecto web 1",
+        		"nota": 98,
+                "profesor":"Antonio Luna",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo1.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]  
+            },
+            {
+                "id":1,
+                "nombre":"Proyecto web 1",
+                "nota": 100,
+                "profesor":"Antonio Luna",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo3.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]  
+            }
         ]
     }
-    ],
-    "curso2":[
-        {
-            "id":1,
-            "nombre":"Proyecto web 1",
-            "nota": 100,
-            "profesor":"Antonio Luna",
-            "equipo":"Dakasoft",
-            "logoEquipo":"img/logoEquipo2.png",
-            "integrantes":[
-              {
-                "integrante1":"Karolina Munnoz",
-                "integrante2":"Luis Daniel Morales",
-                "integrante3":"Carolina Azofeifa"
-              }
-        ] 
-        }
-    ]
-      
-      
-    
-   },
-	{
-    "id": 2,
-    "nombre": "Luis",
-    "apellido": "Morales",
-    "email": "luismendez@live.com",
-    "password": "pass123",
-    "role": "Estudiante",
-    "curso1":[
-    	{
-    		"id":1,
-    		"nombre":"Proyecto web 1",
-    		"nota": 98,
-            "profesor":"Antonio Luna",
-            "equipo":"Dakasoft",
-            "logoEquipo":"img/logoEquipo1.png",
-            "integrantes":[
-              {
-                "integrante1":"Karolina Munnoz",
-                "integrante2":"Luis Daniel Morales",
-                "integrante3":"Carolina Azofeifa"
-              }
-        ]  
-
-    	}
-    ],
-    "curso2":[
-        {
-            "id":1,
-            "nombre":"Proyecto web 1",
-            "nota": 100,
-            "profesor":"Antonio Luna",
-            "equipo":"Dakasoft",
-            "logoEquipo":"img/logoEquipo3.png",
-            "integrantes":[
-              {
-                "integrante1":"Karolina Munnoz",
-                "integrante2":"Luis Daniel Morales",
-                "integrante3":"Carolina Azofeifa"
-              }
-        ]  
-        }
-    ],
-    "profesor":[
-        {
-           "nombre":"Antonio Luna" 
-        }
-    ]
-   }
 ]
