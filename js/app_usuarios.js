@@ -34,6 +34,7 @@
           $scope.role = user.role;
         };
 
+
         $scope.borrar = function(user){        
           angular.forEach($scope.usuarios, function(value, key) {
             console.log(user.id);
@@ -99,5 +100,6 @@
       controllerAs: 'modalCntrl'
     };
   });
+  
 
 })();
