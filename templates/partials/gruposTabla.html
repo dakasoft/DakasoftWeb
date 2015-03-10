@@ -1,0 +1,25 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="table-header">
+				<div class="col-xs-12 col-sm-6">
+					<p>Grupos</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p><a class="add" data-toggle="modal" data-target="#nuevoGrupoModal" ng-click="agregar()" ><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+				</div>
+			</div>
+			<table id="custom-table" ng-table="tableParams"  class="table">
+				<tr ng-repeat="grupo in grupos">
+					<td data-title="'Nombre'">{{grupo.nombre}}</td>
+					<td data-title="'Curso'">{{grupo.curso}}</td>
+					<td data-title="'Acciones'">						
+						<a data-toggle="modal" data-target="#estudiantesGrupoModal" ><i class="fa fa-user-plus fa-2x" ng-click="editar(grupo)"></i></a>
+						<a data-toggle="modal" data-target="#nuevoGrupoModal" ng-click="editar(grupo)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+						<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(grupo)"></i></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
