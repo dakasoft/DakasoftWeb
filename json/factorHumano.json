@@ -20,7 +20,7 @@
                 }
               ]
 
-          },//fin grupo1
+          },
           {
               "id":2,
               "nombre":"Dakasoft2",
@@ -35,10 +35,7 @@
                   "valor":"50"
                 }
             ]
-        }//fin grupo2
-  ]//fin grupos
-
-
-
-  }
+        }
+  ]
+}
 ]

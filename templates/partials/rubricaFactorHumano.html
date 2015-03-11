@@ -1,57 +1,33 @@
 <div class="container-fluid">
-<div class="divTitle">
+<div class="divTitle table-header">
 	<h3>Factor Humano</h3>
-</div>
-<!-- <div class="table-header">
-	<div class="col-xs-12 col-sm-6">
-		<p>Carreras</p>
-	</div>
-	<div class="col-xs-12 col-sm-6">
-		<p>
-			<a class="add" data-toggle="modal" data-target="#editModal" ng-click="agregar(carrera)" href="">
+	<p>
+		<a class="add" data-toggle="modal" data-target="#editModal" ng-click="agregar(carrera)" href="">
 				<i class="fa fa-plus fa-lg"></i>Agregar
-			</a>
-		</p>
-	</div>
-</div>  -->
-			<!-- <table id="carreras-table" ng-table class="table">
-			    <tr ng-repeat="carrera in carreras">
-			        <td data-title="'Nombre'" >{{carrera.nombre}}</td>
-			        <td data-title="'Codigo'" >{{carrera.cod}}</td>
-			        <td data-title="'Acciones'">
-			        		<a data-toggle="modal" data-target="#editModal" ng-click="editar(carrera)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
-			        	<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(carrera)"></i></a>
-			        </td>
-			    </tr>
-</table> -->
-<div class="clearfix divTabla">
-	<table ng-repeat="factor in factorHumano" class="table table-nonfluid table-responsive table-hover">
+		</a>
+	</p>
+</div>
+
+		
+<div class="clearfix divTabla" >
+	<table ng-repeat="factor in factorHumano" class="table table-nonfluid table-hover">
 		<tr>
 			<th>Profesor</th>
 			<th>Grupo</th>		
 			<th>Rubrica</th>
+			<th>Valor</th>
 		</tr>
 		<tr>
-			<td>{{factor.profesor.nombre}} {{factor.profesor.apellido}}</td>
-			<!-- td>{{factor.profesor.grupos[0].nombre}}</td>
-			<td>{{factor.profesor.grupos[0].rubrica[0].nombre}}</td> -->
-			
+			<td>{{factor.nombrePofesor}} {{factor.apellidoProfesor}}</td>
+		  <td>{{factor.grupos[0].nombre}}</td>
+		  <td>{{factor.grupos[0].rubrica[0].nombre}}</td>
+		  <td>{{factor.grupos[0].rubrica[0].valor}}</td>
 		</tr>
-	   	<tr ng-repeat="grupo in profesor.grupos">
-				<td>{{grupo[0].nombre}}</td>
-	    </tr>
-
-	    <!-- 	<td ng-repeat="grupo in factor.profesor.grupos">
-	    		{{grupo.nombre}}
-		    	<td ng-repeat="rubric in factor.profesor.grupos[3].rubrica[0]">
-		    		{{rubric.nombre}}
-		    	</td> 
-	    	</td> -->
-		
-
-	
-		
-		</table>
-
+		<tr>
+			<td>{{factor.nombrePofesor}} {{factor.apellidoProfesor}}</td>
+		  <td>{{factor.grupos[1].nombre}}</td>
+		  <td>{{factor.grupos[1].rubrica[1].nombre}}</td>
+		</tr>
+	</table>
 </div><!-- fin divTabla -->
 </div><!-- finContainer -->

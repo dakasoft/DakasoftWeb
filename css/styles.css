@@ -1037,9 +1037,17 @@ table.selectedTable th, table.selectedTable td {
 
 /*div del título*/
 
-.divTitle{background:#722d7b;padding:4px; }
-.divTitle h3{color:#fff;text-align: center;}
-
+.divTitle{background:#722d7b;padding:4px 10px;position: relative; }
+.divTitle h3{color:#fff;text-align: left;}
+.divTitle i{
+	margin-right: 4px;
+}
+.divTitle p{
+	margin: 5px 0 0px 87.0083%;position: absolute;bottom:20px 
+}
+.divTitle a{
+	  margin:0 0 0 ; /*730px*/
+}
 /*tabla*/
 .divTabla{background:#fff; }
 /*tHead*/
