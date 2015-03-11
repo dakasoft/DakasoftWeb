@@ -8,9 +8,9 @@
       "grupos":[
       {
             "id":1,
-            "nombre":"Dakasoft",
+            "nombre":"Dakasoft1",
             "curso":"Proyecto Web 1",
-            "Rubrica":[
+            "rubrica":[
               {
                 "nombre":"asistencia",
                 "valor":"50"
@@ -23,9 +23,9 @@
       },
       {
             "id":2,
-            "nombre":"Dakasoft",
+            "nombre":"Dakasoft2",
             "curso":"Proyecto Web 2",
-            "Rubrica":[
+            "rubrica":[
               {
                 "nombre":"asistencia",
                 "valor":"50"

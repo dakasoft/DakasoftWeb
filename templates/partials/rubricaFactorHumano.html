@@ -25,25 +25,27 @@
 			    </tr>
 </table> -->
 <div class="clearfix divTabla">
-	<table class="table table-nonfluid table-responsive table-hover">
+	<table  class="table table-nonfluid table-responsive table-hover">
 		<tr>
 			<th>Profesor</th>
 			<th>Grupo</th>		
 			<th>Rubrica</th>
 		</tr>
+
 		<tr ng-repeat="factor in factorHumano">
-			<td>{{factor.profesor.nombre}}</td>
-
-		<td ng-repeat="curso in factor.profesor.cursos">
-			{{curso.nombre}}</td>
-
-		<td ng-repeat="grupo in factor.profesor.cursos[0].grupos">
-			{{grupo.nombre}}</td>
-
+				<td>{{factor.profesor.nombre}}</td>
+	    	<td ng-repeat="grupo in factor.profesor.grupos">
+	    		{{grupo.nombre}}
+		    	<td ng-repeat="rubric in factor.profesor.grupos[3].rubrica[0]">
+		    		{{rubric.nombre}}
+		    	</td> 
+	    	</td>
 		</tr>
-			
 		
-	</table><!-- gcg -->
+
+	
+		
+		</table>
 
 </div><!-- fin divTabla -->
 </div><!-- finContainer -->
