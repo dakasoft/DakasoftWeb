@@ -1,5 +1,5 @@
 (function(){ // define funcionalidad
-var app = angular.module('universidad', ["ui.router","ngTable","carreras"]);
+var app = angular.module('universidad', ["ui.router","ngTable","carreras","parametros"]);
 /*Quitar el hashtag en el browser*/
 
 /* manejador de rutas*/
