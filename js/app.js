@@ -1,6 +1,10 @@
 (function(){ // define funcionalidad
+<<<<<<< HEAD
+var app = angular.module('universidad', ["ui.router","ngTable","cursos"]);
+=======
 var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras"]);
 
+>>>>>>> master
 /*Quitar el hashtag en el browser*/
 
 app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
@@ -32,49 +36,54 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
 
     .state('carreras', {
-      url: "/carreras",
-      templateUrl: "templates/carreras.html"
-      })
-
-
-    .state('home', {
-        url: "/home",
-        templateUrl: "templates/home.html",
-        controller: function($rootScope, $state){
-          $rootScope.currentStateName = $state.current.name;
-        }
-      })
-
-    .state('portafolio',{
-    	url: "/portafolio",
-      templateUrl:"templates/portafolio.html",
-      controller: function ($rootScope, $state) {
-        $rootScope.currentStateName = $state.current.name;
-        if (!$rootScope.bLoggedIn) {
-          $state.go('login');
-        }
-      }
+    url: "/carreras",
+    templateUrl: "templates/carreras.html"
     })
 
-    .state('usuarios', {
-      url: "/usuarios",
-      templateUrl: "templates/usuarios.html",
-      controller: function ($rootScope, $state) {
-        $rootScope.currentStateName = $state.current.name;
-        console.log("wtf?");
-        if (!$rootScope.bLoggedIn) {
-          $state.go('login');
-        }
-      }
-    })
 
-    .state('grupos',{
-      url: "/grupos",
-      templateUrl:"templates/grupos.html",
+  .state('home', {
+      url: "/home",
+      templateUrl: "templates/home.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
       }
+    })
+
+  .state('portafolio',{
+    url: "/portafolio",
+    templateUrl:"templates/portafolio.html",
+    controller: function ($rootScope, $state) {
+      $rootScope.currentStateName = $state.current.name;
+      if (!$rootScope.bLoggedIn) {
+        $state.go('login');
+      }
+    }
+  })
+
+  .state('usuarios', {
+    url: "/usuarios",
+    templateUrl: "templates/usuarios.html",
+    controller: function ($rootScope, $state) {
+      $rootScope.currentStateName = $state.current.name;
+      console.log("wtf?");
+      if (!$rootScope.bLoggedIn) {
+        $state.go('login');
+      }
+    }
+  })
+
+  .state('grupos',{
+    url: "/grupos",
+    templateUrl:"templates/grupos.html",
+    controller: function($rootScope, $state){
+      $rootScope.currentStateName = $state.current.name;
+    }
+
+    .state('cursos', {
+      url: "/cursos",
+      templateUrl: "templates/cursos.html"
     });
+
 
 
 });
