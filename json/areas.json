@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Proceso"
+  },
+  {
+    "id": 2,
+    "nombre": "Factor humano"
+  },
+  {
+    "id": 3,
+    "nombre": "Técnico"
+  }
+]

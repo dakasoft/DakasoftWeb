@@ -10,24 +10,22 @@
             <input type="text" ng-model="nombre" class="form-control"> 
         </div>
         <div class="form-group">
-          <label for="">Código</label>  
+          <label for="">Codigo</label>  
             <input type="text" ng-model="codigo" class="form-control"> 
         </div>
         <div class="form-group">
-          <label for="">Cursos</label>  
-            <select class="form-control plus-add" ng-model="curso" ng-options="obj.id as obj.nombre for obj in cursos">
-              <option value="">--Cursos--</option>
-            </select>
-            <i class="fa fa-plus plus-add-icon" ng-click="agregarCurso()"></i>
+          <label for="">Área Academica</label>  
+            <input type="text" ng-model="area" class="form-control plus-add">
+            <i class="fa fa-plus plus-add-icon" ng-click="agregarArea(area)"></i>
         </div>
         </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <ul class="list-group listaProfesores">
-                <li class="list-group-item list-g-header">Cursos</li>
-                <li class="list-group-item" ng-repeat="curso in cursosSeleccionados">
-                  {{ curso.nombre }}
-                  <a><i class="fa fa-times-circle fa pull-right" ng-click="borrarCurso(curso)"></i></a> 
+                <li class="list-group-item list-g-header">Área</li>
+                <li class="list-group-item" ng-repeat="area in areasSeleccionadas">
+                  {{ area.nombre }}
+                  <a><i class="fa fa-times-circle fa pull-right" ng-click="borrarArea(area)"></i></a> 
                 <li>
               </ul>
             </div>
