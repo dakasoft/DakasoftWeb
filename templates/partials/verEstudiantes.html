@@ -1,0 +1,14 @@
+<div class="container-fluid equipoContent">
+	<div class="col-xs-6 col-xs-offset-3">
+		<div class="row">
+			<p class="col-xs-4">Nombre</p>
+			<p class="col-xs-4">Apellido</p>
+			<p class="col-xs-4">Rol</p>
+		</div>
+		<div class="row" ng-repeat="estudiante in grupo.students">
+			<p class="col-xs-4">{{estudiante.name}}</p>
+			<p class="col-xs-4">{{estudiante.lastname}}</p>
+			<p class="col-xs-4">{{estudiante.role}}</p>
+		</div>
+	</div>
+</div>

@@ -1,49 +1,74 @@
 (function(){ // define funcionalidad
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","misCursos"]);
+var app = angular.module('universidad', ['ui.router','ngTable','usuarios','grupos','misCursos', 'verCursos']);
 /*Quitar el hashtag en el browser*/
 
 /* manejador de rutas*/
 app.config(function($stateProvider, $urlRouterProvider) {
 
-  //$urlRouterProvider.otherwise("/home");
+  //$urlRouterProvider.otherwise('/home');
   // Now set up the states
   $stateProvider
     .state('home', {
-      url: "/home",
-      templateUrl: "templates/home.html",
+      url: '/home',
+      templateUrl: 'templates/home.html',
       controller: function($rootScope,$state){
         $rootScope.currentStateName = $state.current.name;
       }
     })
 
     .state('portafolio',{
-    	url: "/portafolio",
-      templateUrl:"templates/portafolio.html"
+    	url: '/portafolio',
+      templateUrl:'templates/portafolio.html'
     })
 
     .state('usuarios', {
-      url: "/usuarios",
-      templateUrl: "templates/usuarios.html"
+      url: '/usuarios',
+      templateUrl: 'templates/usuarios.html'
     })
 
      .state('grupos',{
-      url: "/grupos",
-      templateUrl:"templates/grupos.html"
+      url: '/grupos',
+      templateUrl:'templates/grupos.html'
     })
 
     .state('miscursos',{
-      url: "/miscursos",
-      templateUrl:"templates/misCursos.html"
+      url: '/miscursos',
+      templateUrl:'templates/misCursos.html'
     })
 
     .state('miscursos.equipo', {
-      url: "/equipo",
-      templateUrl:"templates/partials/miEquipo.html"
+      url: '/equipo',
+      templateUrl:'templates/partials/miEquipo.html'
     })
 
     .state('miscursos.cursos', {
-      url: "/curso",
-      templateUrl:"templates/partials/misCursos.html"
+      url: '/curso',
+      templateUrl:'templates/partials/misCursos.html'
+    })
+
+    .state('verCursos',{
+      url: '/verCursos',
+      templateUrl:'templates/verCursos.html'
+    })
+
+    .state('verCursos.entregas', {
+      url: '/entregas',
+      templateUrl:'templates/partials/verEntregas.html'
+    })
+
+    .state('verCursos.estudiantes', {
+      url: '/estudiantes',
+      templateUrl:'templates/partials/verEstudiantes.html'
+    })
+
+    .state('verCursos.equipo', {
+      url: '/equipo',
+      templateUrl:'templates/partials/verEquipo.html'
+    })
+
+    .state('verCursos.configuracion', {
+      url: '/configuracion',
+      templateUrl:'templates/partials/verConfiguracion.html'
     });
 
 });

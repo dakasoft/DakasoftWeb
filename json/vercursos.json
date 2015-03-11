@@ -1,0 +1,374 @@
+[
+  {
+    "id": 1,
+    "name": "Proyecto web 1",
+    "groups":[
+      {
+        "number":1,
+        "attendant": {
+          "name":"Kiara",
+          "lastname":"Thomas"
+        },
+        "teachers":[
+          {
+            "name":"Alvaro", 
+            "lastname":"Cordero",
+            "area": "Proceso"
+          },
+          {
+            "name":"Alonso", 
+            "lastname":"Guevara",
+            "area": "Tecnica"
+          },
+          {
+            "name":"Kiara", 
+            "lastname":"Thomas",
+            "area": "Factor Humano"
+          }
+        ],
+        "students":[
+          {
+            "name":"Carolina",
+            "lastname":"Azofeifa",
+            "role":"Calidad"
+          },
+          {
+            "name":"Aaron",
+            "lastname":"Chavarria",
+            "role":"Desarrollo"
+          },
+          {
+            "name":"Luis Daniel",
+            "lastname":"Morales",
+            "role":"Soporte y Configuración"
+          },
+          {
+            "name":"Karolina",
+            "lastname":"Muñoz",
+            "role":"Coordinación"
+          }
+        ],
+        "entregas": [
+          {
+            "name":"Entrega 1",
+            "uploads":[
+              "DakaSoft_Entrega1.rar",
+              "Oni_Entrega1.rar"
+            ]
+          },
+          {
+            "name":"Entrega 2",
+            "uploads":[
+              "DakaSoft_Entrega2.rar",
+              "Oni_Entrega2.rar"
+            ]
+          }
+        ],
+        "teams":[
+          {
+            "name":"DakaSoft",
+            "logo":"img/logomobile.png",
+            "integrantes": [
+              {
+                "name":"Carolina",
+                "lastname":"Azofeifa",
+                "role":"Calidad"
+              },
+              {
+                "name":"Aaron",
+                "lastname":"Chavarria",
+                "role":"Desarrollo"
+              },
+              {
+                "name":"Luis Daniel",
+                "lastname":"Morales",
+                "role":"Soporte y Configuración"
+              },
+              {
+                "name":"Karolina",
+                "lastname":"Muñoz",
+                "role":"Coordinación"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number":2,
+        "attendant": {
+          "name":"Alonso",
+          "lastname":"Guevara"
+        },
+        "teachers":[
+          {
+            "name":"Alvaro", 
+            "lastname":"Cordero",
+            "area": "Proceso"
+          },
+          {
+            "name":"Alonso", 
+            "lastname":"Guevara",
+            "area": "Tecnica"
+          },
+          {
+            "name":"Kiara", 
+            "lastname":"Thomas",
+            "area": "Factor Humano"
+          }
+        ],
+        "students":[
+          {
+            "name":"Carolina",
+            "lastname":"Azofeifa",
+            "role":"Calidad"
+          },
+          {
+            "name":"Aaron",
+            "lastname":"Chavarria",
+            "role":"Desarrollo"
+          },
+          {
+            "name":"Luis Daniel",
+            "lastname":"Morales",
+            "role":"Soporte y Configuración"
+          },
+          {
+            "name":"Karolina",
+            "lastname":"Muñoz",
+            "role":"Coordinación"
+          }
+        ],
+        "entregas": [
+          {
+            "name":"Entrega 1",
+            "uploads":[
+              "DakaSoft_Entrega1.rar",
+              "Oni_Entrega1.rar"
+            ]
+          },
+          {
+            "name":"Entrega 2",
+            "uploads":[
+              "DakaSoft_Entrega2.rar",
+              "Oni_Entrega2.rar"
+            ]
+          }
+        ],
+        "teams":[
+          {
+            "name":"DakaSoft",
+            "logo":"img/logomobile.png",
+            "integrantes": [
+              {
+                "name":"Carolina",
+                "lastname":"Azofeifa",
+                "role":"Calidad"
+              },
+              {
+                "name":"Aaron",
+                "lastname":"Chavarria",
+                "role":"Desarrollo"
+              },
+              {
+                "name":"Luis Daniel",
+                "lastname":"Morales",
+                "role":"Soporte y Configuración"
+              },
+              {
+                "name":"Karolina",
+                "lastname":"Muñoz",
+                "role":"Coordinación"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Proyecto web 2",
+    "groups":[
+      {
+        "number":1,
+        "attendant": {
+          "name":"Alvaro",
+          "lastname":"Cordero"
+        },
+        "teachers":[
+          {
+            "name":"Alvaro", 
+            "lastname":"Cordero",
+            "area": "Proceso"
+          },
+          {
+            "name":"Alonso", 
+            "lastname":"Guevara",
+            "area": "Tecnica"
+          },
+          {
+            "name":"Kiara", 
+            "lastname":"Thomas",
+            "area": "Factor Humano"
+          }
+        ],
+        "students":[
+          {
+            "name":"Carolina",
+            "lastname":"Azofeifa",
+            "role":"Calidad"
+          },
+          {
+            "name":"Aaron",
+            "lastname":"Chavarria",
+            "role":"Desarrollo"
+          },
+          {
+            "name":"Luis Daniel",
+            "lastname":"Morales",
+            "role":"Soporte y Configuración"
+          },
+          {
+            "name":"Karolina",
+            "lastname":"Muñoz",
+            "role":"Coordinación"
+          }
+        ],
+        "entregas": [
+          {
+            "name":"Entrega 1",
+            "uploads":[
+              "DakaSoft_Entrega1.rar",
+              "Oni_Entrega1.rar"
+            ]
+          },
+          {
+            "name":"Entrega 2",
+            "uploads":[
+              "DakaSoft_Entrega2.rar",
+              "Oni_Entrega2.rar"
+            ]
+          }
+        ],
+        "teams":[
+          {
+            "name":"DakaSoft",
+            "logo":"img/logomobile.png",
+            "integrantes": [
+              {
+                "name":"Carolina",
+                "lastname":"Azofeifa",
+                "role":"Calidad"
+              },
+              {
+                "name":"Aaron",
+                "lastname":"Chavarria",
+                "role":"Desarrollo"
+              },
+              {
+                "name":"Luis Daniel",
+                "lastname":"Morales",
+                "role":"Soporte y Configuración"
+              },
+              {
+                "name":"Karolina",
+                "lastname":"Muñoz",
+                "role":"Coordinación"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number":2,
+        "attendant": {
+          "name":"Kiara",
+          "lastname":"Thomas"
+        },
+        "teachers":[
+          {
+            "name":"Alvaro", 
+            "lastname":"Cordero",
+            "area": "Proceso"
+          },
+          {
+            "name":"Alonso", 
+            "lastname":"Guevara",
+            "area": "Tecnica"
+          },
+          {
+            "name":"Kiara", 
+            "lastname":"Thomas",
+            "area": "Factor Humano"
+          }
+        ],
+        "students":[
+          {
+            "name":"Carolina",
+            "lastname":"Azofeifa",
+            "role":"Calidad"
+          },
+          {
+            "name":"Aaron",
+            "lastname":"Chavarria",
+            "role":"Desarrollo"
+          },
+          {
+            "name":"Luis Daniel",
+            "lastname":"Morales",
+            "role":"Soporte y Configuración"
+          },
+          {
+            "name":"Karolina",
+            "lastname":"Muñoz",
+            "role":"Coordinación"
+          }
+        ],
+        "entregas": [
+          {
+            "name":"Entrega 1",
+            "uploads":[
+              "DakaSoft_Entrega1.rar",
+              "Oni_Entrega1.rar"
+            ]
+          },
+          {
+            "name":"Entrega 2",
+            "uploads":[
+              "DakaSoft_Entrega2.rar",
+              "Oni_Entrega2.rar"
+            ]
+          }
+        ],
+        "teams":[
+          {
+            "name":"DakaSoft",
+            "logo":"img/logomobile.png",
+            "integrantes": [
+              {
+                "name":"Carolina",
+                "lastname":"Azofeifa",
+                "role":"Calidad"
+              },
+              {
+                "name":"Aaron",
+                "lastname":"Chavarria",
+                "role":"Desarrollo"
+              },
+              {
+                "name":"Luis Daniel",
+                "lastname":"Morales",
+                "role":"Soporte y Configuración"
+              },
+              {
+                "name":"Karolina",
+                "lastname":"Muñoz",
+                "role":"Coordinación"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

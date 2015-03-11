@@ -1,0 +1,24 @@
+<modal-show-equipo></modal-show-equipo>
+<div class="container-fluid equipoContent">
+	<div class="row" ng-repeat="equipo in grupo.teams">
+		<div class="col-xs-6 col-xs-offset-3">
+			<div class="row">
+				<div class="col-xs-2">
+					<img ng-src="equipo.logo">
+				</div>
+				<div class="col-xs-6">
+					<p>{{equipo.name}}</p>
+				</div>
+			</div>
+			<!-- <div>
+				<ul>
+					<li ng-repeat="integrante in equipo.integrantes">
+						<p class="col-xs-4">{{estudiante.name}}</p>
+						<p class="col-xs-4">{{estudiante.lastname}}</p>
+						<p class="col-xs-4">{{estudiante.role}}</p>
+					</li>
+				</ul>
+			</div> -->
+		</div>
+	</div>
+</div>

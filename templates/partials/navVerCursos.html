@@ -1,0 +1,32 @@
+<div class="single-nav" ng-repeat="grupo in curso.groups">
+	<div class="row" ng-click="verCursos.bCourseDisplay = !verCursos.bCourseDisplay">
+		<div class="col-xs-6">
+			<p class="">{{curso.name}}</p>
+		</div>
+		<div class="col-xs-3">
+			<p>{{grupo.number}}</p>
+		</div>
+		<div class="col-xs-3">
+			<p>{{grupo.attendant.name}} {{grupo.attendant.lastname}}</p>
+		</div>
+	</div>
+	<div ng-show="verCursos.bCourseDisplay">
+		<ul class="nav nav-justified nav-cursos-user">
+		  <li>
+		  	<a ui-sref="verCursos.entregas">Entregas</a>
+		  </li>
+		  <li>
+		  	<a ui-sref="verCursos.estudiantes">Estudiantes</a>
+		  </li>
+		  <li>
+		  	<a ui-sref="verCursos.equipo">Equipo</a>
+		  </li>
+		  <li>
+		  	<a ui-sref="verCursos.configuracion">Config</a>
+		  </li>
+		</ul>
+	</div>
+	<div ng-show="verCursos.bCourseDisplay" ui-view></div>
+</div>
+
+

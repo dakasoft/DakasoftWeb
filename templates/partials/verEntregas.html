@@ -1,0 +1,15 @@
+<modal-show-equipo></modal-show-equipo>
+<div class="container-fluid equipoContent">
+	<div class="row" ng-repeat="entrega in grupo.entregas">
+		<div class="col-xs-6 col-xs-offset-3">
+			<div>
+				<p>{{entrega.name}}</p>
+			</div>
+			<div>
+				<ul>
+					<li ng-repeat="upload in entrega.uploads">{{upload}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
