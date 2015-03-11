@@ -1066,3 +1066,9 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
+.tab-active{
+	background: #a32068;
+}
+.tab-no-active{
+	background: #722d7b;
+}

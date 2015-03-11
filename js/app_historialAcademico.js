@@ -11,8 +11,16 @@
 
         $http.get('json/estudiantes.json').success(function (data) {
           $scope.estudiantes = data;
-          console.log(data);
         }); 
+
+      $scope.toogleInfo = function(estado){
+        if(estado)
+        {
+          return false;
+        }
+        return true;
+      }
+
       }],
       controllerAs: 'modalCntrl'
       }

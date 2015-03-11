@@ -6,6 +6,7 @@
         "email": "aronchj7@live.com",
         "password": "pass123",
         "role": "Estudiante",
+        "show":false,
         "cursos":[
         	{
             	"id":1,
@@ -44,6 +45,7 @@
         "email": "luismendez@live.com",
         "password": "pass123",
         "role": "Estudiante",
+        "show":false,
         "cursos":[
             {
         		"id":1,
