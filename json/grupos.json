@@ -1,0 +1,92 @@
+[
+	{
+		"id": 1,
+		"nombre": "Grupo 02",
+		"curso": "Proyecto web 1",
+		"cursoId": 1,
+		"encargado":"Gloria Tate",
+		"encargadoId": 83,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 2,
+		"nombre": "Grupo 03",
+		"curso": "Proyecto web 1",
+		"cursoId": 1,
+		"encargado":"Catherine Hutchinson",
+		"encargadoId": 79,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 3,
+		"nombre": "Grupo 01",
+		"curso": "Proyecto web 2",
+		"cursoId": 2,
+		"encargado":"Ciaran Clayton",
+		"encargadoId": 3,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 4,
+		"nombre": "Grupo 02",
+		"curso": "Proyecto web 2",
+		"cursoId": 2,
+		"encargado":"Ciaran Clayton",
+		"encargadoId": 90,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 5,
+		"nombre": "Grupo 01",
+		"curso": "Proyecto web 3",
+		"cursoId": 3,
+		"encargado":"Kaye Acosta",
+		"encargadoId": 90,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 6,
+		"nombre": "Grupo 02",
+		"curso": "Proyecto web 3",
+		"cursoId": 3,
+		"encargado":"Ciaran Clayton",
+		"encargadoId": 8,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 7,
+		"nombre": "Grupo 01",
+		"curso": "Proyecto software 1",
+		"cursoId": 4,
+		"encargado":"Ciaran Clayton",
+		"encargadoId": 96,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 8,
+		"nombre": "Grupo 02",
+		"curso": "Proyecto software 1",
+		"cursoId": 4,
+		"encargado":"Gloria Tate",
+		"encargadoId": 12,
+		"profesores":[],
+		"estudiantes":[]
+	},
+	{
+		"id": 9,
+		"nombre": "Grupo 03",
+		"curso": "Proyecto software 1",
+		"cursoId": 4,
+		"encargado":"Karina Hutchinson",
+		"encargadoId": 12,
+		"profesores":[],
+		"estudiantes":[]
+	}
+]

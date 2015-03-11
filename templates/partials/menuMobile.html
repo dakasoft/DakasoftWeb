@@ -1,45 +1,45 @@
 <div>
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-  <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-       <a class="navbar-brand" href="#"><img class="logomovile" src="img/logomovile.png"/></a>   
-    </div>
-     <div class="collapse navbar-collapse" id="myNavbar">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand"><img class="logomovile" src="img/logomovile.png"/></a>   
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
        <ul class="nav navbar-nav">
        	<li id="configuracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Configuración<span class="caret"></span></a>
-    		 <ul class="subMenuMovil dropdown-menu">
-     		 <li><a  href='#'>Usuario</a></li>
-    		 <li><a href='#' >Carrera</a></li>
-     		 <li><a  href='#'>Curso</a></li>
-    		 <li><a  href='#'>Parametros</a></li>
-     		 </ul>
+           <ul class="subMenuMovil dropdown-menu">
+            <li><a ui-sref="usuarios" >Usuarios</a></li>
+            <li><a ui-sref="carreras" >Carreras</a></li>
+            <li><a ui-sref="cursos">Cursos</a></li>
+            <li><a ui-sref="grupos">Grupos</a></li>
+            <li><a ui-sref="parametros">Parametros</a></li>
+          </ul>
         </li>
-        		<li id="administracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administración<span class="caret"></span></a>
-    		 <ul class="subMenuMovil dropdown-menu cf">
-     		 <li><a  href='#'>Ver Cursos</a></li>
+        <li id="administracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administración<span class="caret"></span></a>
+         <ul class="subMenuMovil dropdown-menu cf">
+          <li><a  href='#'>Ver Cursos</a></li>
 
-     		 </ul>
-        </li>
-        	<li id="portafolioM"><a href="#" >Portafolio <span ></span></a>
-            </li>
-        	<li id="reportesM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span></a>
-    		 <ul class="subMenuMovil dropdown-menu cf">
-     		 <li><a  href='#' ng-click="" >Reporte Notas</a></li>
-    		 <li><a href='#' ng-click="" >Historial Académico</a></li>
-     		 </ul>
-        </li>
+        </ul>
+      </li>
+      <li id="portafolioM"><a ui-sref="portafolio" >Portafolio <span ></span></a>
+      </li>
+      <li id="reportesM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span></a>
+       <ul class="subMenuMovil dropdown-menu cf">
+        <li><a ui-sref="reportenotas" ng-click="" >Reporte Notas</a></li>
+        <li><a ui-sref="historialacademico" ng-click="" >Historial Académico</a></li>
       </ul>
-       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-user"></i> Cerrar Sesión</a></li>
-      
-      </ul>
-  </div>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a><i class="fa fa-user"></i> Cerrar Sesión</a></li>
+
+  </ul>
+</div>
 </nav>
 
 
