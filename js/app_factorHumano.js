@@ -6,19 +6,20 @@
       restrict: 'E',
       templateUrl: 'templates/partials/rubricaFactorHumano.html',
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
-        $scope.carrera = [];
+        $scope.factorHumano = [];
       
-        // $http.get('json/carreras.json').success(function (data) {
-        //   $scope.carreras = data;
+        $http.get('json/factorHumano.json').success(function (data) {
+          $scope.factorHumano = data;
+          console.log(data);
 
-        // });
+        });
         
         
 
         
        
       }],
-      controllerAs: 'carreras'
+      controllerAs: 'factorH'
     };
   });
 
