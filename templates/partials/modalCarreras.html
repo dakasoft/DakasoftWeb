@@ -1,0 +1,43 @@
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <form class="form-vertical">
+        <div class="col-xs-12 col-sm-6">
+        <div class="form-group">
+          <label for="">Nombre</label>  
+            <input type="text" ng-model="nombre" class="form-control"> 
+        </div>
+        <div class="form-group">
+          <label for="">Código</label>  
+            <input type="text" ng-model="codigo" class="form-control"> 
+        </div>
+        <div class="form-group">
+          <label for="">Cursos</label>  
+            <select class="form-control plus-add" ng-model="curso" ng-options="obj.id as obj.nombre for obj in cursos">
+              <option value="">--Cursos--</option>
+            </select>
+            <i class="fa fa-plus plus-add-icon" ng-click="agregarCurso()"></i>
+        </div>
+        </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <ul class="list-group listaProfesores">
+                <li class="list-group-item list-g-header">Cursos</li>
+                <li class="list-group-item" ng-repeat="curso in cursosSeleccionados">
+                  {{ curso.nombre }}
+                  <a><i class="fa fa-times-circle fa pull-right" ng-click="borrarCurso(curso)"></i></a> 
+                <li>
+              </ul>
+            </div>
+          </div>
+        
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
