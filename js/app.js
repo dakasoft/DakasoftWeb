@@ -21,6 +21,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('carreras', {
       url: "/carreras",
       templateUrl: "templates/carreras.html"
+    })
+
+
+ $stateProvider
+    .state('parametros', {
+      url: "/parametros",
+      templateUrl: "templates/parametros.html"
     });
 
 
