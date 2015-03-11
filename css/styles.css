@@ -416,6 +416,12 @@ ol,ul,ul {list-style:none}
         transform: rotateZ(-30deg);
 }
 /*Párrafo*/
-.pIntegrantes{margin-left:15px; }
-.headingIntegrantes{margin:0;padding:0;margin-left:15px; }
+.headingIntegrantes{margin-left:15px; }
+.ulIntegrantes{margin:0;padding:0;margin-left:15px; }
 details summary::-webkit-details-marker { display:none; }
+/*.imgLogoEquipo{margin-left:20px }*/
+article, aside, canvas, details,
+figcaption, figure, footer, header,
+hgroup, nav, section, summary, video {
+    display: block;
+}
