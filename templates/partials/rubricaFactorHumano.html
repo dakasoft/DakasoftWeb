@@ -33,8 +33,17 @@
 		</tr>
 		<tr ng-repeat="factor in factorHumano">
 			<td>{{factor.profesor.nombre}}</td>
-		</tr>
-	</table>
-</div><!-- fin divTabla -->
 
+		<td ng-repeat="curso in factor.profesor.cursos">
+			{{curso.nombre}}</td>
+
+		<td ng-repeat="grupo in factor.profesor.cursos[0].grupos">
+			{{grupo.nombre}}</td>
+
+		</tr>
+			
+		
+	</table><!-- gcg -->
+
+</div><!-- fin divTabla -->
 </div><!-- finContainer -->
