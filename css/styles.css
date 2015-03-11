@@ -825,16 +825,16 @@ h2{
   -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
   box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 }
+
 .buscador{ /*Buscador*/
 	display:block;
 	float:right;
 }
-menu{  
-	float:left;
-}
+
 .img-circle{
 	width:170px;
 }
+
 .ih-item.square.new {
 	margin-left:13px;
 position: relative;
@@ -843,6 +843,7 @@ height: 180px;
 border: 8px solid #fff;
 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
 .ih-item.square1.new.effect6 {
 overflow: hidden;
 }

@@ -34,7 +34,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('carreras', {
     url: "/carreras",
-    templateUrl: "templates/carreras.html"
+    templateUrl: "templates/carreras.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
     })
 
 
@@ -62,7 +65,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: "templates/usuarios.html",
     controller: function ($rootScope, $state) {
       $rootScope.currentStateName = $state.current.name;
-      console.log("wtf?");
       if (!$rootScope.bLoggedIn) {
         $state.go('login');
       }
@@ -79,10 +81,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('cursos', {
       url: "/cursos",
-      templateUrl: "templates/cursos.html"
+      templateUrl: "templates/cursos.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
     });
-
-
 
 });
 
