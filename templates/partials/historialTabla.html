@@ -11,15 +11,15 @@
 		<ul class="list-group">
 			<li ng-repeat="estudiante in estudiantes | filter:estudiantes.search:nombre">
 				<div class="divNombre">
-					<h3>{{ estudiante.nombre}} {{estudiante.apellido}}</h3>
+					<h3>{{estudiante.nombre}} {{estudiante.apellido}}</h3>
 				</div>
 				<div class="divCursosAlumnos clearfix" ng-repeat="curso in estudiante.cursos">
 					<div class="row">
 						<ul class="list-group">
 							<li>
 								<a href="">
-						    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow">
-						    </a>
+							    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow">
+							    </a>
 								<p><b>Curso:</b>{{curso.nombre}}</p>
 								<p><b>Equipo:</b>{{curso.equipo}}</p>
 								<p><b>Nota :</b>{{curso.nota}}</p>
