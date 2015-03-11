@@ -1,5 +1,5 @@
 (function () { // define funcionalidad
-  var app = angular.module('proyectos', ["ui.router"]);
+  var app = angular.module('proyectosVotacion', ["ui.router"]);
 
   app.directive('proyectosVotacion',function ($http) {
     return {
