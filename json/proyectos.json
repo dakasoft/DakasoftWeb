@@ -1,5 +1,6 @@
 [
 	{
+		"id":1,
 		"curso":"proyecto I",
 		"equipo":"Dakasoft",
 		"nota": "",
@@ -7,6 +8,7 @@
 		"video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0"
 	},
 	{
+		"id":2,
 		"curso":"proyecto II",
 		"equipo":"Oni",
 		"nota": "",
@@ -14,6 +16,7 @@
 		"video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0"
 	},
 	{
+		"id":3,
 		"curso":"proyecto III",
 		"equipo":"EPA",
 		"nota": "",

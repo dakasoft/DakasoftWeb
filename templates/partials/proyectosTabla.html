@@ -1,32 +1,39 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-xs-12 col-sm-6">
 			<div class="table-header">
 				<div class="col-xs-12 col-sm-12">
 					<p>Proyectos</p>
 				</div>
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table">
-				<tr ng-repeat="proyecto in proyectoCtrl.proyectos">
+				<tr ng-repeat="proyecto in proyectos">
 					<td data-title="'Curso'">{{proyecto.curso}}</td>
 					<td data-title="'Equipo'">{{proyecto.equipo}}</td>
 					<td data-title="'Imagen'">{{proyecto.imagen}}</td>
-				</tr>
+					<td data-title="'Nota'"><a data-toggle="modal" data-target="#editModal" ng-click="editarNota(proyecto)">
+				   <i class="fa fa-pencil-square-o fa-2x"></i>
+					</a></td>
+					<td data-title="'Agregar'" ><i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarProyecto(proyecto)"></i></td>
+				</tr>			
+
 			</table>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-xs-12 col-sm-6">
 			<div class="table-header">
 				<div class="col-xs-12 col-sm-12">
 					<p>Proyectos Votacion</p>
 				</div>
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table">
-				<tr ng-repeat="proyecto in proyectoCtrl.proyectos">
+				<tr ng-repeat="proyecto in proyectosSeleccionados track by $index">
 					<td data-title="'Curso'">{{proyecto.curso}}</td>
 					<td data-title="'Equipo'">{{proyecto.equipo}}</td>
 					<td data-title="'Imagen'">{{proyecto.imagen}}</td>
+					<td data-title="'Eliminar'"> <a><i class="fa fa-times-circle fa pull-right" ng-click="EliminarProyecto(proyecto)"></i></a> </td>
 				</tr>
 			</table>
 		</div>
+		
 	</div>
-</div>
+

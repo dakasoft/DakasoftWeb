@@ -1,12 +1,15 @@
-<div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xs">
     <div class="modal-content">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
-        
+         <div class="form-group">
+              <label for="NotasProyecto">Nota</label>
+              <input type="text" class="form-control" id="nota"  ng-model="nota">
+            </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardarnota()">Guardar</button>
       </div>
     </div>
   </div>
