@@ -11,7 +11,7 @@
             	"id":1,
             	"nombre":"Proyecto web 1",
             	"nota": 100,
-                "profesor":"Antonio Luna",
+                "profesor":"Álvaro Cordero",
                 "equipo":"Dakasoft",
                 "logoEquipo":"img/logoEquipo1.png",
                 "integrantes":[
@@ -25,7 +25,7 @@
                 "id":2,
                 "nombre":"Proyecto web 2",
                 "nota": 70,
-                "profesor":"Luna Antonio",
+                "profesor":"Álvaro Cordero",
                 "equipo":"Dakasoft",
                 "logoEquipo":"img/logoEquipo2.png",
                 "integrantes":[
@@ -49,7 +49,7 @@
         		"id":1,
         		"nombre":"Proyecto web 1",
         		"nota": 98,
-                "profesor":"Antonio Luna",
+                "profesor":"Álvaro Cordero",
                 "equipo":"Dakasoft",
                 "logoEquipo":"img/logoEquipo1.png",
                 "integrantes":[
@@ -63,7 +63,7 @@
                 "id":1,
                 "nombre":"Proyecto web 1",
                 "nota": 100,
-                "profesor":"Antonio Luna",
+                "profesor":"Álvaro Cordero",
                 "equipo":"Dakasoft",
                 "logoEquipo":"img/logoEquipo3.png",
                 "integrantes":[

@@ -418,3 +418,4 @@ ol,ul,ul {list-style:none}
 /*Párrafo*/
 .pIntegrantes{margin-left:15px; }
 .headingIntegrantes{margin:0;padding:0;margin-left:15px; }
+details summary::-webkit-details-marker { display:none; }
