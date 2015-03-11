@@ -18,11 +18,13 @@
 		 				"integrantes":
 		 				[
 			 				{
-			 					"nombre":"Aaron Chavarría",
+			 					"nombre":"Aaron",
+			 					"apellido":"Chavarría",
 			 					"rol":"Desarrollo"
 			 				},
 							{
-			 					"nombre":"Karo Muñoz",
+			 					"nombre":"Karo",
+			 					"apellido":"Muñoz",
 			 					"rol":"Coordinadora"
 			 				}
 		 				],
@@ -41,11 +43,13 @@
 		 				"integrantes":
 		 				[
 			 				{
-			 					"nombre":"Aaron Chavarría",
+			 					"nombre":"Aaron",
+			 					"apellido":"Chavarría",
 			 					"rol":"Desarrollo"
 			 				},
 							{
-			 					"nombre":"Karo Muñoz",
+			 					"nombre":"Karo",
+			 					"apellido":"Muñoz",
 			 					"rol":"Coordinadora"
 			 				}
 		 				],
@@ -64,11 +68,13 @@
 		 				"integrantes":
 		 				[
 			 				{
-			 					"nombre":"Aaron Chavarría",
+			 					"nombre":"Aaron",
+			 					"apellido":"Chavarría",
 			 					"rol":"Desarrollo"
 			 				},
 							{
-			 					"nombre":"Karo Muñoz",
+			 					"nombre":"Karo",
+			 					"apellido":"Muñoz",
 			 					"rol":"Coordinadora"
 			 				}
 		 				],
