@@ -25,16 +25,21 @@
 			    </tr>
 </table> -->
 <div class="clearfix divTabla">
-	<table class="table table-nonfluid table-responsive table-hover">
+	<table ng-repeat="factor in factorHumano" class="table table-nonfluid table-responsive table-hover">
 		<tr>
 			<th>Profesor</th>
 			<th>Grupo</th>		
 			<th>Rubrica</th>
 		</tr>
-		<tr ng-repeat="factor in factorHumano">
-				<td>{{factor.profesor.nombre}} {{factor.profesor.apellido}}</td>
+		<tr>
+			<td>{{factor.profesor.nombre}} {{factor.profesor.apellido}}</td>
+			<!-- td>{{factor.profesor.grupos[0].nombre}}</td>
+			<td>{{factor.profesor.grupos[0].rubrica[0].nombre}}</td> -->
+			
 		</tr>
-	   
+	   	<tr ng-repeat="grupo in profesor.grupos">
+				<td>{{grupo[0].nombre}}</td>
+	    </tr>
 
 	    <!-- 	<td ng-repeat="grupo in factor.profesor.grupos">
 	    		{{grupo.nombre}}
