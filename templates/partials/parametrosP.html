@@ -1,0 +1,33 @@
+<div class="container-fluid">
+   
+           <div class="col-xs-12 col-sm-8 col-sm-offset-2 containerP">
+           		 <div class="containertittle">
+
+             	   <h3>Parámetros</h3>
+            	</div>
+            	<form class="form-horizontal formP">
+		    	<div class="form-group group1">
+          			<label class="col-xs-4 control-label" for="">Ciclo lectivo</label>  
+          				<div class="col-xs-8">
+           					 <select class="form-control" ng-model="cicloLectivo" ng-options="obj.id as obj.nombre for obj in parametros">
+             					 <option value="">--Ciclo lectivo--</option>
+           					 </select>
+         				</div>
+       			</div>
+       			<div class="form-group group1">
+       		 	<label class="control-label col-sm-4" for="">Cierre de votación</label> 
+       		 	<div class="col-sm-5">
+           		<input class="form-control" type="date"/>
+           		</div>
+           		
+             	</div>
+           </form>
+
+
+
+           </div>
+  
+
+
+
+</div>
