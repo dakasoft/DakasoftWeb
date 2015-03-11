@@ -1,13 +1,16 @@
-<modal-show-equipo></modal-show-equipo>
+<modal-ver-equipo></modal-ver-equipo>
 <div class="container-fluid equipoContent">
 	<div class="row" ng-repeat="equipo in grupo.teams">
 		<div class="col-xs-6 col-xs-offset-3">
 			<div class="row">
 				<div class="col-xs-2">
-					<img ng-src="equipo.logo">
+					<img ng-src="{{equipo.logo}}">
 				</div>
 				<div class="col-xs-6">
 					<p>{{equipo.name}}</p>
+				</div>
+				<div>
+					<button type="button" ng-click="verCursos.showTeam(equipo)" data-toggle="modal" data-target="#verEquipo">Modal</button>
 				</div>
 			</div>
 			<!-- <div>

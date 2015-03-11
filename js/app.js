@@ -64,13 +64,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('verCursos.equipo', {
       url: '/equipo',
       templateUrl:'templates/partials/verEquipo.html'
-    })
-
-    .state('verCursos.configuracion', {
-      url: '/configuracion',
-      templateUrl:'templates/partials/verConfiguracion.html'
     });
-
 });
 
 
