@@ -1,6 +1,6 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","factorHumano"]);
 
 /*Quitar el hashtag en el browser*/
 
@@ -9,11 +9,7 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
 
-    main.logOut = function () {
-      $rootScope.currentUser = {};
-      $rootScope.bLoggedIn = false;
-      $state.go('login');
-    }
+   
     
   }])
 
@@ -77,10 +73,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
     }
   })
 
-    .state('cursos', {
-      url: "/cursos",
-      templateUrl: "templates/cursos.html"
-    });
+  .state('cursos', {
+    url: "/cursos",
+    templateUrl: "templates/cursos.html"
+  })
+  .state('factorHumano', {
+    url: "/factorHumano",
+    templateUrl: "templates/factorHumano.html"
+  });
 
 
 
