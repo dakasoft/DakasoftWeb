@@ -789,6 +789,36 @@ button.close{
 }
 
 
+/*HISTORIAL DE REPORTES*/
+.divNombre{background:#722d7b;padding:2px 10px;margin-top:20px}
+.divNombre h3{color:#fff;}
+
+.divCursosAlumnos{background:#fff;padding: 20px;margin-top:0.625em }
+.divCursosAlumnos p:nth-child(-n+4){display: inline-block;margin-right:30px }
+.divCursosAlumnos b{color:#722d7b;}
+/*quita el estilo de los ul*/
+ol,ul,ul {list-style:none} 
+/*.imgLogo:last-child{margin-top:20px}*/
+
+/*Estilo del input busador*/
+.divInput{background:#722e7b;padding:10px;position:relative;border-radius:4px;}
+.divInput p{color:#fff;float:left;margin:4px 20px 0 0; }
+.txtSearcher{width:70.1754%;}
+.search2{position:absolute;top:10px;left:91.2280%;/* 520px*/ }
+
+.grow:hover
+{
+        -webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);
+}
+/*Párrafo*/
+.headingIntegrantes{margin-left:15px; }
+.ulIntegrantes{margin:0;padding:0;margin-left:15px; }
+details summary::-webkit-details-marker { display:none; }
+/*.imgLogoEquipo{margin-left:20px}*/
+
+
 /*************************************Portafolio******************************************************/
 
 .descripcion{ 
@@ -1036,3 +1066,9 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
+.tab-active{
+	background: #a32068;
+}
+.tab-no-active{
+	background: #722d7b;
+}

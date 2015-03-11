@@ -1,0 +1,40 @@
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-sm-8 col-offset-sm-2">
+			<div class="table-header divTitle">
+				<h3>Reporte de Notas</h3>
+			</div>
+			<!-- formulario de las notas -->
+			<form action="" class="form-inline formInputSearchers clearfix">
+				 <div class="form-group">
+			    	<label for="exampleInputName2">Curso</label>	
+			    	<input type="text" class="form-control txtCurso" placeholder="Curso" ng-model="notas.search.curso">
+		    	</div>
+		    	<div class="form-group divTxtNota">
+			    	   <label for="exampleInputName2">Nota</label>	
+			    	   <input type="text" class="form-control txtNota" placeholder="Nota" ng-model="notas.search.nota">
+		    	</div>
+		    	<i class="fa fa-search fa-2x pull-right"></i>
+			</form>
+			<div class="clearfix divTabla">
+				<!-- Colocar la tabla Aqui!!!XD -->
+				<table class="table table-nonfluid table-responsive table-hover">
+					<tr>
+						<th>Nombre</th>
+						<th>Curso</th>		
+						<th>Nota</th>
+					</tr>
+					<tr ng-repeat="desglose in notas | filter:notas.search:notas">
+							<td>{{desglose.nombre}}</td>
+							<td>{{desglose.curso}}</td>
+							<td>{{desglose.nota}}</td>
+					</tr>
+				</table>	
+			</div>
+		</div>
+	</div>
+</div>
+				
+				
