@@ -1,16 +1,15 @@
 [
   {
-    "profesor":{
-        "id":1,
-        "nombre":"Kiara", 
-        "apellido":"Thomas",
-        "area": "Factor Humano",
-        "grupos":[
-        {
-              "id":1,
-              "nombre":"Dakasoft1",
-              "curso":"Proyecto Web 1",
-              "rubrica":[
+    "id":1,
+    "nombrePofesor":"Kiara", 
+    "apellidoProfesor":"Thomas",
+    "area": "Factor Humano",
+    "grupos":[
+          {
+            "id":1,
+            "nombre":"Dakasoft1",
+            "curso":"Proyecto Web 1",
+             "rubrica":[
                 {
                   "nombre":"asistencia",
                   "valor":"50"
@@ -20,8 +19,9 @@
                   "valor":"50"
                 }
               ]
-        },
-        {
+
+          },//fin grupo1
+          {
               "id":2,
               "nombre":"Dakasoft2",
               "curso":"Proyecto Web 2",
@@ -35,8 +35,10 @@
                   "valor":"50"
                 }
             ]
-        }
-      ]
-    }
+        }//fin grupo2
+  ]//fin grupos
+
+
+
   }
 ]
