@@ -1,6 +1,40 @@
 [
   {
     "id": 1,
+<<<<<<< HEAD
+    "nombre": "Proyecto web 1",
+    "cursos":"[]"
+  },
+  {
+    "id": 2,
+    "nombre": "Proyecto web 2",
+     "cursos":"[]"
+  },
+  {
+    "id": 3,
+    "nombre": "Proyecto web 3",
+     "cursos":"[]"
+  },
+  {
+    "id": 4,
+    "nombre": "Proyecto software 1",
+     "cursos":"[]"
+  },
+  {
+    "id": 5,
+    "nombre": "Proyecto software 2",
+     "cursos":"[]"
+  },
+  {
+    "id": 6,
+    "nombre": "Proyecto software 3",
+     "cursos":"[]"
+  },
+  {
+    "id": 7,
+    "nombre": "Proyecto software ",
+     "cursos":"[]"
+=======
     "nombre": "Proyecto web 1"
   },
   {
@@ -26,5 +60,6 @@
   {
     "id": 7,
     "nombre": "Proyecto software 4"
+>>>>>>> master
   }
 ]
