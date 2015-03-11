@@ -40,7 +40,10 @@
       restrict: 'E',
       templateUrl: 'templates/partials/modalMiEquipo.html',
       controller: ['$scope','$http',function ($scope,$http) {
-
+        $http.get('json/rubrica.json').success(function (data) {
+          $scope.rubrica = data;
+          console.log($scope.estudianteActual);
+         });
       }],
       controllerAs: 'modalCntrl'
     };
