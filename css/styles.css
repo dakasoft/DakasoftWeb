@@ -1035,3 +1035,12 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
+/*div del título*/
+
+.divTitle{background:#722d7b;padding:4px; }
+.divTitle h3{color:#fff;text-align: center;}
+
+/*tabla*/
+.divTabla{background:#fff; }
+/*tHead*/
+th{text-align: left;background: #722d7b;color:#fff;}
