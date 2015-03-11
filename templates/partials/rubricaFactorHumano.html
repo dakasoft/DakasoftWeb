@@ -23,25 +23,25 @@
 			        	<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(carrera)"></i></a>
 			        </td>
 			    </tr>
-</table>-->
+</table> -->
 <div class="clearfix divTabla">
-	<table  class="table table-nonfluid table-responsive table-hover">
+	<table class="table table-nonfluid table-responsive table-hover">
 		<tr>
 			<th>Profesor</th>
 			<th>Grupo</th>		
 			<th>Rubrica</th>
 		</tr>
-
 		<tr ng-repeat="factor in factorHumano">
-				<td>{{factor.profesor.nombre}}</td>
-	    	
-	    	<td ng-repeat="grupo in factor.profesor.grupos">
+				<td>{{factor.profesor.nombre}} {{factor.profesor.apellido}}</td>
+		</tr>
+	   
+
+	    <!-- 	<td ng-repeat="grupo in factor.profesor.grupos">
 	    		{{grupo.nombre}}
 		    	<td ng-repeat="rubric in factor.profesor.grupos[3].rubrica[0]">
 		    		{{rubric.nombre}}
 		    	</td> 
-	    	</td>
-		</tr>
+	    	</td> -->
 		
 
 	
