@@ -37,6 +37,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: "templates/carreras.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
@@ -49,9 +52,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('historialAcademico',{
-      url: "/historialAcademico",
+    .state('historialacademico',{
+      url: "/historialacademico",
       templateUrl:"templates/historialAcademico.html",
+      controller: function ($rootScope, $state) {
+        $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
+      }
     })
 
   .state('portafolio',{
