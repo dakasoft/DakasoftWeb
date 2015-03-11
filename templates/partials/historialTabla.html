@@ -8,12 +8,16 @@
 			<img src="img/search4.png" alt="" class="pull-right search2">
 			<!-- font awesome muy pronto -->
 		</div>
+
+		
 		<ul class="list-group">
 			<li ng-repeat="estudiante in estudiantes | filter:estudiantes.search:nombre">
-				
-				<div class="divNombre">
-					<h3>{{estudiante.nombre}} {{estudiante.apellido}}</h3>
-				</div>
+				<details open>
+					<summary>
+						<div class="divNombre">
+							<h3>{{estudiante.nombre}} {{estudiante.apellido}}</h3>
+						</div>
+					</summary>
 				
 				<div class="divCursosAlumnos clearfix" ng-repeat="curso in estudiante.cursos">
 					<div class="row">
@@ -38,6 +42,7 @@
 						</div>
 					</div>
 				</div>
+				</details>
 			</li>
 		</ul>
 						 
