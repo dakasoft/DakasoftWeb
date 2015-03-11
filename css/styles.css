@@ -415,3 +415,6 @@ ol,ul,ul {list-style:none}
         -ms-transform: rotateZ(-30deg);
         transform: rotateZ(-30deg);
 }
+/*Párrafo*/
+.pIntegrantes{margin-left:15px; }
+.ulIntegrantes{margin:0;padding:0;margin-left:15px; }
