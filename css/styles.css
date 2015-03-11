@@ -1072,3 +1072,19 @@ table.selectedTable th, table.selectedTable td {
 .tab-no-active{
 	background: #722d7b;
 }
+
+
+/*estilos de reporte de notas*/
+/*divTitle*/
+.divTitle{background:#722d7b;padding:4px; }
+.divTitle h3{color:#fff;text-align: center;}
+/*Buscador para las notas*/
+.formInputSearchers{
+	background:#fff;padding:3.6363%;/*20px*/
+}
+.fa-search{color: #722d7b}
+/*Tabla estilo*/
+.divTabla{background:#fff;padding:0 10px  }
+th{text-align: left;background: #722d7b;color:#fff;}
+tr{text-align: left;}
+

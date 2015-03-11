@@ -1,17 +1,16 @@
 (function () { // define funcionalidad
-  var app = angular.module('historialAcademico', ["ui.router"]);
+  var app = angular.module('reporte', ["ui.router"]);
 
 
-  app.directive('tablaHistorial',function ($http) {
+  app.directive('tablaReporteNotas',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/historialTabla.html',
+      templateUrl: 'templates/partials/tablaReporteNotas.html',
       controller: ['$scope','$http',function ($scope,$http) {
-        $scope.estudiantes = [];
+        $scope.reportes = [];
 
-        $http.get('json/estudiantes.json').success(function (data) {
-          $scope.estudiantes = data;
-          console.log(data);
+        $http.get('json/reporteNotas.json').success(function (data) {
+          $scope.reportes = data;
         }); 
       }],
       controllerAs: 'modalCntrl'

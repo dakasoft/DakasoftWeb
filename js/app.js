@@ -1,6 +1,6 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","historialAcademico"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico"]);
         
 /*Quitar el hashtag en el browser*/
 
@@ -96,6 +96,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('cursos', {
       url: "/cursos",
       templateUrl: "templates/cursos.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
+
+    .state('reportenotas',{
+      url: "/reportenotas",
+      templateUrl:"templates/reporteNotas.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
       }
