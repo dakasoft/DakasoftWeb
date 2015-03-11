@@ -1,0 +1,30 @@
+[
+  {
+    "profesor":{
+      "nombre":"Kiara", 
+      "apellido":"Thomas",
+      "area": "Factor Humano",
+      "cursos":[
+        {
+          "nombre":"Proyecto Web 1",
+          "grupos":[
+            {
+              "nombre":"Grupo Uno",
+              "rubrica": {
+                "asistencia":50,
+                "tarea":50
+              }
+            },
+            {
+              "nombre":"Grupo Dos",
+              "rubrica": {
+                "asistencia":50,
+                "tarea":50
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
