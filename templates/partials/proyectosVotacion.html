@@ -1,0 +1,18 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="table-header">
+				<div class="col-xs-12 col-sm-12">
+					<p>Proyectos Votacion</p>
+				</div>
+			</div>
+			<table id="custom-table" ng-table="tableParams"  class="table">
+				<tr ng-repeat="proyecto in proyectoCtrl.proyectos">
+					<td data-title="'Curso'">{{proyecto.curso}}</td>
+					<td data-title="'Equipo'">{{proyecto.equipo}}</td>
+					<td data-title="'Imagen'">{{proyecto.imagen}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
