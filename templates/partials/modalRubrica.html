@@ -4,9 +4,19 @@
 <div class="modal fade" id="modalRubrica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
-        <p>Hola Soy un modal</p>
+        <div class="form-group">
+          <label for="">Nombre de la rubrica</label>  
+            <input type="text" ng-model="nombre" class="form-control input-md"> 
+        </div>
+        <div class="form-group">
+          <label for="">Valor de la rubrica</label>  
+            <input type="text" ng-model="valor" class="form-control input-md"> 
+        </div>
+
+
+        
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
