@@ -1076,7 +1076,7 @@ table.selectedTable th, table.selectedTable td {
 
 /*estilos de reporte de notas*/
 /*divTitle*/
-.divTitle{background:#722d7b;padding:4px; }
+.divTitle{background:#722d7b;padding:4px 0px; }
 .divTitle h3{color:#fff;text-align: center;}
 /*Buscador para las notas*/
 .formInputSearchers{
@@ -1085,8 +1085,8 @@ table.selectedTable th, table.selectedTable td {
 .fa-search{color: #722d7b}
 /*Tabla estilo*/
 .divTabla{background:#fff;padding:0 10px  }
-th{text-align: left;background: #722d7b;color:#fff;}
-tr{text-align: left;}
+.divTabla th{text-align: left;background: #722d7b;color:#fff;}
+.divTabla tr{text-align: left;}
 
 
 /****************************************Parametros*****************************************************/
