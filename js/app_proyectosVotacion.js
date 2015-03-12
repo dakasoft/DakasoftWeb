@@ -6,24 +6,55 @@
       restrict: 'E',
       templateUrl: 'templates/partials/proyectosVotacion.html',
       controller: ['$scope','$http','ngTableParams',function ($scope, $http, ngTableParams) {
-        var proyectosCtrl = this;
-        $http.get('json/proyectosVotacion.json').success(function (data) {
-          console.log("proyectos");
-          proyectosCtrl.proyectos = data;
+        $scope.proyectos = [];
+         $scope.usuarios = [];
+           $scope.usuariosSeleccionados = [];
+          $scope.proyectosSeleccionados = [];
+         $http.get('json/proyectos.json').success(function (data) {
+        $scope.proyectos = data;
         });
+         $http.get('json/usuarios.json').success(function (data) {
+          console.log("usuarios");
+          $scope.usuarios = data;
+        });
+         $scope.agregarProyecto = function(proyecto){
+                var ingresar = true;
+                angular.forEach($scope.proyectosSeleccionados,function(value,key){
+                  if(value.id == proyecto.id){
+                    ingresar = false;
+                  }
+                });
+                if(ingresar || $scope.proyectosSeleccionados.length == 0){
+                   $scope.proyectosSeleccionados.push(proyecto);
+
+                }
+
+          };
+
+          $scope.EliminarProyecto=function(proyecto){
+        angular.forEach($scope.proyectosSeleccionados, function(value, key) {
+            if(value.id == proyecto.id){
+              $scope.proyectosSeleccionados.splice(key, 1);
+            }
+          });
+
+    }
+
+
+   
       }],
       controllerAs: 'proyectoCtrl'
     };
   });
 
-  app.directive('modalProyectoVotacion',function ($http) {
+  app.directive('modalProyectosvotacion',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalProyectosVotacion.html',
+      templateUrl: 'templates/partials/modalProyectosvotacion.html',
       controller: ['$scope','$http',function ($scope,$http) {
         
       }],
-      controllerAs: 'modalCntrl'
+      controllerAs: 'modalProyectosvotacion'
     };
   });
   
