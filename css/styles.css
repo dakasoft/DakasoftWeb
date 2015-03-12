@@ -1035,17 +1035,17 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
+/*FACTOR HUMANO*/
+
 /*div del título*/
-
-.divTitle{background:#722d7b;padding:4px 10px;position: relative; }
+.divTitle{background:#722d7b;padding:4px 10px; }
 .divTitle h3{color:#fff;text-align: left;}
-
 /*tabla*/
-.divTabla{background:#fff; }
+.divTabla{background:#fff;margin-top:20px;}
 /*tHead*/
 th{text-align: left;background:#722d7b;color:#fff;}
 tr{text-align: left;}
-
+/*Modal estilo*/
 .tdModal a{
 	font-weight:600;
 	list-style:none;
@@ -1057,6 +1057,5 @@ tr{text-align: left;}
 	text-decoration: none;
 }
 .tdModal i{margin-right:4px;}
-
 .tdModal p{margin-right:5px;}
 .fa-plus{color:#722d7b;}
