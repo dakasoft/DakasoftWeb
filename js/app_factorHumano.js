@@ -13,11 +13,6 @@
           console.log(data);
 
         });
-        
-        
-
-        
-       
       }],
       controllerAs: 'factorH'
     };
