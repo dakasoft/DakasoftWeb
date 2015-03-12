@@ -37,6 +37,8 @@
 
     }
      $scope.editarNota = function(proyecto){
+       var notainput= angular.element('#nota');
+       notainput.removeClass( "error" );
       $scope.editableProject = proyecto;
       $scope.nota=$scope.editableProject.nota;
   
@@ -46,11 +48,18 @@
 
 
     $scope.guardarnota = function(){
-
-    $scope.editableProject.nota =angular.copy($scope.nota);
-    console.log($scope.editableProject);
-     $("#editModal").modal('hide');
+      var notainput= angular.element('#nota');
+       notainput.removeClass( "error" );
+    if($scope.nota<=100){
+      $scope.editableProject.nota =angular.copy($scope.nota);
+      console.log($scope.editableProject);
+      $("#editModal").modal('hide');
       $scope.nota="";
+
+    }
+    else{
+        notainput.addClass( "error" );
+    }
     }
 
 
