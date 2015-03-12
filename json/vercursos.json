@@ -6,21 +6,25 @@
       {
         "number":1,
         "attendant": {
+          "id":1003,
           "name":"Kiara",
           "lastname":"Thomas"
         },
         "teachers":[
           {
+            "id":1001,
             "name":"Alvaro", 
             "lastname":"Cordero",
             "area": "Proceso"
           },
           {
+            "id":1002,
             "name":"Alonso", 
             "lastname":"Guevara",
             "area": "Tecnica"
           },
           {
+            "id":1003,
             "name":"Kiara", 
             "lastname":"Thomas",
             "area": "Factor Humano"
@@ -28,24 +32,32 @@
         ],
         "students":[
           {
+            "id":3001,
             "name":"Carolina",
             "lastname":"Azofeifa",
-            "role":"Calidad"
+            "role":"Calidad",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
-            "role":"Desarrollo"
+            "role":"Desarrollo",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
-            "role":"Soporte y Configuración"
+            "role":"Soporte y Configuración",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
-            "role":"Coordinación"
+            "role":"Coordinación",
+            "team":""
           }
         ],
         "entregas": [
@@ -66,30 +78,76 @@
         ],
         "teams":[
           {
+            "id":"DK2015",
             "name":"DakaSoft",
             "logo":"img/logomovile.png",
             "mission":"Mision del Equipo XD",
             "vision":"Vision del Equipo",
             "integrantes": [
               {
+                "id":3001,
                 "name":"Carolina",
                 "lastname":"Azofeifa",
-                "role":"Calidad"
+                "role":"Calidad",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
-                "role":"Desarrollo"
+                "role":"Desarrollo",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
-                "role":"Soporte y Configuración"
+                "role":"Soporte y Configuración",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
-                "role":"Coordinación"
+                "role":"Coordinación",
+                "team":""
+              }
+            ]
+          },
+          {
+            "id":"O2015",
+            "name":"Oni",
+            "logo":"img/logomovile.png",
+            "mission":"Mision del Equipo XD",
+            "vision":"Vision del Equipo",
+            "integrantes": [
+              {
+                "id":2001,
+                "name":"Carolina",
+                "lastname":"Algo",
+                "role":"Calidad",
+                "team":""
+              },
+              {
+                "id":2002,
+                "name":"Diego",
+                "lastname":"Vargas",
+                "role":"Desarrollo",
+                "team":""
+              },
+              {
+                "id":2003,
+                "name":"Jorge",
+                "lastname":"Algo",
+                "role":"Soporte y Configuración",
+                "team":""
+              },
+              {
+                "id":2004,
+                "name":"Irene",
+                "lastname":"Araya",
+                "role":"Coordinación",
+                "team":""
               }
             ]
           }
@@ -98,21 +156,25 @@
       {
         "number":2,
         "attendant": {
+          "id":1002,
           "name":"Alonso",
           "lastname":"Guevara"
         },
         "teachers":[
           {
+            "id":1001,
             "name":"Alvaro", 
             "lastname":"Cordero",
             "area": "Proceso"
           },
           {
+            "id":1002,
             "name":"Alonso", 
             "lastname":"Guevara",
             "area": "Tecnica"
           },
           {
+            "id":1003,
             "name":"Kiara", 
             "lastname":"Thomas",
             "area": "Factor Humano"
@@ -120,24 +182,32 @@
         ],
         "students":[
           {
+            "id":3001,
             "name":"Carolina",
             "lastname":"Azofeifa",
-            "role":"Calidad"
+            "role":"Calidad",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
-            "role":"Desarrollo"
+            "role":"Desarrollo",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
-            "role":"Soporte y Configuración"
+            "role":"Soporte y Configuración",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
-            "role":"Coordinación"
+            "role":"Coordinación",
+            "team":""
           }
         ],
         "entregas": [
@@ -158,30 +228,76 @@
         ],
         "teams":[
           {
+            "id":"DK2015",
             "name":"DakaSoft",
             "logo":"img/logomovile.png",
             "mission":"Mision del Equipo XD",
             "vision":"Vision del Equipo",
             "integrantes": [
               {
+                "id":3001,
                 "name":"Carolina",
                 "lastname":"Azofeifa",
-                "role":"Calidad"
+                "role":"Calidad",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
-                "role":"Desarrollo"
+                "role":"Desarrollo",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
-                "role":"Soporte y Configuración"
+                "role":"Soporte y Configuración",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
-                "role":"Coordinación"
+                "role":"Coordinación",
+                "team":""
+              }
+            ]
+          },
+          {
+            "id":"O2015",
+            "name":"Oni",
+            "logo":"img/logomovile.png",
+            "mission":"Mision del Equipo XD",
+            "vision":"Vision del Equipo",
+            "integrantes": [
+              {
+                "id":2001,
+                "name":"Carolina",
+                "lastname":"Algo",
+                "role":"Calidad",
+                "team":""
+              },
+              {
+                "id":2002,
+                "name":"Diego",
+                "lastname":"Vargas",
+                "role":"Desarrollo",
+                "team":""
+              },
+              {
+                "id":2003,
+                "name":"Jorge",
+                "lastname":"Algo",
+                "role":"Soporte y Configuración",
+                "team":""
+              },
+              {
+                "id":2004,
+                "name":"Irene",
+                "lastname":"Araya",
+                "role":"Coordinación",
+                "team":""
               }
             ]
           }
@@ -196,21 +312,25 @@
       {
         "number":1,
         "attendant": {
+          "id":1001,
           "name":"Alvaro",
           "lastname":"Cordero"
         },
         "teachers":[
           {
+            "id":1001,
             "name":"Alvaro", 
             "lastname":"Cordero",
             "area": "Proceso"
           },
           {
+            "id":1002,
             "name":"Alonso", 
             "lastname":"Guevara",
             "area": "Tecnica"
           },
           {
+            "id":1003,
             "name":"Kiara", 
             "lastname":"Thomas",
             "area": "Factor Humano"
@@ -218,24 +338,32 @@
         ],
         "students":[
           {
+            "id":3001,
             "name":"Carolina",
             "lastname":"Azofeifa",
-            "role":"Calidad"
+            "role":"Calidad",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
-            "role":"Desarrollo"
+            "role":"Desarrollo",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
-            "role":"Soporte y Configuración"
+            "role":"Soporte y Configuración",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
-            "role":"Coordinación"
+            "role":"Coordinación",
+            "team":""
           }
         ],
         "entregas": [
@@ -256,30 +384,76 @@
         ],
         "teams":[
           {
+            "id":"DK2015",
             "name":"DakaSoft",
             "logo":"img/logomovile.png",
             "mission":"Mision del Equipo XD",
             "vision":"Vision del Equipo",
             "integrantes": [
               {
+                "id":3001,
                 "name":"Carolina",
                 "lastname":"Azofeifa",
-                "role":"Calidad"
+                "role":"Calidad",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
-                "role":"Desarrollo"
+                "role":"Desarrollo",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
-                "role":"Soporte y Configuración"
+                "role":"Soporte y Configuración",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
-                "role":"Coordinación"
+                "role":"Coordinación",
+                "team":""
+              }
+            ]
+          },
+          {
+            "id":"O2015",
+            "name":"Oni",
+            "logo":"img/logomovile.png",
+            "mission":"Mision del Equipo XD",
+            "vision":"Vision del Equipo",
+            "integrantes": [
+              {
+                "id":2001,
+                "name":"Carolina",
+                "lastname":"Algo",
+                "role":"Calidad",
+                "team":""
+              },
+              {
+                "id":2002,
+                "name":"Diego",
+                "lastname":"Vargas",
+                "role":"Desarrollo",
+                "team":""
+              },
+              {
+                "id":2003,
+                "name":"Jorge",
+                "lastname":"Algo",
+                "role":"Soporte y Configuración",
+                "team":""
+              },
+              {
+                "id":2004,
+                "name":"Irene",
+                "lastname":"Araya",
+                "role":"Coordinación",
+                "team":""
               }
             ]
           }
@@ -288,21 +462,25 @@
       {
         "number":2,
         "attendant": {
+          "id":1003,
           "name":"Kiara",
           "lastname":"Thomas"
         },
         "teachers":[
           {
+            "id":1001,
             "name":"Alvaro", 
             "lastname":"Cordero",
             "area": "Proceso"
           },
           {
+            "id":1002,
             "name":"Alonso", 
             "lastname":"Guevara",
             "area": "Tecnica"
           },
           {
+            "id":1003,
             "name":"Kiara", 
             "lastname":"Thomas",
             "area": "Factor Humano"
@@ -310,24 +488,32 @@
         ],
         "students":[
           {
+            "id":3001,
             "name":"Carolina",
             "lastname":"Azofeifa",
-            "role":"Calidad"
+            "role":"Calidad",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
-            "role":"Desarrollo"
+            "role":"Desarrollo",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
-            "role":"Soporte y Configuración"
+            "role":"Soporte y Configuración",
+            "team":""
           },
           {
+            "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
-            "role":"Coordinación"
+            "role":"Coordinación",
+            "team":""
           }
         ],
         "entregas": [
@@ -348,30 +534,76 @@
         ],
         "teams":[
           {
+            "id":"DK2015",
             "name":"DakaSoft",
             "logo":"img/logomovile.png",
             "mission":"Mision del Equipo XD",
             "vision":"Vision del Equipo",
             "integrantes": [
               {
+                "id":3001,
                 "name":"Carolina",
                 "lastname":"Azofeifa",
-                "role":"Calidad"
+                "role":"Calidad",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
-                "role":"Desarrollo"
+                "role":"Desarrollo",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
-                "role":"Soporte y Configuración"
+                "role":"Soporte y Configuración",
+                "team":""
               },
               {
+                "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
-                "role":"Coordinación"
+                "role":"Coordinación",
+                "team":""
+              }
+            ]
+          },
+          {
+            "id":"O2015",
+            "name":"Oni",
+            "logo":"img/logomovile.png",
+            "mission":"Mision del Equipo XD",
+            "vision":"Vision del Equipo",
+            "integrantes": [
+              {
+                "id":2001,
+                "name":"Carolina",
+                "lastname":"Algo",
+                "role":"Calidad",
+                "team":""
+              },
+              {
+                "id":2002,
+                "name":"Diego",
+                "lastname":"Vargas",
+                "role":"Desarrollo",
+                "team":""
+              },
+              {
+                "id":2003,
+                "name":"Jorge",
+                "lastname":"Algo",
+                "role":"Soporte y Configuración",
+                "team":""
+              },
+              {
+                "id":2004,
+                "name":"Irene",
+                "lastname":"Araya",
+                "role":"Coordinación",
+                "team":""
               }
             ]
           }

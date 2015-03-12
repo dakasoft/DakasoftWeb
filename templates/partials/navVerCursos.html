@@ -2,13 +2,13 @@
 	<div>
 		<ul class="nav nav-justified nav-cursos-user">
 		  <li>
-		  	<a ui-sref="verCursos.entregas" ng-click="courseDisplayToggle(verCursos.bCourseDisplay, 'main')">{{curso.name}} Grupo: {{grupo.number}}</a>
+		  	<a ng-click="verCursos.bCourseDisplay = courseDisplayToggle('main')" ui-sref="verCursos.entregas">{{curso.name}} Grupo: {{grupo.number}}</a>
 		  </li>
 		  <li>
-		  	<a ui-sref="verCursos.estudiantes" ng-click="courseDisplayToggle(verCursos.bCourseDisplay, 'students')">Estudiantes</a>
+		  	<a ng-click="verCursos.bCourseDisplay = courseDisplayToggle('students')" ui-sref="verCursos.estudiantes">Estudiantes</a>
 		  </li>
 		  <li>
-		  	<a ui-sref="verCursos.equipo" ng-click="courseDisplayToggle(verCursos.bCourseDisplay, 'team')">Equipo</a>
+		  	<a ng-click="verCursos.bCourseDisplay = courseDisplayToggle('team')" ui-sref="verCursos.equipo">Equipo</a>
 		  </li>
 		  <li>
 		  	<a ng-click="verCursos.showTeam(equipo)" data-toggle="modal" data-target="#verConfig">Config</a>

@@ -1,60 +1,54 @@
-<div class="modal fade" id="nuevoGrupoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalNuevoEquipo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-
     <div class="modal-content">    
-    <div class="modal-header">
-      <h4>Nuevo grupo</h4>
-    </div>
-        <button type="button" class="close" data-dismiss="modal" ng-click="cerrarModalGrupo()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-header">
+        <h4 ng-bind="modalTeam.name || 'Nuevo Equipo'"></h4>
+        <button type="button" class="close" data-dismiss="modal" ng-click="closeModalGrupo();"aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <div class="modal-body">
-        <form class="form-vertical">
+        <form class="form-vertical" ng-submit="saveNewTeam()">
           <div class="col-xs-12 col-sm-6">
             <div class="form-group">
-              <label for="nombreGrupo">Nombre Grupo</label>
-              <input type="text" class="form-control" id="nombreGrupo" ng-model="nombreGrupo">
+              <label for="modalTeamID">ID del Equipo</label>
+              <input type="text" class="form-control" id="modalTeamID" ng-model="modalTeam.id">
             </div>
-              <div class="form-group">
-                <label for="profesor">Profesor</label>  
-                <select id="profesor" ng-model="profesor" ng-init="profesor" class="form-control plus-add" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
-                  <option value="">--Profesor--</option>
-                </select>
-                <i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarProfesor()"></i>
-              </div>
-              <div class="form-group">
-                <label for="encargado">Profesor encargado</label> 
-                <select id="encargado" class="form-control" ng-model="encargado" ng-init="encargado" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
-                  <option value="">--Profesor--</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="cursos">Curso</label>  
-                <select id="cursos" class="form-control" ng-model="curso" ng-init="curso" ng-options="obj.id as obj.nombre for obj in cursos">
-                  <option value="">--Cursos--</option>
-                </select>
-              </div>      
+            <div class="form-group">
+              <label for="modalTeamName">Nombre Equipo</label>
+              <input type="text" class="form-control" id="modalTeamName" ng-model="modalTeam.name">
+            </div>
+            <div class="form-group">
+              <table id="custom-table" class="table selectedTable">
+                <tr>
+                  <th colspan="2" class="search-parent">
+                    Nombre<input type="text" ng-model="searchStudent" class="form-control search"><i class="fa fa-search search-icon"></i>
+                  </th>
+                </tr>
+                <tr ng-repeat="estudiante in users | filter:'estudiante' | filter:'true' | filter: searchStudent">
+                  <td>{{estudiante.name}} {{estudiante.lastname}}</td>
+                  <td>
+                    <i class="fa fa-plus fa-lg plus-add-icon pull-right" ng-click="addStudent(estudiante)"></i>
+                  </td>
+                </tr>
+              </table>               
+            </div>
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6">
-              <ul class="list-group listaProfesores">
-                <li class="list-group-item list-g-header">Profesores</li>
-                <li class="list-group-item" ng-repeat="profesorS in profesoresSeleccionados">
-                  {{ profesorS.nombre }} {{ profesorS.apellido }}
-                  <select class="form-control li-select" ng-model="profesorS.area" ng-init="profesorS.area" ng-change="cambiarArea(profesorS,profesorS.area)" ng-init="profesorS.area" ng-options="obj.id as obj.nombre for obj in areasG">
-                      <option value="">--Área--</option>
-                  </select>
-                  <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(profesorS)"></i>
+              <ul class="list-group listaEstudiantes">
+                <li class="list-group-item list-g-header">Integrantes</li>
+                <li class="list-group-item" ng-repeat="integrante in modalTeam.integrantes track by $index">
+                  {{integrante.name}} {{integrante.lastname}}<i class="fa fa-times-circle pull-right" ng-click="removeStudent(integrante)"></i>
                 <li>
               </ul>
             </div>
           </div>
           <div class="row modal-footer">
-            <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+            <button type="submit" class="btn btn-custom btn-sm">Guardar</button>
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>
-
-
