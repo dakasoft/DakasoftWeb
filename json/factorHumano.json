@@ -11,11 +11,11 @@
             "curso":"Proyecto Web 1",
              "rubrica":[
                 {
-                  "nombre":"asistencia",
+                  "nombre":"Asistencia",
                   "valor":"50"
                 },
                 {
-                  "nombre":"asistencia",
+                  "nombre":"reponsabilidad",
                   "valor":"50"
                 }
               ]
@@ -27,11 +27,11 @@
               "curso":"Proyecto Web 2",
               "rubrica":[
                 {
-                  "nombre":"asistencia",
+                  "nombre":"Asistencia",
                   "valor":"50"
                 },
                 {
-                  "nombre":"asistencia",
+                  "nombre":"reponsabilidad",
                   "valor":"50"
                 }
             ]
@@ -39,3 +39,4 @@
   ]
 }
 ]
+// poner en el template el modal
