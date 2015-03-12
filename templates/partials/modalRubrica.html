@@ -21,18 +21,23 @@
                 <input type="text" ng-model="apellido" class="form-control input-md"> 
               </div>
             </div>
-           <div class="col-xs-12 col-sm-6">
-               <table id="cursos-table" ng-table class="table">
+          
+               <table id="factor-table" ng-table="tableParams"  class="table tableFactor">
+              
                 <tr ng-repeat="factor in factorHumano">
-                    <td data-title="'Rúbrica'">{{factor.grupos[0].rubrica[0].nombre}}</td>
+                    <td data-title="'Nombre'">{{factor.grupos[0].rubrica[0].nombre}}</td>
                     <td data-title="'Valor'">{{factor.grupos[0].rubrica[0].valor}}</td>
+                    
                     <td data-title="'Acciones'">
-                       
-                        <a><i class="fa fa-times-circle fa-2x" ng-click="borrar(curso)"></i></a>
+                      <a><i class="fa fa-times-circle fa-2x" ng-click=""></i></a>
                     </td>
+                
+                </tr>
+                <tr ng-repeat="factor in factorHumano">
+                  <td>{{factor.grupos[0].rubrica[0].nombre}}</td>
                 </tr>
             </table>
-            </div>
+           
         </form>
             
            
