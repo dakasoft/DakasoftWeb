@@ -1,28 +1,17 @@
 <div class="single-nav" ng-repeat="grupo in curso.groups">
-	<div class="row" ng-click="verCursos.bCourseDisplay = !verCursos.bCourseDisplay">
-		<div class="col-xs-6">
-			<p class="">{{curso.name}}</p>
-		</div>
-		<div class="col-xs-3">
-			<p>{{grupo.number}}</p>
-		</div>
-		<div class="col-xs-3">
-			<p>{{grupo.attendant.name}} {{grupo.attendant.lastname}}</p>
-		</div>
-	</div>
-	<div ng-show="verCursos.bCourseDisplay">
+	<div>
 		<ul class="nav nav-justified nav-cursos-user">
 		  <li>
-		  	<a ui-sref="verCursos.entregas">Entregas</a>
+		  	<a ui-sref="verCursos.entregas" ng-click="courseDisplayToggle(verCursos.bCourseDisplay, 'main')">{{curso.name}} Grupo: {{grupo.number}}</a>
 		  </li>
 		  <li>
-		  	<a ui-sref="verCursos.estudiantes">Estudiantes</a>
+		  	<a ui-sref="verCursos.estudiantes" ng-click="courseDisplayToggle(verCursos.bCourseDisplay, 'students')">Estudiantes</a>
 		  </li>
 		  <li>
-		  	<a ui-sref="verCursos.equipo">Equipo</a>
+		  	<a ui-sref="verCursos.equipo" ng-click="courseDisplayToggle(verCursos.bCourseDisplay, 'team')">Equipo</a>
 		  </li>
 		  <li>
-		  	<a ng-click="verCursos.showTeam(equipo)" data-toggle="modal" data-target="#verEquipo">Config</a>
+		  	<a ng-click="verCursos.showTeam(equipo)" data-toggle="modal" data-target="#verConfig">Config</a>
 		  </li>
 		</ul>
 	</div>

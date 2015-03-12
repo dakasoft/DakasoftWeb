@@ -1,7 +1,12 @@
 <modal-nueva-entrega></modal-nueva-entrega>
 <div class="container-fluid equipoContent">
 	<div class="row">
-		<button type="button" class="btn btn-danger pull-right" data-toggle="modal" data-target="#verNuevaEntrega">Add</button>
+		<div class="col-xs-6 col-xs-offset-2">
+			<p>Profesor Encargado: {{grupo.attendant.name}} {{grupo.attendant.lastname}}</p>
+		</div>
+		<div class="col-xs-4">
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#verNuevaEntrega">Nueva Entrega</button>
+		</div>
 	</div>
 	<div class="row" ng-repeat="entrega in grupo.entregas">
 		<div class="col-xs-6 col-xs-offset-3">

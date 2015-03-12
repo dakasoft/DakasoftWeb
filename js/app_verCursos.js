@@ -8,6 +8,7 @@
     $scope.modalTeam = {}
 
     verCursos.bCourseDisplay = false;
+    verCursos.currentView = '';
     $rootScope.courses = {};
 
     $http.get('json/vercursos.json').success(function (data) {
@@ -15,8 +16,18 @@
       $rootScope.courses = data;
     });
 
-    verCursos.showTeam = function (pTeam) {
+    $scope.showTeam = function (pTeam) {
       $scope.modalTeam = pTeam;
+    }
+
+    $scope.courseDisplayToggle = function (pView, pViewSwitch) {
+      if (pViewSwitch === verCursos.currentView) {
+        alert('potato');
+        pView = false;
+      } else {
+        verCursos.currentView = pViewSwitch;
+        pView = true;
+      }
     }
 
   }]);
@@ -47,6 +58,17 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/modalVerConfig.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+
+      }],
+      controllerAs: 'modalCntrl'
+    };
+  });
+
+  app.directive('modalVerRubrica',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalVerRubrica.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],
