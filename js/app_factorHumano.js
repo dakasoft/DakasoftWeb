@@ -17,7 +17,18 @@
       controllerAs: 'factorH'
     };
   });
-
+  // ModalDialog
+  app.directive('modalRubrica',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalRubrica.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+       
+        
+      }],
+        controllerAs: 'modalC'
+    };
+});
    
        
   
