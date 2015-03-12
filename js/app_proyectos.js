@@ -7,6 +7,7 @@
       templateUrl: 'templates/partials/proyectosTabla.html',
       controller: ['$scope','$http','ngTableParams',function ($scope, $http, ngTableParams) {
         $scope.proyectos = [];
+
          $scope.nota = "";
         $scope.proyectosSeleccionados = [];
           $scope.editableProject = "";
@@ -43,7 +44,9 @@
 
     }
 
+
     $scope.guardarnota = function(){
+
     $scope.editableProject.nota =angular.copy($scope.nota);
     console.log($scope.editableProject);
      $("#editModal").modal('hide');
@@ -55,6 +58,10 @@
       controllerAs: 'proyectoCtrl'
     };
   });
+
+
+
+
 
   app.directive('modalProyecto',function ($http) {
     return {
