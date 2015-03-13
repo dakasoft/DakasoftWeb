@@ -23,14 +23,8 @@
           var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
           var newId =  lastRubro.id+1;
           
-          // if (lastRubro.id === 0) {
-          //     newId.length +1
-          // }
-          // console.log(lastRubro)
-          console.log($scope.rubrosSeleccionados)
+          // console.log($scope.rubrosSeleccionados)
           // console.log(lastRubro.id)
-          
-          
           if ($scope.rubrosSeleccionados === 0) {
              console.log('vacio 2')
           }
