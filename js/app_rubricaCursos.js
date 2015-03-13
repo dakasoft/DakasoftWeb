@@ -1,6 +1,6 @@
 (function () { // define funcionalidad
   var app = angular.module('rubricaCursos', ["ui.router"]);
-
+  
   app.directive('rubricaCursos',function ($http) {
     return {
       restrict: 'E',
