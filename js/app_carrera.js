@@ -6,10 +6,15 @@
       restrict: 'E',
       templateUrl: 'templates/partials/carrerasTabla.html',
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+        var inputN = angular.element(".inputNombre");
+        var inputC = angular.element(".inputCodigo");
+        var mensaje1 = angular.element(".mensaje1");
+        var mensaje2 = angular.element(".mensaje2");
         $scope.carrera = [];
         $scope.cursos = [];
         $scope.cursosSeleccionados = [];
         $scope.editableC = "";
+        $scope.temporal = "";
         $http.get('json/carreras.json').success(function (data) {
           $scope.carreras = data;
 
@@ -18,7 +23,8 @@
           $scope.cursos = data;
         });
          $scope.editar = function(carrera){
-
+            inputC.removeClass("error");
+            mensaje2.css("display","none");
           $scope.editableC = carrera;
           $scope.nombre = carrera.nombre;
           $scope.codigo = carrera.cod;
@@ -28,7 +34,7 @@
         $scope.borrar = function(carrera){
           
           angular.forEach($scope.carreras, function(value, key) {
-            if(value.id == carrera.id){
+            if(value.id == $scope.temporal.id){
                console.log(value.id);
               $scope.carreras.splice(key, 1);
             }
@@ -45,6 +51,8 @@
         };
 
         $scope.agregar = function(){
+           inputC.removeClass("error");
+            mensaje2.css("display","none");
           $scope.cursosSeleccionados = [];
           $scope.editableC = "";
           $scope.nombre = "";
@@ -73,16 +81,23 @@
           }
         };
 
+        $scope.eliminarTemporal = function(carrera){
+                $scope.temporal = carrera;
+        }
+
            $scope.guardar = function(){
-            if(!$scope.nombre){ 
-               var inputN = angular.element(".inputNombre");
-               inputN.css("border","1px solid red");
-
+            if(!$scope.nombre || !$scope.codigo){  
+               if(!$scope.codigo){
+               inputC.addClass("error");
+               mensaje2.css("display","block");
+                }
+               if(!$scope.nombre){
+               inputN.addClass("error");
+               mensaje1.css("display","block");
+               }
 
             }
-            if(!$scope.codigo){
-
-            }
+          
             else{
                 if($scope.editableC != ""){
                  $scope.editableC.nombre = $scope.nombre;
@@ -121,6 +136,18 @@
         controllerAs: 'modalC'
     };
 });
+
+
+      app.directive('modalConfirm',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalConfirmaciont.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+        
+      }],
+      controllerAs: 'modalConfirm'
+    };
+  });
 
 
 })();
