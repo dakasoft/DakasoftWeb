@@ -21,7 +21,14 @@
         $scope.agregarRubro = function(){
 
           var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
-          var newId =  lastRubro.id+1;
+          
+          var newId = 1;
+          if(lastRubro != null){
+             newId = lastRubro.id + 1;
+          }
+
+          //var newId = lastRubro.id + 1 : 1;
+          // var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
           
           // console.log($scope.rubrosSeleccionados)
           // console.log(lastRubro.id)
@@ -29,7 +36,7 @@
           //    console.log('vacio 2')
           // }
           
-          console.log("rubroNombre");
+          // console.log("rubroNombre");
           $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
           $scope.rubroNombre = "";
           $scope.rubroValor = "";
@@ -42,6 +49,8 @@
               $scope.rubrosSeleccionados.splice(key, 1);
             }
           });
+
+          console.log($scope.rubrosSeleccionados);
 
         };
 
