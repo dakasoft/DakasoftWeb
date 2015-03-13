@@ -58,7 +58,19 @@
               $scope.cursoId = value.id;
             }
           });
-          $scope.cursosSeleccionados.push({id: $scope.cursoId, nombre:  $scope.curso });
+          if($scope.cursos){
+            var ingresar = true;
+            angular.forEach($scope.cursosSeleccionados,function(value,key){
+              if(value.id == $scope.cursoId){
+                ingresar = false;
+              }
+               });
+            if(ingresar || $scope.profesoresSeleccionados.length == 0){
+               $scope.cursosSeleccionados.push({id: $scope.cursoId, nombre:  $scope.curso });
+              $scope.profesor = "";
+            }
+
+          }
         };
 
            $scope.guardar = function(){
