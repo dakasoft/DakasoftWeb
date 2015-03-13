@@ -19,8 +19,12 @@
         };
 
         $scope.agregarRubro = function(){
+
+          var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
+          var newId =  lastRubro.id+1;
+          
           console.log("rubroNombre");
-          $scope.rubrosSeleccionados.push({ nombre: $scope.rubroNombre, valor:$scope.rubroValor });
+          $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
           $scope.rubroNombre = "";
           $scope.rubroValor = "";
         };
@@ -28,7 +32,7 @@
         $scope.eliminarRubro = function(rubro){
 
           angular.forEach($scope.rubrosSeleccionados, function(value, key) {
-            if(value.$$hashkey == rubro.$$hashkey){
+            if(value.id == rubro.id){
               $scope.rubrosSeleccionados.splice(key, 1);
             }
           });
