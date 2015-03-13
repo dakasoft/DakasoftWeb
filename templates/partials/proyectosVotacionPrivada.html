@@ -1,5 +1,29 @@
-<div id="owl-demo" class="owl-carousel">
-  <div><img src="img/project1.jpg"></div>
-	<div><img src="img/project1.jpg"></div>
-	<div><img src="img/project1.jpg"></div>
-</div>
+<div ng-repeat="proyecto in proyectosElegidos">
+	<div class="col-xs-12 col-sm-4">
+		<div class="item-votacion">
+			<div class="item-votacion-header">
+				<h4>{{proyecto.equipo}}</h4>
+			</div>
+			<div class="ih-item square new effect6 from_top_and_bottom">
+				<a data-toggle="modal" ng-click="seleccionar(proyecto)" data-target="#editModalV">
+					<div class="img"><img class="img-responsive" ng-src="{{proyecto.imagen}}" alt=""></div>
+			     	<div class="info"> <h3>{{ proyecto.nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
+			   </a>
+			</div>
+			<div class="item-votacion-estrellas">
+				<img class="star" ng-src="{{currentRate1(proyecto)}}" ng-click="addRate(proyecto)">
+				<img class="star" ng-src="{{currentRate2(proyecto)}}" ng-click="addRate(proyecto)">
+				<img class="star" ng-src="{{currentRate3(proyecto)}}" ng-click="addRate(proyecto)">
+				<img class="star" ng-src="{{currentRate4(proyecto)}}" ng-click="addRate(proyecto)">
+				<img class="star" ng-src="{{currentRate5(proyecto)}}" ng-click="addRate(proyecto)">
+			</div>
+			<div class="item-votacion-contenido">
+				<p ng-repeat="estudiante in proyecto.integrantes">{{estudiante}}</p>		
+			</div>
+			<div class="item-votacion-footer"><button type="submit" class="btn btn-custom btn-sm" ng-click="enviarVotacion(proyecto)">Enviar votación</button></div>
+
+		</div>
+		
+	</div>	
+</div> 
+

@@ -4,7 +4,9 @@
         "nombre":"Proyecto web 1",
         "equipo":"Dakasoft",
         "logoEquipo":"img/logoEquipo1.png",
-        "imagen":"img/project1.jpg",
+        "imagen":"img/proyecto1foto.jpg",
+        "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
+        "rate":0,
         "integrantes":[
             "Karolina Munnoz",
             "Luis Daniel Morales",
@@ -17,7 +19,9 @@
         "nombre":"Proyecto web 2",
         "equipo":"Worldsoft",
         "logoEquipo":"img/logoEquipo2.png",
-        "imagen":"img/project2.jpg",
+        "imagen":"img/proyecto2foto.jpg",
+        "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
+        "rate":0,
         "integrantes":[
             "Karolina Munnoz",
             "Luis Daniel Morales",
@@ -30,7 +34,9 @@
 		"nombre":"Proyecto software 2",
         "equipo":"Softlogic",
         "logoEquipo":"img/logoEquipo1.png",
-        "imagen":"img/project2.jpg",
+        "imagen":"img/proyecto3foto.jpg",
+        "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
+        "rate":0,
         "integrantes":[
             "Maria Munnoz",
             "Daniel Morales",
@@ -43,7 +49,9 @@
         "nombre":"Proyecto software 1",
         "equipo":"Checksoft",
         "logoEquipo":"img/logoEquipo3.png",
-        "imagen":"img/project2.jpg",
+        "imagen":"img/proyecto1foto.jpg",
+        "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
+        "rate":0,
         "integrantes":[
             "Manuel Munnoz",
             "Luis Morales",

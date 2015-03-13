@@ -394,8 +394,7 @@ button.close{
 .mainContent{
 	margin-bottom: 60px;
 }
-<<<<<<< HEAD
-*basic styles*/
+
 /*keep the footer in the bottom of the page*/
 html,
 body {
@@ -407,6 +406,7 @@ body {
 .wrapper {
 	min-height:100%;
 	position:relative;
+	padding-bottom: 60px;
 }
 
 #footer {
@@ -1126,20 +1126,52 @@ table.selectedTable th, table.selectedTable td {
 	padding:20px;
 }
 
-#owl-demo .owl-item div{
-  padding:5px;
+
+/* item votacion*/
+.item-votacion-header{
+	background-color: #722d7b;
+	color:white;
+	padding: 1%;
+	text-align: center;
 }
-#owl-demo .owl-item img{
-  display: block;
-  height: auto;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+
+.item-votacion{
+	height: 420px;
+	background: white;
+	margin-bottom: 20px;
 }
-#owl-demo{
-	width: 410px;
+
+.item-votacion-estrellas{
+	text-align: center;
+	height: 40px;
+	background: rgba(211, 210, 210, 0.54);
+	border-radius: 5px;
+	width: 95%;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: auto;
 }
-#owl-demo .owl-item img{
-width: 400px;
-height:200px;
+
+.item-votacion-footer{
+	margin-top: 15px;
+	text-align: center;
+}
+
+.item-votacion-contenido p{
+
+	margin: 2px 0 2px 20px;
+}
+
+.item-votacion-contenido{
+	margin-left: 20px;
+	color: #722d7b;
+}
+
+.star{
+	width: 35px
+}
+
+.item-votacion .square{
+	width: 100% !important;
+	margin: 0 !important;
 }
