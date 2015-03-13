@@ -74,23 +74,36 @@
         };
 
            $scope.guardar = function(){
-          if($scope.editableC != ""){
-            $scope.editableC.nombre = $scope.nombre;
-            $scope.editableC.cod = $scope.codigo;
-            $scope.editableC.cursos = $scope.cursosSeleccionados;
-          }else{
-            var lastUser = $scope.carreras[$scope.carreras.length - 1];
-            if(lastUser){
-              var newId =  lastUser.id+1; 
-            }else{ 
-              var newId = 1
+            if(!$scope.nombre){ 
+               var inputN = angular.element(".inputNombre");
+               inputN.css("border","1px solid red");
+
+
             }
+            if(!$scope.codigo){
+
+            }
+            else{
+                if($scope.editableC != ""){
+                 $scope.editableC.nombre = $scope.nombre;
+                $scope.editableC.cod = $scope.codigo;
+                $scope.editableC.cursos = $scope.cursosSeleccionados;
+             }
+            else{
+                 var lastUser = $scope.carreras[$scope.carreras.length - 1];
+                   if(lastUser){
+                       var newId =  lastUser.id+1; 
+                     }
+                   else{ 
+                    var newId = 1
+                    }
             /* each temporal para mostrar rol*/
-            $scope.carreras.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
-            });
+                $scope.carreras.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
+                  });
           
-          }
-        $("#editModal").modal('hide');
+              }
+                $("#editModal").modal('hide');
+          } 
         };
       }],
       controllerAs: 'carreras'
