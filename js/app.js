@@ -1,6 +1,6 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","factorHumano"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","factorHumano","rubricaCursos"]);
 
 /*Quitar el hashtag en el browser*/
 
@@ -80,6 +80,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
   .state('factorhumano', {
     url: "/factorhumano",
     templateUrl: "templates/factorHumano.html"
+  })
+  .state('rubricacursos', {
+    url: "/rubricacursos",
+    templateUrl: "templates/rubricaCursos.html"
   });
 
 

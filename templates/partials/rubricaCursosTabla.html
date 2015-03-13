@@ -1,0 +1,23 @@
+<div class="container-fluid">
+<div class="divTitle table-header">
+	<h3>Rubrica Cursos</h3>
+</div>
+<div class="clearfix divTabla" >
+	<table class="table table-nonfluid table-hover">
+		<tr>
+			<th>Grupo</th>
+			<th>Curso</th>		
+			<th>Acciones</th>
+		</tr>
+		<tr ng-repeat="factor in factorHumano[0].grupos">
+		  <td>{{factor.nombre}}</td>
+		  <td>{{factor.curso}}</td>
+			<td class="tdModal">
+				 <a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(factor)">
+					<i class="fa fa-plus fa-lg"></i>Editar
+				 </a>
+			</td>
+		</tr>
+	</table>
+</div><!-- fin divTabla -->
+</div><!-- finContainer -->
