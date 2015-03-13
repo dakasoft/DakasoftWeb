@@ -7,6 +7,7 @@
       templateUrl: 'templates/partials/proyectosVotacion.html',
       controller: ['$scope','$http','ngTableParams',function ($scope, $http, ngTableParams) {
         $scope.proyectos = [];
+        $scope.proyectob = "";
          $scope.usuarios = [];
            $scope.usuariosSeleccionados = [];
           $scope.proyectosSeleccionados = [];
@@ -31,15 +32,22 @@
 
           };
 
-          $scope.EliminarProyecto=function(proyecto){
+          $scope.EliminarProyecto=function(){
+            console.log($scope.proyectob);
           
         angular.forEach($scope.proyectosSeleccionados, function(value, key) {
-            if(value.id == proyecto.id){
+            if(value.id == $scope.proyectob.id){
               $scope.proyectosSeleccionados.splice(key, 1);
             }
           });
 
-    }
+          }
+
+          $scope.borrarEste=function(proyecto){
+            $scope.proyectob=proyecto;
+          }
+          
+
      $scope.agregarUsuarios = function(usuario){
                      $scope.usuariosSeleccionados.push(usuario);
                      angular.forEach($scope.usuarios, function(value, key) {
