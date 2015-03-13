@@ -1,0 +1,54 @@
+[    
+    {
+        "id":1,
+        "nombre":"Proyecto web 1",
+        "equipo":"Dakasoft",
+        "logoEquipo":"img/logoEquipo1.png",
+        "imagen":"img/project1.jpg",
+        "integrantes":[
+            "Karolina Munnoz",
+            "Luis Daniel Morales",
+            "Carolina Azofeifa",
+            "Aaron Chavarria"
+            ]
+    },
+    {
+        "id":2,
+        "nombre":"Proyecto web 2",
+        "equipo":"Worldsoft",
+        "logoEquipo":"img/logoEquipo2.png",
+        "imagen":"img/project2.jpg",
+        "integrantes":[
+            "Karolina Munnoz",
+            "Luis Daniel Morales",
+            "Carolina Azofeifa",
+            "Aaron Chavarria"
+        ] 
+    },
+    {
+		"id":3,
+		"nombre":"Proyecto software 2",
+        "equipo":"Softlogic",
+        "logoEquipo":"img/logoEquipo1.png",
+        "imagen":"img/project2.jpg",
+        "integrantes":[
+            "Maria Munnoz",
+            "Daniel Morales",
+            "Argentina Azofeifa",
+            "Pablo Herrera"
+        ]  
+    },
+    {
+        "id":4,
+        "nombre":"Proyecto software 1",
+        "equipo":"Checksoft",
+        "logoEquipo":"img/logoEquipo3.png",
+        "imagen":"img/project2.jpg",
+        "integrantes":[
+            "Manuel Munnoz",
+            "Luis Morales",
+            "Cristina Jiménez",
+            "Brayan Alfaro"
+        ]  
+    }
+]
