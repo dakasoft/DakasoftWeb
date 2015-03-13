@@ -598,5 +598,38 @@ table.selectedTable th, table.selectedTable td {
 
 /******************************* Ver Cursos XD ******************************/
 #divVerEquipo table thead {
-	
+	background-color: #722d7b;
+}
+#divVerEquipo table thead span {
+	color: white;
+	font-weight: bold;
+}
+
+#divVerEstudiantes table thead {
+	background-color: #722d7b;
+}
+#divVerEstudiantes table thead span {
+	color: white;
+	font-weight: bold;
+}
+
+#divVerEntregas .divAssignment {
+	border: 1px solid #722d7b;
+	background-color: #722d7b;
+	margin-top: 10px;
+}
+#divVerEntregas .divAssignment p {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+#divVerEntregas .divReceived {
+	border: 1px solid #722d7b;
+}
+#divVerEntregas .divReceived ul {
+	list-style: none;
+}
+#divVerEntregas .divReceived ul li{
+	padding: 3px 0 0 0;
 }

@@ -17,6 +17,7 @@
 
     $scope.users = {};
     $scope.idCounter = 0;
+    $scope.bShowReceived = false;
 
     $http.get('json/usuarios.json').success(function (data) {
       $scope.users = data;
@@ -30,10 +31,24 @@
       $scope.rubrica = data;
     });
 
+    $scope.newAssignment = function (pGrupo) {
+      $scope.oEditPointer = pGrupo;
+    }
+
+    $scope.addAssignment = function () {
+      var assignmentTemp = angular.copy($scope.modalAssignment);
+      if ($scope.modalAssignment.name && $scope.modalAssignment.start && $scope.modalAssignment.end) {
+        $scope.oEditPointer.entregas.push(assignmentTemp);
+        $scope.modalAssignment = {};
+      } else {
+        return false;
+      }
+    }
+
     $scope.editEval = function (pStudent) {
       $scope.oEditPointer = pStudent;
       if (true) {
-        
+
       };
       $scope.modalEval = $scope.rubrica;
     }

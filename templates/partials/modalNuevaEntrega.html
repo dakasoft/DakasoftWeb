@@ -1,12 +1,34 @@
 <div class="modal fade" id="verNuevaEntrega" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-header">
+        <h4>Nueva Entrega</h4>
+        <button type="button" class="close" data-dismiss="modal" ng-click="closeModalGrupo();"aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <div class="modal-body">
-
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <form ng-submit="addAssignment()">
+            <div class="form-group">
+              <label for="modalAssignmentName">Nombre Entrega</label>
+              <input type="text" class="form-control" id="modalAssignmentName" ng-model="modalAssignment.name">
+            </div>
+            <div class="form-group">
+              <label for="modalAssignmentStart">Fecha Inicio</label>
+              <input type="date" class="form-control" id="modalAssignmentStart" ng-model="modalAssignment.start">
+            </div>
+            <div class="form-group">
+              <label for="modalAssignmentEnd">Fecha Fin</label>
+              <input type="date" class="form-control" id="modalAssignmentEnd" ng-model="modalAssignment.end">
+            </div>
+            <div class="row">
+              <button type="submit" class="btn btn-custom btn-sm pull-right">Guardar</button>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
       </div>
     </div>
   </div>
