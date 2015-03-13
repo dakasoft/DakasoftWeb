@@ -39,6 +39,25 @@
           });
 
     }
+     $scope.agregarUsuarios = function(usuario){
+                     $scope.usuariosSeleccionados.push(usuario);
+                     angular.forEach($scope.usuarios, function(value, key) {
+                      if(value.id == usuario.id){
+                        $scope.usuarios.splice(key,1);
+                      }                 
+                     });                                                                
+        };
+
+         $scope.quitarUsuarios = function(usuario){
+             angular.forEach($scope.usuariosSeleccionados, function(value, key) {
+            if(value.id == usuario.id){
+               $scope.usuariosSeleccionados.splice(key, 1);
+               $scope.usuarios.unshift(usuario);
+            }
+          });
+    
+        }; 
+
 
 
    

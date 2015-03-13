@@ -4,12 +4,21 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
           <div class="row col-xs-12 col-sm-6">
+
             <div class="col-xs-12 col-sm-12">
-              <ul class="list-group listaEstudiantes">
-                <li class="list-group-item list-g-header">Lista de Usuarios</li>
-                <li class="list-group-item" ng-repeat="usuario in usuarios">
-                  {{ usuario.name }} {{ usuario.lastname }}
-                  <i class="fa fa-times-circle pull-right" ng-click="quitarEstudiante(estudiantesS)"></i>
+<form class="" role="search">
+    <div class="form-group search-parent">
+      <input type="text" class="form-control normal-search" placeholder="Search" ng-model="palabra">
+      <i class="fa fa-search normal-search-icon"></i>
+    </div>
+  </form> 
+              <ul class="list-group listaEstudiantes Listascroll">
+                <li class="list-group-item list-g-header">Lista de Usuarios
+                </li>
+                <li class="list-group-item" ng-repeat="usuario in usuarios | filter:palabra">
+                  {{ usuario.name }} {{ usuario.lastname }}<i class="fa fa-plus fa-lg plus-add-icon pull-right" ng-click="agregarUsuarios(usuario)"></i>
+                   <span>{{ usuario.role }}</span>
+                  </li>
                 <li>
               </ul>
             </div>
@@ -18,18 +27,18 @@
 
          <div class="row col-xs-12 col-sm-6">
             <div class="col-xs-12 col-sm-12">
-              <ul class="list-group listaEstudiantes">
+              <ul class="list-group listaEstudiantes Listascroll ListaInvitados">
                 <li class="list-group-item list-g-header">Lista de invitados</li>
-                <li class="list-group-item" ng-repeat="estudiantesS in estudiantesSeleccionados">
-                  {{ estudiantesS.nombre }} {{ estudiantesS.apellido }}
-                  <i class="fa fa-times-circle pull-right" ng-click="quitarEstudiante(estudiantesS)"></i>
+                <li class="list-group-item" ng-repeat="usuario in usuariosSeleccionados">
+                 {{ usuario.name }} {{ usuario.lastname }}
+                  <i class="fa fa-times-circle fa pull-right" ng-click="quitarUsuarios(usuario)"></i>
                 <li>
               </ul>
             </div>
           </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Enviar Votación</button>
       </div>
     </div>
   </div>

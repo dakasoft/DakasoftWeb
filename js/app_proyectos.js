@@ -6,8 +6,9 @@
       restrict: 'E',
       templateUrl: 'templates/partials/proyectosTabla.html',
       controller: ['$scope','$http','ngTableParams',function ($scope, $http, ngTableParams) {
+        var notainput= angular.element('#nota');
+       var mensaje=angular.element('.mensaje');
         $scope.proyectos = [];
-
          $scope.nota = "";
         $scope.proyectosSeleccionados = [];
           $scope.editableProject = "";
@@ -37,7 +38,7 @@
 
     }
      $scope.editarNota = function(proyecto){
-       var notainput= angular.element('#nota');
+         mensaje.css("display","none");
        notainput.removeClass( "error" );
       $scope.editableProject = proyecto;
       $scope.nota=$scope.editableProject.nota;
@@ -48,7 +49,7 @@
 
 
     $scope.guardarnota = function(){
-      var notainput= angular.element('#nota');
+      mensaje.css("display","none");
        notainput.removeClass( "error" );
     if($scope.nota<=100){
       $scope.editableProject.nota =angular.copy($scope.nota);
@@ -59,6 +60,7 @@
     }
     else{
         notainput.addClass( "error" );
+        mensaje.css("display","block");
     }
     }
 
