@@ -1145,7 +1145,7 @@ table.selectedTable th, table.selectedTable td {
             box-shadow: 0px 0px 4px #a32068; 
 }
 
-.mensaje{
+.mensaje1,.mensaje2{
 	display:none;
 	line-height:2em;
 	color:#a32068;

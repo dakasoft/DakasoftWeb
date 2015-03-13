@@ -24,6 +24,7 @@
         });
          $scope.editar = function(carrera){
             inputC.removeClass("error");
+            mensaje1.css("display","none");
             mensaje2.css("display","none");
           $scope.editableC = carrera;
           $scope.nombre = carrera.nombre;
@@ -52,6 +53,7 @@
 
         $scope.agregar = function(){
            inputC.removeClass("error");
+            mensaje1.css("display","none");
             mensaje2.css("display","none");
           $scope.cursosSeleccionados = [];
           $scope.editableC = "";
