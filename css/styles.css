@@ -1151,7 +1151,16 @@ table.selectedTable th, table.selectedTable td {
 	color:#a32068;
 }
 
-.Listascroll{
-overflow: auto;
-height: 400px;
+.Listascroll2{
+overflow:auto;
+height: 200px;
 }
+.pdf{
+	font-size:16px;
+ color:#2e368f;
+}
+.pdf:hover{
+text-decoration: none;
+color:#a32068;
+}
+
