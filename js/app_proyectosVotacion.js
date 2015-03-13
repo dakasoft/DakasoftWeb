@@ -32,6 +32,7 @@
           };
 
           $scope.EliminarProyecto=function(proyecto){
+          
         angular.forEach($scope.proyectosSeleccionados, function(value, key) {
             if(value.id == proyecto.id){
               $scope.proyectosSeleccionados.splice(key, 1);
@@ -58,7 +59,10 @@
     
         }; 
 
+           $scope.guardar= function(){
+                $("#elegirVot").modal('hide');
 
+           }
 
    
       }],
@@ -74,6 +78,16 @@
         
       }],
       controllerAs: 'modalProyectosvotacion'
+    };
+  });
+  app.directive('modalConfirm',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/ModalConfirmacion.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+        
+      }],
+      controllerAs: 'modalConfirm'
     };
   });
   

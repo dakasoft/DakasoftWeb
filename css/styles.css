@@ -1084,4 +1084,5 @@ height: 400px;
 
 .listaEstudiantes span{
 	display: block;
+	font-weight:bold;
 }
