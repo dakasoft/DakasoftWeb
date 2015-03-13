@@ -36,28 +36,32 @@
             "name":"Carolina",
             "lastname":"Azofeifa",
             "role":"Calidad",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
             "role":"Desarrollo",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
             "role":"Soporte y Configuración",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
             "role":"Coordinación",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           }
         ],
         "entregas": [
@@ -89,28 +93,32 @@
                 "name":"Carolina",
                 "lastname":"Azofeifa",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           },
@@ -126,28 +134,32 @@
                 "name":"Carolina",
                 "lastname":"Algo",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2002,
                 "name":"Diego",
                 "lastname":"Vargas",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2003,
                 "name":"Jorge",
                 "lastname":"Algo",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2004,
                 "name":"Irene",
                 "lastname":"Araya",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           }
@@ -186,28 +198,32 @@
             "name":"Carolina",
             "lastname":"Azofeifa",
             "role":"Calidad",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
             "role":"Desarrollo",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
             "role":"Soporte y Configuración",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
             "role":"Coordinación",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           }
         ],
         "entregas": [
@@ -239,28 +255,32 @@
                 "name":"Carolina",
                 "lastname":"Azofeifa",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           },
@@ -276,28 +296,32 @@
                 "name":"Carolina",
                 "lastname":"Algo",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2002,
                 "name":"Diego",
                 "lastname":"Vargas",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2003,
                 "name":"Jorge",
                 "lastname":"Algo",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2004,
                 "name":"Irene",
                 "lastname":"Araya",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           }
@@ -342,28 +366,32 @@
             "name":"Carolina",
             "lastname":"Azofeifa",
             "role":"Calidad",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
             "role":"Desarrollo",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
             "role":"Soporte y Configuración",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
             "role":"Coordinación",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           }
         ],
         "entregas": [
@@ -395,28 +423,32 @@
                 "name":"Carolina",
                 "lastname":"Azofeifa",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           },
@@ -432,28 +464,32 @@
                 "name":"Carolina",
                 "lastname":"Algo",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2002,
                 "name":"Diego",
                 "lastname":"Vargas",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2003,
                 "name":"Jorge",
                 "lastname":"Algo",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2004,
                 "name":"Irene",
                 "lastname":"Araya",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           }
@@ -492,28 +528,32 @@
             "name":"Carolina",
             "lastname":"Azofeifa",
             "role":"Calidad",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Aaron",
             "lastname":"Chavarria",
             "role":"Desarrollo",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Luis Daniel",
             "lastname":"Morales",
             "role":"Soporte y Configuración",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           },
           {
             "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
             "role":"Coordinación",
-            "team":""
+            "team":"",
+            "evaluacion":[]
           }
         ],
         "entregas": [
@@ -545,28 +585,32 @@
                 "name":"Carolina",
                 "lastname":"Azofeifa",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Aaron",
                 "lastname":"Chavarria",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Luis Daniel",
                 "lastname":"Morales",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":3001,
                 "name":"Karolina",
                 "lastname":"Muñoz",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           },
@@ -582,28 +626,32 @@
                 "name":"Carolina",
                 "lastname":"Algo",
                 "role":"Calidad",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2002,
                 "name":"Diego",
                 "lastname":"Vargas",
                 "role":"Desarrollo",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2003,
                 "name":"Jorge",
                 "lastname":"Algo",
                 "role":"Soporte y Configuración",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               },
               {
                 "id":2004,
                 "name":"Irene",
                 "lastname":"Araya",
                 "role":"Coordinación",
-                "team":""
+                "team":"",
+                "evaluacion":[]
               }
             ]
           }

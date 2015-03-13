@@ -1,13 +1,12 @@
 <div class="container-fluid equipoContent">
 	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-		<table ng-table="tableParams"  class="table">
+		<table id="custom-table" ng-table="tableParams"  class="table">
 			<tr ng-repeat="estudiante in grupo.students">
 				<td data-title="'Nombre'">{{estudiante.name}}</td>
 				<td data-title="'Apellido'">{{estudiante.lastname}}</td>
 				<td data-title="'Rol'">{{estudiante.role}}</td>
-				<td data-title="'Equipo'">{{estudiante.team}}</td>
 				<td data-title="'Acciones'">
-					<a data-toggle="modal" data-target="#modalRubrica" ng-click="editar(estudiante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+					<a data-toggle="modal" data-target="#modalRubrica" ng-click="editEval(estudiante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 					<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(estudiante)"></i></a>
 				</td>
 			</tr>

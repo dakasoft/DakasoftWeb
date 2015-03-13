@@ -11,20 +11,38 @@
     $rootScope.courses = {};
     
     $scope.modalTeam = {};
-    $scope.modalStudent = {};
+    $scope.modalEval = {};
     $scope.modalAssignment = {};
     $scope.oEditPointer = {};
 
     $scope.users = {};
+    $scope.idCounter = 0;
 
     $http.get('json/usuarios.json').success(function (data) {
       $scope.users = data;
     });
 
     $http.get('json/vercursos.json').success(function (data) {
-      console.log(data);
       $rootScope.courses = data;
     });
+
+    $http.get('json/verrubrica.json').success(function (data) {
+      $scope.rubrica = data;
+    });
+
+    $scope.editEval = function (pStudent) {
+      $scope.oEditPointer = pStudent;
+      if (true) {
+        
+      };
+      $scope.modalEval = $scope.rubrica;
+    }
+
+    $scope.saveEval = function () {
+      var evalTemp = angular.copy($scope.modalEval);
+      $scope.oEditPointer = evalTemp;
+      $scope.modalEval = {};
+    }
 
     $scope.courseDisplayToggle = function (psViewSwitch) {
       if (psViewSwitch !== verCursos.currentView) {
@@ -38,7 +56,7 @@
 
     $scope.newTeam = function (pGroup) {
       $scope.oEditPointer = pGroup;
-      $scope.modalTeam.id = '';
+      $scope.modalTeam.id = $scope.newID();
       $scope.modalTeam.name = '';
       $scope.modalTeam.logo = 'img/logomovile.png';
       $scope.modalTeam.mission = '';
@@ -48,8 +66,12 @@
 
     $scope.saveNewTeam = function () {
       var teamTemp = angular.copy($scope.modalTeam);
-      $scope.oEditPointer.push(teamTemp);
-      $scope.modalTeam = {};
+      if ($scope.modalTeam.name) {
+        $scope.oEditPointer.teams.push(teamTemp);
+        $scope.modalTeam = {};
+      } else {
+        return false;
+      }
     };
 
     $scope.editTeam = function (pTeam) {
@@ -58,10 +80,14 @@
     };
 
     $scope.saveTeam = function () {
-      angular.forEach($scope.modalTeam, function (pValue, pKey) {
-        $scope.oEditPointer[pKey] = pValue;
-      });
-      $scope.modalTeam = {};
+      if ($scope.modalTeam.name) {
+        angular.forEach($scope.modalTeam, function (pValue, pKey) {
+          $scope.oEditPointer[pKey] = pValue;
+        });
+        $scope.modalTeam = {};
+      } else {
+        return false;
+      }
     };
 
     $scope.deleteTeam = function (pGroup, pTeam) {
@@ -86,13 +112,18 @@
       }
     };
 
-    $scope.removeStudent = function(pStudent){
+    $scope.removeStudent = function (pStudent){
       angular.forEach($scope.modalTeam.integrantes, function (pValue, pKey) {
         if(pValue.id === pStudent.id){
           $scope.modalTeam.integrantes.splice(pKey, 1);
         }
       });
     };
+
+    $scope.newID = function () {
+      $scope.idCounter = $scope.idCounter + 1;
+      return $scope.idCounter;
+    }
 
   }]);
 
