@@ -394,8 +394,7 @@ button.close{
 .mainContent{
 	margin-bottom: 60px;
 }
-<<<<<<< HEAD
-*basic styles*/
+
 /*keep the footer in the bottom of the page*/
 html,
 body {
@@ -407,6 +406,7 @@ body {
 .wrapper {
 	min-height:100%;
 	position:relative;
+	padding-bottom: 60px;
 }
 
 #footer {
@@ -1127,6 +1127,54 @@ table.selectedTable th, table.selectedTable td {
 }
 
 
+/* item votacion*/
+.item-votacion-header{
+	background-color: #722d7b;
+	color:white;
+	padding: 1%;
+	text-align: center;
+}
+
+.item-votacion{
+	height: 420px;
+	background: white;
+	margin-bottom: 20px;
+}
+
+.item-votacion-estrellas{
+	text-align: center;
+	height: 40px;
+	background: rgba(211, 210, 210, 0.54);
+	border-radius: 5px;
+	width: 95%;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.item-votacion-footer{
+	margin-top: 15px;
+	text-align: center;
+}
+
+.item-votacion-contenido p{
+
+	margin: 2px 0 2px 20px;
+}
+
+.item-votacion-contenido{
+	margin-left: 20px;
+	color: #722d7b;
+}
+
+.star{
+	width: 35px
+}
+
+.item-votacion .square{
+	width: 100% !important;
+	margin: 0 !important;
+}
 
 .error{
 	 border: 1px solid #a32068; /* some kind of blue border */
