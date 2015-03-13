@@ -25,9 +25,9 @@
           
           // console.log($scope.rubrosSeleccionados)
           // console.log(lastRubro.id)
-          if ($scope.rubrosSeleccionados === 0) {
-             console.log('vacio 2')
-          }
+          // if ($scope.rubrosSeleccionados === 0) {
+          //    console.log('vacio 2')
+          // }
           
           console.log("rubroNombre");
           $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
