@@ -40,6 +40,7 @@
               $scope.carreras.splice(key, 1);
             }
           });
+           $("#modalConfirm").modal('hide');
         };
 
         $scope.borrarCurso = function(curso){
@@ -49,7 +50,11 @@
               $scope.cursosSeleccionados.splice(key, 1);
             }
           });
+
         };
+          $scope.eliminarTemporal = function(carrera){
+                $scope.temporal = carrera;
+        }
 
         $scope.agregar = function(){
            inputC.removeClass("error");
@@ -83,9 +88,7 @@
           }
         };
 
-        $scope.eliminarTemporal = function(carrera){
-                $scope.temporal = carrera;
-        }
+      
 
            $scope.guardar = function(){
             if(!$scope.nombre || !$scope.codigo){  
