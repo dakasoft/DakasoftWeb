@@ -24,6 +24,9 @@
         $scope.enviarVotacion = function(proyecto){
           if($scope.votar){
             alert("Ya ud voto");
+            angular.forEach($scope.proyectosElegidos, function(value, key) {
+              value.rate = 0
+            });
           }else{
             $scope.votar = true;
             angular.forEach($scope.proyectosElegidos, function(value, key) {
