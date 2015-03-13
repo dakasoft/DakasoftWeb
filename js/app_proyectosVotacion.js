@@ -40,7 +40,7 @@
               $scope.proyectosSeleccionados.splice(key, 1);
             }
           });
-
+              $("#modalConfirm").modal('hide');
           }
 
           $scope.borrarEste=function(proyecto){
@@ -48,7 +48,7 @@
           }
           
 
-     $scope.agregarUsuarios = function(usuario){
+         $scope.agregarUsuarios = function(usuario){
                      $scope.usuariosSeleccionados.push(usuario);
                      angular.forEach($scope.usuarios, function(value, key) {
                       if(value.id == usuario.id){
