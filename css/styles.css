@@ -1066,6 +1066,22 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
+<<<<<<< HEAD
+.fa.fa-cog.fa-2{
+	color:#f5f5f5;
+	font-size: 2em;
+	float:right;
+	background:none;
+	border:none;
+}
+
+.proyecto p{
+    float left
+
+	}
+
+
+=======
 .tab-active{
 	background: #a32068;
 }
@@ -1175,6 +1191,12 @@ table.selectedTable th, table.selectedTable td {
 	width: 100% !important;
 	margin: 0 !important;
 }
+.proyecto p{
+    float left
+
+	}
+
+
 
 .error{
 	 border: 1px solid #a32068; /* some kind of blue border */
@@ -1193,10 +1215,38 @@ table.selectedTable th, table.selectedTable td {
             box-shadow: 0px 0px 4px #a32068; 
 }
 
-.mensaje1,.mensaje2{
+.mensaje{
 	display:none;
 	line-height:2em;
 	color:#a32068;
+}
+
+.Listascroll{
+overflow: auto;
+height: 400px;
+}
+
+.ListaInvitados{
+	margin-top:50px;
+}
+
+.listaEstudiantes span{
+	display: block;
+	font-weight:bold;
+}
+
+.Listascroll{
+overflow: auto;
+height: 400px;
+}
+
+.ListaInvitados{
+	margin-top:50px;
+}
+
+.listaEstudiantes span{
+	display: block;
+	font-weight:bold;
 }
 
 .Listascroll2{

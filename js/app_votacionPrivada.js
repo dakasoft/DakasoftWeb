@@ -2,7 +2,7 @@
   var app = angular.module('votacionesPrivadas', ["ui.router"]);
 
 
-  app.directive('proyectosVotacion',function ($http) {
+  app.directive('votacionesPrivadas',function ($http) {
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/proyectosVotacionPrivada.html',
