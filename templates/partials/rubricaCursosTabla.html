@@ -9,13 +9,13 @@
 			<th>Curso</th>		
 			<th>Acciones</th>
 		</tr>
-		<tr ng-repeat="factor in rubricaCursos[0].grupos">
-		  <td>{{factor.nombre}}</td>
-		  <td>{{factor.curso}}</td>
+		<tr ng-repeat="curso in rubricaCursos[0].grupos">
+		  <td>{{curso.nombre}}</td>
+		  <td>{{curso.curso}}</td>
 			<td class="tdModal">
-				 <a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(factor)">
-					<i class="fa fa-plus fa-lg"></i>Editar
-				 </a>
+			<a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(curso)">
+				<i class="fa fa-plus fa-lg"></i>Editar
+			</a>
 			</td>
 		</tr>
 	</table>
