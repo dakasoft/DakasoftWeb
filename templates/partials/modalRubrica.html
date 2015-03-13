@@ -1,7 +1,3 @@
-
-
-
-
 <div class="modal fade" id="modalRubrica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -12,40 +8,36 @@
             <div class="form-group">
               <label class="col-xs-4 control-label" for="">Rubro</label>  
               <div class="col-xs-8">
-                <input type="text" ng-model="nombre" class="form-control input-md"> 
+                <input type="text" ng-model="rubroNombre" class="form-control input-md"> 
               </div>
             </div>
             <div class="form-group">
               <label class="col-xs-4 control-label" for="">Valor</label>  
               <div class="col-xs-8">
-                <input type="text" ng-model="apellido" class="form-control input-md"> 
+                <input type="text" ng-model="rubroValor" class="form-control input-md"> 
               </div>
             </div>
+              <div class="form-group ">               
+                <button type="submit" class="btn btn-custom btn-sm pull-right mrFa" ng-click="agregarRubro()">Agregar</button>  
+              </div>
           
                <table id="factor-table" ng-table="tableParams"  class="table tableFactor">
               
-                <tr ng-repeat="factor in factorHumano">
-                    <td data-title="'Nombre'">{{factor.grupos[0].rubrica[0].nombre}}</td>
-                    <td data-title="'Valor'">{{factor.grupos[0].rubrica[0].valor}}</td>
+                <tr ng-repeat="rubrica in rubrosSeleccionados">
+                    <td data-title="'Nombre'">{{rubrica.nombre}}</td>
+                    <td data-title="'Valor'">{{rubrica.valor}}</td>
                     
                     <td data-title="'Acciones'">
-                      <a>
-                        <i class="fa fa-pencil-square-o fa-2x"></i>
-                      </a>
-                      <a><i class="fa fa-times-circle fa-2x" ng-click=""></i></a>
+                      <a><i class="fa fa-times-circle fa-2x" ng-click="eliminarRubro(rubrica)"></i></a>
                     </td>
                 
                 </tr>
                
-            </table>
-           
-        </form>
-            
-           
-        
+            </table>  
+        </form>      
        </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Agregar</button>
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardarRubrica()">Guardar</button>
       </div>
     </div>
   </div>

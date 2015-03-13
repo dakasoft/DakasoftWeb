@@ -77,8 +77,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: "/cursos",
     templateUrl: "templates/cursos.html"
   })
-  .state('factorHumano', {
-    url: "/factorHumano",
+  .state('factorhumano', {
+    url: "/factorhumano",
     templateUrl: "templates/factorHumano.html"
   });
 

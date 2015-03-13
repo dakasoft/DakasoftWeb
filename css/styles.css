@@ -53,7 +53,6 @@ header img{ /* header contiene el logo*/
 }
 .logo{
   width:17em;
-
 }
 
 /* Estilos del menu*/
@@ -1060,7 +1059,9 @@ tr{text-align: left;}
 .tdModal p{margin-right:5px;}
 .fa-plus, .fa-times-circle{color:#722d7b;}
 
-
+.mrFa{
+	margin-right: 40px;
+}
 
 #factor-table, .table-header{
 	text-align: center;

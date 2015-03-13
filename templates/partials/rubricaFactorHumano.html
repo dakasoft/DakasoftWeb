@@ -3,23 +3,18 @@
 	<h3>Rubrica Factor Humano</h3>
 </div>
 <div class="clearfix divTabla" >
-	<table ng-repeat="factor in factorHumano" class="table table-nonfluid table-hover">
+	<table class="table table-nonfluid table-hover">
 		<tr>
-			<th>Profesor</th>
-			<th>Grupo</th>		
-			<th>Rubrica</th>
+			<th>Grupo</th>
+			<th>Curso</th>		
+			<th>Acciones</th>
 		</tr>
-		<tr>
-		  <td>{{factor.nombrePofesor}} {{factor.apellidoProfesor}}</td>
-		  <td>{{factor.grupos[0].nombre}}</td>
-		  <td>{{factor.grupos[0].rubrica[0].nombre}}</td>
-		</tr>
-		<tr>
-			<td>{{factor.nombrePofesor}} {{factor.apellidoProfesor}}</td>
-			<td>{{factor.grupos[1].nombre}}</td>
+		<tr ng-repeat="factor in factorHumano[0].grupos">
+		  <td>{{factor.nombre}}</td>
+		  <td>{{factor.curso}}</td>
 			<td class="tdModal">
-				 <a href="" data-toggle="modal" data-target="#modalRubrica">
-					<i class="fa fa-plus fa-lg"></i>Agregar
+				 <a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(factor)">
+					<i class="fa fa-plus fa-lg"></i>Editar
 				 </a>
 			</td>
 		</tr>
