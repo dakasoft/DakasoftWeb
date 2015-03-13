@@ -1,15 +1,25 @@
 <div id="divVerEstudiantes" class="container-fluid equipoContent">
 	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-		<table id="custom-table" ng-table="tableParams"  class="table selectedTable">
-			<tr ng-repeat="estudiante in grupo.students">
-				<td data-title="'Nombre'">{{estudiante.name}}</td>
-				<td data-title="'Apellido'">{{estudiante.lastname}}</td>
-				<td data-title="'Rol'">{{estudiante.role}}</td>
-				<td data-title="'Acciones'">
-					<a data-toggle="modal" data-target="#modalRubrica" ng-click="editEval(estudiante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
-					<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(estudiante)"></i></a>
-				</td>
-			</tr>
-		</table>
+		<div class="row divSearchStudents">
+			<div class="col-xs-4">
+				<label for="inputSearchStudents">Estudiante:</label>
+			</div>
+			<div class="col-xs-8">
+				<input type="text" name="inputSearchStudents" id="inputSearchStudents" class="form-control" ng-model="searchStudents"><i class="fa fa-search search-icon"></i>
+			</div>
+		</div>
+		<div class="row">
+			<table id="custom-table" ng-table="tableParams"  class="table">
+				<tr ng-repeat="estudiante in grupo.students | filter:searchStudents">
+					<td data-title="'Nombre'">{{estudiante.name}}</td>
+					<td data-title="'Apellido'">{{estudiante.lastname}}</td>
+					<td data-title="'Rol'">{{estudiante.role}}</td>
+					<td data-title="'Acciones'">
+						<a data-toggle="modal" data-target="#modalRubrica" ng-click="editEval(estudiante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+						<a><i class="fa fa-times-circle fa-2x" ng-click="borrar(estudiante)"></i></a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

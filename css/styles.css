@@ -612,6 +612,13 @@ table.selectedTable th, table.selectedTable td {
 	color: white;
 	font-weight: bold;
 }
+#divVerEstudiantes .divSearchStudents {
+	margin-bottom: 10px;
+}
+#divVerEstudiantes .divSearchStudents label {
+	font-size: 1.5em;
+	color: #722d7b;
+}
 
 #divVerEntregas .divAssignment {
 	border: 1px solid #722d7b;
