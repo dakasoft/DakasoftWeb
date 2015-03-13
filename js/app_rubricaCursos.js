@@ -1,7 +1,7 @@
 (function () { // define funcionalidad
   var app = angular.module('rubricaCursos', ["ui.router"]);
 
-  app.directive('rubricaCursos',function ($http) {
+  app.directive('rubricaCursosTabla',function ($http) {
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/rubricaCursosTabla.html',

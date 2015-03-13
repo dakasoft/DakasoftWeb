@@ -10,8 +10,7 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     $rootScope.bLoggedIn = true; //cambiar para deslogear
 
    
-    
-  }])
+}])
 
 
 /* manejador de rutas*/
