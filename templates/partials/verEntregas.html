@@ -13,10 +13,13 @@
 			<div class="row divAssignment" ng-click="bShowReceived = !bShowReceived">
 				<p>{{entrega.name}}</p>
 			</div>
-			<div class="row divReceived" ng-show="bShowReceived">
-				<ul>
-					<li ng-repeat="upload in entrega.uploads">{{upload}} <i class="fa fa-download pull-right"></i></li>
-				</ul>
+			<div class="row divReceived" ng-show="bShowReceived" ng-repeat="upload in entrega.uploads">
+				<div class="col-xs-11">
+					<label>{{upload}}</label>
+				</div>
+				<div class="col-xs-1">
+					<i class="fa fa-download pull-right"></i>
+				</div>
 			</div>
 		</div>
 	</div>

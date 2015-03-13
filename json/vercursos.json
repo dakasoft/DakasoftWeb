@@ -62,6 +62,38 @@
             "role":"Coordinación",
             "team":"",
             "evaluacion":[]
+          },
+          {
+            "id":2001,
+            "name":"Carolina",
+            "lastname":"Algo",
+            "role":"Calidad",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2002,
+            "name":"Diego",
+            "lastname":"Vargas",
+            "role":"Desarrollo",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2003,
+            "name":"Jorge",
+            "lastname":"Algo",
+            "role":"Soporte y Configuración",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2004,
+            "name":"Irene",
+            "lastname":"Araya",
+            "role":"Coordinación",
+            "team":"",
+            "evaluacion":[]
           }
         ],
         "entregas": [
@@ -221,6 +253,38 @@
             "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
+            "role":"Coordinación",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2001,
+            "name":"Carolina",
+            "lastname":"Algo",
+            "role":"Calidad",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2002,
+            "name":"Diego",
+            "lastname":"Vargas",
+            "role":"Desarrollo",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2003,
+            "name":"Jorge",
+            "lastname":"Algo",
+            "role":"Soporte y Configuración",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2004,
+            "name":"Irene",
+            "lastname":"Araya",
             "role":"Coordinación",
             "team":"",
             "evaluacion":[]
@@ -392,6 +456,38 @@
             "role":"Coordinación",
             "team":"",
             "evaluacion":[]
+          },
+          {
+            "id":2001,
+            "name":"Carolina",
+            "lastname":"Algo",
+            "role":"Calidad",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2002,
+            "name":"Diego",
+            "lastname":"Vargas",
+            "role":"Desarrollo",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2003,
+            "name":"Jorge",
+            "lastname":"Algo",
+            "role":"Soporte y Configuración",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2004,
+            "name":"Irene",
+            "lastname":"Araya",
+            "role":"Coordinación",
+            "team":"",
+            "evaluacion":[]
           }
         ],
         "entregas": [
@@ -551,6 +647,38 @@
             "id":3001,
             "name":"Karolina",
             "lastname":"Muñoz",
+            "role":"Coordinación",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2001,
+            "name":"Carolina",
+            "lastname":"Algo",
+            "role":"Calidad",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2002,
+            "name":"Diego",
+            "lastname":"Vargas",
+            "role":"Desarrollo",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2003,
+            "name":"Jorge",
+            "lastname":"Algo",
+            "role":"Soporte y Configuración",
+            "team":"",
+            "evaluacion":[]
+          },
+          {
+            "id":2004,
+            "name":"Irene",
+            "lastname":"Araya",
             "role":"Coordinación",
             "team":"",
             "evaluacion":[]

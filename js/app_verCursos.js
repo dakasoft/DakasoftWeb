@@ -47,16 +47,17 @@
 
     $scope.editEval = function (pStudent) {
       $scope.oEditPointer = pStudent;
-      if (true) {
 
-      };
-      $scope.modalEval = $scope.rubrica;
+      if (pStudent.evaluacion[0]) {
+        $scope.modalEval = pStudent.evaluacion;
+      } else {
+        $scope.modalEval = angular.copy($scope.rubrica);
+      }
     }
 
     $scope.saveEval = function () {
       var evalTemp = angular.copy($scope.modalEval);
-      $scope.oEditPointer = evalTemp;
-      $scope.modalEval = {};
+      $scope.oEditPointer.evaluacion = evalTemp;
     }
 
     $scope.courseDisplayToggle = function (psViewSwitch) {
