@@ -10,19 +10,13 @@
         $scope.rubrosSeleccionados = [];
       
         $http.get('json/rubricaCursos.json').success(function (data) {
-          $scope.rubricaCursos = data;//nombre del json para llamarlo en el html
+          $scope.rubricaCursos = data;
         });
 
        $scope.agregarRubro = function(){
 
           var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
           var newId =  lastRubro.id+1;
-          
-          // console.log($scope.rubrosSeleccionados)
-          // console.log(lastRubro.id)
-          // if ($scope.rubrosSeleccionados === 0) {
-          //    console.log('vacio 2')
-          // }
           
           console.log("rubroNombre");
           $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
