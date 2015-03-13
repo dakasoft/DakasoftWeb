@@ -1,5 +1,9 @@
 <div class="container-fluid">
 	<div class="row">
+		<div class="form-group search-parent  col-xs-12 col-sm-4">
+	      <input type="text" class="form-control normal-search" placeholder="Search" ng-model="palabra">
+	      <i class="fa fa-search normal-search-icon"></i>
+	    </div>
 		<div class="col-xs-12">
 			<div class="table-header">
 				<div class="col-xs-12 col-sm-6">
@@ -10,7 +14,7 @@
 				</div>
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table">
-				<tr ng-repeat="grupo in grupos">
+				<tr ng-repeat="grupo in grupos | filter:palabra">
 					<td data-title="'Nombre'">{{grupo.nombre}}</td>
 					<td data-title="'Curso'">{{grupo.curso}}</td>
 					<td data-title="'Acciones'">						
@@ -23,3 +27,4 @@
 		</div>
 	</div>
 </div>
+

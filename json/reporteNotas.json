@@ -1,0 +1,30 @@
+[    
+	{
+        "id": 1,
+        "nombre": "Aaron",
+        "apellido": "Chavarría",
+        "curso":"Proyecto web 1",
+        "nota": 100
+    },
+	{
+        "id": 2,
+        "nombre": "Luis",
+        "apellido": "Morales",
+        "curso":"Proyecto web 1",
+        "nota": 98
+    },
+    {
+        "id": 3,
+        "nombre": "Carolina",
+        "apellido": "Muñoz",
+        "curso":"Proyecto web 1",
+        "nota": 98
+    },
+    {
+        "id": 4,
+        "nombre": "Carolina",
+        "apellido": "Asofeifa",
+        "curso":"Proyecto web 1",
+        "nota": 98
+    }
+]

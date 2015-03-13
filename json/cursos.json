@@ -2,36 +2,48 @@
   {
     "id": 1,
     "nombre": "Proyecto web 1",
-    "cursos":"[]"
+    "cod": "web1M",
+    "area":[
+    {"nombre":"proceso"},
+    {"nombre":"tecnico"}
+    ]
   },
   {
     "id": 2,
     "nombre": "Proyecto web 2",
-     "cursos":"[]"
+      "cod": "web2T",
+    "area":[
+    {"nombre":"tecnico"}
+    ]
   },
   {
     "id": 3,
     "nombre": "Proyecto web 3",
-     "cursos":"[]"
+    "cod": "web3N",
+    "area":[]
   },
   {
     "id": 4,
     "nombre": "Proyecto software 1",
-     "cursos":"[]"
+    "cod": "webS1N",
+    "area":[]
   },
   {
     "id": 5,
     "nombre": "Proyecto software 2",
-     "cursos":"[]"
+    "cod": "webS2N",
+    "area":[]
   },
   {
     "id": 6,
     "nombre": "Proyecto software 3",
-     "cursos":"[]"
+    "cod": "web3M",
+    "area":[]
   },
   {
     "id": 7,
     "nombre": "Proyecto software ",
-     "cursos":"[]"
+    "cod": "webS2N",
+    "area":[]
   }
 ]

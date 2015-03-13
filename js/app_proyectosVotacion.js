@@ -8,96 +8,97 @@
       controller: ['$scope','$http','ngTableParams',function ($scope, $http, ngTableParams) {
         $scope.proyectos = [];
         $scope.proyectob = "";
-         $scope.usuarios = [];
-           $scope.usuariosSeleccionados = [];
-          $scope.proyectosSeleccionados = [];
-         $http.get('json/proyectos.json').success(function (data) {
-        $scope.proyectos = data;
+        $scope.usuarios = [];
+        $scope.usuariosSeleccionados = [];
+        $scope.proyectosSeleccionados = [];
+        $http.get('json/proyectos.json').success(function (data) {
+          $scope.proyectos = data;
         });
-         $http.get('json/usuarios.json').success(function (data) {
+        $http.get('json/usuarios.json').success(function (data) {
           console.log("usuarios");
           $scope.usuarios = data;
         });
-         $scope.agregarProyecto = function(proyecto){
-                var ingresar = true;
-                angular.forEach($scope.proyectosSeleccionados,function(value,key){
-                  if(value.id == proyecto.id){
-                    ingresar = false;
-                  }
-                });
-                if(ingresar || $scope.proyectosSeleccionados.length == 0){
-                   $scope.proyectosSeleccionados.push(proyecto);
+        $scope.agregarProyecto = function(proyecto){
+          var ingresar = true;
+          angular.forEach($scope.proyectosSeleccionados,function(value,key){
+            if(value.id == proyecto.id){
+              ingresar = false;
+            }
+          });
+          if(ingresar || $scope.proyectosSeleccionados.length == 0){
+           $scope.proyectosSeleccionados.push(proyecto);
 
-                }
+         }
 
-          };
+       };
 
-          $scope.EliminarProyecto=function(){
-            console.log($scope.proyectob);
-          
+       $scope.EliminarProyecto=function(){
+        console.log($scope.proyectob);
+
         angular.forEach($scope.proyectosSeleccionados, function(value, key) {
-            if(value.id == $scope.proyectob.id){
-              $scope.proyectosSeleccionados.splice(key, 1);
-            }
-          });
-              $("#modalConfirm").modal('hide');
+          if(value.id == $scope.proyectob.id){
+            $scope.proyectosSeleccionados.splice(key, 1);
           }
+        });
+        $("#modalConfirm").modal('hide');
+      }
 
-          $scope.borrarEste=function(proyecto){
-            $scope.proyectob=proyecto;
-          }
-          
+      $scope.borrarEste=function(proyecto){
+        $scope.proyectob=proyecto;
+      }
 
-         $scope.agregarUsuarios = function(usuario){
-                     $scope.usuariosSeleccionados.push(usuario);
-                     angular.forEach($scope.usuarios, function(value, key) {
-                      if(value.id == usuario.id){
-                        $scope.usuarios.splice(key,1);
-                      }                 
-                     });                                                                
-        };
 
-         $scope.quitarUsuarios = function(usuario){
-             angular.forEach($scope.usuariosSeleccionados, function(value, key) {
-            if(value.id == usuario.id){
-               $scope.usuariosSeleccionados.splice(key, 1);
-               $scope.usuarios.unshift(usuario);
-            }
-          });
-    
-        }; 
+      $scope.agregarUsuarios = function(usuario){
+       $scope.usuariosSeleccionados.push(usuario);
+       angular.forEach($scope.usuarios, function(value, key) {
+        if(value.id == usuario.id){
+          $scope.usuarios.splice(key,1);
+        }                 
+      });                                                                
+     };
 
-           $scope.guardar= function(){
-                $("#elegirVot").modal('hide');
+     $scope.quitarUsuarios = function(usuario){
+       angular.forEach($scope.usuariosSeleccionados, function(value, key) {
+        if(value.id == usuario.id){
+         $scope.usuariosSeleccionados.splice(key, 1);
+         $scope.usuarios.unshift(usuario);
+       }
+     });
 
-           }
+     }; 
 
-   
-      }],
-      controllerAs: 'proyectoCtrl'
-    };
-  });
+     $scope.guardar= function(){
+      $("#elegirVot").modal('hide');
 
-  app.directive('modalProyectosvotacion',function ($http) {
-    return {
-      restrict: 'E',
-      templateUrl: 'templates/partials/modalProyectosvotacion.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-        
-      }],
-      controllerAs: 'modalProyectosvotacion'
-    };
-  });
-  app.directive('modalConfirm',function ($http) {
-    return {
-      restrict: 'E',
-      templateUrl: 'templates/partials/ModalConfirmacion.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-        
-      }],
-      controllerAs: 'modalConfirm'
-    };
-  });
-  
+    }
+
+
+  }],
+  controllerAs: 'proyectoCtrl'
+};
+});
+
+app.directive('modalProyectosvotacion',function ($http) {
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/partials/modalProyectosvotacion.html',
+    controller: ['$scope','$http',function ($scope,$http) {
+
+    }],
+    controllerAs: 'modalProyectosvotacion'
+  };
+});
+
+app.directive('modalConfirmv',function ($http) {
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/partials/ModalConfirmacion.html',
+    controller: ['$scope','$http',function ($scope,$http) {
+
+    }],
+    controllerAs: 'modalConfirm'
+  };
+});
+
 
 })();

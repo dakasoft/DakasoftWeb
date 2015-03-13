@@ -394,8 +394,7 @@ button.close{
 .mainContent{
 	margin-bottom: 60px;
 }
-<<<<<<< HEAD
-*basic styles*/
+
 /*keep the footer in the bottom of the page*/
 html,
 body {
@@ -407,6 +406,7 @@ body {
 .wrapper {
 	min-height:100%;
 	position:relative;
+	padding-bottom: 60px;
 }
 
 #footer {
@@ -789,7 +789,38 @@ button.close{
 }
 
 
+/*HISTORIAL DE REPORTES*/
+.divNombre{background:#722d7b;padding:2px 10px;margin-top:20px}
+.divNombre h3{color:#fff;}
+
+.divCursosAlumnos{background:#fff;padding: 20px;margin-top:0.625em }
+.divCursosAlumnos p:nth-child(-n+4){display: inline-block;margin-right:30px }
+.divCursosAlumnos b{color:#722d7b;}
+/*quita el estilo de los ul*/
+ol,ul,ul {list-style:none} 
+/*.imgLogo:last-child{margin-top:20px}*/
+
+/*Estilo del input busador*/
+.divInput{background:#722e7b;padding:10px;position:relative;border-radius:4px;}
+.divInput p{color:#fff;float:left;margin:4px 20px 0 0; }
+.txtSearcher{width:70.1754%;}
+.search2{position:absolute;top:10px;left:91.2280%;/* 520px*/ }
+
+.grow:hover
+{
+        -webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);
+}
+/*Párrafo*/
+.headingIntegrantes{margin-left:15px; }
+.ulIntegrantes{margin:0;padding:0;margin-left:15px; }
+details summary::-webkit-details-marker { display:none; }
+/*.imgLogoEquipo{margin-left:20px}*/
+
+
 /*************************************Portafolio******************************************************/
+
 
 .descripcion{ 
 	text-align:justify;
@@ -811,8 +842,6 @@ h2{
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  margin-left:10px;
-
 }
 
 .head{
@@ -825,16 +854,16 @@ h2{
   -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
   box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 }
+
 .buscador{ /*Buscador*/
 	display:block;
 	float:right;
 }
-menu{  
-	float:left;
-}
+
 .img-circle{
 	width:170px;
 }
+
 .ih-item.square.new {
 	margin-left:13px;
 position: relative;
@@ -843,6 +872,7 @@ height: 180px;
 border: 8px solid #fff;
 box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
 .ih-item.square1.new.effect6 {
 overflow: hidden;
 }
@@ -967,6 +997,7 @@ display: inline-block;
 	display: none;
 }
 
+
 .selectedTable{
 	margin-top: 2px;
 }
@@ -1035,6 +1066,7 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
+<<<<<<< HEAD
 .fa.fa-cog.fa-2{
 	color:#f5f5f5;
 	font-size: 2em;
@@ -1043,6 +1075,122 @@ table.selectedTable th, table.selectedTable td {
 	border:none;
 }
 
+.proyecto p{
+    float left
+
+	}
+
+
+=======
+.tab-active{
+	background: #a32068;
+}
+.tab-no-active{
+	background: #722d7b;
+}
+
+
+/*estilos de reporte de notas*/
+/*divTitle*/
+.divTitle{background:#722d7b;padding:4px 0px; }
+.divTitle h3{color:#fff;text-align: center;}
+/*Buscador para las notas*/
+.formInputSearchers{
+	background:#fff;padding:3.6363%;/*20px*/
+}
+.fa-search{color: #722d7b}
+/*Tabla estilo*/
+.divTabla{background:#fff;padding:0 10px  }
+.divTabla th{text-align: left;background: #722d7b;color:#fff;}
+.divTabla tr{text-align: left;}
+
+
+/****************************************Parametros*****************************************************/
+
+
+.descripcion{ 
+	text-align:justify;
+}
+
+
+.containerP
+{
+  padding:0px;
+  background: #f5f5f5;
+  border: 1px solid #c5c5c5;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+
+}
+.containertittle{
+	background-color: #722d7b ;
+	color:white;
+
+}
+.containertittle h3{
+	margin:0;
+	padding:7px;
+	
+}
+
+
+.formP{
+	padding:20px;
+}
+
+
+/* item votacion*/
+.item-votacion-header{
+	background-color: #722d7b;
+	color:white;
+	padding: 1%;
+	text-align: center;
+}
+
+.item-votacion{
+	height: 420px;
+	background: white;
+	margin-bottom: 20px;
+}
+
+.item-votacion-estrellas{
+	text-align: center;
+	height: 40px;
+	background: rgba(211, 210, 210, 0.54);
+	border-radius: 5px;
+	width: 95%;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.item-votacion-footer{
+	margin-top: 15px;
+	text-align: center;
+}
+
+.item-votacion-contenido p{
+
+	margin: 2px 0 2px 20px;
+}
+
+.item-votacion-contenido{
+	margin-left: 20px;
+	color: #722d7b;
+}
+
+.star{
+	width: 35px
+}
+
+.item-votacion .square{
+	width: 100% !important;
+	margin: 0 !important;
+}
 .proyecto p{
     float left
 
@@ -1086,3 +1234,31 @@ height: 400px;
 	display: block;
 	font-weight:bold;
 }
+
+.Listascroll{
+overflow: auto;
+height: 400px;
+}
+
+.ListaInvitados{
+	margin-top:50px;
+}
+
+.listaEstudiantes span{
+	display: block;
+	font-weight:bold;
+}
+
+.Listascroll2{
+overflow:auto;
+height: 200px;
+}
+.pdf{
+	font-size:16px;
+ color:#2e368f;
+}
+.pdf:hover{
+text-decoration: none;
+color:#a32068;
+}
+

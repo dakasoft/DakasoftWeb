@@ -1,0 +1,65 @@
+<div class="col-sm-10 col-sm-offset-1">
+
+
+	
+		<div class="divInput">
+			<p>Estudiante</p>
+			<input type="text" class="form-control txtSearcher" placeholder="Buscar estudiante" ng-model="estudiantes.search.nombre">
+			<img src="img/search4.png" alt="" class="pull-right search2">
+			<!-- font awesome muy pronto -->
+		</div>
+		<ul class="list-group">
+			<li ng-repeat="estudiante in estudiantes | filter:estudiantes.search:nombre">
+			<div class="divNombre" ng-click="estudiante.show = toogleInfo(estudiante.show)" ng-class="estudiante.show == true? 'tab-active' : 'tab-no-active' ">
+				<h3>{{estudiante.nombre}} {{estudiante.apellido}}</h3>
+			</div>
+				
+				<div class="divCursosAlumnos clearfix" ng-repeat="curso in estudiante.cursos" ng-show="estudiante.show">
+					<div class="row">
+						<div class="col-xs-12 col-sm-8 col-sm-offset-2">							
+						 	<ul class="list-group"> 
+								<li>
+									<a href="">
+								    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow imgLogoEquipo">
+								    </a>
+									<p><b>Curso:</b>{{curso.nombre}}</p>
+									<p><b>Equipo:</b>{{curso.equipo}}</p>
+									<p><b>Nota :</b>{{curso.nota}}</p>
+									<p><b>Profesor:</b>{{curso.profesor}}</p>
+								</li>
+							</ul>
+							<div class="row">
+									<h5 class="headingIntegrantes"><b>Integrantes</b></h5>
+									<ul class="ulIntegrantes">
+										<li ng-repeat="integrante in curso.integrantes">{{integrante}}</li>
+									</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>					 
+					
+
+
+							
+	
+
+				
+					
+					
+				
+					
+					
+					
+			
+	
+						
+				
+
+				
+			
+
+			
+	
