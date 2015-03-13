@@ -3,11 +3,17 @@
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
-        <form ng-submit="saveEval()">
+        <form ng-submit="saveConfig()">
           <div class="col-xs-12 col-sm-8 col-sm-offset-2">
             <div class="row">
-              <table id="custom-table" class="table" ng-table="tableParams" >
-                  <tr ng-repeat="rubro in modalEval">
+              <h2 class="h2ConfigTitle">Configuración</h2>
+            </div>
+            <div class="row divAddConfig">
+              <button type="button" class="btn btn-custom pull-right">Agregar Rubro</button>
+            </div>
+            <div class="row">
+              <table id="custom-table" class="table selectedTable" ng-table="tableParams" >
+                  <tr ng-repeat="rubro in rubrica">
                     <td data-title="'Rubro'">{{rubro.rubro}}</td>
                     <td data-title="'Valor'">
                       <input type="number" min="0" max="100" class="form-control" ng-model="rubro.valor">
@@ -22,7 +28,6 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
       </div>
     </div>
   </div>

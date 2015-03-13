@@ -12,15 +12,15 @@
           <form ng-submit="addAssignment()">
             <div class="form-group">
               <label for="modalAssignmentName">Nombre Entrega</label>
-              <input type="text" class="form-control" id="modalAssignmentName" ng-model="modalAssignment.name">
+              <input type="text" class="form-control" id="modalAssignmentName" ng-model="modalAssignment.name" required>
             </div>
             <div class="form-group">
               <label for="modalAssignmentStart">Fecha Inicio</label>
-              <input type="date" class="form-control" id="modalAssignmentStart" ng-model="modalAssignment.start">
+              <input type="date" class="form-control" id="modalAssignmentStart" ng-model="modalAssignment.start" required>
             </div>
             <div class="form-group">
               <label for="modalAssignmentEnd">Fecha Fin</label>
-              <input type="date" class="form-control" id="modalAssignmentEnd" ng-model="modalAssignment.end">
+              <input type="date" class="form-control" id="modalAssignmentEnd" ng-model="modalAssignment.end" required>
             </div>
             <div class="row">
               <button type="submit" class="btn btn-custom btn-sm pull-right">Guardar</button>

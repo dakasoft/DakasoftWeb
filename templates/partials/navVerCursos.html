@@ -11,7 +11,9 @@
 		  	<a ui-sref="verCursos.equipo" ng-click="verCursos.bCourseDisplay = courseDisplayToggle('team')">Equipo</a>
 		  </li>
 		  <li>
-		  	<a ng-click="verCursos.showTeam(equipo)" data-toggle="modal" data-target="#verConfig">Config</a>
+		  	<a>
+		  		<button id="btnVerConfig" ng-click="verCursos.showTeam(equipo)" data-toggle="modal" data-target="#verConfig" class="conf fa fa-cog"></button>
+		  	</a>
 		  </li>
 		</ul>
 	</div>

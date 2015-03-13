@@ -605,6 +605,10 @@ table.selectedTable th, table.selectedTable td {
 	font-weight: bold;
 }
 
+#divVerEquipo .divAddTeam {
+	margin-bottom: 10px;
+}
+
 #divVerEstudiantes table thead {
 	background-color: #722d7b;
 }
@@ -639,4 +643,13 @@ table.selectedTable th, table.selectedTable td {
 }
 #divVerEntregas .divReceived ul li{
 	padding: 3px 0 0 0;
+}
+
+#verConfig .h2ConfigTitle {
+	color: #722d7b;
+	text-align: center;
+}
+
+#verConfig .divAddConfig {
+	margin-bottom: 10px
 }

@@ -14,6 +14,8 @@
     $scope.modalEval = {};
     $scope.modalAssignment = {};
     $scope.oEditPointer = {};
+    $scope.deletePointer = {};
+    $scope.deleteContainer = {};
 
     $scope.users = {};
     $scope.idCounter = 0;
@@ -27,9 +29,18 @@
       $rootScope.courses = data;
     });
 
-    $http.get('json/verrubrica.json').success(function (data) {
-      $scope.rubrica = data;
+    $http.get('json/verconfig.json').success(function (data) {
+      $scope.config = data;
+      $scope.rubrica = data.rubrica;
     });
+
+    $scope.confirmDelete = function () {
+      angular.forEach($scope.deleteContainer, function (pValue, pKey) {
+        if(pValue.id === $scope.deletePointer.id){
+          $scope.deleteContainer.splice(pKey, 1);
+        }
+      });
+    }
 
     $scope.newAssignment = function (pGrupo) {
       $scope.oEditPointer = pGrupo;
@@ -107,11 +118,8 @@
     };
 
     $scope.deleteTeam = function (pGroup, pTeam) {
-      angular.forEach(pGroup.teams, function (pValue, pKey) {
-        if(pValue.id === pTeam.id){
-          pGroup.teams.splice(pKey, 1);
-        }
-      });
+      $scope.deletePointer = pTeam;
+      $scope.deleteContainer = pGroup.teams;
     }
 
     $scope.addStudent = function(pStudent){
@@ -208,5 +216,17 @@
       controllerAs: 'modalCntrl'
     };
   });
+
+  app.directive('modalVerConfirmacion',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalVerConfirmacion.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+
+      }],
+      controllerAs: 'modalCntrl'
+    };
+  });
+
 
 })();
