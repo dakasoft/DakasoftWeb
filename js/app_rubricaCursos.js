@@ -21,7 +21,10 @@
         $scope.agregarRubro = function(){
 
           var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
-          var newId =  lastRubro.id+1;
+          var newId = 1;
+          if(lastRubro != null){
+             newId = lastRubro.id + 1;
+          }
           
           // console.log($scope.rubrosSeleccionados)
           // console.log(lastRubro.id)
