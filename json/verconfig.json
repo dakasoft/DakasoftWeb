@@ -1,8 +1,12 @@
 {
   "config":{
-    "modifyTeam": {
-      "dateStart":"",
-      "dateEnd":""
+    "team": {
+      "modifStart":"",
+      "modifEnd":""
+    },
+    "course":{
+      "periodStart": "",
+      "periodEnd": ""
     }
   },
   "rubrica": [

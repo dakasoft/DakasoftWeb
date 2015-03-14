@@ -645,11 +645,22 @@ table.selectedTable th, table.selectedTable td {
 	padding: 3px 0 0 0;
 }
 
-#verConfig .h2ConfigTitle {
+#modalConfig .h3ConfigTitle {
 	color: #722d7b;
+	font-weight: bold;
 	text-align: center;
 }
-
-#verConfig .divAddConfig {
+#modalConfig .divAddConfig {
 	margin-bottom: 10px
+}
+#modalConfig #btnSaveConfig {
+	margin-top: 10px;
+}
+#modalConfig label {
+	margin-top: 5px;
+	font-size: 1.1em;
+	color: #722d7b;
+}
+#modalConfig .configRow {
+	margin-bottom: 10px;
 }

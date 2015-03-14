@@ -1,4 +1,4 @@
-<div class="modal fade" id="verConfig" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalConfig" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -6,23 +6,45 @@
         <form ng-submit="saveConfig()">
           <div class="col-xs-12 col-sm-8 col-sm-offset-2">
             <div class="row">
-              <h2 class="h2ConfigTitle">Configuración</h2>
+              <h3 class="h3ConfigTitle">Periodo del Curso</h3>
             </div>
-            <div class="row divAddConfig">
-              <button type="button" class="btn btn-custom pull-right">Agregar Rubro</button>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configPeriodStart">Inicio del Periodo</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configPeriodStart" name="configPeriodStart" class="form-control" ng-model="config.course.periodStart">
+              </div>
+            </div>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configPeriodEnd">Fin del Periodo</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configPeriodEnd" name="configPeriodEnd" class="form-control" ng-model="config.course.periodEnd">
+              </div>
             </div>
             <div class="row">
-              <table id="custom-table" class="table selectedTable" ng-table="tableParams" >
-                  <tr ng-repeat="rubro in rubrica">
-                    <td data-title="'Rubro'">{{rubro.rubro}}</td>
-                    <td data-title="'Valor'">
-                      <input type="number" min="0" max="100" class="form-control" ng-model="rubro.valor">
-                    </td>
-                  </tr>
-                </table>   
+              <h3 class="h3ConfigTitle">Modificación de Equipos</h3>
             </div>
-            <div class="row">
-              <button type="submit" class="btn btn-custom btn-sm pull-right">Guardar</button>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configModifStart">Fecha de Inicio</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configModifStart" name="configModifStart" class="form-control" ng-model="config.team.modifStart">
+              </div>
+            </div>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configModifEnd">Fecha de Finalización</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configModifEnd" name="configModifEnd" class="form-control" ng-model="config.team.modifEnd">
+              </div>
+            </div>
+            <div class="row configRow">
+              <button type="submit" id="btnSaveConfig" class="btn btn-custom btn-sm pull-right">Guardar</button>
             </div>
           </div>
         </form>

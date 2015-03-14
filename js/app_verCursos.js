@@ -30,9 +30,15 @@
     });
 
     $http.get('json/verconfig.json').success(function (data) {
-      $scope.config = data;
+      $scope.config = data.config;
       $scope.rubrica = data.rubrica;
     });
+
+    $scope.saveConfig = function () {
+      if ($scope.config.course.periodStart && $scope.config.course.periodEnd && $scope.config.team.modifStart && $scope.config.team.modifEnd) {
+        $("#modalConfig").modal('hide');
+      }
+    }
 
     $scope.confirmDelete = function () {
       angular.forEach($scope.deleteContainer, function (pValue, pKey) {
@@ -51,6 +57,7 @@
       if ($scope.modalAssignment.name && $scope.modalAssignment.start && $scope.modalAssignment.end) {
         $scope.oEditPointer.entregas.push(assignmentTemp);
         $scope.modalAssignment = {};
+        $("#modalNuevaEntrega").modal('hide');
       } else {
         return false;
       }
@@ -69,6 +76,8 @@
     $scope.saveEval = function () {
       var evalTemp = angular.copy($scope.modalEval);
       $scope.oEditPointer.evaluacion = evalTemp;
+      $("#modalRubrica").modal('hide');
+
     }
 
     $scope.courseDisplayToggle = function (psViewSwitch) {
@@ -96,6 +105,7 @@
       if ($scope.modalTeam.name) {
         $scope.oEditPointer.teams.push(teamTemp);
         $scope.modalTeam = {};
+        $("#modalNuevoEquipo").modal('hide');
       } else {
         return false;
       }
@@ -112,6 +122,7 @@
           $scope.oEditPointer[pKey] = pValue;
         });
         $scope.modalTeam = {};
+        $("#modalEquipo").modal('hide');
       } else {
         return false;
       }
