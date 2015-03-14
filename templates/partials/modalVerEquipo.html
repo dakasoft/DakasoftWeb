@@ -1,0 +1,54 @@
+<div class="modal fade" id="modalEquipo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">    
+      <div class="modal-header">
+        <h4 ng-bind="modalTeam.name || 'Nuevo Equipo'"></h4>
+        <button type="button" class="close" data-dismiss="modal" ng-click="closeModalGrupo();"aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-vertical" ng-submit="saveTeam()">
+          <div class="col-xs-12 col-sm-5">
+            <div class="form-group">
+              <label for="modalTeamName">Nombre Equipo</label>
+              <input type="text" class="form-control" id="modalTeamName" ng-model="modalTeam.name" required>
+            </div>
+            <div class="form-group">
+              <table id="custom-table" class="table selectedTable">
+                <tr>
+                  <th colspan="2" class="search-parent">
+                    Nombre<input type="text" ng-model="searchStudent" class="form-control search"><i class="fa fa-search search-icon"></i>
+                  </th>
+                </tr>
+                <tr ng-repeat="estudiante in users | filter:'estudiante' | filter:'true' | filter: searchStudent">
+                  <td>{{estudiante.name}} {{estudiante.lastname}}</td>
+                  <td>
+                    <i class="fa fa-plus fa-lg plus-add-icon pull-right" ng-click="addStudent(estudiante)"></i>
+                  </td>
+                </tr>
+              </table>               
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-7">
+            <div class="row">
+              <ul class="list-group listaEstudiantes">
+                <li class="list-group-item list-g-header">Integrantes</li>
+                <li class="list-group-item" ng-repeat="integrante in modalTeam.integrantes track by $index">
+                  {{integrante.name}} {{integrante.lastname}}
+                  <i class="fa fa-times-circle pull-right" ng-click="removeStudent(integrante)"></i>
+                  <select ng-model="integrante.role" class="pull-right">
+                    <option ng-repeat="role in config.roles">{{role}}</option>
+                  </select>
+                <li>
+              </ul>
+            </div>
+          </div>
+          <div class="row modal-footer">
+            <button type="submit" class="btn btn-custom btn-sm">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

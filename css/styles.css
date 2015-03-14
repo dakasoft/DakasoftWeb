@@ -894,13 +894,7 @@ display:inline-block;
 font-size: 4em;
 display: inline-block;
 }
-.conf,.fa.fa-cog{
-	color:#f5f5f5;
-	font-size: 3em;
-	float:right;
-	background:none;
-	border:none;
-}
+
 .fa.fa-cog:hover{
 	 color:white;
 }
@@ -1059,6 +1053,82 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
+/*Mis Cursos*/
+.nav-cursos-user{
+	background: #722d7b;
+	border:none;
+}
+
+.nav-cursos-user a{
+	color:white;
+	border:none;
+}
+
+.nav-cursos-user > li > a:hover{
+	border:none;
+	color: white;
+	background: #a32068;
+}
+
+.nav-cursos-user > li > a:focus{
+	border:none;
+	color: white;
+	background: transparent;
+}
+
+
+.equipoContent{
+	background: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.equipoContent .control-label{
+	padding-left: 0px;
+	text-align: left;
+}
+
+.equipoContent label{
+	text-align: left;
+}
+
+.single-nav{
+	margin-bottom: 40px;
+}
+
+.pencil-parent{
+	position: relative;
+}
+.pencil-input{
+	padding-right: 30px;
+}
+.pencil-icon{
+	position: absolute;
+	top: 4px;
+	right: 20px;
+	color: #722d7b;
+}
+
+.ul-list-integrantes{
+	list-style: none;
+	padding-left: 20px;
+}
+
+.input-xs{
+	height: 25px;
+}
+
+.row-xs{
+	width: 80%;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.config-a{
+	position: absolute !important;
+	height: 40px;
+	right: 0;
+}
 
 /*FACTOR HUMANO*/
 
@@ -1148,18 +1218,11 @@ tr{text-align: left;}
             box-shadow: 0px 0px 4px #4195fc; 
 }
 
-.fa.fa-cog.fa-2{
-	color:#f5f5f5;
-	font-size: 2em;
-	float:right;
-	background:none;
-	border:none;
-}
-
 .proyecto p{
     float left
 
 	}
+
 
 .tab-active{
 	background: #a32068;
@@ -1168,6 +1231,96 @@ tr{text-align: left;}
 	background: #722d7b;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************* Ver Cursos XD ******************************/
+#divVerEquipo table thead {
+	background-color: #722d7b;
+}
+#divVerEquipo table thead span {
+	color: white;
+	font-weight: bold;
+}
+
+#divVerEquipo .divAddTeam {
+	margin-bottom: 10px;
+}
+
+#divVerEstudiantes table thead {
+	background-color: #722d7b;
+}
+#divVerEstudiantes table thead span {
+	color: white;
+	font-weight: bold;
+}
+#divVerEstudiantes .divSearchStudents {
+	margin-bottom: 10px;
+}
+#divVerEstudiantes .divSearchStudents label {
+	font-size: 1.5em;
+	color: #722d7b;
+}
+
+#divVerEntregas .divAssignment {
+	border: 1px solid #722d7b;
+	background-color: #722d7b;
+	margin-top: 10px;
+}
+#divVerEntregas .divAssignment p {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+#divVerEntregas .divReceived {
+	border: 1px solid #722d7b;
+}
+#divVerEntregas .divReceived ul {
+	list-style: none;
+}
+#divVerEntregas .divReceived ul li{
+	padding: 3px 0 0 0;
+}
+
+#modalConfig .h3ConfigTitle {
+	color: #722d7b;
+	font-weight: bold;
+	text-align: center;
+}
+#modalConfig .divAddConfig {
+	margin-bottom: 10px
+}
+#modalConfig #btnSaveConfig {
+	margin-top: 10px;
+}
+#modalConfig label {
+	margin-top: 5px;
+	font-size: 1.1em;
+	color: #722d7b;
+}
+#modalConfig .configRow {
+	margin-bottom: 10px;
+}
 
 /*estilos de reporte de notas*/
 /*divTitle*/
@@ -1378,5 +1531,4 @@ color:#a32068;
 	margin-top: -25px;
 	position: absolute !important;
 }
-
 

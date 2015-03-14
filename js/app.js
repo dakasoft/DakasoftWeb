@@ -1,6 +1,6 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos","verCursos"]);
 
 /*Quitar el hashtag en el browser*/
 
@@ -145,8 +145,42 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
       }
-    });
+    })
 
+    .state('miscursos',{
+      url: '/miscursos',
+      templateUrl:'templates/misCursos.html'
+    })
+
+    .state('miscursos.equipo', {
+      url: '/equipo',
+      templateUrl:'templates/partials/miEquipo.html'
+    })
+
+    .state('miscursos.cursos', {
+      url: '/curso',
+      templateUrl:'templates/partials/misCursos.html'
+    })
+
+    .state('vercursos',{
+      url: '/vercursos',
+      templateUrl:'templates/verCursos.html'
+    })
+
+    .state('vercursos.entregas', {
+      url: '/entregas',
+      templateUrl:'templates/partials/verEntregas.html'
+    })
+
+    .state('vercursos.estudiantes', {
+      url: '/estudiantes',
+      templateUrl:'templates/partials/verEstudiantes.html'
+    })
+
+    .state('vercursos.equipo', {
+      url: '/equipo',
+      templateUrl:'templates/partials/verEquipo.html'
+    });
 });
 
 
