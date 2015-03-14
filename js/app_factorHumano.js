@@ -66,8 +66,7 @@
         controllerAs: 'modalFactorRubrica'
     };
 });
-   
-       
+     
   
 
 
