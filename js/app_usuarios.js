@@ -10,7 +10,6 @@
         $scope.editableUser = "";
         $scope.tempUser = "";
         $http.get('json/usuarios.json').success(function (data) {
-          console.log("usuarios");
           $scope.usuarios = data;
         });
 
@@ -33,7 +32,6 @@
 
         $scope.borrar = function(){        
           angular.forEach($scope.usuarios, function(value, key) {
-            console.log($scope.tempUser.id);
             if(value.id == $scope.tempUser.id){
               $scope.usuarios.splice(key, 1);
             }
@@ -42,7 +40,6 @@
         };
 
         $scope.agregar = function(){
-          console.log("borrando");
           $scope.usuariosForm.$setUntouched(true);
           $scope.usuariosForm.$setPristine(true);
           $scope.editableUser = "";
@@ -76,7 +73,6 @@
               }
             });
 
-            console.log($scope.role);
             $scope.usuarios.push({id:newId,name: $scope.nombre, lastname: $scope.apellido,
               email: $scope.email, password: $scope.pass, role: $scope.role
             });

@@ -18,10 +18,8 @@ app.directive('portafolio', function(){
           $scope.video =proyecto.video;
           $("#video").attr("src", $scope.video); /* dinamic iframe */
           $scope.video = "";
-          //console.log($scope.video);
         };
 
-        //hermoso jquery//
         $('#editModalV').on('hidden.bs.modal', function (e) {
           $("#video").attr("src", $scope.video);
           $scope.video = "";

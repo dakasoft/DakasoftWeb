@@ -69,11 +69,23 @@
 
           $rootScope.currentUser = poUser;
           $rootScope.bLoggedIn = true;
+          if($rootScope.currentUser.role=="Estudiante"){
+            $rootScope.roleLv = 1;
+          }else if($rootScope.currentUser.role=="Profesor"){
+            $rootScope.roleLv = 2;
+          }else if($rootScope.currentUser.role=="Director académico"){
+            $rootScope.roleLv = 3;
+          }else if($rootScope.currentUser.role=="Decano"){
+            $rootScope.roleLv = 4;
+          }else if($rootScope.currentUser.role=="Admin"){
+            $rootScope.roleLv = 5;
+          }
           $state.go(sSuccessState);
         }
         //Funcion que se ejecuta cuando la contraseña NO corresponde al usuario
         login.loginFail = function () {
           console.log('Failed Login');
+          $scope.loginValid = true;
           return false;
         }
 

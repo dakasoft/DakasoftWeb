@@ -7,9 +7,16 @@ var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupo
 app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
     var main = this;
     $rootScope.currentUser = {};
-    $rootScope.bLoggedIn = true; //cambiar para deslogear
+    $rootScope.bLoggedIn = false; //cambiar para deslogear
+    $rootScope.roleLv = 0;
 
-   
+    main.logOut = function () {
+      $rootScope.currentUser = {};
+      $rootScope.bLoggedIn = false;
+      $rootScope.roleLv = 0;
+      $state.go('login');
+    }
+
 }])
 
 
@@ -44,6 +51,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/home.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
@@ -85,12 +95,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/parametros.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
     .state('rubricacursos', {
       url: "/rubricacursos",
-      templateUrl: "templates/rubricaCursos.html"
+      templateUrl: "templates/rubricaCursos.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
+      }
     })
 
     .state('grupos',{
@@ -98,6 +117,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/grupos.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
@@ -106,12 +128,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/verProyectos.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }       
       }
     })
 
     .state('factorhumano', {
       url: "/factorhumano",
-      templateUrl: "templates/factorHumano.html"
+      templateUrl: "templates/factorHumano.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
+      }
     })
 
     .state('cursos', {
@@ -119,6 +150,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/cursos.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
@@ -127,6 +161,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/proyectosVotacion.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
@@ -136,6 +173,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/reporteNotas.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
@@ -144,12 +184,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/votacionPrivada.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
     .state('miscursos',{
       url: '/miscursos',
-      templateUrl:'templates/misCursos.html'
+      templateUrl:'templates/misCursos.html',
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
+      }
     })
 
     .state('miscursos.equipo', {
@@ -164,7 +213,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('vercursos',{
       url: '/vercursos',
-      templateUrl:'templates/verCursos.html'
+      templateUrl:'templates/verCursos.html',
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
+      }
     })
 
     .state('vercursos.entregas', {

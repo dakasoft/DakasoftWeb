@@ -194,7 +194,6 @@
                 profesores:$scope.profesoresSeleccionados,
                 estudiantes: []
               });
-              console.log($scope.grupos);
 
             }
             $scope.nombreGrupo = "";

@@ -53,7 +53,6 @@
        notainput.removeClass( "error" );
     if($scope.nota<=100){
       $scope.editableProject.nota =angular.copy($scope.nota);
-      console.log($scope.editableProject);
       $("#editModal").modal('hide');
       $scope.nota="";
 

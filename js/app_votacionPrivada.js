@@ -18,7 +18,6 @@
           $scope.video =proyecto.video;
           $("#video").attr("src", $scope.video); /* dinamic iframe */
           $scope.video = "";
-          //console.log($scope.video);
         };
 
         $scope.enviarVotacion = function(proyecto){

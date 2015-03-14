@@ -1138,8 +1138,8 @@ table.selectedTable th, table.selectedTable td {
 /*tabla*/
 .divTabla{background:#fff;margin-top:20px;}
 /*tHead*/
-th{text-align: left;background:#722d7b;color:#fff;}
-tr{text-align: left;}
+.divTabla th{text-align: left;background:#722d7b;color:#fff;}
+.divTabla tr{text-align: left;}
 /*Modal estilo*/
 .tdModal a{
 	font-weight:600;
@@ -1480,6 +1480,13 @@ tr{text-align: left;}
 	color:#a32068;
 }
 
+.mensaje1{
+	color:#a32068;
+}
+
+.mensaje2{
+	color:#a32068;
+}
 .Listascroll{
 overflow: auto;
 height: 400px;
@@ -1532,3 +1539,6 @@ color:#a32068;
 	position: absolute !important;
 }
 
+.soyunpointer{
+	cursor: pointer;
+}
