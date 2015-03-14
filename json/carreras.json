@@ -1,0 +1,30 @@
+[
+    {
+      "id":1,
+      "nombre":"Diseño y Desarrollo Web",
+      "cod":"web232",
+      "cursos":
+      [
+        {
+          "id": 1,
+          "nombre": "Proyecto de Desarrollo Web 1"
+        },
+        {
+          "id": 2,
+          "nombre": "Proyecto de Desarrollo Web 2"
+        }
+      ]
+    },
+    {       
+      "id":2,
+      "nombre":"Desarrollo de Software",
+      "cod":"soft220",
+      "cursos":[]
+    },
+    {
+      "nombre":"Tecnologias",
+      "id":3,
+      "cod":"Bitic",
+      "cursos": []
+    }
+]

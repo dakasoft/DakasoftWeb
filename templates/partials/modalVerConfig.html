@@ -1,0 +1,56 @@
+<div class="modal fade" id="modalConfig" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <form ng-submit="saveConfig()">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <div class="row">
+              <h3 class="h3ConfigTitle">Periodo del Curso</h3>
+            </div>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configPeriodStart">Inicio del Periodo</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configPeriodStart" name="configPeriodStart" class="form-control" ng-model="config.config.course.periodStart">
+              </div>
+            </div>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configPeriodEnd">Fin del Periodo</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configPeriodEnd" name="configPeriodEnd" class="form-control" ng-model="config.config.course.periodEnd">
+              </div>
+            </div>
+            <div class="row">
+              <h3 class="h3ConfigTitle">Modificación de Equipos</h3>
+            </div>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configModifStart">Fecha de Inicio</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configModifStart" name="configModifStart" class="form-control" ng-model="config.config.team.modifStart">
+              </div>
+            </div>
+            <div class="row configRow">
+              <div class="col-xs-6">
+                <label for="configModifEnd">Fecha de Finalización</label>
+              </div>
+              <div class="col-xs-6">
+                <input type="date" id="configModifEnd" name="configModifEnd" class="form-control" ng-model="config.config.team.modifEnd">
+              </div>
+            </div>
+            <div class="row configRow">
+              <button type="submit" id="btnSaveConfig" class="btn btn-custom btn-sm pull-right">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

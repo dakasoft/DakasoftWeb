@@ -13,7 +13,7 @@
 
     $rootScope.courses = {};
 
-    $http.get('json/estudiantes.json').success(function (data) {
+    $http.get('json/estudiantesEquipo.json').success(function (data) {
       $scope.estudianteActual = data;
       console.log($scope.estudianteActual);
     });

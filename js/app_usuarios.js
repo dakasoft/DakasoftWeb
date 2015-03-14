@@ -8,24 +8,14 @@
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
         $scope.usuarios = [];
         $scope.editableUser = "";
-       // $scope.mensaje = "hola";
+        $scope.tempUser = "";
         $http.get('json/usuarios.json').success(function (data) {
-          console.log("usuarios");
           $scope.usuarios = data;
         });
 
-        /*
-        $scope.tableParams = new ngTableParams({page: 1,count: 10}, 
-          {
-            total: $scope.usuarios.length, // length of data
-            getData: function($defer, params) {
-              console.log($scope.mensaje);
-              $defer.resolve($scope.usuarios.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-            }
-        });
-        */
-
         $scope.editar = function(user){
+          $scope.usuariosForm.$setUntouched(true);
+          $scope.usuariosForm.$setPristine(true);
           $scope.editableUser = user;
           $scope.nombre = user.name;
           $scope.apellido = user.lastname;
@@ -34,16 +24,24 @@
           $scope.role = user.role;
         };
 
-        $scope.borrar = function(user){        
+        $scope.setUser = function(user)
+        {
+          $scope.tempUser = user;
+        }
+
+
+        $scope.borrar = function(){        
           angular.forEach($scope.usuarios, function(value, key) {
-            console.log(user.id);
-            if(value.id == user.id){
+            if(value.id == $scope.tempUser.id){
               $scope.usuarios.splice(key, 1);
             }
           });
+          $("#modalConfirm").modal('hide');
         };
 
         $scope.agregar = function(){
+          $scope.usuariosForm.$setUntouched(true);
+          $scope.usuariosForm.$setPristine(true);
           $scope.editableUser = "";
           $scope.nombre = "";
           $scope.apellido = "";
@@ -53,7 +51,8 @@
         };
 
         $scope.guardar = function(){
-          if($scope.editableUser != ""){
+          if($scope.usuariosForm.$valid){
+            if($scope.editableUser != ""){
             $scope.editableUser.name = $scope.nombre;
             $scope.editableUser.lastname = $scope.apellido;
             $scope.editableUser.email = $scope.email;
@@ -74,12 +73,15 @@
               }
             });
 
-            console.log($scope.role);
             $scope.usuarios.push({id:newId,name: $scope.nombre, lastname: $scope.apellido,
               email: $scope.email, password: $scope.pass, role: $scope.role
             });
           }
-        $("#editModal").modal('hide');
+        $("#editModal").modal('hide');            
+          }else{
+            $scope.usuariosForm.$setDirty();
+          }
+          
         };
       }],
       controllerAs: 'usuariosCntrl'
@@ -99,5 +101,6 @@
       controllerAs: 'modalCntrl'
     };
   });
+  
 
 })();

@@ -1,7 +1,24 @@
-{
-	"config": {
-		"general": {
-			"AAA": "BBB"
-		}
+[
+
+	{
+		"id":1,
+		"nombre":"Bimestre"
+
+	},
+    {
+		"id":2,
+		"nombre":"Trimestre"
+
+	},
+	{
+		"id":3,
+		"nombre":"Cuatrimestre"
+
+	},
+	{
+		"id":4,
+		"nombre":"Semestre"
+
 	}
-}
+
+]

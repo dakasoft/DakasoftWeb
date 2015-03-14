@@ -1,146 +1,80 @@
-[
-  {
-    "id": 68,
-    "nombre": "Kibo",
-    "apellido": "Moore",
-    "email": "ac@felisadipiscing.net",
-    "password": "2622",
-    "role": "Estudiante",
-    "cursos":
-    [
-     	{
-	 		"id": 1,
-	 		"nombre": "Proyecto web 1",
-	 		"attendant":"Alvaro Cordero",
-	 		"entregas": [
-				{
-					"name":"Entrega 1",
-					"uploads":[
-						"DakaSoft_Entrega1.rar",
-						"Oni_Entrega1.rar"
-					]
-				},
-				{
-					"name":"Entrega 2",
-					"uploads":[
-						"DakaSoft_Entrega2.rar",
-						"Oni_Entrega2.rar"
-					]
-				}
-	 		],
-	 		"equipo":
-	 		[
-	 			{
-	 				"nombre":"DakaSoft",
-	 				"integrantes":
-	 				[
-		 				{
-		 					"nombre":"Aaron",
-		 					"apellido":"Chavarría",
-		 					"rol":"Desarrollo",
-		 					"evaluacion":[]
-		 				},
-						{
-		 					"nombre":"Karo",
-		 					"apellido":"Muñoz",
-		 					"rol":"Coordinadora",
-		 					"evaluacion":[]
-		 				}
-	 				],
-	 				"vision":"Lorem",
-	 				"mision":"Ipsum"
-	 			}
-	 		]
-	 	},
-		  {
-		    "id": 2,
-		    "nombre": "Proyecto web 2",
-		    "attendant":"Alvaro Cordero",
-		    "entregas": [
-				{
-					"name":"Entrega 1",
-					"uploads":[
-						"DakaSoft_Entrega1.rar",
-						"Oni_Entrega1.rar"
-					]
-				},
-				{
-					"name":"Entrega 2",
-					"uploads":[
-						"DakaSoft_Entrega2.rar",
-						"Oni_Entrega2.rar"
-					]
-				}
-		    ],
-		 		"equipo":
-		 		[
-		 			{
-		 				"nombre":"DakaSoft",
-		 				"integrantes":
-		 				[
-			 				{
-			 					"nombre":"Aaron",
-			 					"apellido":"Chavarría",
-			 					"rol":"Desarrollo",
-			 					"evaluacion":[]
-			 				},
-							{
-			 					"nombre":"Karo",
-			 					"apellido":"Muñoz",
-			 					"rol":"Coordinadora",
-			 					"evaluacion":[]
-			 				}
-		 				],
-		 				"vision":"Lorem",
-		 				"mision":"Ipsum"
-		 			}
-		 		]
-		  },
-		  {
-		    "id": 3,
-		    "nombre": "Proyecto web 3",
-		    "attendant":"Alvaro Cordero",
-		    "entregas": [
-				{
-					"name":"Entrega 1",
-					"uploads":[
-						"DakaSoft_Entrega1.rar",
-						"Oni_Entrega1.rar"
-					]
-				},
-				{
-					"name":"Entrega 2",
-					"uploads":[
-						"DakaSoft_Entrega2.rar",
-						"Oni_Entrega2.rar"
-					]
-				}
-		    ],
-		 		"equipo":
-		 		[
-		 			{
-		 				"nombre":"DakaSoft",
-		 				"integrantes":
-		 				[
-			 				{
-			 					"nombre":"Aaron",
-			 					"apellido":"Chavarría",
-			 					"rol":"Desarrollo",
-			 					"evaluacion":[]
-			 				},
-							{
-			 					"nombre":"Karo",
-			 					"apellido":"Muñoz",
-			 					"rol":"Coordinadora",
-			 					"evaluacion":[]
-			 				}
-		 				],
-		 				"vision":"Lorem",
-		 				"mision":"Ipsum"
-		 			}
-		 		]
-		  }
-    ]
-  }
+[    
+	{
+        "id": 1,
+        "nombre": "Aaron",
+        "apellido": "Chavarría",
+        "email": "aronchj7@live.com",
+        "password": "pass123",
+        "role": "Estudiante",
+        "show":false,
+        "cursos":[
+        	{
+            	"id":1,
+            	"nombre":"Proyecto web 1",
+            	"nota": 100,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo1.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]
+            },
+            {
+                "id":2,
+                "nombre":"Proyecto web 2",
+                "nota": 70,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Worldsoft",
+                "logoEquipo":"img/logoEquipo2.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ] 
+            }
+        ]
+    },
+	{
+        "id": 2,
+        "nombre": "Luis",
+        "apellido": "Morales",
+        "email": "luismendez@live.com",
+        "password": "pass123",
+        "role": "Estudiante",
+        "show":false,
+        "cursos":[
+            {
+        		"id":1,
+        		"nombre":"Proyecto web 1",
+        		"nota": 98,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo1.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]  
+            },
+            {
+                "id":1,
+                "nombre":"Proyecto web 1",
+                "nota": 100,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Checksoft",
+                "logoEquipo":"img/logoEquipo3.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]  
+            }
+        ]
+    }
 ]
-

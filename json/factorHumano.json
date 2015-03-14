@@ -1,0 +1,46 @@
+[
+  {
+    "id":1,
+    "nombrePofesor":"Kiara", 
+    "apellidoProfesor":"Thomas",
+    "area": "Factor Humano",
+    "grupos":[
+          {
+            "id":1,
+            "nombre":"Grupo 01",
+            "curso":"Proyecto Web 1",
+             "rubrica":[
+                {
+                  "id":1,
+                  "nombre":"Asistencia",
+                  "valor":"50"
+                },
+                {
+                  "id":2,
+                  "nombre":"reponsabilidad",
+                  "valor":"50"
+                }
+              ]
+
+          },
+          {
+              "id":2,
+              "nombre":"Grupo 02",
+              "curso":"Proyecto Web 2",
+              "rubrica":[
+                {
+                  "id":1,
+                  "nombre":"Asistencia",
+                  "valor":"50"
+                },
+                {
+                  "id":2,
+                  "nombre":"reponsabilidad",
+                  "valor":"50"
+                }
+            ]
+        }
+  ]
+}
+]
+

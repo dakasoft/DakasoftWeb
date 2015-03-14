@@ -1,0 +1,22 @@
+<modal-ver-equipo></modal-ver-equipo>
+<div id="divVerEquipo" class="container-fluid equipoContent">
+	<div class="row divAddTeam">
+		<div class="col-xs-12 col-sm-2 col-sm-offset-8">
+			<button type="button" class="btn btn-custom pull-right" data-toggle="modal" data-target="#modalNuevoEquipo" ng-click="newTeam(grupo)">Agregar Equipo</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+			<table id="custom-table" ng-table="tableParams"  class="table">
+				<tr ng-repeat="equipo in grupo.teams">
+					<td data-title="'Equipo'">{{equipo.name}}</td>
+					<td data-title="'Logo'">{{equipo.logo}}</td>
+					<td data-title="'Acciones'">
+						<a data-toggle="modal" data-target="#modalEquipo" ng-click="editTeam(equipo)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+						<a><i class="fa fa-times-circle fa-2x" ng-click="deleteTeam(grupo, equipo)" data-toggle="modal" data-target="#modalConfirmacion"></i></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

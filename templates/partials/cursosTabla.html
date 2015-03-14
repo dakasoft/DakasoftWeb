@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<div class="row">
+	<div class="form-group search-parent  col-xs-12 col-sm-4">
+      <input type="text" class="form-control normal-search" placeholder="Search" ng-model="palabra">
+      <i class="fa fa-search normal-search-icon"></i>
+    </div>
+		<div class="col-xs-12">
+			<div class="table-header">
+
+				<div class="col-xs-12 col-sm-6">
+					<p>Cursos</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p><a href="" data-toggle="modal" data-target="#editModal" ng-click="agregar(curso)" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+
+				</div>
+			</div>
+			<table id="custom-table" ng-table class="table">
+			    <tr ng-repeat="curso in cursos | filter:palabra" >
+			        <td data-title="'Nombre'">{{curso.nombre}}</td>
+			        <td data-title="'Código'">{{curso.cod}}</td>
+			        <td data-title="'Acciones'">
+			        	<a data-toggle="modal" data-target="#editModal" ng-click="editar(curso)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+			        	<a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm"  ng-click="eliminarTemporal(curso)"></i></a>
+			        </td>
+			    </tr>
+			</table>
+		</div>
+	</div>
+</div>
