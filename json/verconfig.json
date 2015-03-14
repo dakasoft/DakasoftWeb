@@ -34,5 +34,8 @@
       "rubro":"Proyecto Final",
       "valor":40
     }
+  ],
+  "roles": [
+    "Calidad", "Soporte", "Desarrollo", "Coordinación"
   ]
 }

@@ -30,7 +30,7 @@
     });
 
     $http.get('json/verconfig.json').success(function (data) {
-      $scope.config = data.config;
+      $scope.config = data;
       $scope.rubrica = data.rubrica;
     });
 

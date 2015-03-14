@@ -30,12 +30,16 @@
               </table>               
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6">
+          <div class="col-xs-12 col-sm-7">
+            <div class="row">
               <ul class="list-group listaEstudiantes">
                 <li class="list-group-item list-g-header">Integrantes</li>
                 <li class="list-group-item" ng-repeat="integrante in modalTeam.integrantes track by $index">
-                  {{integrante.name}} {{integrante.lastname}}<i class="fa fa-times-circle pull-right" ng-click="removeStudent(integrante)"></i>
+                  {{integrante.name}} {{integrante.lastname}}
+                  <i class="fa fa-times-circle pull-right" ng-click="removeStudent(integrante)"></i>
+                  <select ng-model="integrante.role" class="pull-right">
+                    <option ng-repeat="role in config.roles">{{role}}</option>
+                  </select>
                 <li>
               </ul>
             </div>
