@@ -1,0 +1,81 @@
+[
+  {
+    "id":1,
+    "nombrePofesor":"Kiara", 
+    "apellidoProfesor":"Thomas",
+    "area": "Factor Humano",
+    "cursos":[
+          {
+            "id":1,
+            "nombreGrupo":"Grupo 01",
+            "cursoNombre":"Proyecto Web 1",
+             "rubrica":[
+                {
+                  "id":1,
+                  "nombre":"Asistencia",
+                  "valor":"80"
+                },
+                {
+                  "id":2,
+                  "nombre":"reponsabilidad",
+                  "valor":"98"
+                }
+              ]
+
+          },
+          {
+              "id":2,
+              "nombreGrupo":"Grupo 02",
+              "cursoNombre":"Proyecto Web 2",
+              "rubrica":[
+                {
+                  "id":1,
+                  "nombre":"Asistencia",
+                  "valor":"70"
+                },
+                {
+                  "id":2,
+                  "nombre":"reponsabilidad",
+                  "valor":"100"
+                }
+            ]
+        },
+        {
+              "id":3,
+              "nombreGrupo":"Grupo 03",
+              "cursoNombre":"Proyecto software 1",
+              "rubrica":[
+                {
+                  "id":1,
+                  "nombre":"Respeto",
+                  "valor":"90"
+                },
+                {
+                  "id":2,
+                  "nombre":"reponsabilidad",
+                  "valor":"100"
+                }
+            ]
+        },
+        {
+              "id":4,
+              "nombreGrupo":"Grupo 04",
+              "cursoNombre":"Proyecto software 4",
+              "rubrica":[
+                {
+                  "id":1,
+                  "nombre":"Respeto",
+                  "valor":"90"
+                },
+                {
+                  "id":2,
+                  "nombre":"reponsabilidad",
+                  "valor":"100"
+                }
+            ]
+        }
+
+  ]
+}
+]
+

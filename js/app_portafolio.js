@@ -1,0 +1,75 @@
+(function(){
+var app = angular.module('portafolio', ["ui.router"]);
+
+app.directive('portafolio', function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'templates/partials/portafolioEstudiante.html',
+        
+       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+      $scope.estudiantes = [];
+       $scope.video= "";
+       $scope.editableUser = "";
+        $http.get('json/portafolio.json').success(function (data) {
+          $scope.estudiantes = data;
+        });
+
+        $scope.seleccionar = function(proyecto){
+          $scope.video =proyecto.video;
+          $("#video").attr("src", $scope.video); /* dinamic iframe */
+          $scope.video = "";
+          //console.log($scope.video);
+        };
+
+        //hermoso jquery//
+        $('#editModalV').on('hidden.bs.modal', function (e) {
+          $("#video").attr("src", $scope.video);
+          $scope.video = "";
+        })
+
+
+         $scope.editar = function(estudiante){
+          $scope.editableUser = estudiante;
+          $scope.foto = estudiante.foto;
+          $scope.correo = estudiante.correo;
+          $scope.telefono = estudiante.telefono;
+          $scope.OtraInfo = estudiante.OtraInfo;
+        };
+         $scope.guardar = function(){
+          if($scope.editableUser != ""){
+            $scope.editableUser.correo =$scope.correo;
+             $scope.editableUser.telefono =$scope.telefono;
+              $scope.editableUser.OtraInfo = $scope.OtraInfo;
+          }
+        $("#editModal").modal('hide');
+        };
+
+      }],
+      controllerAs: 'portafolioCtrl'
+    };
+  });
+
+  app.directive('modalPortafolio',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalPortafolio.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+       
+        
+      }],
+        controllerAs: 'modalPortafolioCtrl'
+    };
+});
+  app.directive('modalVideo',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalVideo.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+       
+      }],
+      controllerAs: 'modalVCntrl'
+    };
+  });
+
+
+})();

@@ -1,83 +1,81 @@
-[
-  {
-    "id": 68,
-    "nombre": "Kibo",
-    "apellido": "Moore",
-    "email": "ac@felisadipiscing.net",
-    "password": "2622",
-    "role": "Estudiante",
-    "cursos":
-    [
-     	{
-		 		"id": 1,
-		 		"nombre": "Proyecto web 1",
-		 		"equipo":
-		 		[
-		 			{
-		 				"nombre":"prueba",
-		 				"integrantes":
-		 				[
-			 				{
-			 					"nombre":"Aaron Chavarría",
-			 					"rol":"Desarrollo"
-			 				},
-							{
-			 					"nombre":"Karo Muñoz",
-			 					"rol":"Coordinadora"
-			 				}
-		 				],
-		 				"vision":"",
-		 				"mision":""
-		 			}
-		 		]
-		 	},
-		  {
-		    "id": 2,
-		    "nombre": "Proyecto web 2",
-		 		"equipo":
-		 		[
-		 			{
-		 				"nombre":"",
-		 				"integrantes":
-		 				[
-			 				{
-			 					"nombre":"Aaron Chavarría",
-			 					"rol":"Desarrollo"
-			 				},
-							{
-			 					"nombre":"Karo Muñoz",
-			 					"rol":"Coordinadora"
-			 				}
-		 				],
-		 				"vision":"",
-		 				"mision":""
-		 			}
-		 		]
-		  },
-		  {
-		    "id": 3,
-		    "nombre": "Proyecto web 3",
-		 		"equipo":
-		 		[
-		 			{
-		 				"nombre":"",
-		 				"integrantes":
-		 				[
-			 				{
-			 					"nombre":"Aaron Chavarría",
-			 					"rol":"Desarrollo"
-			 				},
-							{
-			 					"nombre":"Karo Muñoz",
-			 					"rol":"Coordinadora"
-			 				}
-		 				],
-		 				"vision":"",
-		 				"mision":""
-		 			}
-		 		]
-		  }
-    ]
-  }
+[    
+	{
+        "id": 1,
+        "nombre": "Aaron",
+        "apellido": "Chavarría",
+        "email": "aronchj7@live.com",
+        "password": "pass123",
+        "role": "Estudiante",
+        "show":false,
+        "cursos":[
+        	{
+            	"id":1,
+            	"nombre":"Proyecto web 1",
+            	"nota": 100,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo1.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]
+            },
+            {
+                "id":2,
+                "nombre":"Proyecto web 2",
+                "nota": 70,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Worldsoft",
+                "logoEquipo":"img/logoEquipo2.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ] 
+            }
+        ]
+    },
+	{
+        "id": 2,
+        "nombre": "Luis",
+        "apellido": "Morales",
+        "email": "luismendez@live.com",
+        "password": "pass123",
+        "role": "Estudiante",
+        "show":false,
+        "cursos":[
+            {
+        		"id":1,
+        		"nombre":"Proyecto web 1",
+        		"nota": 98,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Dakasoft",
+                "logoEquipo":"img/logoEquipo1.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]  
+            },
+            {
+                "id":1,
+                "nombre":"Proyecto web 1",
+                "nota": 100,
+                "profesor":"Álvaro Cordero",
+                "equipo":"Checksoft",
+                "logoEquipo":"img/logoEquipo3.png",
+                "integrantes":[
+                    "Karolina Munnoz",
+                    "Luis Daniel Morales",
+                    "Carolina Azofeifa",
+                    "Aaron Chavarria"
+                ]  
+            }
+        ]
+    }
 ]
 
