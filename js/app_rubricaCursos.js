@@ -30,8 +30,6 @@
             if(lastRubro != null){
                newId = lastRubro.id + 1;
             }
-            
-            console.log("rubroNombre");
             $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
             $scope.rubroNombre = "";
             $scope.rubroValor = "";

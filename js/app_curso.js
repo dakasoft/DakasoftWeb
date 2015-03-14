@@ -36,7 +36,6 @@
           
           angular.forEach($scope.cursos, function(value, key) {
             if(value.id == $scope.temporal.id){
-               console.log(value.id);
               $scope.cursos.splice(key, 1);
             }
           });
@@ -66,7 +65,6 @@
         };
          $scope.borrarArea = function(area){
           angular.forEach($scope.areasSeleccionadas, function(value, key) {
-               console.log(value);
             if(value.nombre == area.nombre){
              $scope.areasSeleccionadas.splice(key, 1);
             }

@@ -798,5 +798,13 @@
         "email": "nibh@imperdiet.co.uk",
         "password": "5694",
         "role": "Decano"
-    }
+    },
+     {
+        "id": 101,
+        "name": "Aaron",
+        "lastname": "Gamble",
+        "email": "aronchj7@live.com",
+        "password": "Master123",
+        "role": "Admin"
+    ,"disponible": true}
 ]

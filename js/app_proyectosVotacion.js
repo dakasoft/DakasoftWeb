@@ -15,7 +15,6 @@
           $scope.proyectos = data;
         });
         $http.get('json/usuarios.json').success(function (data) {
-          console.log("usuarios");
           $scope.usuarios = data;
         });
         $scope.agregarProyecto = function(proyecto){

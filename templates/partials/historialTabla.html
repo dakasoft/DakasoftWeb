@@ -1,7 +1,4 @@
 <div class="col-sm-10 col-sm-offset-1">
-
-
-	
 		<div class="divInput">
 			<p>Estudiante</p>
 			<input type="text" class="form-control txtSearcher" placeholder="Buscar estudiante" ng-model="estudiantes.search.nombre">
@@ -11,7 +8,7 @@
 		<ul class="list-group">
 			<li ng-repeat="estudiante in estudiantes | filter:estudiantes.search:nombre">
 			<div class="divNombre" ng-click="estudiante.show = toogleInfo(estudiante.show)" ng-class="estudiante.show == true? 'tab-active' : 'tab-no-active' ">
-				<h3>{{estudiante.nombre}} {{estudiante.apellido}}</h3>
+				<h3 class="soyunpointer">{{estudiante.nombre}} {{estudiante.apellido}}</h3>
 			</div>
 				
 				<div class="divCursosAlumnos clearfix" ng-repeat="curso in estudiante.cursos" ng-show="estudiante.show">

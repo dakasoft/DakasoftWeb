@@ -11,29 +11,32 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
        <ul class="nav navbar-nav">
-       	<li id="configuracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Configuración<span class="caret"></span></a>
+       	<li ng-show="roleLv > 2" id="configuracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Configuración<span class="caret"></span></a>
            <ul class="subMenuMovil dropdown-menu">
-             <li><a ui-sref="usuarios">Usuarios</a></li>
-             <li><a ui-sref="carreras">Carreras</a></li>
-             <li><a ui-sref="cursos">Cursos</a></li>
-             <li><a ui-sref="grupos">Grupos</a></li>
-             <li><a ui-sref="parametros">Parametros</a></li>
-             <li><a ui-sref="factorhumano">Factor Humano</a></li>
-             <li><a ui-sref="votacion">Votación</a></li>
+              <li ng-show="roleLv > 4"><a ui-sref="usuarios">Usuarios</a></li>
+              <li ng-show="roleLv > 2"><a ui-sref="carreras">Carreras</a></li>
+              <li ng-show="roleLv > 2"><a ui-sref="cursos">Cursos</a></li>
+              <li ng-show="roleLv > 2"><a ui-sref="grupos">Grupos</a></li>
+              <li ng-show="roleLv > 2"><a ui-sref="parametros">Parametros</a></li>
+              <li ng-show="roleLv > 1"><a ui-sref="factorhumano">Factor Humano</a></li>
+              <li ng-show="roleLv > 1"><a ui-sref="rubricacursos">Rúbrica</a></li>
+              <li ng-show="roleLv > 4"><a ui-sref="proyectosvotacion">Votación</a></li>
           </ul>
         </li>
         <li id="administracionM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administración<span class="caret"></span></a>
          <ul class="subMenuMovil dropdown-menu cf">
-          <li><a  href='#'>Ver Cursos</a></li>
-
+        <li ng-show="roleLv == 1"><a ui-sref="miscursos">Mis Cursos</a></li>
+        <li ng-show="roleLv == 2"><a ui-sref="vercursos">Ver Cursos</a></li>
+        <li ng-show="roleLv == 2"><a ui-sref="verproyectos">Proyectos</a></li>
+        <li ng-show="roleLv == 5"><a ui-sref="votacionprivada">En Votación</a></li>
         </ul>
       </li>
-      <li id="portafolioM"><a ui-sref="portafolio" >Portafolio <span ></span></a>
+      <li id="portafolioM"><a ng-show="roleLv >= 3" ui-sref="portafolio" >Portafolio <span ></span></a>
       </li>
       <li id="reportesM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span></a>
        <ul class="subMenuMovil dropdown-menu cf">
-        <li><a ui-sref="reportenotas" ng-click="" >Reporte Notas</a></li>
-        <li><a ui-sref="historialacademico" ng-click="" >Historial Académico</a></li>
+        <li ng-show="roleLv > 1"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>
+        <li ng-show="roleLv > 1"><a ui-sref="historialacademico" ng-click="">Historial Acádemico</a></li>
       </ul>
     </li>
   </ul>

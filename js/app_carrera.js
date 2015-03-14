@@ -37,7 +37,6 @@
           
           angular.forEach($scope.carreras, function(value, key) {
             if(value.id == $scope.temporal.id){
-               console.log(value.id);
               $scope.carreras.splice(key, 1);
             }
           });
@@ -47,7 +46,6 @@
         $scope.borrarCurso = function(curso){
           angular.forEach($scope.cursosSeleccionados, function(value, key) {
             if(value.id == curso.id){
-               console.log(value.id);
               $scope.cursosSeleccionados.splice(key, 1);
             }
           });

@@ -27,7 +27,6 @@
             $(".css-form").removeClass("ng-dirty");
             var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
             var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
-            // console.log("rubroNombre");
             $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
             $scope.rubroNombre = "";
             $scope.rubroValor = "";
@@ -45,7 +44,6 @@
             }
           });
 
-          console.log($scope.rubrosSeleccionados);
 
         };
 
