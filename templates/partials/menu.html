@@ -1,6 +1,6 @@
 <ul ng-class=" $root.currentStateName=='home' ? 'menuList' : 'menuVertical'">
   <div class="col1">
-    <li id="configuracion"><a><img ng-src="img/configuracion.png"/></a>
+    <li ng-show="roleLv > 1" id="configuracion"><a><img ng-src="img/configuracion.png"/></a>
      <ul class="subMenu cf">
         <li ng-show="roleLv > 4"><a ui-sref="usuarios">Usuarios</a></li>
         <li ng-show="roleLv > 2"><a ui-sref="carreras">Carreras</a></li>

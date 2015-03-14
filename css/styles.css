@@ -1232,26 +1232,13 @@ table.selectedTable th, table.selectedTable td {
 }
 
 
+/*************************************Mi Equipo****************************/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#h3EvalMiEquipo {
+	text-align: center;
+	color: #722d7b;
+	font-weight: bold;
+}
 
 /******************************* Ver Cursos XD ******************************/
 #divVerEquipo table thead {
@@ -1286,18 +1273,33 @@ table.selectedTable th, table.selectedTable td {
 	background-color: #722d7b;
 	margin-top: 10px;
 }
+
 #divVerEntregas .divAssignment p {
 	color: white;
 	font-weight: bold;
 	text-align: center;
 }
 
+#divMiCurso .divReceived {
+	border: 1px solid #722d7b;
+}
+
+#divMiCurso .divReceived ul {
+	list-style: none;
+}
+
+#divMiCurso .divReceived ul li{
+	padding: 3px 0 0 0;
+}
+
 #divVerEntregas .divReceived {
 	border: 1px solid #722d7b;
 }
+
 #divVerEntregas .divReceived ul {
 	list-style: none;
 }
+
 #divVerEntregas .divReceived ul li{
 	padding: 3px 0 0 0;
 }

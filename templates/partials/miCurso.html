@@ -1,0 +1,19 @@
+<div id="divMiCurso" class="container-fluid equipoContent">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-2">
+			<p>Profesor Encargado: {{curso.attendant}}</p>
+		</div>
+	</div>
+	<div class="row" ng-repeat="entrega in curso.entregas">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+			<div class="row divAssignment">
+				<div class="col-xs-10">
+					<p>{{entrega.name}}</p>
+				</div>
+				<div class="col-xs-2">
+					<p><i class="fa fa-upload"></i></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

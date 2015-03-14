@@ -1,0 +1,36 @@
+<div class="modal fade" id="modalIntegrante" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+          <div class="row">
+            <h3 id="h3EvalMiEquipo">Evaluación de Equipo</h3>
+          </div>
+          <div class="row">
+            <form class="form-horizontal" ng-submit="saveEval()">
+              <div class="form-group">
+                <div class="row">
+                  <table id="custom-table" class="table" ng-table="tableParams" >
+                    <tr ng-repeat="rubro in modalEval">
+                      <td data-title="'Rubro'">{{rubro.rubro}}</td>
+                      <td data-title="'Valor'">
+                        <input type="number" min="0" max="100" class="form-control" ng-model="rubro.valor">
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <button type="submit" class="btn btn-custom btn-sm pull-right">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>

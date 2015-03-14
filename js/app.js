@@ -1,14 +1,14 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos","verCursos"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos","verCursos","misCursos"]);
 
 /*Quitar el hashtag en el browser*/
 
 app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
     var main = this;
     $rootScope.currentUser = {};
-    $rootScope.bLoggedIn = false; //cambiar para deslogear
-    $rootScope.roleLv = 0;
+    $rootScope.bLoggedIn = true; //cambiar para deslogear
+    $rootScope.roleLv = 1;
 
     main.logOut = function () {
       $rootScope.currentUser = {};
@@ -204,6 +204,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('miscursos.equipo', {
       url: '/equipo',
       templateUrl:'templates/partials/miEquipo.html'
+    })
+
+    .state('miscursos.curso', {
+      url: "/curso",
+      templateUrl:"templates/partials/miCurso.html"
     })
 
     .state('miscursos.cursos', {

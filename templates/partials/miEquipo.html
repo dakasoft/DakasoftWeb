@@ -1,4 +1,5 @@
-<div class="container-fluid equipoContent" ng-show="curso.equipo.show">
+<modal-mi-equipo></modal-mi-equipo>
+<div class="container-fluid equipoContent">
 	<div class="col-xs-12">
 	<form class="form-horizontal">
 		<div class="form-group">
@@ -9,13 +10,20 @@
       </div>    
 		</div>
 		<div class="form-group">
-			<div class="col-xs-12 col-sm-5">
+			<div class="col-xs-12 col-sm-6">
 				<label>Integrantes:</label>
-				<ul class="ul-list-integrantes">
-					<li ng-repeat="integrante in curso.equipo[0].integrantes">{{ integrante.nombre }} - {{integrante.rol}}</li>
-				</ul>
+				<table id="custom-table" ng-table="tableParams"  class="table">
+					<tr ng-repeat="integrante in curso.equipo[0].integrantes">
+						<td data-title="'Nombre'">{{integrante.nombre}}</td>
+						<td data-title="'Apellido'">{{integrante.apellido}}</td>
+						<td data-title="'Rol'">{{integrante.rol}}</td>
+						<td data-title="'Evaluacion'">
+							<a data-toggle="modal" data-target="#modalIntegrante" ng-click="editEval(integrante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+						</td>
+					</tr>
+				</table>
 			</div>
-			<div class="col-xs-12 col-sm-7">
+			<div class="col-xs-12 col-sm-6">
 				<div class="row">
 					<label class="col-xs-12">Descripción <i class="fa fa-pencil-square-o fa-2x"></i></label>
 				</div>
@@ -23,7 +31,7 @@
 					<div class="col-xs-2 col-sm-2">
 						<label for="" class="label-xs">Visión</label>
 					</div>
-					<div class="col-xs-8 col-sm-8">
+					<div class="col-xs-8 col-sm-10">
 						<input type="text" class="form-control pencil-input input-xs" id="nombreEquipo" ng-model="curso.equipo[0].vision">
 					</div>
 				</div>
@@ -31,7 +39,7 @@
 					<div class="col-xs-2 col-sm-2">
 						<label for="" class="label-xs">Misión</label>
 					</div>
-					<div class="col-xs-8 col-sm-8">
+					<div class="col-xs-8 col-sm-10">
 						<input type="text" class="form-control pencil-input input-xs" id="nombreEquipo" ng-model="curso.equipo[0].mision">
 					</div>
 				</div>
