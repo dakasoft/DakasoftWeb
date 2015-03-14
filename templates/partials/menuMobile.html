@@ -31,9 +31,9 @@
         <li ng-show="roleLv == 5"><a ui-sref="votacionprivada">En Votación</a></li>
         </ul>
       </li>
-      <li id="portafolioM"><a ng-show="roleLv >= 3" ui-sref="portafolio" >Portafolio <span ></span></a>
+      <li id="portafolioM"><a ng-show="roleLv >= 3 || roleLv == 1 " ui-sref="portafolio" >Portafolio <span ></span></a>
       </li>
-      <li id="reportesM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span></a>
+      <li ng-show="roleLv > 1" id="reportesM"class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span></a>
        <ul class="subMenuMovil dropdown-menu cf">
         <li ng-show="roleLv > 1"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>
         <li ng-show="roleLv > 1"><a ui-sref="historialacademico" ng-click="">Historial Acádemico</a></li>

@@ -8,7 +8,7 @@
         </div>
       </form> 
       <div ng-repeat="estudiante in estudiantes | filter:palabra | limitTo: 1">
-        <div  class=" head col-xs-12 col-sm-12"><h2>Portafolio</h2><button ng-show="roleLv == 1" data-toggle="modal"  data-target="#editModal" ng-click="editar(estudiante)" class="conf fa fa-cog"></button></div>
+        <div  class=" head col-xs-12 col-sm-12"><h2>Portafolio</h2><i ng-show="roleLv == 1" data-toggle="modal"  data-target="#editModal" ng-click="editar(estudiante)" class="conf fa fa-cog fa-2x pull-right"></i></div>
         <div class="fotoI col-xs-12 col-sm-3" >
           <img ng-src="{{estudiante.foto}}" class="img-responsive img-circle"/>      
         </div>
