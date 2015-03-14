@@ -5,16 +5,15 @@
 <div class="clearfix divTabla" >
 	<table class="table table-nonfluid table-hover">
 		<tr>
-			<th>Grupo</th>
+			<!-- <th>Grupo</th> -->
 			<th>Curso</th>		
 			<th>Acciones</th>
 		</tr>
-		<tr ng-repeat="curso in rubricaCursos[0].grupos">
-		  <td>{{curso.nombre}}</td>
-		  <td>{{curso.curso}}</td>
+		<tr ng-repeat="curso in rubricaCursos[0].cursos">
+		  <td>{{curso.cursoNombre}}</td>
 			<td class="tdModal">
 			<a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(curso)">
-				<i class="fa fa-plus fa-lg"></i>Editar
+				<i class="fa fa-pencil-square-o fa-2x"></i>Editar
 			</a>
 			</td>
 		</tr>

@@ -1,7 +1,7 @@
 (function () { // define funcionalidad
   var app = angular.module('rubricaCursos', ["ui.router"]);
   
-  app.directive('rubricaCursos',function ($http) {
+  app.directive('rubricaCursosTabla',function ($http) {
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/rubricaCursosTabla.html',
@@ -26,12 +26,6 @@
              newId = lastRubro.id + 1;
           }
           
-          // console.log($scope.rubrosSeleccionados)
-          // console.log(lastRubro.id)
-          // if ($scope.rubrosSeleccionados === 0) {
-          //    console.log('vacio 2')
-          // }
-          
           console.log("rubroNombre");
           $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
           $scope.rubroNombre = "";
@@ -53,25 +47,18 @@
           $scope.rubrosSeleccionados = [];
           $("#modalRubrica").modal("hide");
         };
-
-
-
-
-        
       }],
       controllerAs: 'factorH'
     };
   });
-
-
-  // ModalDialog
+// ModalDialog
   app.directive('modalRubricaCursos',function ($http) {
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/modalRubricaCursos.html',
       controller: ['$scope','$http',function ($scope,$http) {     
       }],
-        controllerAs: 'modalC'
+        controllerAs: 'modalRubriCursos'
     };
 });
    
