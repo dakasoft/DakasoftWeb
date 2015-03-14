@@ -3,38 +3,37 @@
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form name="usuariosForm" class="form-horizontal css-form" novalidate >
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Nombre</label>  
           <div class="col-xs-8">
-            <input type="text" ng-model="nombre" class="form-control input-md"> 
+            <input type="text" ng-model="nombre" class="form-control input-md" required> 
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Primer Apellido</label>  
           <div class="col-xs-8">
-            <input type="text" ng-model="apellido" class="form-control input-md"> 
+            <input type="text" ng-model="apellido" class="form-control input-md" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Email</label>  
           <div class="col-xs-8">
-            <input type="email" ng-model="email" class="form-control input-md"> 
+            <input type="email" ng-model="email" class="form-control input-md" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Contraseña</label>  
           <div class="col-xs-8">
-            <input type="password" ng-model="pass" class="form-control input-md"> 
+            <input type="password" ng-model="pass" class="form-control input-md" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Role</label>  
           <div class="col-xs-8">
-            <select ng-model="role" ng-options="obj.id as obj.label for obj in roles">
+            <select ng-model="role" required ng-options="obj.id as obj.label for obj in roles" >
               <option value="">--Roles--</option>
             </select>
-            <!-- <input type="text" ng-model="role" class="form-control input-md">  -->
           </div>
         </div>
         </form>

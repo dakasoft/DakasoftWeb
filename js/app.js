@@ -1,6 +1,7 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","factorHumano"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano"]);
+
 
 /*Quitar el hashtag en el browser*/
 
@@ -30,7 +31,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     .state('carreras', {
     url: "/carreras",
-    templateUrl: "templates/carreras.html"
+    templateUrl: "templates/carreras.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
+      }
     })
 
 
@@ -39,6 +46,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/home.html",
       controller: function($rootScope, $state){
         $rootScope.currentStateName = $state.current.name;
+      }
+    })
+
+    .state('historialacademico',{
+      url: "/historialacademico",
+      templateUrl:"templates/historialAcademico.html",
+      controller: function ($rootScope, $state) {
+        $rootScope.currentStateName = $state.current.name;
+        if (!$rootScope.bLoggedIn) {
+          $state.go('login');
+        }
       }
     })
 
@@ -58,31 +76,72 @@ app.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: "templates/usuarios.html",
     controller: function ($rootScope, $state) {
       $rootScope.currentStateName = $state.current.name;
-      console.log("wtf?");
       if (!$rootScope.bLoggedIn) {
         $state.go('login');
       }
     }
   })
 
-  .state('grupos',{
-    url: "/grupos",
-    templateUrl:"templates/grupos.html",
-    controller: function($rootScope, $state){
-      $rootScope.currentStateName = $state.current.name;
-    }
-  })
+    .state('parametros', {
+      url: "/parametros",
+      templateUrl: "templates/parametros.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
 
-  .state('cursos', {
-    url: "/cursos",
-    templateUrl: "templates/cursos.html"
-  })
-  .state('factorhumano', {
-    url: "/factorhumano",
-    templateUrl: "templates/factorHumano.html"
-  });
+    .state('grupos',{
+      url: "/grupos",
+      templateUrl:"templates/grupos.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
 
+    .state('verproyectos',{
+      url: "/verproyectos",
+      templateUrl:"templates/verProyectos.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
 
+    .state('factorhumano', {
+      url: "/factorhumano",
+      templateUrl: "templates/factorHumano.html"
+    })
+
+    .state('cursos', {
+      url: "/cursos",
+      templateUrl: "templates/cursos.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
+
+    .state('proyectosvotacion',{
+      url: "/proyectosvotacion",
+      templateUrl:"templates/proyectosVotacion.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
+
+    .state('reportenotas',{
+      url: "/reportenotas",
+      templateUrl:"templates/reporteNotas.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    })
+
+    .state('votacionprivada',{
+      url: "/votacionprivada",
+      templateUrl:"templates/votacionPrivada.html",
+      controller: function($rootScope, $state){
+        $rootScope.currentStateName = $state.current.name;
+      }
+    });
 
 });
 
