@@ -21,21 +21,7 @@
         $scope.agregarRubro = function(){
 
           var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
-          
-          var newId = 1;
-          if(lastRubro != null){
-             newId = lastRubro.id + 1;
-          }
-
-          //var newId = lastRubro.id + 1 : 1;
-          // var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
-          
-          // console.log($scope.rubrosSeleccionados)
-          // console.log(lastRubro.id)
-          // if ($scope.rubrosSeleccionados === 0) {
-          //    console.log('vacio 2')
-          // }
-          
+          var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
           // console.log("rubroNombre");
           $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
           $scope.rubroNombre = "";
@@ -77,7 +63,7 @@
       templateUrl: 'templates/partials/modalRubrica.html',
       controller: ['$scope','$http',function ($scope,$http) {     
       }],
-        controllerAs: 'modalC'
+        controllerAs: 'modalFactorRubrica'
     };
 });
    
