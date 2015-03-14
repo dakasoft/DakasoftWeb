@@ -10,6 +10,7 @@
 			     	<div class="info"> <h3>{{ proyecto.nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
 			   </a>
 			</div>
+						<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
 			<div class="item-votacion-estrellas">
 				<img class="star" ng-src="{{currentRate1(proyecto)}}" ng-click="addRate(proyecto)">
 				<img class="star" ng-src="{{currentRate2(proyecto)}}" ng-click="addRate(proyecto)">
@@ -27,3 +28,11 @@
 	</div>	
 </div> 
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
