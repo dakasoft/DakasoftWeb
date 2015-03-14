@@ -898,7 +898,14 @@ display: inline-block;
 .fa.fa-cog:hover{
 	 color:white;
 }
+#textPortafolio{
+	resize:none;
+	height:150px;
+}
 
+.projects{
+	margin-bottom:30px;
+}
 
 
 /************************************Log In *******************************************************/
