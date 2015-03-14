@@ -53,7 +53,6 @@ header img{ /* header contiene el logo*/
 }
 .logo{
   width:17em;
-
 }
 
 /* Estilos del menu*/
@@ -1060,7 +1059,95 @@ table.selectedTable th, table.selectedTable td {
 	margin-left: 4%;
 }
 
-<<<<<<< HEAD
+
+/*FACTOR HUMANO*/
+
+/*div del título*/
+.divTitle{background:#722d7b;padding:4px 10px; }
+.divTitle h3{color:#fff;text-align: left;}
+/*tabla*/
+.divTabla{background:#fff;margin-top:20px;}
+/*tHead*/
+th{text-align: left;background:#722d7b;color:#fff;}
+tr{text-align: left;}
+/*Modal estilo*/
+.tdModal a{
+	font-weight:600;
+	list-style:none;
+	text-decoration: none;
+	color:#722d7b;
+}
+.tdModal a:hover{
+	color: black;
+	text-decoration: none;
+}
+.tdModal i{margin-right:4px;}
+.tdModal p{margin-right:5px;}
+.fa-plus, .fa-times-circle{color:#722d7b;}
+
+.mrFa{
+	margin-right: 40px;
+}
+
+#factor-table, .table-header{
+	text-align: center;
+}
+
+#factor-table a{
+	color: #722d7b;
+	cursor: pointer;
+}
+
+#factor-table i:hover{
+	color: black;
+}
+
+#factor-table th
+{
+	font-weight: 300;
+	color: #fff;
+	border-bottom: 1px solid #722d7b;
+}
+#factor-table{
+	border: 1px solid #722d7b;
+}
+
+#factor-table tr
+{
+	border-bottom: 1px solid #722d7b;
+}
+
+#factor-table td
+{
+	padding: 4px;
+	vertical-align: middle;text-align: center;
+	border-top: 0;
+}
+#factor-table .fa-times-circle {
+	margin-left: 12px;
+}
+#factor-table{
+	background: white;
+}
+
+/*error validación*/
+.error{
+	 border: 1px solid #4195fc; /* some kind of blue border */
+
+    /* other CSS styles */
+
+    /* round the corners */
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+
+
+    /* make it glow! */
+    -webkit-box-shadow: 0px 0px 4px #4195fc;
+       -moz-box-shadow: 0px 0px 4px #4195fc;
+            box-shadow: 0px 0px 4px #4195fc; 
+}
+
 .fa.fa-cog.fa-2{
 	color:#f5f5f5;
 	font-size: 2em;
@@ -1074,8 +1161,6 @@ table.selectedTable th, table.selectedTable td {
 
 	}
 
-
-=======
 .tab-active{
 	background: #a32068;
 }
@@ -1094,7 +1179,7 @@ table.selectedTable th, table.selectedTable td {
 }
 .fa-search{color: #722d7b}
 /*Tabla estilo*/
-.divTabla{background:#fff;padding:0 10px  }
+.divTabla{background:#fff}
 .divTabla th{text-align: left;background: #722d7b;color:#fff;}
 .divTabla tr{text-align: left;}
 
@@ -1293,4 +1378,5 @@ color:#a32068;
 	margin-top: -25px;
 	position: absolute !important;
 }
+
 
