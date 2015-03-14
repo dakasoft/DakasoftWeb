@@ -1,5 +1,5 @@
 <modal-mi-equipo></modal-mi-equipo>
-<div class="container-fluid equipoContent" ng-show="curso.equipo.show">
+<div class="container-fluid equipoContent">
 	<div class="col-xs-12">
 	<form class="form-horizontal">
 		<div class="form-group">
@@ -18,7 +18,7 @@
 						<td data-title="'Apellido'">{{integrante.apellido}}</td>
 						<td data-title="'Rol'">{{integrante.rol}}</td>
 						<td data-title="'Evaluacion'">
-							<a data-toggle="modal" data-target="#modalIntegrante"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+							<a data-toggle="modal" data-target="#modalIntegrante" ng-click="editEval(integrante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 						</td>
 					</tr>
 				</table>

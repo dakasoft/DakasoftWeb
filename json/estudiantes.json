@@ -9,77 +9,134 @@
     "cursos":
     [
      	{
-		 		"id": 1,
-		 		"nombre": "Proyecto web 1",
-		 		"equipo":
-		 		[
-		 			{
-		 				"nombre":"prueba",
-		 				"integrantes":
-		 				[
-			 				{
-			 					"nombre":"Aaron",
-			 					"apellido":"Chavarría",
-			 					"rol":"Desarrollo"
-			 				},
-							{
-			 					"nombre":"Karo",
-			 					"apellido":"Muñoz",
-			 					"rol":"Coordinadora"
-			 				}
-		 				],
-		 				"vision":"",
-		 				"mision":""
-		 			}
-		 		]
-		 	},
+	 		"id": 1,
+	 		"nombre": "Proyecto web 1",
+	 		"attendant":"Alvaro Cordero",
+	 		"entregas": [
+				{
+					"name":"Entrega 1",
+					"uploads":[
+						"DakaSoft_Entrega1.rar",
+						"Oni_Entrega1.rar"
+					]
+				},
+				{
+					"name":"Entrega 2",
+					"uploads":[
+						"DakaSoft_Entrega2.rar",
+						"Oni_Entrega2.rar"
+					]
+				}
+	 		],
+	 		"equipo":
+	 		[
+	 			{
+	 				"nombre":"DakaSoft",
+	 				"integrantes":
+	 				[
+		 				{
+		 					"nombre":"Aaron",
+		 					"apellido":"Chavarría",
+		 					"rol":"Desarrollo",
+		 					"evaluacion":[]
+		 				},
+						{
+		 					"nombre":"Karo",
+		 					"apellido":"Muñoz",
+		 					"rol":"Coordinadora",
+		 					"evaluacion":[]
+		 				}
+	 				],
+	 				"vision":"Lorem",
+	 				"mision":"Ipsum"
+	 			}
+	 		]
+	 	},
 		  {
 		    "id": 2,
 		    "nombre": "Proyecto web 2",
+		    "attendant":"Alvaro Cordero",
+		    "entregas": [
+				{
+					"name":"Entrega 1",
+					"uploads":[
+						"DakaSoft_Entrega1.rar",
+						"Oni_Entrega1.rar"
+					]
+				},
+				{
+					"name":"Entrega 2",
+					"uploads":[
+						"DakaSoft_Entrega2.rar",
+						"Oni_Entrega2.rar"
+					]
+				}
+		    ],
 		 		"equipo":
 		 		[
 		 			{
-		 				"nombre":"",
+		 				"nombre":"DakaSoft",
 		 				"integrantes":
 		 				[
 			 				{
 			 					"nombre":"Aaron",
 			 					"apellido":"Chavarría",
-			 					"rol":"Desarrollo"
+			 					"rol":"Desarrollo",
+			 					"evaluacion":[]
 			 				},
 							{
 			 					"nombre":"Karo",
 			 					"apellido":"Muñoz",
-			 					"rol":"Coordinadora"
+			 					"rol":"Coordinadora",
+			 					"evaluacion":[]
 			 				}
 		 				],
-		 				"vision":"",
-		 				"mision":""
+		 				"vision":"Lorem",
+		 				"mision":"Ipsum"
 		 			}
 		 		]
 		  },
 		  {
 		    "id": 3,
 		    "nombre": "Proyecto web 3",
+		    "attendant":"Alvaro Cordero",
+		    "entregas": [
+				{
+					"name":"Entrega 1",
+					"uploads":[
+						"DakaSoft_Entrega1.rar",
+						"Oni_Entrega1.rar"
+					]
+				},
+				{
+					"name":"Entrega 2",
+					"uploads":[
+						"DakaSoft_Entrega2.rar",
+						"Oni_Entrega2.rar"
+					]
+				}
+		    ],
 		 		"equipo":
 		 		[
 		 			{
-		 				"nombre":"",
+		 				"nombre":"DakaSoft",
 		 				"integrantes":
 		 				[
 			 				{
 			 					"nombre":"Aaron",
 			 					"apellido":"Chavarría",
-			 					"rol":"Desarrollo"
+			 					"rol":"Desarrollo",
+			 					"evaluacion":[]
 			 				},
 							{
 			 					"nombre":"Karo",
 			 					"apellido":"Muñoz",
-			 					"rol":"Coordinadora"
+			 					"rol":"Coordinadora",
+			 					"evaluacion":[]
 			 				}
 		 				],
-		 				"vision":"",
-		 				"mision":""
+		 				"vision":"Lorem",
+		 				"mision":"Ipsum"
 		 			}
 		 		]
 		  }

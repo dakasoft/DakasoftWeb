@@ -41,9 +41,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/partials/miEquipo.html"
     })
 
-    .state('miscursos.cursos', {
+    .state('miscursos.curso', {
       url: "/curso",
-      templateUrl:"templates/partials/misCursos.html"
+      templateUrl:"templates/partials/miCurso.html"
     });
 
 });

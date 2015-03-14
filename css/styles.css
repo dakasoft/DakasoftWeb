@@ -574,3 +574,33 @@ table.selectedTable th, table.selectedTable td {
 .tab-no-active{
 	background: #722d7b;
 }
+
+/*************************************Mi Equipo****************************/
+
+#h3EvalMiEquipo {
+	text-align: center;
+	color: #722d7b;
+	font-weight: bold;
+}
+
+/******************************* Ver Cursos XD ******************************/
+#divMiCurso .divAssignment {
+	border: 1px solid #722d7b;
+	background-color: #722d7b;
+	margin-top: 10px;
+}
+#divMiCurso .divAssignment p {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+#divMiCurso .divReceived {
+	border: 1px solid #722d7b;
+}
+#divMiCurso .divReceived ul {
+	list-style: none;
+}
+#divMiCurso .divReceived ul li{
+	padding: 3px 0 0 0;
+}
