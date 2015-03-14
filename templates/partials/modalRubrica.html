@@ -4,7 +4,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       
       <div class="modal-body">
-        <form name="reviewForm" class="form-horizontal" ng-submit="reviewForm.$valid" novalidate>
+        <form name="rubricaForm" class="form-horizontal css-form" novalidate>
             <div class="form-group">
               <label class="col-xs-4 control-label" for="">Rubro</label>  
               <div class="col-xs-8">
@@ -14,7 +14,7 @@
             <div class="form-group">
               <label class="col-xs-4 control-label" for="">Valor</label>  
               <div class="col-xs-8">
-                <input type="text" ng-model="rubroValor" class="form-control input-md" required> 
+                <input type="number" ng-model="rubroValor" class="form-control input-md" required> 
               </div>
             </div>
               <div class="form-group ">               

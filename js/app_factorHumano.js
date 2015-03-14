@@ -14,18 +14,23 @@
         });
 
         $scope.editar = function(grupoRubrica){
+          $scope.rubricaForm.$setUntouched(true);
+          $scope.rubricaForm.$setPristine(true);
           $scope.editableGrupo = grupoRubrica;
           $scope.rubrosSeleccionados = angular.copy(grupoRubrica.rubrica);
         };
 
         $scope.agregarRubro = function(){
-
+        if($scope.rubricaForm.$valid){
           var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
           var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
           // console.log("rubroNombre");
           $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
           $scope.rubroNombre = "";
           $scope.rubroValor = "";
+        }else{
+          $scope.rubricaForm.$setDirty();
+        }
         };
 
         $scope.eliminarRubro = function(rubro){
