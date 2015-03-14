@@ -46,22 +46,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:'templates/partials/misCursos.html'
     })
 
-    .state('verCursos',{
-      url: '/verCursos',
+    .state('vercursos',{
+      url: '/vercursos',
       templateUrl:'templates/verCursos.html'
     })
 
-    .state('verCursos.entregas', {
+    .state('vercursos.entregas', {
       url: '/entregas',
       templateUrl:'templates/partials/verEntregas.html'
     })
 
-    .state('verCursos.estudiantes', {
+    .state('vercursos.estudiantes', {
       url: '/estudiantes',
       templateUrl:'templates/partials/verEstudiantes.html'
     })
 
-    .state('verCursos.equipo', {
+    .state('vercursos.equipo', {
       url: '/equipo',
       templateUrl:'templates/partials/verEquipo.html'
     });
