@@ -7,11 +7,11 @@
     </div>
         <button type="button" class="close" data-dismiss="modal" ng-click="cerrarModalGrupo()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body">
-        <form class="form-vertical">
+        <form name="grupoForm" class="form-vertical css-form" novalidate>
           <div class="col-xs-12 col-sm-6">
             <div class="form-group">
               <label for="nombreGrupo">Nombre Grupo</label>
-              <input type="text" class="form-control" id="nombreGrupo" ng-model="nombreGrupo">
+              <input type="text" class="form-control" id="nombreGrupo" ng-model="nombreGrupo" required>
             </div>
               <div class="form-group">
                 <label for="profesor">Profesor</label>  
@@ -22,13 +22,13 @@
               </div>
               <div class="form-group">
                 <label for="encargado">Profesor encargado</label> 
-                <select id="encargado" class="form-control" ng-model="encargado" ng-init="encargado" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
+                <select id="encargado" required class="form-control" ng-model="encargado" ng-init="encargado" ng-options="obj.id as (obj.name +' '+ obj.lastname) for obj in profesores | filter: 'profesor'">
                   <option value="">--Profesor--</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="cursos">Curso</label>  
-                <select id="cursos" class="form-control" ng-model="curso" ng-init="curso" ng-options="obj.id as obj.nombre for obj in cursos">
+                <select id="cursos" required class="form-control" ng-model="curso" ng-init="curso" ng-options="obj.id as obj.nombre for obj in cursos">
                   <option value="">--Cursos--</option>
                 </select>
               </div>      
@@ -39,7 +39,7 @@
                 <li class="list-group-item list-g-header">Profesores</li>
                 <li class="list-group-item" ng-repeat="profesorS in profesoresSeleccionados">
                   {{ profesorS.nombre }} {{ profesorS.apellido }}
-                  <select class="form-control li-select" ng-model="profesorS.area" ng-init="profesorS.area" ng-change="cambiarArea(profesorS,profesorS.area)" ng-init="profesorS.area" ng-options="obj.id as obj.nombre for obj in areasG">
+                  <select class="form-control li-select" ng-model="profesorS.area" ng-init="profesorS.area" ng-change="cambiarArea(profesorS,profesorS.area)"required ng-options="obj.id as obj.nombre for obj in areasG">
                       <option value="">--Área--</option>
                   </select>
                   <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(profesorS)"></i>
