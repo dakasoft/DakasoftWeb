@@ -12,7 +12,7 @@
         <li ng-show="roleLv > 4"><a ui-sref="proyectosvotacion">Votación</a></li>
      </ul>
    </li>
-   <li id="administracion"><a><img ng-src="img/administracion.png"/></a>
+   <li ng-show="roleLv != 3" id="administracion"><a><img ng-src="img/administracion.png"/></a>
      <ul class="subMenu" >
         <li ng-show="roleLv == 1"><a ui-sref="miscursos">Mis Cursos</a></li>
         <li ng-show="roleLv == 2"><a ui-sref="vercursos">Ver Cursos</a></li>
@@ -22,7 +22,7 @@
    </li>
  </div>
  <div class="col2">
-  <li id="portafolio"><a ng-show="roleLv >= 3 || roleLv == 1 " ui-sref="portafolio" ><img ng-src="img/portafolio.png"/></a></li>
+  <li ng-show="roleLv >= 3 || roleLv == 1 " id="portafolio"><a ui-sref="portafolio" ><img ng-src="img/portafolio.png"/></a></li>
   <li ng-show="roleLv > 1" id="reportes"><a><img ng-src="img/reportes.png"/></a>
     <ul class="subMenu subMenu-lg">
       <li ng-show="roleLv > 1"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>

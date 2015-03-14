@@ -1551,3 +1551,7 @@ color:#a32068;
 .soyunpointer{
 	cursor: pointer;
 }
+
+#factor-table th{
+	background: #722d7b;
+}
