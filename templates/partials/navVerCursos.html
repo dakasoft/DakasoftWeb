@@ -2,22 +2,22 @@
 	<div>
 		<ul class="nav nav-justified nav-cursos-user">
 		  <li>
-		  	<a ui-sref="vercursos.entregas" ng-click="vercursos.bCourseDisplay = courseDisplayToggle('main')">{{curso.name}} (Grupo: {{grupo.number}})</a>
+		  	<a ui-sref="vercursos.entregas" ng-click="bCourseDisplay = courseDisplayToggle('main')">{{curso.name}} (Grupo: {{grupo.number}})</a>
 		  </li>
 		  <li>
-		  	<a ui-sref="vercursos.estudiantes" ng-click="vercursos.bCourseDisplay = courseDisplayToggle('students')">Estudiantes</a>
+		  	<a ui-sref="vercursos.estudiantes" ng-click="bCourseDisplay = courseDisplayToggle('students')">Estudiantes</a>
 		  </li>
 		  <li>
-		  	<a ui-sref="vercursos.equipo" ng-click="vercursos.bCourseDisplay = courseDisplayToggle('team')">Equipo</a>
+		  	<a ui-sref="vercursos.equipo" ng-click="bCourseDisplay = courseDisplayToggle('team')">Equipo</a>
 		  </li>
 		  <li>
-		  	<a class="config-a">
-		  		<i id="btnVerConfig" ng-click="vercursos.showTeam(equipo)" data-toggle="modal" data-target="#modalConfig" class="conf fa fa-cog pull-right"></i>
+		  	<a class="config-a" ng-click="vercursos.showTeam(equipo)" data-toggle="modal" data-target="#modalConfig">
+		  		<i id="btnVerConfig"class="conf fa fa-cog pull-right"></i>
 		  	</a>
 		  </li>
 		</ul>
 	</div>
-	<div ng-show="vercursos.bCourseDisplay" ui-view></div>
+	<div ng-show="bCourseDisplay" ui-view></div>
 </div>
 
 

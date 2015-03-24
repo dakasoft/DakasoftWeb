@@ -4,7 +4,7 @@
 
   app.controller('misCursos', ['$rootScope','$scope','$http', function ($rootScope,$scope,$http) {
     var misCursos = this;
-    misCursos.bCourseDisplay = false;
+    $scope.bCourseDisplay = false;
     misCursos.currentView = '';
 
     $scope.estudianteActual = {};

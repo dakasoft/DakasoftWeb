@@ -5,7 +5,7 @@
   app.controller('verCursos', ['$rootScope','$scope','$http', function ($rootScope, $scope,$http) {
     var verCursos = this;
 
-    verCursos.bCourseDisplay = false;
+    $scope.bCourseDisplay = false;
     verCursos.currentView = '';
 
     $rootScope.courses = {};
