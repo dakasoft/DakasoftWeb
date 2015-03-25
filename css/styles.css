@@ -906,7 +906,9 @@ display: inline-block;
 .projects{
 	margin-bottom:30px;
 }
-
+.projects h2{
+	font-size:24px;
+}
 
 /************************************Log In *******************************************************/
 .divForm{
@@ -1552,6 +1554,36 @@ color:#a32068;
 	cursor: pointer;
 }
 
+.pagetittle {
+margin-left: 15px;
+margin-right:50px;
+padding: 0;
+	background-color: #722d7b ;
+	opacity: 0.9; 
+}
+.pagetittle h2, h3{
+   float:none;
+	margin: 0;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.pageV{
+	margin-bottom:20px;
+	margin-left:4px;
+} 
+
+.cursosP h2{
+	float:none;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
 #factor-table th{
 	background: #722d7b;
 }
