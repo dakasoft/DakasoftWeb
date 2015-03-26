@@ -1587,3 +1587,20 @@ padding: 0;
 #factor-table th{
 	background: #722d7b;
 }
+
+
+
+/*Tooltip*/
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color:#A32068;
+  border-width: 5px 5px 0;
+}
+.tooltip-inner {
+  padding:10px; 
+  color: #fff;
+  background:#A32068;
+  border: solid 1px #A32068;
+}
