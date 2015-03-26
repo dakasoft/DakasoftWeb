@@ -3,7 +3,19 @@
 		<h3>Evaluación Factor Humano</h3>
 	</div>
 	<div class="clearfix divTabla" >
-		<p>Soy la tabla</p>
-	</div>
-
+		<table class="table table-nonfluid table-hover">
+			<tr>
+				<th>Curso</th>		
+				<th>Acciones</th>
+			</tr>
+			<tr ng-repeat="factor in factorHumano[0].cursos">
+				<td>{{factor.nombre}}</td>
+				<td class="tdModal">
+				 <a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(factor)">
+					<i class="fa fa-pencil-square-o fa-2x"></i>Editar
+				 </a>
+			  </td>
+			</tr>
+		</table>
+	</div><!-- fin divTabla -->
 </div><!-- finContainer -->
