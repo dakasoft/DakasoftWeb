@@ -7,6 +7,7 @@
       templateUrl: 'templates/partials/rubricasFactorH.html',
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
         $scope.factorHumano = [];
+        
       
       
         $http.get('json/rubricaFH.json').success(function (data) {
