@@ -4,10 +4,10 @@
     "nombrePofesor":"Kiara", 
     "apellidoProfesor":"Thomas",
     "area": "Factor Humano",
-    "grupos":[
+    "cursos":[
           {
             "id":1,
-            "nombre":"Grupo 01",
+            "nombre":"Proyecto Web 1",
             "curso":"Proyecto Web 1",
              "rubrica":[
                 {
@@ -25,7 +25,7 @@
           },
           {
               "id":2,
-              "nombre":"Grupo 02",
+              "nombre":"Proyecto Web 2",
               "curso":"Proyecto Web 2",
               "rubrica":[
                 {
