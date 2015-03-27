@@ -18,10 +18,14 @@
 				<tr ng-repeat="grupo in grupos | filter:palabra">
 					<td data-title="'Nombre'">{{grupo.nombre}}</td>
 					<td data-title="'Curso'">{{grupo.curso}}</td>
-					<td data-title="'Acciones'">						
+					<td data-title="'Agregar Estudiantes'">						
 						<a data-toggle="modal" data-target="#estudiantesGrupoModal" ><i class="fa fa-user-plus fa-2x" ng-click="editar(grupo)"></i></a>
-						<a data-toggle="modal" data-target="#nuevoGrupoModal" ng-click="editar(grupo)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
-						<a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm" ng-click="setGrupo(grupo)"></i></a>
+					</td>
+					<td data-title="'Modificar'">
+					<a data-toggle="modal" data-target="#nuevoGrupoModal" ng-click="editar(grupo)"><i class="fa fa-pencil-square-o fa-2x"></i></a>	
+					</td>
+					<td data-title="'Eliminar'">
+					<a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm" ng-click="setGrupo(grupo)"></i></a>	
 					</td>
 				</tr>
 			</table>

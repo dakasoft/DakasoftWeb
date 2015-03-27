@@ -1587,3 +1587,14 @@ padding: 0;
 #factor-table th{
 	background: #722d7b;
 }
+
+
+
+#custom-table th {
+
+	font-weight:bold;
+	border-bottom: 2px solid #722d7b;
+line-height:2em;
+
+	}
+	
