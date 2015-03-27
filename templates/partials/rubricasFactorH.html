@@ -11,7 +11,7 @@
 			<tr ng-repeat="factor in factorHumano[0].cursos">
 				<td>{{factor.nombre}}</td>
 				<td class="tdModal">
-				 <a href="" data-toggle="modal" data-target="#modalRubricas" ng-click="editar(factor)">
+				 <a href="" data-toggle="modal" data-target="#modalRubricas" ng-click="editar(factor)" title="Agregar Rúbrica!" data-toggle="tooltip" data-placement="right" tooltip>
 					<i class="fa fa-pencil-square-o fa-2x"></i>Editar
 				 </a>
 			  </td>

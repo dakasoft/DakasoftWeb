@@ -81,7 +81,9 @@ app.directive('tooltip', function(){
             });
         }
     };
+   $("[data-toggle='tooltip']").tooltip(); 
 }); 
+
 })();
 
 
