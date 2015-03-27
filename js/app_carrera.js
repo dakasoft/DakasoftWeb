@@ -80,7 +80,7 @@
                 ingresar = false;
               }
                });
-            if(ingresar || $scope.profesoresSeleccionados.length == 0){
+            if(ingresar || $scope.cursosSeleccionados.length == 0){
                $scope.cursosSeleccionados.push({id: $scope.cursoId, nombre:  $scope.curso });
               $scope.profesor = "";
             }
