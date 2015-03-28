@@ -33,6 +33,7 @@
             $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
             $scope.rubroNombre = "";
             $scope.rubroValor = "";
+            
           }else{
             $scope.rubricaCursoForm.$setDirty();
           }
