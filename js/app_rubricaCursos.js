@@ -21,7 +21,12 @@
         };
 
         $scope.agregarRubro = function(){
-          if($scope.rubricaCursoForm.$valid){
+        if($scope.rubricaCursoForm.$valid){
+          //Si ésta función lo que valida está bien agrege la nueva fila.
+          //La función valida que la suma no sea mayor de 100
+          //El scope tiene el array y valor que se va a meter
+          if(esValidoMaxValorRubro($scope)){
+
             $scope.rubricaCursoForm.$setUntouched(true);
             $scope.rubricaCursoForm.$setPristine(true);
 
@@ -33,7 +38,11 @@
             $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
             $scope.rubroNombre = "";
             $scope.rubroValor = "";
-            
+
+          }else{
+              alert('La suma de los valores no puede ser mayor a 100');
+          }
+
           }else{
             $scope.rubricaCursoForm.$setDirty();
           }
@@ -54,6 +63,25 @@
           $scope.rubrosSeleccionados = [];
           $("#modalRubrica").modal("hide");
         };
+
+         function esValidoMaxValorRubro($scope){
+          var suma = 0;
+          var esValido = true;
+          var arrayRubros = $scope.rubrosSeleccionados;
+          var nuevoValor = $scope.rubroValor;
+
+          for(var i = 0; i < arrayRubros.length; i++){
+            suma +=  parseInt(arrayRubros[i].valor);
+          }
+          suma +=  parseInt(nuevoValor);
+          
+          if(suma > 100){
+            esValido = false;
+          }
+
+          return esValido;
+        }
+
       }],
       controllerAs: 'factorH'
     };
