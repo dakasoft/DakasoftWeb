@@ -1,6 +1,6 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos","verCursos","misCursos","rubricasfh"]);
+var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos","verCursos","misCursos"]);
 
 /*Quitar el hashtag en el browser*/
 
@@ -240,16 +240,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('vercursos.equipo', {
       url: '/equipo',
       templateUrl:'templates/partials/verEquipo.html'
-    })
-    .state('rubricasfh', {
-      url: "/rubricasfh",
-      templateUrl: "templates/rubricasfh.html",
-      controller: function($rootScope, $state){
-        $rootScope.currentStateName = $state.current.name;
-        if (!$rootScope.bLoggedIn) {
-          $state.go('login');
-        }
-      }
     });
 });
 
