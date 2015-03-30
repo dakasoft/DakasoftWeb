@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Web",
+    "code": "WebArea"
+  },
+  {
+    "id": 2,
+    "name": "Software",
+    "code": "SoftArea"
+  },
+  {
+    "id": 3,
+    "name": "TI",
+    "code": "TArea"
+  }
+]
