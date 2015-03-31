@@ -1,2 +1,8 @@
-<modal-video></modal-video>
-<votaciones-privadas></votaciones-privadas>
+<div ng-show="roleLv != 5">
+	<modal-video></modal-video>
+	<votaciones-privadas></votaciones-privadas>
+</div>
+<div ng-show="roleLv == 5">
+	<estado-votacion></estado-votacion>
+</div>
+

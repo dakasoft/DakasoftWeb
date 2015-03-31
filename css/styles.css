@@ -1556,9 +1556,9 @@ color:#a32068;
 }
 
 .pagetittle {
-margin-left: 15px;
-margin-right:50px;
-padding: 0;
+	margin-left: 15px;
+	margin-right:50px;
+	padding: 0;
 	background-color: #722d7b ;
 	opacity: 0.9; 
 }
@@ -1591,6 +1591,7 @@ padding: 0;
 
 
 
+
 #custom-table th {
 
 	font-weight:bold;
@@ -1599,6 +1600,7 @@ line-height:2em;
 
 	}
 	
+<<<<<<< HEAD
 .ListascrollCarrera,.ListascrollEstudiante{
 	overflow: auto;
 }
@@ -1628,3 +1630,58 @@ line-height:2em;
     border-radius: 4px;
    
 }
+
+/*Estado de proyectos en votacion*/
+
+.proyecto-estado-box{
+	position: relative;
+	padding: 15px;
+  background: rgba(255, 255, 255, 0.53);
+  border-radius: 5px;
+  height: 180px;
+  margin-bottom: 40px;
+}
+
+.proyecto-imagen-circle{
+	width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.informacion-equipo h4{
+	color: #722d7b;
+}
+
+.votacion-circulo{
+	color: white;
+	background: #722d7b;
+	position: absolute;
+	border-radius: 50%;
+	top: 10px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+}
+
+.votacion-circulo span{
+  text-align: center;
+  vertical-align: sub;
+}
+
+.startsbox{
+	display: inline-block;
+}
+
+.starEstado{
+	margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+.cantidad{
+	display: inline-block;
+  margin-left: 10px;
+  vertical-align: bottom;
+  font-weight: 600;
+}
+
