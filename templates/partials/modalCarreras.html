@@ -16,11 +16,16 @@
             <p class="mensaje2">*Este campo es obligatorio</p>
         </div>
         <div class="form-group">
-          <label for="">Cursos</label>  
-            <select class="form-control plus-add" ng-model="curso" ng-options="obj.id as obj.nombre for obj in cursos">
-              <option value="">--Cursos--</option>
-            </select>
-            <i class="fa fa-plus plus-add-icon" ng-click="agregarCurso()"></i>
+          <ul class="list-group listaEstudiantes ListascrollCarrera">
+              <li class="list-group-item list-g-header">Cursos
+               
+              </li>
+              <li class="list-group-item" ng-repeat="curso in cursos">
+                {{ usuario.name }} {{ usuario.lastname }}<i class="fa fa-plus fa-lg plus-add-icon pull-right"  ng-model="curso" ng-click="agregarCurso(curso)"></i>
+                <span>{{curso.nombre }}</span>
+              </li>
+              <li>
+            </ul>
         </div>
         </div>
           <div class="row">

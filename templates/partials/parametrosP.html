@@ -6,21 +6,24 @@
              	   <h3>Parámetros</h3>
             	</div>
             	<form class="form-horizontal formP">
-		    	<div class="form-group group1">
-          			<label class="col-xs-4 control-label" for="">Ciclo lectivo</label>  
-          				<div class="col-xs-8">
-           					 <select class="form-control" ng-model="cicloLectivo" ng-options="obj.id as obj.nombre for obj in parametros">
-             					 <option value="">--Ciclo lectivo--</option>
-           					 </select>
-         				</div>
-       			</div>
-       			<div class="form-group group1">
-       		 	<label class="control-label col-sm-4" for="">Cierre de votación</label> 
-       		 	<div class="col-sm-5">
-           		<input class="form-control" type="date"/>
-           		</div>
-           		
-             	</div>
+              <legend>Votación</legend>
+              <p class="pull-right parametro"><a class="add" data-toggle="modal" data-target="#editModalP" ng-click="" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+              <table id="custom-table" ng-table class="table">
+          <tr ng-repeat="parametro in parametros">
+              <td data-title="'Fecha'" >{{parametro.Fecha}}</td>
+              <td data-title="'Fecha Proyecto'" >{{parametro.FechaProyectos}}</td>
+              <td data-title="'Fecha Cierre'">
+                 {{parametro.FechaCierre}}
+              </td>
+               <td data-title="'Modificar'">
+                 <a data-toggle="modal" data-target="#editModalP" ng-click="editar(parametro)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+               </td>
+                 <td data-title="'Votación activa'">               
+    
+        <input type="checkbox" value="None" id="slideOne" name="check"/>
+         </td>
+          </tr>
+      </table>
            </form>
 
 
