@@ -51,12 +51,14 @@
         };
 
         $scope.guardar = function(){
+          var g = new Date();
+          alert(g.getDate() + "/" + (g.getMonth() +1) + "/" + g.getFullYear());
           if($scope.usuariosForm.$valid){
             if($scope.editableUser != ""){
             $scope.editableUser.name = $scope.nombre;
             $scope.editableUser.lastname = $scope.apellido;
             $scope.editableUser.email = $scope.email;
-            $scope.editableUser.pass = $scope.pass;
+            $scopre.editableUser.pass = $scope.pass;
 
             angular.forEach($scope.roles, function(value, key) {
               if(value.id == $scope.role){

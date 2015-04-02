@@ -128,7 +128,9 @@
             });
 
             if(ingresar || $scope.estudiantesSeleccionados.length == 0){
-              $scope.estudiantesSeleccionados.push({id: $scope.estudiantesId, nombre: $scope.estudiante, apellido:$scope.estudiantesApellido });
+               var g = new Date();
+               var fechaIngreso= g.getDate() + "/" + (g.getMonth() +1) + "/" + g.getFullYear();
+              $scope.estudiantesSeleccionados.push({id: $scope.estudiantesId, nombre: $scope.estudiante, apellido:$scope.estudiantesApellido,fecha: fechaIngreso });
               $scope.estudiante = "";
             }
           }
