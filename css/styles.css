@@ -1561,16 +1561,18 @@ line-height:2em;
 
 /*.....Proyecto Ganador....*/
 
-.mainTitle h1, p{text-align: center;}
+.mainTitle h1, h4{
+	text-align: center;
+    
+}
 
 
 
 
 
 .mainTitle .gain{
-	margin-top:20px;margin-bottom:10px; 
-	text-align: center;vertical-align:middle; 
 	
+	text-align: center;vertical-align:middle; 
 	width:70px;
 	height:70px;
 	line-height:70px;
@@ -1584,18 +1586,13 @@ line-height:2em;
 .mainTitle .fa-trophy{
 	line-height: inherit;color:#fff;
 }
-.mainTitle .trophy1:hover{
-	/*-webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);*/
-}
+
 
 
 
 .divGainer{
 	background:#fff;
 	 border-bottom:solid 2px #722d7b;
-	 padding:10px;
 	 margin-bottom:40px; 
 }
 .divGainer:hover{background:#f8f8f8;}
@@ -1604,7 +1601,7 @@ line-height:2em;
 
 .divGainer img{opacity:1;margin-bottom:20px }
 .divGainer img:hover{opacity:0.8;}
-.divGainer span{font-size:12px;font-style: italic;color:#722d7b; }
+.divGainer span{font-size:13px;font-style: italic;color:#722d7b; }
 
 .content:nth-child(3) {
 	/*background: pink;*/

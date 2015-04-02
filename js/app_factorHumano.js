@@ -5,7 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/rubricaFactorHumano.html',
-      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+      controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.factorHumano = [];
         $scope.rubrosSeleccionados = [];
       
@@ -14,6 +14,9 @@
         });
 
         $scope.editar = function(grupoRubrica){
+          funciones.closeC();
+            $scope.rubroNombre = "";
+             $scope.rubroValor = "";
           $scope.rubricaForm.$setUntouched(true);
           $scope.rubricaForm.$setPristine(true);
           $scope.editableGrupo = grupoRubrica;
@@ -22,24 +25,25 @@
 
         $scope.agregarRubro = function(){
           if($scope.rubricaForm.$valid){
-
             if(esValidoMaxValorRubro($scope)){
-
               $scope.rubricaForm.$setUntouched(true);
               $scope.rubricaForm.$setPristine(true);
-              $(".css-form").removeClass("ng-dirty");
               var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
               var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
               $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
+              funciones.closeC();
+              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
               $scope.rubroNombre = "";
               $scope.rubroValor = "";
 
+
             }else{
-              alert('La suma de los valores no puede ser mayor a 100');
+  
             }
 
           }else{
-            $scope.rubricaForm.$setDirty();
+               funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
           }
 
         };
@@ -56,9 +60,8 @@
         };
 
         $scope.guardarRubrica = function(){
-          $scope.editableGrupo.rubrica = $scope.rubrosSeleccionados
-          $scope.rubrosSeleccionados = [];
-          $("#modalRubrica").modal("hide");
+          $scope.editableGrupo.rubrica = $scope.rubrosSeleccionados;
+           setTimeout(function(){$("#modalRubrica").modal('hide')},1000);
         };
 
         function esValidoMaxValorRubro($scope){
@@ -74,6 +77,8 @@
           
           if(suma > 100){
             esValido = false;
+            funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> La suma de los valores no debe ser mayor a 100',3500);
           }
 
           return esValido;

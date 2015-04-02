@@ -5,7 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/rubricaCursosTabla.html',
-      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+      controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.rubricaCursos = [];
         $scope.rubrosSeleccionados = [];
       
@@ -14,6 +14,9 @@
         });
 
         $scope.editar = function(grupoRubrica){
+           funciones.closeC();
+            $scope.rubroNombre = "";
+             $scope.rubroValor = "";
           $scope.rubricaCursoForm.$setUntouched(true);
           $scope.rubricaCursoForm.$setPristine(true);
           $scope.editableGrupo = grupoRubrica;
@@ -36,15 +39,18 @@
                newId = lastRubro.id + 1;
             }
             $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
+            funciones.closeC();
+            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
             $scope.rubroNombre = "";
             $scope.rubroValor = "";
 
           }else{
-              alert('La suma de los valores no puede ser mayor a 100');
+             
           }
 
           }else{
-            $scope.rubricaCursoForm.$setDirty();
+            funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
           }
         };
 
@@ -60,8 +66,7 @@
 
         $scope.guardarRubrica = function(){
           $scope.editableGrupo.rubrica = $scope.rubrosSeleccionados
-          $scope.rubrosSeleccionados = [];
-          $("#modalRubrica").modal("hide");
+         setTimeout(function(){$("#modalRubrica").modal('hide')},1000);
         };
 
          function esValidoMaxValorRubro($scope){
@@ -77,6 +82,8 @@
           
           if(suma > 100){
             esValido = false;
+             funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> La suma de los valores no debe ser mayor a 100',3500);
           }
 
           return esValido;
