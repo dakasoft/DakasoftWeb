@@ -5,7 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/gruposTabla.html',
-      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+      controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.grupos = [];
         $scope.cursos = [];
         $scope.profesores = [];
@@ -199,11 +199,14 @@
             $scope.nombreGrupo = "";
             $scope.estudiantesSeleccionados = [];
             $scope.profesoresSeleccionados = [];
+            funciones.closeC();
+            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
 
             $("#estudiantesGrupoModal").modal('hide');
-            $("#nuevoGrupoModal").modal('hide');
+             setTimeout(function(){$("#nuevoGrupoModal").modal('hide')},1000);
           }else{
-            $scope.grupoForm.$setDirty();
+            funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
           }
         };
 

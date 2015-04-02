@@ -1442,63 +1442,6 @@ table.selectedTable th, table.selectedTable td {
 
 
 
-.error{
-	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.css-form input.ng-invalid.ng-touched {
-  	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.css-form select.ng-invalid.ng-touched {
-  	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.css-form.ng-dirty .ng-invalid-required {
-  	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.mensaje{
-	display:none;
-	line-height:2em;
-	color:#a32068;
-}
-
-.mensaje1{
-	color:#a32068;
-}
-
-.mensaje2{
-	color:#a32068;
-}
 .Listascroll{
 overflow: auto;
 height: 400px;
@@ -1600,9 +1543,12 @@ line-height:2em;
 
 	}
 	
-<<<<<<< HEAD
+
 .ListascrollCarrera,.ListascrollEstudiante{
 	overflow: auto;
+}
+.ListascrollCarrera{
+	height:200px;
 }
 .ListascrollEstudiante{
 	height:200px;

@@ -73,11 +73,11 @@
             
             if($scope.nombre && $scope.codigo){
                 funciones.closeC();
-               funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> el procedimiento se ha realizado con exito',3000);
+               funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
             }
             if(!$scope.nombre || !$scope.codigo){ 
             funciones.closeC(); 
-            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3000);
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
             }
 
           
@@ -99,8 +99,8 @@
                 $scope.carreras.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
                   });
           
-              }
-                $("#editModal").modal('hide');
+              } setTimeout(function(){$("#editModal").modal('hide')},1000);
+               
           } 
         };
       }],
