@@ -1597,4 +1597,37 @@ padding: 0;
 line-height:2em;
 
 	}
+
+
+/*.....Proyecto Ganador....*/
+
+.mainTitle h1, p{text-align: center;}
+.mainTitle .gain{
+	margin-top:20px;margin-bottom:10px; 
+	text-align: center;vertical-align:middle; 
 	
+	width:70px;
+	height:70px;
+	line-height:70px;
+	
+	background:#722d7b;
+	border-radius:50%;  
+}
+.mainTitle .gain:hover{background:#a32068 }
+.mainTitle .fa-trophy{
+	line-height: inherit;color:#fff;
+}
+.mainTitle .trophy1:hover{
+	-webkit-transform: rotateZ(30deg);
+      -ms-transform: rotateZ(30deg);
+       transform: rotateZ(30deg);
+}
+.divGainer{
+	background:#fff;
+	 border-bottom:solid 2px #722d7b;
+	 padding:10px;
+}
+.divGainer:hover{background:#f8f8f8;}
+
+
+

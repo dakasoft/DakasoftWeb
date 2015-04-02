@@ -7,10 +7,10 @@
       restrict: 'E',
       templateUrl: 'templates/partials/verProyectoGanador.html',
       controller: ['$scope','$http',function ($scope,$http) {
-        $scope.estudiantes = [];
+        $scope.ganador = [];
 
-        $http.get('json/estudiantes.json').success(function (data) {
-          $scope.estudiantes = data;
+        $http.get('json/proyectoGanador.json').success(function (data) {
+          $scope.ganador = data;
         }); 
 
       // $scope.toogleInfo = function(estado){
