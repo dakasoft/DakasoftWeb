@@ -1615,19 +1615,19 @@ line-height:2em;
 	height:70px;
 	line-height:70px;
 	
-	background:#a32068;
+	background:#ac3677;
 	border-radius:50%;  
 }
-.mainTitle .gain:hover{background:#722d7b  }
+.mainTitle .gain:hover{background:#a32068  }
 
 
 .mainTitle .fa-trophy{
 	line-height: inherit;color:#fff;
 }
 .mainTitle .trophy1:hover{
-	-webkit-transform: scale(1.3);
+	/*-webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
-    transform: scale(1.3);
+    transform: scale(1.3);*/
 }
 
 
