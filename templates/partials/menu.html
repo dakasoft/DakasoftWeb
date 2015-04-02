@@ -1,7 +1,10 @@
 <ul ng-class=" $root.currentStateName=='home' ? 'menuList' : 'menuVertical'">
   <div class="col1">
-    <li ng-show="roleLv > 1" id="configuracion"><a><img ng-src="img/configuracion.png"/></a>
-     <ul class="subMenu cf">
+    <li ng-show="roleLv > 1" id="configuracion">
+      <a>
+        <img ng-src="img/configuracion.png"/>
+      </a>
+      <ul class="subMenu cf">
         <li ng-show="roleLv > 4"><a ui-sref="usuarios">Usuarios</a></li>
         <li ng-show="roleLv > 2"><a ui-sref="carreras">Carreras</a></li>
         <li ng-show="roleLv > 2"><a ui-sref="cursos">Cursos</a></li>
@@ -10,25 +13,38 @@
         <li ng-show="roleLv > 1"><a ui-sref="factorhumano">Factor Humano</a></li>
         <li ng-show="roleLv > 1"><a ui-sref="rubricacursos">Rúbricas</a></li>
         <li ng-show="roleLv > 4"><a ui-sref="proyectosvotacion">Votación</a></li>
-     </ul>
-   </li>
-   <li ng-show="roleLv != 3" id="administracion"><a><img ng-src="img/administracion.png"/></a>
-     <ul class="subMenu" >
+      </ul>
+    </li>
+    <li ng-show="roleLv != 3" id="administracion"><a><img ng-src="img/administracion.png"/></a>
+      <ul class="subMenu" >
         <li ng-show="roleLv == 1"><a ui-sref="miscursos">Mis Cursos</a></li>
         <li ng-show="roleLv == 2"><a ui-sref="vercursos">Ver Cursos</a></li>
         <li ng-show="roleLv == 2"><a ui-sref="verproyectos">Proyectos</a></li>
         <li ng-show="roleLv == 5"><a ui-sref="votacionprivada">En Votación</a></li>
-     </ul>
-   </li>
- </div>
- <div class="col2">
-  <li id="portafolio"><a ng-show="roleLv >= 3 || roleLv == 1 "><a ui-sref="portafolio" ><img ng-src="img/portafolio.png"/></a></li>
-  <li ng-show="roleLv > 1" id="reportes"><a><img ng-src="img/reportes.png"/></a>
-    <ul class="subMenu subMenu-lg">
-      <li ng-show="roleLv > 1"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>
-      <li ng-show="roleLv > 1"><a ui-sref="historialacademico" ng-click="">Historial Acádemico</a></li>
-    </ul>
-  </li> 
-</div>
-
+        <li ng-show="roleLv < 100"><a ui-sref="areasAcademicas">Areas Académicas</a></li>
+      </ul>
+    </li>
+  </div>
+  <div class="col2">
+    <li id="portafolio">
+      <a ng-show="roleLv >= 3 || roleLv == 1 ">
+        <a ui-sref="portafolio" >
+          <img ng-src="img/portafolio.png"/>
+        </a>
+      </a>
+    </li>
+    <li ng-show="roleLv > 1" id="reportes">
+      <a>
+        <img ng-src="img/reportes.png"/>
+      </a>
+      <ul class="subMenu subMenu-lg">
+        <li ng-show="roleLv > 1">
+          <a ui-sref="reportenotas" ng-click="">Reporte Notas</a>
+        </li>
+        <li ng-show="roleLv > 1">
+          <a ui-sref="historialacademico" ng-click="">Historial Acádemico</a>
+        </li>
+      </ul>
+    </li> 
+  </div>
 </ul>
