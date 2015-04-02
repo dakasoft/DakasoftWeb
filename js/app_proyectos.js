@@ -5,9 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/proyectosTabla.html',
-      controller: ['$scope','$http','ngTableParams',function ($scope, $http, ngTableParams) {
-        var notainput= angular.element('#nota');
-       var mensaje=angular.element('.mensaje');
+      controller: ['$scope','$http','ngTableParams','funciones',function ($scope, $http, ngTableParams,funciones) {
         $scope.proyectos = [];
          $scope.nota = "";
         $scope.proyectosSeleccionados = [];
@@ -16,6 +14,7 @@
         $scope.proyectos = data;
         });
      $scope.agregarProyecto = function(proyecto){
+             funciones.closeC();
                 var ingresar = true;
                 angular.forEach($scope.proyectosSeleccionados,function(value,key){
                   if(value.id == proyecto.id){
@@ -38,8 +37,7 @@
 
     }
      $scope.editarNota = function(proyecto){
-         mensaje.css("display","none");
-       notainput.removeClass( "error" );
+      funciones.closeC();
       $scope.editableProject = proyecto;
       $scope.nota=$scope.editableProject.nota;
   
@@ -49,17 +47,23 @@
 
 
     $scope.guardarnota = function(){
-      mensaje.css("display","none");
-       notainput.removeClass( "error" );
     if($scope.nota<=100){
-      $scope.editableProject.nota =angular.copy($scope.nota);
-      $("#editModal").modal('hide');
-      $scope.nota="";
+         if($scope.nota<1){
+            setTimeout(function(){$("#editModal").modal('hide')},1000);
+         }
+          else{
+             $scope.editableProject.nota =angular.copy($scope.nota);
+       funciones.closeC();
+      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> Has agregado la nota',3500);
+      setTimeout(function(){$("#editModal").modal('hide')},1000);
 
+
+          }
     }
     else{
-        notainput.addClass( "error" );
-        mensaje.css("display","block");
+      funciones.closeC(); 
+      funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> La nota debe ser menor igual 100',3500);
+    
     }
     }
 

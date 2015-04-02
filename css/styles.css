@@ -1317,6 +1317,7 @@ table.selectedTable th, table.selectedTable td {
 	color: #722d7b;
 	font-weight: bold;
 	text-align: center;
+	text-shadow: none;
 }
 #modalConfig .divAddConfig {
 	margin-bottom: 10px
@@ -1441,63 +1442,6 @@ table.selectedTable th, table.selectedTable td {
 
 
 
-.error{
-	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.css-form input.ng-invalid.ng-touched {
-  	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.css-form select.ng-invalid.ng-touched {
-  	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.css-form.ng-dirty .ng-invalid-required {
-  	 border: 1px solid #a32068; /* some kind of blue border */
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-      border-radius: 4px;
-
-    -webkit-box-shadow: 0px 0px 4px #a32068;
-       -moz-box-shadow: 0px 0px 4px #a32068;
-            box-shadow: 0px 0px 4px #a32068; 
-}
-
-.mensaje{
-	display:none;
-	line-height:2em;
-	color:#a32068;
-}
-
-.mensaje1{
-	color:#a32068;
-}
-
-.mensaje2{
-	color:#a32068;
-}
 .Listascroll{
 overflow: auto;
 height: 400px;
@@ -1590,6 +1534,20 @@ color:#a32068;
 
 
 
+/*Tooltip*/
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color:#A32068;
+  border-width: 5px 5px 0;
+}
+.tooltip-inner {
+  padding:10px; 
+  color: #fff;
+  background:#A32068;
+  border: solid 1px #A32068;
+}
 
 #custom-table th {
 
@@ -1598,7 +1556,96 @@ color:#a32068;
 line-height:2em;
 
 	}
+
+
+
+/*.....Proyecto Ganador....*/
+
+.mainTitle h1, h4{
+	text-align: center;
+    
+}
+
+
+
+
+
+.mainTitle .gain{
 	
+	text-align: center;vertical-align:middle; 
+	width:70px;
+	height:70px;
+	line-height:70px;
+	
+	background:#ac3677;
+	border-radius:50%;  
+}
+.mainTitle .gain:hover{background:#a32068  }
+
+
+.mainTitle .fa-trophy{
+	line-height: inherit;color:#fff;
+}
+
+
+
+
+.divGainer{
+	background:#fff;
+	 border-bottom:solid 2px #722d7b;
+	 margin-bottom:40px; 
+}
+.divGainer:hover{background:#f8f8f8;}
+
+.divGainer p{text-align:center;}
+
+.divGainer img{opacity:1;margin-bottom:20px }
+.divGainer img:hover{opacity:0.8;}
+.divGainer span{font-size:13px;font-style: italic;color:#722d7b; }
+
+.content:nth-child(3) {
+	/*background: pink;*/
+	width:320px;float:left;margin-right:50px;  
+}
+.content:nth-child(4) {
+	/*background: pink;*/
+	width:320px;float:left;padding-bottom:5px  
+}
+	
+
+.ListascrollCarrera,.ListascrollEstudiante{
+	overflow: auto;
+}
+.ListascrollCarrera{
+	height:200px;
+}
+.ListascrollEstudiante{
+	height:200px;
+}
+.parametro a{
+ color: #722d7b;
+ text-decoration: none;
+}
+.parametro a:hover{
+ color: black;
+ text-decoration: none;
+}
+
+#editModalP.modal-content{
+	width:600px;
+}
+
+/******************Parametros**************************/
+#slideOne{
+ width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+   
+}
+
 /*Estado de proyectos en votacion*/
 
 .proyecto-estado-box{
@@ -1652,3 +1699,4 @@ line-height:2em;
   vertical-align: bottom;
   font-weight: 600;
 }
+

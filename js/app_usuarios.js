@@ -5,7 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/usuariosTabla.html',
-      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+      controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.usuarios = [];
         $scope.editableUser = "";
         $scope.tempUser = "";
@@ -14,6 +14,7 @@
         });
 
         $scope.editar = function(user){
+           funciones.closeC();
           $scope.usuariosForm.$setUntouched(true);
           $scope.usuariosForm.$setPristine(true);
           $scope.editableUser = user;
@@ -40,6 +41,7 @@
         };
 
         $scope.agregar = function(){
+           funciones.closeC();
           $scope.usuariosForm.$setUntouched(true);
           $scope.usuariosForm.$setPristine(true);
           $scope.editableUser = "";
@@ -51,19 +53,23 @@
         };
 
         $scope.guardar = function(){
+          var g = new Date();
+          alert(g.getDate() + "/" + (g.getMonth() +1) + "/" + g.getFullYear());
           if($scope.usuariosForm.$valid){
             if($scope.editableUser != ""){
             $scope.editableUser.name = $scope.nombre;
             $scope.editableUser.lastname = $scope.apellido;
             $scope.editableUser.email = $scope.email;
-            $scope.editableUser.pass = $scope.pass;
+            $scopre.editableUser.pass = $scope.pass;
 
             angular.forEach($scope.roles, function(value, key) {
               if(value.id == $scope.role){
                 $scope.editableUser.role = value.label;
               }
             });
+
           }else{
+
             var lastUser = $scope.usuarios[$scope.usuarios.length - 1];
             var newId =  lastUser.id+1;
             /* each temporal para mostrar rol*/
@@ -76,10 +82,25 @@
             $scope.usuarios.push({id:newId,name: $scope.nombre, lastname: $scope.apellido,
               email: $scope.email, password: $scope.pass, role: $scope.role
             });
+            funciones.closeC();
+            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
           }
-        $("#editModal").modal('hide');            
+       setTimeout(function(){$("#editModal").modal('hide')},1000);         
           }else{
-            $scope.usuariosForm.$setDirty();
+            funciones.closeC();
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+            regExpCorreo = /^\w+\@{1}\w+\.{1}(com|net|edu|org)$/;
+            if($scope.email==""){
+               funciones.closeC();
+               funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+
+            }
+
+            if($scope.email== null){
+             funciones.closeC();
+               funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> El correo no es válido',3500);
+            }
+          
           }
           
         };

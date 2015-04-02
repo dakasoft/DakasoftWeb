@@ -1,0 +1,44 @@
+<div class="col-sm-10 col-sm-offset-1">
+	<div class="mainTitle">
+	<div class="table-header divTitle">
+				<h3>Proyecto Ganador</h3>
+			</div>
+	</div>
+
+<div class="content clearfix" ng-repeat="gana in ganador">
+	
+	<div class="divGainer clearfix" >
+	
+		<img class="img-responsive imgGainer" ng-src="{{gana.imagen}}"/>
+
+		<div class="col-sm-4">
+		<div class="mainTitle">
+			<div class="center-block gain">
+				<a href="">
+					<i class="fa fa-trophy fa-2x trophy1"></i>
+				</a>
+
+			</div>
+			<p><b>{{gana.posicion}}</b></p>
+			</div>
+	  </div>
+	  <div class="frase col-sm-8">
+	  <h4><b>{{gana.name}}</b></h4>
+		<p><span>{{gana.frase}}</span></p>
+	 </div>
+	</div>
+	
+</div>	
+
+
+
+</div>
+		
+		
+		
+			
+
+
+		
+	
+	

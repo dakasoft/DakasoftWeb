@@ -13,12 +13,12 @@
                 {
                   "id":1,
                   "nombre":"Asistencia",
-                  "valor":"80"
+                  "valor":"40"
                 },
                 {
                   "id":2,
                   "nombre":"reponsabilidad",
-                  "valor":"98"
+                  "valor":"20"
                 }
               ]
 
@@ -31,12 +31,12 @@
                 {
                   "id":1,
                   "nombre":"Asistencia",
-                  "valor":"70"
+                  "valor":"30"
                 },
                 {
                   "id":2,
                   "nombre":"reponsabilidad",
-                  "valor":"100"
+                  "valor":"10"
                 }
             ]
         },
@@ -48,12 +48,12 @@
                 {
                   "id":1,
                   "nombre":"Respeto",
-                  "valor":"90"
+                  "valor":"30"
                 },
                 {
                   "id":2,
                   "nombre":"reponsabilidad",
-                  "valor":"100"
+                  "valor":"50"
                 }
             ]
         },
@@ -65,12 +65,12 @@
                 {
                   "id":1,
                   "nombre":"Respeto",
-                  "valor":"90"
+                  "valor":"20"
                 },
                 {
                   "id":2,
                   "nombre":"reponsabilidad",
-                  "valor":"100"
+                  "valor":"40"
                 }
             ]
         }
