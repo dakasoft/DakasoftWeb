@@ -6,18 +6,37 @@
       restrict: 'E',
       templateUrl: 'templates/partials/parametrosP.html',
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
-        $scope.parametros = [];
+        $scope.parametro = [];
+          $scope.editableC = "";
         $http.get('json/parametros.json').success(function (data) {
           $scope.parametros = data;
 
         }); 
-        
+       
+   $scope.editar = function(parametro){
+          $scope.editableC = parametro;
+          $scope.FechaProyectos = parametro.FechaProyectos;
+          $scope.FechaCierre = parametro.FechaCierre;
+        };
 
+ $scope.guardar = function() {
+          
+  };
       }],
       controllerAs: 'parametros'
     };
   });
-
+  app.directive('modalParametros',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalParametros.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+       
+        
+      }],
+        controllerAs: 'modalParametros'
+    };
+});
 
 
 })();

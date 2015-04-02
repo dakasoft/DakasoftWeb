@@ -1,6 +1,8 @@
 (function(){ // define funcionalidad
 
-var app = angular.module('universidad', ["ui.router","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos","verCursos","misCursos","proyectoganador"]);
+
+var app = angular.module('universidad', ["ui.router","factory","ngTable","usuarios","grupos","loginU","portafolio","carreras","cursos","reporte","historialAcademico","votacionesPrivadas","parametros","proyectosVotacion","proyectos","factorHumano","rubricaCursos","verCursos","misCursos","proyectoganador"]);
+
 
 /*Quitar el hashtag en el browser*/
 
@@ -8,7 +10,8 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     var main = this;
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 5;
+    $rootScope.roleLv = 4;
+
 
     main.logOut = function () {
       $rootScope.currentUser = {};
@@ -37,7 +40,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('carreras', {
     url: "/carreras",
     templateUrl: "templates/carreras.html",
-      controller: function($rootScope, $state){
+      controller: function($rootScope, $state,funciones){
         $rootScope.currentStateName = $state.current.name;
         if (!$rootScope.bLoggedIn) {
           $state.go('login');
@@ -82,7 +85,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   .state('usuarios', {
     url: "/usuarios",
     templateUrl: "templates/usuarios.html",
-    controller: function ($rootScope, $state) {
+    controller: function ($rootScope, $state,funciones) {
       $rootScope.currentStateName = $state.current.name;
       if (!$rootScope.bLoggedIn) {
         $state.go('login');
@@ -270,6 +273,21 @@ app.directive('menuMobile', function(){
 	};
 });
 
+/*Directiva para el tooltip*/
+app.directive('tooltip', function(){
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs){
+            $(element).hover(function(){
+                // on mouseenter
+                $(element).tooltip('show');
+            }, function(){
+                // on mouseleave
+                $(element).tooltip('hide');
+            });
+        }
+    };
+});   
 
 
 })();

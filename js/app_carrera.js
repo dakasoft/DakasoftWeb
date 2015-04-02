@@ -1,15 +1,10 @@
 (function () { // define funcionalidad
   var app = angular.module('carreras', ["ui.router"]);
-
   app.directive('carrerasTabla',function ($http) {
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/carrerasTabla.html',
-      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
-        var inputN = angular.element(".inputNombre");
-        var inputC = angular.element(".inputCodigo");
-        var mensaje1 = angular.element(".mensaje1");
-        var mensaje2 = angular.element(".mensaje2");
+      controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.carrera = [];
         $scope.cursos = [];
         $scope.cursosSeleccionados = [];
@@ -23,10 +18,7 @@
           $scope.cursos = data;
         });
          $scope.editar = function(carrera){
-            inputC.removeClass("error");
-             inputN.removeClass("error");
-            mensaje1.css("display","none");
-            mensaje2.css("display","none");
+            funciones.closeC();
           $scope.editableC = carrera;
           $scope.nombre = carrera.nombre;
           $scope.codigo = carrera.cod;
@@ -47,6 +39,7 @@
           angular.forEach($scope.cursosSeleccionados, function(value, key) {
             if(value.id == curso.id){
               $scope.cursosSeleccionados.splice(key, 1);
+              $scope.cursos.unshift(curso);
             }
           });
 
@@ -56,15 +49,13 @@
         }
 
         $scope.agregar = function(){
-           inputC.removeClass("error");
-            inputN.removeClass("error");
-            mensaje1.css("display","none");
-            mensaje2.css("display","none");
+            funciones.closeC();
           $scope.cursosSeleccionados = [];
           $scope.editableC = "";
           $scope.nombre = "";
           $scope.codigo = ""; 
         };
+
 
         $scope.agregarCurso = function(){
           angular.forEach($scope.cursos, function(value, key) {
@@ -79,8 +70,8 @@
               if(value.id == $scope.cursoId){
                 ingresar = false;
               }
-               });
-            if(ingresar || $scope.profesoresSeleccionados.length == 0){
+               });                //cursosSeleccionados
+            if(ingresar || $scope.cursosSeleccionados.length == 0){
                $scope.cursosSeleccionados.push({id: $scope.cursoId, nombre:  $scope.curso });
               $scope.profesor = "";
             }
@@ -91,17 +82,16 @@
       
 
            $scope.guardar = function(){
-            if(!$scope.nombre || !$scope.codigo){  
-               if(!$scope.codigo){
-               inputC.addClass("error");
-               mensaje2.css("display","block");
-                }
-               if(!$scope.nombre){
-               inputN.addClass("error");
-               mensaje1.css("display","block");
-               }
-
+            
+            if($scope.nombre && $scope.codigo){
+                funciones.closeC();
+               funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
             }
+            if(!$scope.nombre || !$scope.codigo){ 
+            funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
+            }
+
           
             else{
                 if($scope.editableC != ""){
@@ -121,8 +111,8 @@
                 $scope.carreras.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
                   });
           
-              }
-                $("#editModal").modal('hide');
+              } setTimeout(function(){$("#editModal").modal('hide')},1000);
+               
           } 
         };
       }],

@@ -1,0 +1,22 @@
+<div class="pagetittle pageV col-xs-11 col-sm-12"><h2>Estado de Votación</h2></div>
+<div ng-repeat="(i, proyecto) in proyectosElegidos">
+	<div class="col-xs-6 col-sm-4 ">
+		<div class="proyecto-estado-box">
+			<div class="votacion-circulo"><span>{{i+1}}</span></div>
+			<div class="col-xs-6">
+				<img class="proyecto-imagen-circle" ng-src="{{proyecto.imagen}}" alt="">
+			</div>
+			<div class="informacion-equipo">
+				<h4>{{ proyecto.nombre }}</h4>
+				<h4>{{ proyecto.equipo }}</h4>
+				<div class="startsbox">
+					<img class="starEstado" ng-show="proyecto.cantidad > 0" src="img/starLlena.png" alt="">
+					<img class="starEstado" ng-show="proyecto.cantidad == 0" src="img/starVacia.png" alt="">
+				</div>
+					<p class="cantidad">{{proyecto.cantidad}}</p>
+
+			</div>
+		</div>
+	</div>	
+</div>	
+</div> 

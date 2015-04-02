@@ -5,11 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/cursosTabla.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-        var inputN = angular.element(".inputNombre");
-        var inputC = angular.element(".inputCodigo");
-        var mensaje1 = angular.element(".mensaje1");
-        var mensaje2 = angular.element(".mensaje2");
+      controller: ['$scope','$http','funciones',function ($scope,$http,funciones) {
         $scope.temporal = "";
       $scope.cursos = [];
       $scope.codigoSeleccionado= [];
@@ -21,10 +17,7 @@
         });
 
          $scope.editar = function(curso){
-           inputC.removeClass("error");
-            inputN.removeClass("error");
-            mensaje1.css("display","none");
-            mensaje2.css("display","none");
+           funciones.closeC();
           $scope.editableC = curso;
           $scope.nombre = curso.nombre;
           $scope.codigo = curso.cod;
@@ -45,10 +38,7 @@
                 $scope.temporal = carrera;
         }
           $scope.agregar = function(){
-             inputC.removeClass("error");
-               inputN.removeClass("error");
-            mensaje1.css("display","none");
-            mensaje2.css("display","none");
+             funciones.closeC();
            $scope.area="";
             $scope.areasSeleccionadas=[];
           $scope.editableC = "";
@@ -73,15 +63,8 @@
 
           $scope.guardar = function(){
             if(!$scope.nombre || !$scope.codigo){  
-               if(!$scope.codigo){
-               inputC.addClass("error");
-               mensaje2.css("display","block");
-                }
-               if(!$scope.nombre){
-               inputN.addClass("error");
-               mensaje1.css("display","block");
-               }
-
+            funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
 
             }
             else{
@@ -107,9 +90,11 @@
             });
             $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,area :$scope.areasSeleccionadas
             });
+             funciones.closeC();
+              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
           
           }
-        $("#editModal").modal('hide');
+   setTimeout(function(){$("#editModal").modal('hide')},1000);
 
 
             }
