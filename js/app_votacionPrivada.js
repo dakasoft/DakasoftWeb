@@ -90,14 +90,23 @@
             return "img/starLlena.png"
           }  
         };
+      }]
+    }
+  });
 
+  app.directive('estadoVotacion', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'templates/partials/estadoVotacion.html',
+      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+        $scope.proyectosElegidos = [];
+        $http.get('json/proyectosVotacion.json').success(function (data) {
+          $scope.proyectosElegidos = data;
+        }); 
 
+      }]
+    };
+  });
 
-
-
-      }],
-      controllerAs: 'modalCntrl'
-      }
-    });
 
 })();

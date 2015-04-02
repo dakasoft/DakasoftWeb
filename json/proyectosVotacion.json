@@ -7,6 +7,7 @@
         "imagen":"img/proyecto1foto.jpg",
         "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
         "rate":0,
+        "cantidad":100,
         "integrantes":[
             "Karolina Muñoz",
             "Luis Daniel Morales",
@@ -22,6 +23,7 @@
         "imagen":"img/proyecto2foto.jpg",
         "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
         "rate":0,
+        "cantidad":0,
         "integrantes":[
             "Argentina Muñoz",
             "Luis Daniel Morales",
@@ -37,6 +39,7 @@
         "imagen":"img/proyecto3foto.jpg",
         "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
         "rate":0,
+        "cantidad":0,
         "integrantes":[
             "Maria Munnoz",
             "Daniel Morales",
@@ -52,6 +55,7 @@
         "imagen":"img/proyecto1foto.jpg",
         "video":"http://www.youtube.com/embed/mwuPTI8AT7M?rel=0",
         "rate":0,
+        "cantidad":0,
         "integrantes":[
             "Manuel Munnoz",
             "Luis Morales",

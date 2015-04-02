@@ -1,0 +1,26 @@
+<div class="modal fade" id="editModalP" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <div class="modal-header"><h4>Nueva Votación</h4></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <form class="form-vertical">
+        <div class="col-xs-12 col-sm-12">
+        <div class="form-group">
+          <label for="">Recepción de Proyectos</label>  
+           
+              <input class="form-control" ng-model="FechaProyectos" type="date"/>   
+        </div>
+        <div class="form-group">
+          <label for="">Fecha de Cierre</label>  
+              <input class="form-control" ng-model="FechaCierre"  type="date"/>
+        </div>
+        </div> 
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

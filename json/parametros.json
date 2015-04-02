@@ -2,22 +2,30 @@
 
 	{
 		"id":1,
-		"nombre":"Bimestre"
+		"Fecha":"12/09/12",
+		"FechaProyectos":"12/09/12",
+		"FechaCierre":"22/09/15"
 
 	},
     {
 		"id":2,
-		"nombre":"Trimestre"
+		"Fecha":"",
+		"FechaProyectos":"",
+		"FechaCierre":""
 
 	},
 	{
 		"id":3,
-		"nombre":"Cuatrimestre"
+		"Fecha":"",
+		"FechaProyectos":"",
+		"FechaCierre":""
 
 	},
 	{
 		"id":4,
-		"nombre":"Semestre"
+		"Fecha":"",
+		"FechaProyectos":"",
+		"FechaCierre":""
 
 	}
 
