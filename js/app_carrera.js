@@ -56,15 +56,27 @@
           $scope.codigo = ""; 
         };
 
-        $scope.agregarCurso = function(curso){
-           $scope.cursosSeleccionados.push(curso);
-       angular.forEach($scope.cursos, function(value, key) {
-        if(value.id == curso.id){
-          $scope.cursos.splice(key,1);
-        }                 
-      });    
-         
-          
+
+        $scope.agregarCurso = function(){
+          angular.forEach($scope.cursos, function(value, key) {
+            if(value.id == $scope.curso){
+              $scope.curso = value.nombre;
+              $scope.cursoId = value.id;
+            }
+          });
+          if($scope.cursos){
+            var ingresar = true;
+            angular.forEach($scope.cursosSeleccionados,function(value,key){
+              if(value.id == $scope.cursoId){
+                ingresar = false;
+              }
+               });                //cursosSeleccionados
+            if(ingresar || $scope.cursosSeleccionados.length == 0){
+               $scope.cursosSeleccionados.push({id: $scope.cursoId, nombre:  $scope.curso });
+              $scope.profesor = "";
+            }
+
+          }
         };
 
       

@@ -13,7 +13,7 @@
                 {
                   "id":1,
                   "nombre":"Asistencia",
-                  "valor":"50"
+                  "valor":"20"
                 },
                 {
                   "id":2,
@@ -31,12 +31,12 @@
                 {
                   "id":1,
                   "nombre":"Asistencia",
-                  "valor":"50"
+                  "valor":"30"
                 },
                 {
                   "id":2,
                   "nombre":"reponsabilidad",
-                  "valor":"50"
+                  "valor":"40"
                 }
             ]
         }

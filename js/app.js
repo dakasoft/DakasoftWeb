@@ -8,7 +8,8 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     var main = this;
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 5;
+    $rootScope.roleLv = 4;
+
 
     main.logOut = function () {
       $rootScope.currentUser = {};
@@ -260,6 +261,21 @@ app.directive('menuMobile', function(){
 	};
 });
 
+/*Directiva para el tooltip*/
+app.directive('tooltip', function(){
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs){
+            $(element).hover(function(){
+                // on mouseenter
+                $(element).tooltip('show');
+            }, function(){
+                // on mouseleave
+                $(element).tooltip('hide');
+            });
+        }
+    };
+});   
 
 
 })();

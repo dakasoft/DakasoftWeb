@@ -12,8 +12,8 @@
 		<tr ng-repeat="curso in rubricaCursos[0].cursos">
 		  <td>{{curso.cursoNombre}}</td>
 			<td class="tdModal">
-			<a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(curso)">
-				<i class="fa fa-pencil-square-o fa-2x"></i>Editar
+			<a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(curso)" title="Agregar Rúbrica!" data-toggle="tooltip" data-placement="right" tooltip>
+				<i class="fa fa-pencil-square-o fa-2x"></i>Rubrica
 			</a>
 			</td>
 		</tr>

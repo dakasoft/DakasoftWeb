@@ -22,14 +22,22 @@
 
         $scope.agregarRubro = function(){
           if($scope.rubricaForm.$valid){
-            $scope.rubricaForm.$setUntouched(true);
-            $scope.rubricaForm.$setPristine(true);
-            $(".css-form").removeClass("ng-dirty");
-            var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
-            var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
-            $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
-            $scope.rubroNombre = "";
-            $scope.rubroValor = "";
+
+            if(esValidoMaxValorRubro($scope)){
+
+              $scope.rubricaForm.$setUntouched(true);
+              $scope.rubricaForm.$setPristine(true);
+              $(".css-form").removeClass("ng-dirty");
+              var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
+              var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
+              $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
+              $scope.rubroNombre = "";
+              $scope.rubroValor = "";
+
+            }else{
+              alert('La suma de los valores no puede ser mayor a 100');
+            }
+
           }else{
             $scope.rubricaForm.$setDirty();
           }
@@ -53,9 +61,23 @@
           $("#modalRubrica").modal("hide");
         };
 
+        function esValidoMaxValorRubro($scope){
+          var suma = 0;
+          var esValido = true;
+          var arrayRubros = $scope.rubrosSeleccionados;
+          var nuevoValor = $scope.rubroValor;
 
+          for(var i = 0; i < arrayRubros.length; i++){
+            suma +=  parseInt(arrayRubros[i].valor);
+          }
+          suma +=  parseInt(nuevoValor);
+          
+          if(suma > 100){
+            esValido = false;
+          }
 
-
+          return esValido;
+        }
         
       }],
       controllerAs: 'factorH'
@@ -74,7 +96,6 @@
     };
 });
      
-  
 
 
 
