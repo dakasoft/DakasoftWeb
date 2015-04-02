@@ -2,22 +2,22 @@
         {
             "name": "Dakasoft",
             "id":1,
-            "logo":"img/foto.png",
-            "imagen": "img/foto.png",
+            "logo":"img/logoEquipo1.png",
+            "imagen": "img/proyecto1Foto.jpg",
             "frase": "La emoción de ganar debe ser mayor al miedo a perder"
         },
         {
             "name": "SoftLogic",
             "id":2,
-            "logo":"img/lasuertedejim.jpg",
-            "imagen": "img/foto.png",
+            "logo":"img/logoEquipo2.png",
+            "imagen": "img/imgGanador2.png",
             "frase": "La mejor victoria es aquella en la que ganan todos"
         },
         {
             "name": "WedoSoft",
             "id":3,
-            "logo":"img/karma.jpg",
-            "imagen": "img/foto.png",
+            "logo":"img/logoEquipo3.png",
+            "imagen": "img/imgGanador3.png",
             "frase":"No tengo miedo de empezar desde cero"
         }
     ]

@@ -1618,16 +1618,19 @@ line-height:2em;
 	line-height: inherit;color:#fff;
 }
 .mainTitle .trophy1:hover{
-	-webkit-transform: rotateZ(30deg);
-      -ms-transform: rotateZ(30deg);
-       transform: rotateZ(30deg);
+	-webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
 }
 .divGainer{
 	background:#fff;
 	 border-bottom:solid 2px #722d7b;
 	 padding:10px;
+	 margin-bottom:40px; 
 }
 .divGainer:hover{background:#f8f8f8;}
+
+.divGainer h4{text-align:center; }
 
 
 
