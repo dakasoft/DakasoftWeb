@@ -1556,6 +1556,64 @@ color:#a32068;
 line-height:2em;
 
 	}
+
+
+
+/*.....Proyecto Ganador....*/
+
+.mainTitle h1, p{text-align: center;}
+
+
+
+
+
+.mainTitle .gain{
+	margin-top:20px;margin-bottom:10px; 
+	text-align: center;vertical-align:middle; 
+	
+	width:70px;
+	height:70px;
+	line-height:70px;
+	
+	background:#ac3677;
+	border-radius:50%;  
+}
+.mainTitle .gain:hover{background:#a32068  }
+
+
+.mainTitle .fa-trophy{
+	line-height: inherit;color:#fff;
+}
+.mainTitle .trophy1:hover{
+	/*-webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);*/
+}
+
+
+
+.divGainer{
+	background:#fff;
+	 border-bottom:solid 2px #722d7b;
+	 padding:10px;
+	 margin-bottom:40px; 
+}
+.divGainer:hover{background:#f8f8f8;}
+
+.divGainer p{text-align:center;}
+
+.divGainer img{opacity:1;margin-bottom:20px }
+.divGainer img:hover{opacity:0.8;}
+.divGainer span{font-size:12px;font-style: italic;color:#722d7b; }
+
+.content:nth-child(3) {
+	/*background: pink;*/
+	width:320px;float:left;margin-right:50px;  
+}
+.content:nth-child(4) {
+	/*background: pink;*/
+	width:320px;float:left;padding-bottom:5px  
+}
 	
 
 .ListascrollCarrera,.ListascrollEstudiante{

@@ -1,0 +1,42 @@
+<div class="col-sm-10 col-sm-offset-1">
+	<div class="mainTitle">
+		<h1>Proyecto Ganador</h1>
+		<!-- <div class="center-block gain">
+			<a href="">
+				<i class="fa fa-trophy fa-3x trophy1"></i>
+			</a>
+
+		</div>
+		<p><b>Primer lugar</b></p> -->
+	</div>
+
+<div class="content clearfix" ng-repeat="gana in ganador">
+	<div class="mainTitle">
+			<div class="center-block gain">
+				<a href="">
+					<i class="fa fa-trophy fa-2x trophy1"></i>
+				</a>
+
+			</div>
+			<p><b>{{gana.posicion}}</b></p>
+	</div>
+	<div class="divGainer clearfix" >
+		<img class="img-responsive imgGainer" ng-src="{{gana.imagen}}"/>
+		<p><b>{{gana.name}}</b></p>
+		<p><span>{{gana.frase}}</span></p>
+	</div>
+	
+</div>	
+
+
+
+</div>
+		
+		
+		
+			
+
+
+		
+	
+	

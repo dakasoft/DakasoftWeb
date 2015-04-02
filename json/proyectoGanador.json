@@ -1,0 +1,26 @@
+[
+        {
+            "name": "Dakasoft",
+            "id":1,
+            "logo":"img/logoEquipo1.png",
+            "imagen": "img/imgGanador1.png",
+            "posicion":"Primer lugar",
+            "frase": "La emoción de ganar debe ser mayor al miedo a perder."
+        },
+        {
+            "name": "SoftLogic",
+            "id":2,
+            "logo":"img/logoEquipo2.png",
+            "imagen": "img/imgGanador2.png",
+            "posicion":"Segundo lugar",
+            "frase": "Sólo una cosa convierte en imposible un sueño: el miedo a fracasar."
+        },
+        {
+            "name": "WedoSoft",
+            "id":3,
+            "logo":"img/logoEquipo3.png",
+            "imagen": "img/imgGanador3.png",
+            "posicion":"Tercer lugar",
+            "frase":"Si realmente quieres hacer algo, encontrarás una forma. Si no, encontrarás una excusa."
+        }
+    ]
