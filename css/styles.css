@@ -1615,10 +1615,10 @@ line-height:2em;
 	height:70px;
 	line-height:70px;
 	
-	background:#722d7b;
+	background:#a32068;
 	border-radius:50%;  
 }
-.mainTitle .gain:hover{background:#a32068 }
+.mainTitle .gain:hover{background:#722d7b  }
 
 
 .mainTitle .fa-trophy{
@@ -1640,15 +1640,18 @@ line-height:2em;
 }
 .divGainer:hover{background:#f8f8f8;}
 
-.divGainer h4{text-align:center; }
+.divGainer p{text-align:center;}
 
-.divGainer img{opacity:0.8;}
-.divGainer img:hover{opacity:1;}
+.divGainer img{opacity:1;margin-bottom:20px }
+.divGainer img:hover{opacity:0.8;}
+.divGainer span{font-size:12px;font-style: italic;color:#722d7b; }
 
-.divGainer:nth-child(3) {
-	background: pink;width:320px;float:left;margin-right:50px;  
+.content:nth-child(3) {
+	/*background: pink;*/
+	width:320px;float:left;margin-right:50px;  
 }
-.divGainer:nth-child(4) {
-	background: pink;width:320px;float:left; 
+.content:nth-child(4) {
+	/*background: pink;*/
+	width:320px;float:left;padding-bottom:5px  
 }
 
