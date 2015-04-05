@@ -12,7 +12,7 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     var main = this;
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 4;
+    $rootScope.roleLv = 5;
 
 
     main.logOut = function () {
@@ -247,10 +247,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:'templates/partials/verEquipo.html'
     })
 
+    .state('vercursos.roles', {
+      url: '/equipo',
+      templateUrl:'templates/partials/verRoles.html'
+    })
+
 
     .state('areasAcademicas', {
       url: '/areasAcademicas',
       templateUrl:'templates/areasAcademicas.html'
+    })
 
     .state('proyectoganador',{
       url: '/proyectoganador',
@@ -280,6 +286,15 @@ app.directive('menuMobile', function(){
 		restrict: 'E',
 		templateUrl: 'templates/partials/menuMobile.html'
 	};
+});
+
+/*Custom para todos*/
+
+app.directive('modalConfirmarBorrar', function(){
+  return{
+    restrict: 'E',
+    templateUrl: 'templates/partials/shared/modalConfirmacion.html'
+  };
 });
 
 /*Directiva para el tooltip*/
