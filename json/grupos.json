@@ -2,9 +2,8 @@
 	{
 		"id": 1,
 		"nombre": "Grupo 02",
-		"curso": "Proyecto web 1",
-		"cursoId": 1,
-		"encargado":"Gloria Tate",
+		"curso": {"id":1,"nombre":"Proyecto web 1"},
+		"encargado":{"id":83,"nombre":"Carl Torres"},
 		"encargadoId": 83,
 		"profesores":[],
 		"estudiantes":[]
@@ -12,80 +11,65 @@
 	{
 		"id": 2,
 		"nombre": "Grupo 03",
-		"curso": "Proyecto web 1",
-		"cursoId": 1,
-		"encargado":"Catherine Hutchinson",
-		"encargadoId": 79,
+		"curso": {"id":1,"nombre":"Proyecto web 1"},
+		"encargado":{"id":79,"nombre":"Sloane Vazquez"},
 		"profesores":[],
 		"estudiantes":[]
 	},
 	{
 		"id": 3,
 		"nombre": "Grupo 01",
-		"curso": "Proyecto web 2",
-		"cursoId": 2,
-		"encargado":"Ciaran Clayton",
-		"encargadoId": 3,
+		"curso": {"id":2,"nombre":"Proyecto web 2"},
+		"encargado":{"id":3,"nombre":"Autumn Stone"},
 		"profesores":[],
 		"estudiantes":[]
 	},
 	{
 		"id": 4,
 		"nombre": "Grupo 02",
-		"curso": "Proyecto web 2",
-		"cursoId": 2,
-		"encargado":"Ciaran Clayton",
-		"encargadoId": 90,
+		"curso": {"id":3,"nombre":"Proyecto web 3"},
+		"encargado":{"id":90,"nombre":"Boris Odonnell"},
 		"profesores":[],
 		"estudiantes":[]
 	},
 	{
 		"id": 5,
 		"nombre": "Grupo 01",
-		"curso": "Proyecto web 3",
-		"cursoId": 3,
-		"encargado":"Kaye Acosta",
-		"encargadoId": 90,
+		"curso": {"id":3,"nombre":"Proyecto web 3"},
+		"encargado":{"id":3,"nombre":"Autumn Stone"},
 		"profesores":[],
 		"estudiantes":[]
 	},
 	{
 		"id": 6,
 		"nombre": "Grupo 02",
-		"curso": "Proyecto web 3",
+		"curso": {"id":3,"nombre":"Proyecto web 3"},
 		"cursoId": 3,
-		"encargado":"Ciaran Clayton",
-		"encargadoId": 8,
+		"encargado":{"id":90,"nombre":"Boris Odonnell"},
 		"profesores":[],
 		"estudiantes":[]
 	},
 	{
 		"id": 7,
 		"nombre": "Grupo 01",
-		"curso": "Proyecto software 1",
-		"cursoId": 4,
-		"encargado":"Ciaran Clayton",
-		"encargadoId": 96,
+		"curso": {"id":4,"nombre":"Proyecto software 1"},
+		"encargado":{"id":79,"nombre":"Sloane Vazquez"},
 		"profesores":[],
 		"estudiantes":[]
 	},
 	{
 		"id": 8,
 		"nombre": "Grupo 02",
-		"curso": "Proyecto software 1",
-		"cursoId": 4,
-		"encargado":"Gloria Tate",
-		"encargadoId": 12,
+		"curso": {"id":4,"nombre":"Proyecto software 1"},
+		"encargado":{"id":3,"nombre":"Autumn Stone"},
 		"profesores":[],
 		"estudiantes":[]
 	},
 	{
 		"id": 9,
 		"nombre": "Grupo 03",
-		"curso": "Proyecto software 1",
-		"cursoId": 4,
-		"encargado":"Karina Hutchinson",
-		"encargadoId": 12,
+		"curso": {"id":4,"nombre":"Proyecto software 1"},
+		"encargado":{"id":83,"nombre":"Carl Torres"},
 		"profesores":[],
 		"estudiantes":[]
 	}

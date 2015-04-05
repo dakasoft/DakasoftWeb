@@ -1,30 +1,32 @@
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header"><h4>Nuevo Curso</h4></div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="modal-body" id="contentbody">
-        <form class="form-vertical">
+        <form name="cursosForm" class="form-vertical" novalidate>
         <div class="col-xs-12 col-sm-6">
         <div class="form-group">
           <label for="">Nombre</label>  
-            <input type="text" ng-model="nombre" class="form-control inputNombre"> 
+            <input type="text" ng-model="curso.nombre" class="form-control inputNombre" required> 
         </div>
         <div class="form-group">
           <label for="">Código</label>  
-            <input type="text" ng-model="codigo" class="form-control inputCodigo">
+            <input type="text" ng-model="curso.cod" class="form-control inputCodigo" required>
         </div>
         <div class="form-group">
-          <label for="">Área Academica</label>  
-            <input type="text" ng-model="area" class="form-control plus-add">
-            <i class="fa fa-plus plus-add-icon" ng-click="agregarArea(area)"></i>
+          <label for="profesor">Áreas Academicas</label>  
+          <select id="profesor" ng-model="area" ng-init="areasAcademicas" class="form-control plus-add" ng-options="obj.nombre for obj in areasAcademicas track by obj.id">
+            <option value="">--Areas--</option>
+          </select>
+          <i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarArea(area)"></i>
         </div>
         </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <ul class="list-group listaProfesores">
                 <li class="list-group-item list-g-header">Área</li>
-                <li class="list-group-item " ng-repeat="area in areasSeleccionadas" >
+                <li class="list-group-item " ng-repeat="area in curso.area" >
                   {{ area.nombre }}
                   <a><i class="fa fa-times-circle fa pull-right" ng-click="borrarArea(area)"></i></a> 
                 <li>
@@ -35,7 +37,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar(curso)">Guardar</button>
       </div>
     </div>
   </div>

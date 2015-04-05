@@ -1,148 +1,80 @@
 (function () { // define funcionalidad
   var app = angular.module('carreras', ["ui.router"]);
+
   app.directive('carrerasTabla',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/carrerasTabla.html',
+      templateUrl: 'templates/partials/carreras/tabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
-        $scope.carrera = [];
+        $scope.carreras = [];
         $scope.cursos = [];
-        $scope.cursosSeleccionados = [];
-        $scope.editableC = "";
-        $scope.temporal = "";
+        $scope.carrera = funciones.carrera();
+        $scope.curso = funciones.curso();
+
+        /*Get de usuarios y roles*/
         $http.get('json/carreras.json').success(function (data) {
           $scope.carreras = data;
-
         });
+
         $http.get('json/cursos.json').success(function (data) {
           $scope.cursos = data;
         });
-         $scope.editar = function(carrera){
-            funciones.closeC();
-          $scope.editableC = carrera;
-          $scope.nombre = carrera.nombre;
-          $scope.codigo = carrera.cod;
-          $scope.cursosSeleccionados = angular.copy(carrera.cursos);
+        /*Funciones*/
+        $scope.editar = function(carrera){
+          funciones.closeC();
+          $scope.carrera =  angular.copy(carrera);
+          $scope.accion = "Editar";
         };
 
-        $scope.borrar = function(carrera){
-          
-          angular.forEach($scope.carreras, function(value, key) {
-            if(value.id == $scope.temporal.id){
-              $scope.carreras.splice(key, 1);
-            }
-          });
-           $("#modalConfirm").modal('hide');
+        $scope.borrarObjeto= function(carrera){
+          $scope.carrera = carrera;
+          $scope.entidad = "carrera";
+        }
+
+        $scope.borrar = function(){
+          $scope.carreras=funciones.borrarDeLista($scope.carreras,$scope.carrera);      
+          $("#modalConfirm").modal('hide');
         };
 
         $scope.borrarCurso = function(curso){
-          angular.forEach($scope.cursosSeleccionados, function(value, key) {
-            if(value.id == curso.id){
-              $scope.cursosSeleccionados.splice(key, 1);
-              $scope.cursos.unshift(curso);
-            }
-          });
-
-        };
-          $scope.eliminarTemporal = function(carrera){
-                $scope.temporal = carrera;
-        }
-
-        $scope.agregar = function(){
-            funciones.closeC();
-          $scope.cursosSeleccionados = [];
-          $scope.editableC = "";
-          $scope.nombre = "";
-          $scope.codigo = ""; 
+          funciones.borrarDeLista($scope.carrera.cursos,curso);
         };
 
-
-        $scope.agregarCurso = function(){
-          angular.forEach($scope.cursos, function(value, key) {
-            if(value.id == $scope.curso){
-              $scope.curso = value.nombre;
-              $scope.cursoId = value.id;
-            }
-          });
-          if($scope.cursos){
-            var ingresar = true;
-            angular.forEach($scope.cursosSeleccionados,function(value,key){
-              if(value.id == $scope.cursoId){
-                ingresar = false;
-              }
-               });                //cursosSeleccionados
-            if(ingresar || $scope.cursosSeleccionados.length == 0){
-               $scope.cursosSeleccionados.push({id: $scope.cursoId, nombre:  $scope.curso });
-              $scope.profesor = "";
-            }
-
-          }
+        $scope.nuevo = function(){
+          funciones.closeC();
+          $scope.carrera = funciones.carrera()
+          $scope.accion = "Nueva";
         };
 
-      
-
-           $scope.guardar = function(){
-            
-            if($scope.nombre && $scope.codigo){
-                funciones.closeC();
-               funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-            }
-            if(!$scope.nombre || !$scope.codigo){ 
-            funciones.closeC(); 
-            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
-            }
-
-          
-            else{
-                if($scope.editableC != ""){
-                 $scope.editableC.nombre = $scope.nombre;
-                $scope.editableC.cod = $scope.codigo;
-                $scope.editableC.cursos = $scope.cursosSeleccionados;
-             }
-            else{
-                 var lastUser = $scope.carreras[$scope.carreras.length - 1];
-                   if(lastUser){
-                       var newId =  lastUser.id+1; 
-                     }
-                   else{ 
-                    var newId = 1
-                    }
-            /* each temporal para mostrar rol*/
-                $scope.carreras.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,cursos :$scope.cursosSeleccionados
-                  });
-          
-              } setTimeout(function(){$("#editModal").modal('hide')},1000);
-               
-          } 
+        $scope.agregarCurso = function(curso){
+          funciones.agregarAListaNoRepetido($scope.carrera.cursos,curso);
         };
-      }],
-      controllerAs: 'carreras'
+
+        $scope.guardar = function(carrera){
+          if($scope.carrerasForm.$valid){
+            if(carrera.id==""){//es nuevo usuario
+              carrera.id = funciones.nuevoId($scope.carreras);
+              $scope.carreras = funciones.agregarALista($scope.carreras,carrera);
+              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+              setTimeout(function(){$("#modalCarrera").modal('hide')},1000);   
+            }else{ //editar usuario
+              $scope.carreras = funciones.editarDeLista($scope.carreras,carrera);
+              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+              setTimeout(function(){$("#modalCarrera").modal('hide')},1000);  
+            }
+          }else{
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+          }  
+        };
+      }]
     };
   });
 
-    app.directive('modalc',function ($http) {
+  app.directive('modalCarrera',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalCarreras.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-       
-        
-      }],
-        controllerAs: 'modalC'
-    };
-});
-
-
-      app.directive('modalConfirm',function ($http) {
-    return {
-      restrict: 'E',
-      templateUrl: 'templates/partials/modalConfirmaciont.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-        
-      }],
-      controllerAs: 'modalConfirm'
+      templateUrl: 'templates/partials/carreras/modalCarrera.html',
     };
   });
-
 
 })();

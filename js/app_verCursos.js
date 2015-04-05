@@ -16,6 +16,7 @@
     $scope.oEditPointer = {};
     $scope.deletePointer = {};
     $scope.deleteContainer = {};
+    $scope.editRol= {};
 
     $scope.users = {};
     $scope.idCounter = 0;
@@ -40,12 +41,18 @@
       }
     }
 
-    $scope.confirmDelete = function () {
-      angular.forEach($scope.deleteContainer, function (pValue, pKey) {
-        if(pValue.id === $scope.deletePointer.id){
-          $scope.deleteContainer.splice(pKey, 1);
-        }
-      });
+    $scope.confirmDelete = function (entidad) {
+      console.log(entidad);
+      if(entidad=="rol"){
+        $scope.deleteRol();
+      }else{
+        angular.forEach($scope.deleteContainer, function (pValue, pKey) {
+          if(pValue.id === $scope.deletePointer.id){
+            $scope.deleteContainer.splice(pKey, 1);
+          }
+        });
+      }
+
     }
 
     $scope.newAssignment = function (pGrupo) {
@@ -160,6 +167,52 @@
       return $scope.idCounter;
     }
 
+    $scope.newRol = function (pGroup) {
+      $scope.oEditPointer = pGroup;
+      $scope.modalRolname = '';
+      $scope.editRol='';
+    };
+
+    $scope.saveRol = function () {
+      if($scope.editRol){
+        $scope.editRol.name = $scope.modalRolname;
+        $scope.editRol='';
+        $("#modalNuevoRol").modal('hide');
+      }else{
+      if ($scope.modalRolname) {
+        var newid = $scope.oEditPointer.roles.length+1;
+        $scope.oEditPointer.roles.push({id:newid,name:$scope.modalRolname});
+        $scope.modalRolname = '';
+        $("#modalNuevoRol").modal('hide');
+      } else {
+        console.log("i'm empty");
+      }
+
+      }
+
+    };
+
+    $scope.editRoles = function (rol) {//
+      $scope.modalRolname = rol.name;
+      $scope.editRol = rol;
+    };
+
+    $scope.setDelete = function (pGroup, rol) {
+      console.log(rol);
+      $scope.borrarGrupo = pGroup;
+      $scope.borrarRol = rol;
+      $scope.entidad = "rol";
+    }   
+
+    $scope.deleteRol = function () {
+      angular.forEach($scope.borrarGrupo.roles, function(value, key) {
+        if(value.id == $scope.borrarRol.id){
+            $scope.borrarGrupo.roles.splice(key, 1);
+          }
+      });
+    }    
+
+
   }]);
 
   app.directive('navVerCursos',function ($http) {
@@ -188,6 +241,17 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/modalVerNuevoEquipo.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+
+      }],
+      controllerAs: 'modalCntrl'
+    };
+  });
+
+  app.directive('modalNuevoRol',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/modalNuevoRolEquipo.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],

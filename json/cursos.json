@@ -4,8 +4,14 @@
     "nombre": "Proyecto web 1",
     "cod": "web1M",
     "area":[
-    {"nombre":"proceso"},
-    {"nombre":"tecnico"}
+      { 
+        "id":1,
+        "nombre":"Proceso"
+      },
+      {
+        "id":2,
+        "nombre":"Técnico"
+      }
     ]
   },
   {
@@ -13,7 +19,7 @@
     "nombre": "Proyecto web 2",
       "cod": "web2T",
     "area":[
-    {"nombre":"tecnico"}
+    {"nombre":"Técnico"}
     ]
   },
   {

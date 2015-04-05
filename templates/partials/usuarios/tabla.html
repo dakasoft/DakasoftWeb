@@ -11,21 +11,21 @@
 					<p>Usuarios</p>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<p><a class="add" data-toggle="modal" data-target="#editModal" ng-click="agregar(user)" ><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+					<p><a class="add" data-toggle="modal" data-target="#modalUsuario" ng-click="nuevo()" ><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
 				</div>
 			</div>
 			<div class="scrollLongTable">
 				<table id="custom-table" ng-table="tableParams"  class="table">
 
-				<tr ng-repeat="user in usuarios | filter:palabra">
-					<td data-title="'Nombre'">{{user.name}}</td>
-					<td data-title="'Apellido'">{{user.lastname}}</td>
-					<td data-title="'Rol'">{{user.role}}</td>
+				<tr ng-repeat="usuario in usuarios | filter:palabra">
+					<td data-title="'Nombre'">{{usuario.nombre}}</td>
+					<td data-title="'Apellido'">{{usuario.apellido}}</td>
+					<td data-title="'Rol'">{{usuario.rol.nombre}}</td>
 					<td data-title="'Modificar'">
-						<a data-toggle="modal" data-target="#editModal" ng-click="editar(user)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+						<a data-toggle="modal" data-target="#modalUsuario" ng-click="editar(usuario)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 					</td>
 					<td data-title="'Eliminar'">
-					<a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm" ng-click="setUser(user)"></i></a>
+					<a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm" ng-click="borrarObjeto(usuario)"></i></a>
 					</td>
 				</tr>
 			</table>

@@ -4,129 +4,79 @@
   app.directive('cursosTabla',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/cursosTabla.html',
+      templateUrl: 'templates/partials/cursos/tabla.html',
       controller: ['$scope','$http','funciones',function ($scope,$http,funciones) {
-        $scope.temporal = "";
       $scope.cursos = [];
-      $scope.codigoSeleccionado= [];
-      $scope.areasSeleccionadas= [];
-      $scope.editableC = "";
+      $scope.areasAcademicas = [];
+      $scope.curso = funciones.curso();
 
         $http.get('json/cursos.json').success(function (data) {
           $scope.cursos = data;
         });
 
-         $scope.editar = function(curso){
-           funciones.closeC();
-          $scope.editableC = curso;
-          $scope.nombre = curso.nombre;
-          $scope.codigo = curso.cod;
-          $scope.area = curso.area.nombre;
-          $scope.areasSeleccionadas = angular.copy(curso.area);
+        $http.get('json/areas.json').success(function (data) {
+          $scope.areasAcademicas = data;
+        });
+
+
+        $scope.editar = function(curso){
+          funciones.closeC();
+          $scope.curso =  angular.copy(curso);
+          $scope.accion = "Editar";
         };
 
-        $scope.borrar = function(curso){
-          
-          angular.forEach($scope.cursos, function(value, key) {
-            if(value.id == $scope.temporal.id){
-              $scope.cursos.splice(key, 1);
-            }
-          });
-             $("#modalConfirm").modal('hide');
-        };
-          $scope.eliminarTemporal = function(carrera){
-                $scope.temporal = carrera;
+        $scope.borrarObjeto= function(curso){
+          $scope.curso = curso;
+          $scope.entidad = "curso";
         }
-          $scope.agregar = function(){
-             funciones.closeC();
-           $scope.area="";
-            $scope.areasSeleccionadas=[];
-          $scope.editableC = "";
-          $scope.nombre = "";
-          $scope.codigo = ""; 
-        };
-            $scope.agregarArea = function(area){
-              if(area){
-                $scope.areasSeleccionadas.push({nombre: area});
-                 $scope.area="";
 
-              }
+        $scope.borrar = function(){
+          $scope.cursos=funciones.borrarDeLista($scope.cursos,$scope.curso);      
+          $("#modalConfirm").modal('hide');
+        };        
+
+        $scope.borrarArea = function(area){
+          funciones.borrarDeLista($scope.carrera.area,area);
+        };
+
+        $scope.nuevo = function(){
+          funciones.closeC();
+          $scope.curso = funciones.curso()
+          $scope.accion = "Nuevo";
+        };
+
+        $scope.agregarArea = function(area){
+          funciones.agregarAListaNoRepetido($scope.curso.area,area);
+        };
     
-        };
-         $scope.borrarArea = function(area){
-          angular.forEach($scope.areasSeleccionadas, function(value, key) {
-            if(value.nombre == area.nombre){
-             $scope.areasSeleccionadas.splice(key, 1);
-            }
-          });
-        };
-
-          $scope.guardar = function(){
-            if(!$scope.nombre || !$scope.codigo){  
-            funciones.closeC(); 
-            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
-
-            }
-            else{
-
-               if($scope.editableC != ""){
-              angular.forEach($scope.cursos, function(value, key) {
-              if(value.id == $scope.cursos.id){
-                $scope.codigo = value.label;
-              }
-            });
-            $scope.editableC.nombre = $scope.nombre;
-            $scope.editableC.cod = $scope.codigo;
-            $scope.editableC.area =$scope.areasSeleccionadas;
-          }
-
-            else{
-            var lastUser = $scope.cursos[$scope.cursos.length - 1];
-            var newId =  lastUser.id+1;
-             angular.forEach($scope.codigo, function(value, key) {
-              if(value.id == $scope.codigo){
-                $scope.cursos = value.label;
-              }
-            });
-            $scope.cursos.push({id:newId,nombre: $scope.nombre,cod:$scope.codigo,area :$scope.areasSeleccionadas
-            });
-             funciones.closeC();
+        $scope.guardar = function(curso){
+          if($scope.cursosForm.$valid){
+            if(curso.id==""){//es nuevo usuario
+              curso.id = funciones.nuevoId($scope.cursos);
+              $scope.cursos = funciones.agregarALista($scope.cursos,curso);
               funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-          
-          }
-   setTimeout(function(){$("#editModal").modal('hide')},1000);
-
-
+              setTimeout(function(){$("#modalCurso").modal('hide')},1000);   
+            }else{ //editar usuario
+              $scope.cursos = funciones.editarDeLista($scope.cursos,curso);
+              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+              setTimeout(function(){$("#modalCurso").modal('hide')},1000);  
             }
-          
-         
-
+          }else{
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+          } 
         };
-      }],
-      controllerAs: 'curso'
+
+      }]
     };
   });
 
     app.directive('modalCurso',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalCursos.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-       
-        
-      }],
-        controllerAs: 'modalCurso'
+      templateUrl: 'templates/partials/cursos/modalCurso.html'
     };
+
 });
-    app.directive('modalConfirmc',function ($http) {
-    return {
-      restrict: 'E',
-      templateUrl: 'templates/partials/modalConfirmaciont.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-        
-      }],
-      controllerAs: 'modalConfirmc'
-    };
-  });
+
 
 })();

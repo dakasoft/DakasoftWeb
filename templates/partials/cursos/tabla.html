@@ -12,7 +12,7 @@
 					<p>Cursos</p>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<p><a href="" data-toggle="modal" data-target="#editModal" ng-click="agregar(curso)" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+					<p><a href="" data-toggle="modal" data-target="#modalCurso" ng-click="nuevo()" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
 
 				</div>
 			</div>
@@ -21,10 +21,10 @@
 			        <td data-title="'Nombre'">{{curso.nombre}}</td>
 			        <td data-title="'Código'">{{curso.cod}}</td>
 			        <td data-title="'Modificar'">
-			        	<a data-toggle="modal" data-target="#editModal" ng-click="editar(curso)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+			        	<a data-toggle="modal" data-target="#modalCurso" ng-click="editar(curso)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 			        </td>
 			        <td data-title="'Eliminar'">
-			        <a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm"  ng-click="eliminarTemporal(curso)"></i></a>
+			        <a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm"  ng-click="borrarObjeto(curso)"></i></a>
 			        </td>
 			    </tr>
 			</table>

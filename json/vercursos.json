@@ -112,6 +112,24 @@
             ]
           }
         ],
+        "roles": [
+          {
+            "id":1,
+            "name":"Desarrollo"
+          },
+          {
+            "id":2,
+            "name":"Coordinador"
+          },
+          {
+            "id":3,
+            "name":"Calidad"
+          },
+          {
+            "id":4,
+            "name":"Soporte"
+          }
+        ],
         "teams":[
           {
             "id":"DK2015",
@@ -304,6 +322,24 @@
               "DakaSoft_Entrega2.rar",
               "Oni_Entrega2.rar"
             ]
+          }
+        ],
+        "roles": [
+          {
+            "id":1,
+            "name":"Desarrollo"
+          },
+          {
+            "id":2,
+            "name":"Coordinador"
+          },
+          {
+            "id":3,
+            "name":"Calidad"
+          },
+          {
+            "id":4,
+            "name":"Soporte"
           }
         ],
         "teams":[
@@ -506,6 +542,24 @@
             ]
           }
         ],
+        "roles": [
+          {
+            "id":1,
+            "name":"Desarrollo"
+          },
+          {
+            "id":2,
+            "name":"Coordinador"
+          },
+          {
+            "id":3,
+            "name":"Calidad"
+          },
+          {
+            "id":4,
+            "name":"Soporte"
+          }
+        ],
         "teams":[
           {
             "id":"DK2015",
@@ -698,6 +752,24 @@
               "DakaSoft_Entrega2.rar",
               "Oni_Entrega2.rar"
             ]
+          }
+        ],
+        "roles": [
+          {
+            "id":1,
+            "name":"Desarrollo"
+          },
+          {
+            "id":2,
+            "name":"Coordinador"
+          },
+          {
+            "id":3,
+            "name":"Calidad"
+          },
+          {
+            "id":4,
+            "name":"Soporte"
           }
         ],
         "teams":[
