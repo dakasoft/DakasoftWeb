@@ -4,15 +4,15 @@ var app = angular.module('portafolio', ["ui.router"]);
 app.directive('portafolio', function(){
     return{
         restrict: 'E',
-        templateUrl: 'templates/partials/portafolioEstudiante.html',
+        templateUrl: 'templates/partials/portafolio/portafolio.html',
         
        controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
-      $scope.estudiantes = [];
-       $scope.video= "";
-       $scope.editableUser = "";
-        $http.get('json/portafolio.json').success(function (data) {
-          $scope.estudiantes = data;
-        });
+          $scope.estudiantes = [];
+          $scope.video= "";
+          $scope.editableUser = "";
+          $http.get('json/portafolio.json').success(function (data) {
+            $scope.estudiantes = data;
+          });
 
         $scope.seleccionar = function(proyecto){
           $scope.video =proyecto.video;
@@ -42,30 +42,20 @@ app.directive('portafolio', function(){
         $("#editModal").modal('hide');
         };
 
-      }],
-      controllerAs: 'portafolioCtrl'
+      }]
     };
   });
 
   app.directive('modalPortafolio',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalPortafolio.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-       
-        
-      }],
-        controllerAs: 'modalPortafolioCtrl'
+      templateUrl: 'templates/partials/portafolio/modalPortafolio.html'
     };
 });
   app.directive('modalVideo',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalVideo.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-       
-      }],
-      controllerAs: 'modalVCntrl'
+      templateUrl: 'templates/partials/shared/modalVideo.html'
     };
   });
 

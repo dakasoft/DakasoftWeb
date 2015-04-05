@@ -5,15 +5,15 @@
   app.directive('tablaReporteNotas',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/tablaReporteNotas.html',
+      templateUrl: 'templates/partials/reportes/tablaNotas.html',
       controller: ['$scope','$http',function ($scope,$http) {
         $scope.reportes = [];
 
         $http.get('json/reporteNotas.json').success(function (data) {
           $scope.reportes = data;
         }); 
-      }],
-      controllerAs: 'modalCntrl'
+        
+      }]
       }
     });
 

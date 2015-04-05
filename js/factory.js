@@ -26,6 +26,9 @@ app.factory('funciones',function(){
         grupo:function(){
           return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[]};
         },
+        votacion:function(){
+          return {id:"",fecha:"",fechaProyectos:"",fechaCierre:""}
+        },
         agregarALista:function(lista,objeto){
       	  lista.push(objeto);
       	  return lista;

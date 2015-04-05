@@ -5,7 +5,7 @@
   app.directive('tablaHistorial',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/historialTabla.html',
+      templateUrl: 'templates/partials/reportes/tablaHistorial.html',
       controller: ['$scope','$http',function ($scope,$http) {
         $scope.estudiantes = [];
 
@@ -21,8 +21,7 @@
         return true;
       }
 
-      }],
-      controllerAs: 'modalCntrl'
+      }]
       }
     });
 

@@ -4,14 +4,14 @@
      app.directive('parametros',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/parametrosP.html',
-      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
-        $scope.parametro = [];
-          $scope.editableC = "";
-        $http.get('json/parametros.json').success(function (data) {
-          $scope.parametros = data;
+      templateUrl: 'templates/partials/parametros/parametrosP.html',
+      controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams,funciones) {
+      $scope.parametros = [];
+      $scope.votacion = funciones.votacion();
 
-        }); 
+      $http.get('json/parametros.json').success(function (data) {
+        $scope.parametros = data;
+      }); 
        
    $scope.editar = function(parametro){
           $scope.editableC = parametro;
@@ -29,7 +29,7 @@
   app.directive('modalParametros',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalParametros.html',
+      templateUrl: 'templates/partials/parametros/modalParametros.html',
       controller: ['$scope','$http',function ($scope,$http) {
        
         
