@@ -8,6 +8,7 @@
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.grupos = [];
         $scope.cursos = [];
+        $scope.grupo = funciones.grupo();
         $scope.areasAcademicas = [];
         $scope.profesores = [];
         $scope.estudiantes = [];

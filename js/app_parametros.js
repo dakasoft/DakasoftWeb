@@ -15,13 +15,21 @@
 
         $scope.editar = function(votacion){
           $scope.votacion =  angular.copy(votacion);
-          //$scope.votacion.fechaProyectos = new Date(2014, 3, 12);
-          console.log($scope.votacion);
+          //anno,mes,dia
+          $scope.votacion.fechaProyectos
+          $scope.votacion.fechaProyectos = new Date(2014, 3, 12);
+          console.log($scope.votacion.fechaProyectos);
           $scope.accion = "Editar";
         };
 
-        $scope.guardar = function() {
+        $scope.nuevo = function(){
+          funciones.closeC();
+          $scope.votacion = funciones.votacion();
+          $scope.accion = "Nuevo"
+        };
 
+        $scope.guardar = function() {
+          
         };
       }]
     };
