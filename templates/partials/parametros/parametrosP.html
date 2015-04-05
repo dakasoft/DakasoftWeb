@@ -1,36 +1,26 @@
 <div class="container-fluid">
-   
-           <div class="col-xs-12 col-sm-8 col-sm-offset-2 containerP">
-           		 <div class="containertittle">
-
-             	   <h3>Parámetros</h3>
-            	</div>
-            	<form class="form-horizontal formP">
-              <legend>Votación</legend>
-              <p class="pull-right parametro"><a class="add" data-toggle="modal" data-target="#editModalP" ng-click="" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
-              <table id="custom-table" ng-table class="table">
-          <tr ng-repeat="parametro in parametros">
-              <td data-title="'Fecha'" >{{parametro.Fecha}}</td>
-              <td data-title="'Fecha Proyecto'" >{{parametro.FechaProyectos}}</td>
-              <td data-title="'Fecha Cierre'">
-                 {{parametro.FechaCierre}}
-              </td>
-               <td data-title="'Modificar'">
-                 <a data-toggle="modal" data-target="#editModalP" ng-click="editar(parametro)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
-               </td>
-                 <td data-title="'Votación activa'">               
-    
-        <input type="checkbox" value="None" id="slideOne" name="check"/>
+ <div class="col-xs-12 col-sm-8 col-sm-offset-2 containerP">
+    <div class="containertittle">
+       <h3>Parámetros</h3>
+     </div>
+     <form class="form-horizontal formP">
+      <legend>Votación</legend>
+      <p class="pull-right parametro"><a class="add" data-toggle="modal" data-target="#modalVotacion" ng-click="nueva()" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+      <table id="custom-table" ng-table class="table">
+        <tr ng-repeat="votacion in votaciones">
+          <td data-title="'Fecha'" >{{votacion.fecha}}</td>
+          <td data-title="'Fecha Proyecto'" >{{votacion.fechaProyectos}}</td>
+          <td data-title="'Fecha Cierre'">
+           {{votacion.fechaCierre}}
          </td>
-          </tr>
-      </table>
-           </form>
-
-
-
-           </div>
-  
-
-
-
+         <td data-title="'Modificar'">
+           <a data-toggle="modal" data-target="#modalVotacion" ng-click="editar(votacion)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+         </td>
+         <td data-title="'Votación activa'">               
+          <input type="checkbox" value="None" id="slideOne" name="check"/>
+        </td>
+      </tr>
+    </table>
+    </form>
+  </div>
 </div>
