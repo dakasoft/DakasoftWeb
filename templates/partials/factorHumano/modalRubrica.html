@@ -5,31 +5,31 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       
       <div class="modal-body" id="contentbody">
-        <form name="rubricaForm" class="form-horizontal css-form" novalidate>
+        <form name="rubricaForm" class="form-horizontal" novalidate>
             <div class="form-group">
               <label class="col-xs-4 control-label" for="">Rubro</label>  
               <div class="col-xs-8">
-                <input type="text" ng-model="rubroNombre" class="form-control input-md" required> 
+                <input type="text" ng-model="rubro.nombre" class="form-control input-md" required> 
               </div>
             </div>
             <div class="form-group">
               <label class="col-xs-4 control-label" for="">Valor</label>  
               <div class="col-xs-8">
-                <input type="number" ng-model="rubroValor" class="form-control input-md" required> 
+                <input type="number" ng-model="rubro.valor" class="form-control input-md" required> 
               </div>
             </div>
               <div class="form-group ">               
-                <button type="button" class="btn btn-custom btn-sm pull-right mrFa" ng-click="agregarRubro()">Agregar</button>  
+                <button type="button" class="btn btn-custom btn-sm pull-right mrFa" ng-click="agregarRubro(rubro)">Agregar</button>  
               </div>
           
                <table id="factor-table" ng-table="tableParams"  class="table tableFactor">
               
-                <tr ng-repeat="rubrica in rubrosSeleccionados">
-                    <td data-title="'Nombre'">{{rubrica.nombre}}</td>
-                    <td data-title="'Valor'">{{rubrica.valor}}</td>
+                <tr ng-repeat="rubro in grupo.rubricaFactor">
+                    <td data-title="'Nombre'">{{rubro.nombre}}</td>
+                    <td data-title="'Valor'">{{rubro.valor}}</td>
                     
                     <td data-title="'Acciones'">
-                      <a><i class="fa fa-times-circle fa-2x" ng-click="eliminarRubro(rubrica)"></i></a>
+                      <a><i class="fa fa-times-circle fa-2x" ng-click="eliminarRubro(rubro)"></i></a>
                     </td>
                 
                 </tr>
@@ -38,7 +38,7 @@
         </form>      
        </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardarRubrica()">Guardar</button>
+        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar(grupo)">Guardar</button>
       </div>
     </div>
   </div>

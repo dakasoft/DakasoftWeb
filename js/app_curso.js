@@ -36,7 +36,8 @@
         };        
 
         $scope.borrarArea = function(area){
-          funciones.borrarDeLista($scope.carrera.area,area);
+          console.log(area);
+          $scope.carrera.area = funciones.borrarDeLista($scope.curso.area,area);  
         };
 
         $scope.nuevo = function(){

@@ -27,8 +27,11 @@ app.factory('funciones',function(){
           return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[]};
         },
         votacion:function(){
-          return {id:"",fecha:"",fechaProyectos:"",fechaCierre:""}
+          return {id:"",fecha:"",fechaProyectos:"",fechaCierre:"",activo:false};
         },
+        rubro:function(){
+          return {id:"",nombre:"",valor:""};
+        },  
         agregarALista:function(lista,objeto){
       	  lista.push(objeto);
       	  return lista;
@@ -37,6 +40,18 @@ app.factory('funciones',function(){
           var repetido = false;
           angular.forEach(lista, function(value, key) {
             if(value.id == objeto.id){
+              repetido = true;
+            }
+          });
+
+          if(!repetido) lista.push(objeto);
+
+          return lista;
+        },
+        agregarAListaNoRepetidoPorNombre:function(lista,objeto){
+          var repetido = false;
+          angular.forEach(lista, function(value, key) {
+            if(value.nombre.toLowerCase() == objeto.nombre.toLowerCase()){
               repetido = true;
             }
           });
@@ -54,12 +69,25 @@ app.factory('funciones',function(){
           return lista;
         },
         nuevoId:function(lista){
-        	var last = lista[lista.length - 1];
-        	return last.id+1;
+          if(lista.length){
+            var last = lista[lista.length - 1];
+            return last.id+1;
+          }else{
+            return 1;
+          }
+
         },
         borrarDeLista:function(lista,objeto){
         	angular.forEach(lista, function(value, key) {
             if(value.id == objeto.id){
+              lista.splice(key, 1);
+            }
+          });
+          return lista;
+        },
+        borrarDeListaPorNombre:function(lista,objeto){
+          angular.forEach(lista, function(value, key) {
+            if(value.nombre.toLowerCase()== objeto.nombre.toLowerCase()){
               lista.splice(key, 1);
             }
           });

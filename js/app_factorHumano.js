@@ -4,64 +4,43 @@
   app.directive('factorHumano',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/rubricaFactorHumano.html',
+      templateUrl: 'templates/partials/factorHumano/tabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
-        $scope.factorHumano = [];
+        $scope.grupos = [];
         $scope.rubrosSeleccionados = [];
-      
-        $http.get('json/factorHumano.json').success(function (data) {
-          $scope.factorHumano = data;
+        $scope.rubro = funciones.rubro();
+
+        $http.get('json/grupos.json').success(function (data) {
+          $scope.grupos = data;
         });
 
-        $scope.editar = function(grupoRubrica){
+        $scope.editar = function(grupo){
           funciones.closeC();
-            $scope.rubroNombre = "";
-             $scope.rubroValor = "";
-          $scope.rubricaForm.$setUntouched(true);
-          $scope.rubricaForm.$setPristine(true);
-          $scope.editableGrupo = grupoRubrica;
-          $scope.rubrosSeleccionados = angular.copy(grupoRubrica.rubrica);
+          $scope.rubro = funciones.rubro();
+          $scope.grupo =  angular.copy(grupo);
+          $scope.accion = "Editar";
         };
 
-        $scope.agregarRubro = function(){
+        $scope.guardar = function(grupo){
+          $scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
+          funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+          setTimeout(function(){$("#modalRubrica").modal('hide')},1000);  
+        };
+
+        $scope.agregarRubro = function(rubro){
           if($scope.rubricaForm.$valid){
-            if(esValidoMaxValorRubro($scope)){
-              $scope.rubricaForm.$setUntouched(true);
-              $scope.rubricaForm.$setPristine(true);
-              var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
-              var newId =  (lastRubro) ? lastRubro.id + 1 : 1;
-              $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
-              funciones.closeC();
-              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-              $scope.rubroNombre = "";
-              $scope.rubroValor = "";
-
-
-            }else{
-  
-            }
-
+            $scope.rubro = funciones.rubro();
+            var newRubro = angular.copy(rubro);
+            funciones.agregarAListaNoRepetidoPorNombre($scope.grupo.rubricaFactor,newRubro);
+            funciones.closeC();
           }else{
-               funciones.closeC(); 
             funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
           }
 
         };
 
         $scope.eliminarRubro = function(rubro){
-
-          angular.forEach($scope.rubrosSeleccionados, function(value, key) {
-            if(value.id == rubro.id){
-              $scope.rubrosSeleccionados.splice(key, 1);
-            }
-          });
-
-
-        };
-
-        $scope.guardarRubrica = function(){
-          $scope.editableGrupo.rubrica = $scope.rubrosSeleccionados;
-           setTimeout(function(){$("#modalRubrica").modal('hide')},1000);
+          funciones.borrarDeListaPorNombre($scope.grupo.rubricaFactor,rubro);
         };
 
         function esValidoMaxValorRubro($scope){
@@ -84,8 +63,7 @@
           return esValido;
         }
         
-      }],
-      controllerAs: 'factorH'
+      }]
     };
   });
 
@@ -94,10 +72,7 @@
   app.directive('modalRubrica',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalRubrica.html',
-      controller: ['$scope','$http',function ($scope,$http) {     
-      }],
-        controllerAs: 'modalFactorRubrica'
+      templateUrl: 'templates/partials/factorHumano/modalRubrica.html'
     };
 });
      

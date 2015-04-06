@@ -4,7 +4,7 @@
   app.directive('rubricaCursosTabla',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/rubricaCursosTabla.html',
+      templateUrl: 'templates/partials/evaluacion/tabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.rubricaCursos = [];
         $scope.rubrosSeleccionados = [];
@@ -97,7 +97,7 @@
   app.directive('modalRubricaCursos',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalRubricaCursos.html',
+      templateUrl: 'templates/partials/evaluacion/modalRubricaCursos.html',
       controller: ['$scope','$http',function ($scope,$http) {     
       }],
         controllerAs: 'modalRubriCursos'

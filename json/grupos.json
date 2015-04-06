@@ -6,6 +6,7 @@
 		"encargado":{"id":83,"nombre":"Carl Torres"},
 		"encargadoId": 83,
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -14,6 +15,7 @@
 		"curso": {"id":1,"nombre":"Proyecto web 1"},
 		"encargado":{"id":79,"nombre":"Sloane Vazquez"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -22,6 +24,7 @@
 		"curso": {"id":2,"nombre":"Proyecto web 2"},
 		"encargado":{"id":3,"nombre":"Autumn Stone"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -30,6 +33,7 @@
 		"curso": {"id":3,"nombre":"Proyecto web 3"},
 		"encargado":{"id":90,"nombre":"Boris Odonnell"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -38,6 +42,7 @@
 		"curso": {"id":3,"nombre":"Proyecto web 3"},
 		"encargado":{"id":3,"nombre":"Autumn Stone"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -47,6 +52,7 @@
 		"cursoId": 3,
 		"encargado":{"id":90,"nombre":"Boris Odonnell"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -55,6 +61,7 @@
 		"curso": {"id":4,"nombre":"Proyecto software 1"},
 		"encargado":{"id":79,"nombre":"Sloane Vazquez"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -63,6 +70,7 @@
 		"curso": {"id":4,"nombre":"Proyecto software 1"},
 		"encargado":{"id":3,"nombre":"Autumn Stone"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	},
 	{
@@ -71,6 +79,7 @@
 		"curso": {"id":4,"nombre":"Proyecto software 1"},
 		"encargado":{"id":83,"nombre":"Carl Torres"},
 		"profesores":[],
+		"rubricaFactor":[],
 		"estudiantes":[]
 	}
 ]
