@@ -15,7 +15,7 @@ app.factory('funciones',function(){
          	return $(".alert").remove();
         },
         usuario:function(){
-        	return {id:"",Nombre:"",Apellido:"",Email:"",Password:"",IdRol:""};
+        	return {id:0,Nombre:"",Apellido:"",Email:"",Password:"",IdRol:0};
         },
         carrera:function(){
           return {id:"",nombre:"",cod:"",cursos:[]};

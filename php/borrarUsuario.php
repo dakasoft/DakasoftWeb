@@ -5,9 +5,8 @@ $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
 $data = $objData->data;
-$rolid = $data->rol->id;
 
-$query = "CALL usuarioModificar('$data->id','$data->Nombre','$data->Apellido','$data->Email','$data->Password','$rolid')";
+$query = "CALL usuarioBorrar('$data->id')";
 $result = mysqli_query($conexion,$query);
 
 if($result){

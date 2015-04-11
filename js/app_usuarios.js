@@ -44,9 +44,9 @@
         };
 
         $scope.editar = function(usuario){
-          console.log(usuario);
           funciones.closeC();
           $scope.usuario =  angular.copy(usuario);
+          $scope.accion = "Editar";
         };
 
         $scope.borrarObjeto= function(usuario){
@@ -55,13 +55,20 @@
         }
 
         $scope.borrar = function(entidad){  
-          $scope.usuarios=funciones.borrarDeLista($scope.usuarios,$scope.usuario);      
+          $http.post("php/borrarUsuario.php", { "data" : $scope.usuario})
+          .success(function(data) {
+            $scope.usuarios=funciones.borrarDeLista($scope.usuarios,$scope.usuario);
+           })
+          .error(function(data, status) {
+              result = data || "Request failed";//hacer algo con esto.
+           });      
           $("#modalConfirm").modal('hide');
         };
 
         $scope.nuevo = function(){
           funciones.closeC();//limpia el modal
           $scope.usuario = funciones.usuario()
+          $scope.accion = "Nuevo";
         };
 
         $scope.guardar = function(usuario){
@@ -69,7 +76,7 @@
             if(usuario.id==""){
               $http.post("php/crearUsuario.php", { "data" : $scope.usuario})
               .success(function(data) {
-                  usuario.id = data.Insert_Id;
+                  usuario.id = parseInt(data.Insert_Id);
                   $scope.usuarios = funciones.agregarALista($scope.usuarios,usuario);
                   funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                   setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
@@ -78,12 +85,13 @@
                   result = data || "Request failed";//hacer algo con esto.
                });  
             }else{ 
+              $scope.usuario.id = parseInt($scope.usuario.id );
               $http.post("php/modificarUsuario.php", { "data" : $scope.usuario})
               .success(function(data) {
                 console.log(data);
-                //$scope.usuarios = funciones.editarDeLista($scope.usuarios,usuario);
-                //funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                //setTimeout(function(){$("#modalUsuario").modal('hide')},1000);   
+                $scope.usuarios = funciones.editarDeLista($scope.usuarios,usuario);
+                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                setTimeout(function(){$("#modalUsuario").modal('hide')},1000);   
                })
               .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.
@@ -91,11 +99,11 @@
             }
           }else{
             funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
-            if(usuario.email==""){
+            if(usuario.Email==""){
                funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
 
             }
-            else if(usuario.email == undefined){
+            else if(usuario.Email == undefined){
                funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> El correo no es válido',3500);
             }
           }   

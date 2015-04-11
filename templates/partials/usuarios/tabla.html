@@ -17,7 +17,7 @@
 			<div class="scrollLongTable">
 				<table id="custom-table" ng-table="tableParams" class="table">
 
-				<tr ng-repeat="usuario in usuarios | filter:palabra">
+				<tr ng-repeat="usuario in usuarios | filter:palabra track by $index">
 					<td data-title="'Nombre'">{{usuario.Nombre}}</td>
 					<td data-title="'Apellido'">{{usuario.Apellido}}</td>
 					<td data-title="'Rol'">{{usuario.rol.nombre}}</td>
