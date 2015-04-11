@@ -27,7 +27,7 @@ app.factory('funciones',function(){
           return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[]};
         },
         votacion:function(){
-          return {id:"",fecha:"",fechaProyectos:"",fechaCierre:"",activo:false};
+          return {id:"",fecha:"",fechaProyectos:"",fechaCierre:"",activo:0};
         },
         rubro:function(){
           return {id:"",nombre:"",valor:""};
@@ -96,6 +96,240 @@ app.factory('funciones',function(){
     }
 
 });
+app.service('appServices',function(){
+    this.obtenerUsuario = function(){
+    $http.get('.php').success(function (data) {
+      alert(data); 
+      this.product = data;
+      });
 
+    }
+    this.guardarUsuario = function(url){
+      var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerCarrera = function(){
+      
+      
+    }
+    this.guardarCarrera = function(url){
+       var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerCurso = function(){
+        
+
+    }
+    this.guardarCurso = function(url){
+      var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerGrupo = function(){
+      
+
+    }
+    this.guardarGrupo = function(url){
+       var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerEquipo = function(){
+        
+
+    }
+    this.guardarEquipo = function(url){
+      var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerPortafolio = function(){
+      
+
+    }
+    this.guardarPortafolio = function(url){
+       var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerRolEquipo = function(){
+       
+
+    }
+    this.guardarRolEquipo = function(url){
+       var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerArea = function(){
+      
+
+    }
+    this.guardarArea = function(url){
+        var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerCursoCarrera = function(){
+       
+    }
+    this.guardarCursoCarrera = function(url){
+       var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+
+    }
+    this.obtenerDesglose = function(){
+       
+    }
+    this.guardarDesglose = function(url){
+      var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+
+    }
+    this.obtenerRubro = function(){
+      
+
+    }
+    this.guardarRubro = function(url){
+        var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+    this.obtenerVotacion = function(){
+        
+
+    }
+    this.guardarVotacion = function(url){
+      var result;
+      $http.post(url, { "data" : $scope.objeto})
+      .success(function(data, status) {
+         result = data; 
+       })
+      .error(function(data, status) {
+       result = data || "Request failed";
+       });
+       return result;
+
+    }
+     this.listarUsuarios = function(){
+
+    }
+     this.listarCarreras = function(){
+
+    }
+     this.listarCursos = function(){
+
+    }
+     this.listarGrupos = function(){
+
+    }
+     this.listarEquipos = function(){
+
+    }
+     this.listarGrupos = function(){
+
+    }
+     this.listarDesglose = function(){
+
+    }
+    this.listarAreas = function(){
+
+    }
+     this.listarCursoCarrera = function(){
+
+    }
+    this.listarNotas = function(){
+
+    }
+     this.listarHistorial = function(){
+
+    }
+    this.listarVotacion = function(){
+
+    }
+    // falta proyectos crear , listas
+
+});
 
 })();

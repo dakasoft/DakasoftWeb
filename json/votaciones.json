@@ -2,16 +2,16 @@
 
 	{
 		"id":1,
-		"fecha":"19/04/2014",
+		"fecha":"19/04/2018",
 		"fechaProyectos":"19/04/2014",
 		"fechaCierre":"19/04/2014",
-		"activo":false
+		"activo":0
 	},
     {
 		"id":2,
 		"fecha":"19/04/2014",
 		"fechaProyectos":"19/04/2014",
 		"fechaCierre":"19/04/2014",
-		"activo":false
+		"activo":0
 	}
 ]
