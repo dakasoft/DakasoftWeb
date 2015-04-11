@@ -1,9 +1,8 @@
 <?php
 
 include "conexion.php";
-mysqli_set_charset($conexion, "utf8");
 
-$query = "SELECT * FROM tbusuario";
+$query = "CALL usuariosListar()";
 $result = mysqli_query($conexion,$query);
 
 $rows = array();

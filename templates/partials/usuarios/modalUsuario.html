@@ -8,31 +8,31 @@
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Nombre</label>  
           <div class="col-xs-8">
-            <input type="text" ng-model="usuario.nombre" class="form-control input-md" required> 
+            <input type="text" ng-model="usuario.Nombre" class="form-control input-md" required> 
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Primer Apellido</label>  
           <div class="col-xs-8">
-            <input type="text" ng-model="usuario.apellido" class="form-control input-md" required>
+            <input type="text" ng-model="usuario.Apellido" class="form-control input-md" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Email</label>  
           <div class="col-xs-8">
-            <input type="email" ng-model="usuario.email" class="form-control input-md">
+            <input type="email" ng-model="usuario.Email" class="form-control input-md">
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Contraseña</label>  
           <div class="col-xs-8">
-            <input type="password" ng-model="usuario.password" class="form-control input-md" required>
+            <input type="password" ng-model="usuario.Password" class="form-control input-md" required>
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Role</label>  
           <div class="col-xs-8">
-            <select ng-model="usuario.rol" ng-init="usuario.rol" required ng-options="obj.label for obj in roles track by obj.id">
+            <select ng-model="usuario.rol" ng-init="usuario.rol" required ng-options="obj.nombre for obj in roles track by obj.id">
               <option value="">--Roles--</option>
             </select>
           </div>

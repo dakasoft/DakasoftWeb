@@ -15,7 +15,7 @@ app.factory('funciones',function(){
          	return $(".alert").remove();
         },
         usuario:function(){
-        	return {id:"",nombre:"",apellido:"",email:"",password:"",rol:""};
+        	return {id:"",Nombre:"",Apellido:"",Email:"",Password:"",IdRol:""};
         },
         carrera:function(){
           return {id:"",nombre:"",cod:"",cursos:[]};
@@ -63,6 +63,7 @@ app.factory('funciones',function(){
         editarDeLista:function(lista,objeto){
         	angular.forEach(lista, function(value, key) {
             if(value.id == objeto.id){
+              console.log("me encontre");
               lista[key] = objeto;
             }
           });

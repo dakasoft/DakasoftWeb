@@ -20,7 +20,7 @@
 				<tr ng-repeat="usuario in usuarios | filter:palabra">
 					<td data-title="'Nombre'">{{usuario.Nombre}}</td>
 					<td data-title="'Apellido'">{{usuario.Apellido}}</td>
-					<td data-title="'Rol'">{{usuario.IdRol}}</td>
+					<td data-title="'Rol'">{{usuario.rol.nombre}}</td>
 					<td data-title="'Modificar'">
 						<a data-toggle="modal" data-target="#modalUsuario" ng-click="editar(usuario)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 					</td>

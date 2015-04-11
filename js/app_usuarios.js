@@ -12,23 +12,39 @@
         $scope.entidad = "usuario";
         $scope.editarUsuario = [];
 
-        /*Get de usuarios y roles*/
-        //$scope.usuarios = appServices.listarUsuarios();
-
         $http.get('php/listarUsuarios.php')
           .success(function (data) {
             $scope.usuarios = data;
+            $scope.cambioExtrategico($scope.usuarios);
           })
           .error(function(data,status){
             result = data || "jiji"
           });
-          
+
         $http.get('json/roles.json').success(function (data) {
           $scope.roles = data;
         });
 
         /*Funciones*/
+        $scope.cambioExtrategico = function(usuarios){
+          angular.forEach(usuarios, function(value, key) {
+            if(value.IdRol == 1){
+              value.rol = {id:1,nombre:"Admin"};
+            }else if(value.IdRol == 2){
+              value.rol = {id:2,nombre:"Decano"};
+            }else if(value.IdRol == 3){
+              value.rol = {id:3,nombre:"Director académico"};
+            }else if(value.IdRol == 4){
+              value.rol = {id:4,nombre:"Profesor"};
+            }else if(value.IdRol == 5){
+              value.rol = {id:5,nombre:"Estudiante"};
+            }
+          });
+          $scope.usuarios = usuarios;
+        };
+
         $scope.editar = function(usuario){
+          console.log(usuario);
           funciones.closeC();
           $scope.usuario =  angular.copy(usuario);
         };
@@ -50,20 +66,30 @@
 
         $scope.guardar = function(usuario){
           if($scope.usuariosForm.$valid){
-            if(usuario.id==""){//es nuevo usuario
-              usuario.id = funciones.nuevoId($scope.usuarios);
-              usuario.rol.nombre = usuario.rol.label;
-              $scope.usuarios = funciones.agregarALista($scope.usuarios,usuario);
-              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-              setTimeout(function(){$("#modalUsuario").modal('hide')},1000);   
-            }else{ //editar usuario
-              usuario.rol.nombre = usuario.rol.label;
-              $scope.usuarios = funciones.editarDeLista($scope.usuarios,usuario);
-              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-              setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
+            if(usuario.id==""){
+              $http.post("php/crearUsuario.php", { "data" : $scope.usuario})
+              .success(function(data) {
+                  usuario.id = data.Insert_Id;
+                  $scope.usuarios = funciones.agregarALista($scope.usuarios,usuario);
+                  funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                  setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
+               })
+              .error(function(data, status) {
+                  result = data || "Request failed";//hacer algo con esto.
+               });  
+            }else{ 
+              $http.post("php/modificarUsuario.php", { "data" : $scope.usuario})
+              .success(function(data) {
+                console.log(data);
+                //$scope.usuarios = funciones.editarDeLista($scope.usuarios,usuario);
+                //funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                //setTimeout(function(){$("#modalUsuario").modal('hide')},1000);   
+               })
+              .error(function(data, status) {
+                  result = data || "Request failed";//hacer algo con esto.
+               });
             }
           }else{
-            console.log(usuario);
             funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
             if(usuario.email==""){
                funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);

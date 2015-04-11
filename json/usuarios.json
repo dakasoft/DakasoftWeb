@@ -6,9 +6,10 @@
         "apellido": "Gamble",
         "email": "Nunc.mauris@etlaciniavitae.org",
         "password": "8536",
+        "IdRol":1,
         "rol": {
-                "id":2,
-                "nombre":"Decano"
+                "id":1,
+                "nombre":"Admin"
             },
         "disponible": true},
     {

@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "label": "Admin"
+    "nombre": "Admin"
   },
   {
     "id": 2,
-    "label": "Decano"
+    "nombre": "Decano"
   },
   {
     "id": 3,
-    "label": "Director académico"
+    "nombre": "Director académico"
   },
   {
     "id": 4,
-    "label": "Profesor"
+    "nombre": "Profesor"
   },
   {
     "id": 5,
-    "label": "Estudiante"
+    "nombre": "Estudiante"
   }
 ]
