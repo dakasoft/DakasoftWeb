@@ -5,7 +5,7 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/usuarios/tabla.html',
-      controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
+      controller: ['$scope','$http','ngTableParams','funciones','appServices',function ($scope,$http,ngTableParams,funciones,appServices) {
         $scope.usuarios = []; //todos los usuarios
         $scope.usuario = funciones.usuario(); //objeto usuario
         $scope.roles = [];
@@ -13,10 +13,16 @@
         $scope.editarUsuario = [];
 
         /*Get de usuarios y roles*/
-        $http.get('json/usuarios.json').success(function (data) {
-          $scope.usuarios = data;
-        });        
+        //$scope.usuarios = appServices.listarUsuarios();
 
+        $http.get('php/listarUsuarios.php')
+          .success(function (data) {
+            $scope.usuarios = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
+          
         $http.get('json/roles.json').success(function (data) {
           $scope.roles = data;
         });

@@ -96,14 +96,16 @@ app.factory('funciones',function(){
     }
 
 });
-app.service('appServices',function(){
+
+app.service('appServices',function($http){
+
     this.obtenerUsuario = function(){
     $http.get('.php').success(function (data) {
       alert(data); 
       this.product = data;
       });
+    };
 
-    }
     this.guardarUsuario = function(url){
       var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -114,12 +116,12 @@ app.service('appServices',function(){
        result = data || "Request failed";
        });
        return result;
+    };
 
-    }
     this.obtenerCarrera = function(){
-      
-      
-    }
+           
+    };
+
     this.guardarCarrera = function(url){
        var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -131,27 +133,31 @@ app.service('appServices',function(){
        });
        return result;
 
-    }
+    };
+
     this.obtenerCurso = function(){
         
+    };
 
-    }
     this.guardarCurso = function(url){
-      var result;
+      //$scope.result;
       $http.post(url, { "data" : $scope.objeto})
       .success(function(data, status) {
-         result = data; 
+         return data; 
        })
       .error(function(data, status) {
-       result = data || "Request failed";
+       $scope.result = data || "Request failed";
        });
-       return result;
 
-    }
+       //return $scope.result;
+
+    };
+
     this.obtenerGrupo = function(){
       
 
-    }
+    };
+
     this.guardarGrupo = function(url){
        var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -163,11 +169,13 @@ app.service('appServices',function(){
        });
        return result;
 
-    }
+    };
+
     this.obtenerEquipo = function(){
         
 
-    }
+    };
+
     this.guardarEquipo = function(url){
       var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -179,11 +187,12 @@ app.service('appServices',function(){
        });
        return result;
 
-    }
+    };
+
     this.obtenerPortafolio = function(){
       
+    };
 
-    }
     this.guardarPortafolio = function(url){
        var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -195,11 +204,12 @@ app.service('appServices',function(){
        });
        return result;
 
-    }
+    };
+
     this.obtenerRolEquipo = function(){
        
+    };
 
-    }
     this.guardarRolEquipo = function(url){
        var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -210,12 +220,12 @@ app.service('appServices',function(){
        result = data || "Request failed";
        });
        return result;
+    };
 
-    }
     this.obtenerArea = function(){
       
+    };
 
-    }
     this.guardarArea = function(url){
         var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -227,10 +237,12 @@ app.service('appServices',function(){
        });
        return result;
 
-    }
+    };
+
     this.obtenerCursoCarrera = function(){
        
-    }
+    };
+
     this.guardarCursoCarrera = function(url){
        var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -241,12 +253,12 @@ app.service('appServices',function(){
        result = data || "Request failed";
        });
        return result;
+    };
 
-
-    }
     this.obtenerDesglose = function(){
        
-    }
+    };
+
     this.guardarDesglose = function(url){
       var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -257,13 +269,13 @@ app.service('appServices',function(){
        result = data || "Request failed";
        });
        return result;
+    };
 
-
-    }
     this.obtenerRubro = function(){
       
 
-    }
+    };
+
     this.guardarRubro = function(url){
         var result;
       $http.post(url, { "data" : $scope.objeto})
@@ -275,13 +287,15 @@ app.service('appServices',function(){
        });
        return result;
 
-    }
+    };
+
     this.obtenerVotacion = function(){
         
 
-    }
+    };
+
     this.guardarVotacion = function(url){
-      var result;
+      var result = {};
       $http.post(url, { "data" : $scope.objeto})
       .success(function(data, status) {
          result = data; 
@@ -291,43 +305,66 @@ app.service('appServices',function(){
        });
        return result;
 
-    }
-     this.listarUsuarios = function(){
+    };
 
-    }
+    this.listarUsuarios = function(){
+      var result;
+      $http.get('php/listarUsuarios.php')
+        .success(function (data) {
+          //console.log("success aqui");
+          console.log(data);
+          result = data;
+        })
+        .error(function(data,status){
+          result = data || "jiji"
+        });
+      console.log(result);
+      return result;
+    };
+
      this.listarCarreras = function(){
 
-    }
+    };
+
      this.listarCursos = function(){
 
-    }
+    };
+
      this.listarGrupos = function(){
 
-    }
+    };
+
      this.listarEquipos = function(){
 
-    }
+    };
+
      this.listarGrupos = function(){
 
-    }
+    };
+
      this.listarDesglose = function(){
 
-    }
+    };
+
     this.listarAreas = function(){
 
-    }
-     this.listarCursoCarrera = function(){
+    };
 
-    }
+    this.listarCursoCarrera = function(){
+
+    };
+
     this.listarNotas = function(){
 
-    }
-     this.listarHistorial = function(){
+    };
 
-    }
+    this.listarHistorial = function(){
+
+    };
+
     this.listarVotacion = function(){
 
-    }
+    };
     // falta proyectos crear , listas
 
 });
