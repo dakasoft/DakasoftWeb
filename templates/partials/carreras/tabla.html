@@ -16,8 +16,8 @@
 			</div>
 			<table id="custom-table" ng-table class="table">
 			    <tr ng-repeat="carrera in carreras | filter:palabra">
-			        <td data-title="'Nombre'" >{{carrera.nombre}}</td>
-			        <td data-title="'Código'" >{{carrera.cod}}</td>
+			        <td data-title="'Nombre'" >{{carrera.Nombre}}</td>
+			        <td data-title="'Código'" >{{carrera.Codigo}}</td>
 			        <td data-title="'Modificar'">
 			        		<a data-toggle="modal" data-target="#modalCarrera" ng-click="editar(carrera)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 			        </td>

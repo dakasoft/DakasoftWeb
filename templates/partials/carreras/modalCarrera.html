@@ -8,17 +8,17 @@
         <div class="col-xs-12 col-sm-6">
         <div class="form-group">
           <label for="">Nombre</label>  
-            <input type="text" ng-model="carrera.nombre" class="form-control inputNombre" required> 
+            <input type="text" ng-model="carrera.Nombre" class="form-control inputNombre" required> 
         </div>
         <div class="form-group">
           <label for="">Código</label>  
-            <input type="text" ng-model="carrera.cod" class="form-control inputCodigo" required> 
+            <input type="text" ng-model="carrera.Codigo" class="form-control inputCodigo" required> 
         </div>
         <div class="form-group">
         <table id="custom-table" class="table selectedTable">
          <tr><th colspan="2" class="search-parent">Curso<input type="text" ng-model="searchCurso" class="form-control search"><i class="fa fa-search search-icon"></i></th></tr>
          <tr ng-repeat="curso in cursos | filter: searchCurso">
-                    <td>{{curso.nombre }} </td>
+                    <td>{{curso.Nombre }} </td>
                     <td>  <i class="fa fa-plus fa-lg plus-add-icon pull-right"  ng-model="curso" ng-click="agregarCurso(curso)"></i></td>
                   </tr>
           </table>
@@ -28,8 +28,8 @@
             <div class="col-xs-12 col-sm-6">
               <ul class="list-group listaProfesores Listascroll2">
                 <li class="list-group-item list-g-header">Cursos</li>
-                <li class="list-group-item" ng-repeat="curso in carrera.cursos">
-                  {{ curso.nombre }}
+                <li class="list-group-item" ng-repeat="curso in carrera.Cursos">
+                  {{ curso.Nombre }}
                   <a><i class="fa fa-times-circle fa pull-right" ng-click="borrarCurso(curso)"></i></a> 
                 <li>
               </ul>

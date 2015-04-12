@@ -15,13 +15,13 @@ app.factory('funciones',function(){
          	return $(".alert").remove();
         },
         usuario:function(){
-        	return {id:0,Nombre:"",Apellido:"",Email:"",Password:"",IdRol:0};
+        	return {id:"",Nombre:"",Apellido:"",Email:"",Password:"",IdRol:""};
         },
         carrera:function(){
-          return {id:"",nombre:"",cod:"",cursos:[]};
+          return {id:"",Nombre:"",Codigo:"",Cursos:[]};
         },
         curso:function(){
-          return {id:"",nombre:"",cod:"",area:[]};
+          return {id:"",Nombre:"",Codigo:"",Areas:[]};
         },
         grupo:function(){
           return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[]};
@@ -45,7 +45,6 @@ app.factory('funciones',function(){
           });
 
           if(!repetido) lista.push(objeto);
-
           return lista;
         },
         agregarAListaNoRepetidoPorNombre:function(lista,objeto){
