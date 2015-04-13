@@ -21,6 +21,7 @@
           });
 
         //pensado esto para q no se repitan, soy demasiado cool
+        // creo que si pueden repetirse XD
         $http.get('php/listarCursos.php')
           .success(function (data) {
             $scope.cursos = data;;
@@ -83,10 +84,11 @@
               //tanto de carerra como los cursos q esta tiene
               $http.post("php/crearCarrera.php", { "data" : $scope.carrera})
               .success(function(data) {
-                  carrera.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
-                  $scope.carreras = funciones.agregarALista($scope.carreras,carrera);
-                  funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                  setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
+                  console.log(data);
+                  //carrera.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
+                  //$scope.carreras = funciones.agregarALista($scope.carreras,carrera);
+                  //funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                  //setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
                })
               .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.
