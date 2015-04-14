@@ -8,15 +8,15 @@
         <div class="col-xs-12 col-sm-6">
         <div class="form-group">
           <label for="">Nombre</label>  
-            <input type="text" ng-model="curso.nombre" class="form-control inputNombre" required> 
+            <input type="text" ng-model="curso.Nombre" class="form-control inputNombre" required> 
         </div>
         <div class="form-group">
           <label for="">Código</label>  
-            <input type="text" ng-model="curso.cod" class="form-control inputCodigo" required>
+            <input type="text" ng-model="curso.Codigo" class="form-control inputCodigo" required>
         </div>
         <div class="form-group">
           <label for="profesor">Áreas Academicas</label>  
-          <select id="profesor" ng-model="area" ng-init="areasAcademicas" class="form-control plus-add" ng-options="obj.nombre for obj in areasAcademicas track by obj.id">
+          <select id="profesor" ng-model="areas" ng-init="area" class="form-control plus-add" ng-options="obj.Nombre for obj in areas track by obj.id">
             <option value="">--Areas--</option>
           </select>
           <i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarArea(area)"></i>
@@ -26,8 +26,8 @@
             <div class="col-xs-12 col-sm-6">
               <ul class="list-group listaProfesores">
                 <li class="list-group-item list-g-header">Área</li>
-                <li class="list-group-item " ng-repeat="area in curso.area" >
-                  {{ area.nombre }}
+                <li class="list-group-item " ng-repeat="area in curso.areas" >
+                  {{ area.Nombre }}
                   <a><i class="fa fa-times-circle fa pull-right" ng-click="borrarArea(area)"></i></a> 
                 <li>
               </ul>

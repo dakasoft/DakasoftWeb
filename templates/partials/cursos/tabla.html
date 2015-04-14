@@ -18,8 +18,8 @@
 			</div>
 			<table id="custom-table" ng-table class="table">
 			    <tr ng-repeat="curso in cursos | filter:palabra" >
-			        <td data-title="'Nombre'">{{curso.nombre}}</td>
-			        <td data-title="'Código'">{{curso.cod}}</td>
+			        <td data-title="'Nombre'">{{curso.Nombre}}</td>
+			        <td data-title="'Código'">{{curso.Codigo}}</td>
 			        <td data-title="'Modificar'">
 			        	<a data-toggle="modal" data-target="#modalCurso" ng-click="editar(curso)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 			        </td>

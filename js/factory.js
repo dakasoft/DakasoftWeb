@@ -32,6 +32,9 @@ app.factory('funciones',function(){
         rubro:function(){
           return {id:"",nombre:"",valor:""};
         },  
+        area:function(){
+          return{id:"",nombre:""};
+        },
         agregarALista:function(lista,objeto){
       	  lista.push(objeto);
       	  return lista;
@@ -136,20 +139,24 @@ app.service('appServices',function($http){
     };
 
     this.obtenerCurso = function(){
+        $http.get('.php').success(function (data) {
+      alert(data); 
+      this.product = data;
+      });
         
     };
 
     this.guardarCurso = function(url){
-      //$scope.result;
+      var result;
       $http.post(url, { "data" : $scope.objeto})
       .success(function(data, status) {
-         return data; 
+          result = data; 
        })
       .error(function(data, status) {
-       $scope.result = data || "Request failed";
+       result = data || "Request failed";
        });
+       return result;
 
-       //return $scope.result;
 
     };
 
@@ -327,6 +334,18 @@ app.service('appServices',function($http){
     };
 
      this.listarCursos = function(){
+       var result;
+      $http.get('php/listarCursos.php')
+        .success(function (data) {
+          //console.log("success aqui");
+          console.log(data);
+          result = data;
+        })
+        .error(function(data,status){
+          result = data || "jiji"
+        });
+      console.log(result);
+      return result;
 
     };
 
