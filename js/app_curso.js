@@ -18,23 +18,25 @@
           .error(function(data,status){
             result = data || "jiji"
           });
+
            $http.get('php/listarAreas.php')
           .success(function (data) {
+            //console.log(data);
             $scope.areas = data;
           })
           .error(function(data,status){
             result = data || "jiji"
           });
+          
 
-
+  
 
         $scope.editar = function(curso){
           funciones.closeC();
           $scope.curso =  angular.copy(curso);
-          $http.post("php/listarAreasCurso.php", { "data" : $scope.areas})
+          $http.post("php/listarAreasCurso.php", { "data" : $scope.curso})
           .success(function(data) {
-        
-            $scope.cursos.areas= data; // duda
+            $scope.curso.Areas = data; // duda
            })
           .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
@@ -59,7 +61,7 @@
         };        
 
         $scope.borrarArea = function(area){
-          $scope.carrera.area = funciones.borrarDeLista($scope.curso.areas,area); 
+          $scope.curso.area = funciones.borrarDeLista($scope.curso.Areas,area); 
         };
 
         $scope.nuevo = function(){
@@ -69,27 +71,33 @@
         };
 
         $scope.agregarArea = function(area){
-          funciones.agregarAListaNoRepetido($scope.curso.areas,area);
+          funciones.agregarAListaNoRepetido($scope.curso.Areas,area);
         };
     
         $scope.guardar = function(curso){
           console.log(curso);
-         if($scope.cursosForm.$valid){
+          if($scope.cursosForm.$valid){
             if(curso.id==""){
               $http.post("php/crearCurso.php", { "data" : $scope.curso})
               .success(function(data) {
-                    curso.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
-                    $scope.cursos = funciones.agregarALista($scope.cursos,curso);
-                    funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                     setTimeout(function(){$("#modalCurso").modal('hide')},1000);  
+                  curso.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
+                  $scope.cursos = funciones.agregarALista($scope.cursos,curso);
+                  funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                  setTimeout(function(){$("#modalCurso").modal('hide')},1000);  
                })
               .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.
                }); 
             }else{ //Pending
-              $scope.cursos = funciones.editarDeLista($scope.cursos,curso);
-              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-              setTimeout(function(){$("#modalCurso").modal('hide')},1000);  
+              $http.post("php/modificarCurso.php", { "data" : $scope.curso})
+              .success(function(data) {
+                $scope.cursos = funciones.editarDeLista($scope.cursos,curso);
+                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                setTimeout(function(){$("#modalCurso").modal('hide')},1000);  
+               })
+              .error(function(data, status) {
+                  result = data || "Request failed";//hacer algo con esto.
+               }); 
             }
 
           }else{

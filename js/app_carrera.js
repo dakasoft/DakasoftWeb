@@ -85,10 +85,10 @@
               $http.post("php/crearCarrera.php", { "data" : $scope.carrera})
               .success(function(data) {
                   console.log(data);
-                  //carrera.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
-                  //$scope.carreras = funciones.agregarALista($scope.carreras,carrera);
-                  //funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                  //setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
+                  carrera.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
+                  $scope.carreras = funciones.agregarALista($scope.carreras,carrera);
+                  funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                  setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
                })
               .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.

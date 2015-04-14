@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
           <label for="profesor">Áreas Academicas</label>  
-          <select id="profesor" ng-model="areas" ng-init="area" class="form-control plus-add" ng-options="obj.Nombre for obj in areas track by obj.id">
+          <select id="profesor" ng-model="area" ng-init="areas" class="form-control plus-add" ng-options="obj.Nombre for obj in areas track by obj.id">
             <option value="">--Areas--</option>
           </select>
           <i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarArea(area)"></i>
@@ -26,7 +26,7 @@
             <div class="col-xs-12 col-sm-6">
               <ul class="list-group listaProfesores">
                 <li class="list-group-item list-g-header">Área</li>
-                <li class="list-group-item " ng-repeat="area in curso.areas" >
+                <li class="list-group-item " ng-repeat="area in curso.Areas" >
                   {{ area.Nombre }}
                   <a><i class="fa fa-times-circle fa pull-right" ng-click="borrarArea(area)"></i></a> 
                 <li>
