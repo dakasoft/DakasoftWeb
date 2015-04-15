@@ -11,6 +11,13 @@
 		</tr>
 		<tr ng-repeat="grupo in grupos">
 		  <td>{{grupo.Nombre}}</td>
+	    <td>{{curso.Nombre}}</td>
+		  
+		  <td class="tdModal">
+				<a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(grupo)" title="Agregar Rúbrica!" data-toggle="tooltip" data-placement="right" tooltip>
+				<i class="fa fa-pencil-square-o fa-2x"></i>Rubrica
+				</a>
+		  </td>
 		</tr>
 	</table>
 </div><!-- fin divTabla -->
