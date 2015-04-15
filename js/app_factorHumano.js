@@ -9,6 +9,26 @@
         $scope.grupos = [];
         $scope.rubrosSeleccionados = [];
         // $scope.rubro = funciones.rubro();
+        
+        // json php
+        /* Listar grupos*/
+        $http.get('php/listarGrupos.php')
+          .success(function (data) {
+            $scope.grupos = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
+
+         /* Listar cursos*/
+          $http.get('php/listarCursos.php')
+          .success(function (data) {
+            $scope.cursos = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
+
 
         // $http.get('json/grupos.json').success(function (data) {
         //   $scope.grupos = data;
