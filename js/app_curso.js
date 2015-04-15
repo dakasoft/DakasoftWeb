@@ -75,7 +75,6 @@
         };
     
         $scope.guardar = function(curso){
-          console.log(curso);
           if($scope.cursosForm.$valid){
             if(curso.id==""){
               $http.post("php/crearCurso.php", { "data" : $scope.curso})
