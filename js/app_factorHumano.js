@@ -34,13 +34,18 @@
         // $http.get('json/grupos.json').success(function (data) {
         //   $scope.grupos = data;
         // });
+        
+        /*Funciones*/
 
-        // $scope.editar = function(grupo){
-        //   funciones.closeC();
-        //   $scope.rubro = funciones.rubro();
-        //   $scope.grupo =  angular.copy(grupo);
-        //   $scope.accion = "Editar";
-        // };
+
+        $scope.editar = function(grupo){
+          funciones.closeC();
+          $scope.rubro = funciones.rubro();
+          $scope.grupo =  angular.copy(grupo);
+          $scope.grupo.rubricaFactor = [];
+          $scope.accion = "Editar";
+          //si tiene id rubrica buscar rubros
+        };
 
         // $scope.guardar = function(grupo){
         //   $scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
@@ -48,21 +53,21 @@
         //   setTimeout(function(){$("#modalRubrica").modal('hide')},1000);  
         // };
 
-        // $scope.agregarRubro = function(rubro){
-        //   if($scope.rubricaForm.$valid){
-        //     $scope.rubro = funciones.rubro();
-        //     var newRubro = angular.copy(rubro);
-        //     funciones.agregarAListaNoRepetidoPorNombre($scope.grupo.rubricaFactor,newRubro);
-        //     funciones.closeC();
-        //   }else{
-        //     funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
-        //   }
+        $scope.agregarRubro = function(rubro){
+          if($scope.rubricaForm.$valid){
+            // $scope.rubro = funciones.rubro();
+            var newRubro = angular.copy(rubro);
+            funciones.agregarAListaNoRepetidoPorNombre($scope.grupo.rubricaFactor,newRubro);
+            funciones.closeC();
+          }else{
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
+          }
 
-        // };
+        };
 
-        // $scope.eliminarRubro = function(rubro){
-        //   funciones.borrarDeListaPorNombre($scope.grupo.rubricaFactor,rubro);
-        // };
+        $scope.eliminarRubro = function(rubro){
+          funciones.borrarDeListaPorNombre($scope.grupo.rubricaFactor,rubro);
+        };
 
         // function esValidoMaxValorRubro($scope){
         //   var suma = 0;
