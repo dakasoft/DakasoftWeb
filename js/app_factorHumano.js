@@ -12,9 +12,10 @@
         
         // json php
         /* Listar grupos*/
-        $http.get('php/listarGrupos.php')
+        $http.get('php/listargrupoconcurso.php')
           .success(function (data) {
             $scope.grupos = data;
+            console.log(data)
           })
           .error(function(data,status){
             result = data || "jiji"
