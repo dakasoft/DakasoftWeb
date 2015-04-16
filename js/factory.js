@@ -24,7 +24,7 @@ app.factory('funciones',function(){
           return {id:"",Nombre:"",Codigo:"",Areas:[]};
         },
         grupo:function(){
-          return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[]};
+          return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[],cursonombre:""};
         },
         votacion:function(){
           return {id:"",fecha:"",fechaProyectos:"",fechaCierre:"",activo:0};
