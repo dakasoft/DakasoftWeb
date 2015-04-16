@@ -46,12 +46,12 @@
           $scope.accion = "Editar";
           //si tiene id rubrica buscar rubros
         };
-
-        // $scope.guardar = function(grupo){
-        //   $scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
-        //   funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-        //   setTimeout(function(){$("#modalRubrica").modal('hide')},1000);  
-        // };
+        //gardar en bd
+        $scope.guardar = function(grupo){
+          $scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
+          funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+          setTimeout(function(){$("#modalRubrica").modal('hide')},1000);  
+        };
 
         $scope.agregarRubro = function(rubro){
           if($scope.rubricaForm.$valid){
