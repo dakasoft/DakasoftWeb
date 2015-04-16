@@ -10,8 +10,12 @@ app.directive('portafolio', function(){
           $scope.estudiantes = [];
           $scope.video= "";
           $scope.editableUser = "";
-          $http.get('json/portafolio.json').success(function (data) {
+        $http.get('php/listarPortafolio.php')
+          .success(function (data) {
             $scope.estudiantes = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
           });
 
         $scope.seleccionar = function(proyecto){

@@ -6,15 +6,19 @@ $data = file_get_contents("php://input");
 $objData = json_decode($data);
 $data = $objData->data;
 
-$query = "CALL cursoEliminar('$data->id')";
+$query = "CALL portafolioListar()";
 $result = mysqli_query($conexion,$query);
 
-if($result){
-	echo true;
-}else{
-	echo false;
+$rows = array();
+
+while($r = mysqli_fetch_assoc($result)){
+	$rows[] = $r;
 }
 
+	
+mysqli_free_result($result);
 mysqli_close($conexion);
+
+echo json_encode($rows);
 
 ?>

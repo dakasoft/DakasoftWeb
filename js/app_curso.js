@@ -50,9 +50,9 @@
         }
 
         $scope.borrar = function(){
-            $http.post("php/borrarCurso.php", { "data" : $scope.curso}) //
+            $http.post("php/borrarCurso.php", { "data" : $scope.curso}) // 
           .success(function(data) {
-            $scope.cursos=funciones.borrarDeLista($scope.cursos,$scope.curso); 
+            $scope.cursos=funciones.borrarDeLista($scope.cursos,$scope.curso);
            })
           .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
@@ -79,10 +79,11 @@
             if(curso.id==""){
               $http.post("php/crearCurso.php", { "data" : $scope.curso})
               .success(function(data) {
-                  curso.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
-                  $scope.cursos = funciones.agregarALista($scope.cursos,curso);
-                  funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                  setTimeout(function(){$("#modalCurso").modal('hide')},1000);  
+                 console.log(data);
+                  // curso.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
+                  // $scope.cursos = funciones.agregarAListaNoRepetido($scope.cursos,curso);
+                  // funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                  // setTimeout(function(){$("#modalCurso").modal('hide')},1000);  
                })
               .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.
