@@ -89,13 +89,13 @@
   });
 
 
-  // ModalDialog
-//   app.directive('modalRubrica',function ($http) {
-//     return {
-//       restrict: 'E',
-//       templateUrl: 'templates/partials/factorHumano/modalRubrica.html'
-//     };
-// });
+// ModalDialog
+app.directive('modalRubrica',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/factorHumano/modalRubrica.html'
+    };
+});
      
 
 
