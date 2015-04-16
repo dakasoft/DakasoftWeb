@@ -79,6 +79,7 @@
             if(curso.id==""){
               $http.post("php/crearCurso.php", { "data" : $scope.curso})
               .success(function(data) {
+                $( "#modalCurso" ).append(data);
                  console.log(data);
                   // curso.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
                   // $scope.cursos = funciones.agregarAListaNoRepetido($scope.cursos,curso);

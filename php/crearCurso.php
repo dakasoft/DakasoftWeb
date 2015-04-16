@@ -12,9 +12,9 @@ $result = mysqli_query($conexion,$query);
 	
 if($result){
 	$Insert_Id = $result->fetch_array(MYSQLI_ASSOC);
-
 	foreach ($data->Areas as &$areas) {
-		  $idArea = $areas->id;
+		$idArea = $areas->id;
+		var_dump($idArea);
 		$qry = "CALL areascursoCrear('$idArea','$Insert_Id')";//
 		mysqli_query($conexion,$qry);
 	}
