@@ -2,26 +2,42 @@
   var app = angular.module('areasAcademicas', ["ui.router"]);
 
 
-  app.controller('areasController', ['$rootScope','$scope','$http', function ($rootScope, $scope,$http) {
+  app.controller('areasController', ['$rootScope','$scope','$http','funciones','appServices', function ($rootScope, $scope, $http, funciones, appServices) {
     var areasCtrl = this;
 
-    $rootScope.areasAcademicas = {};
+    $scope.areasAcademicas = [];
     
     $scope.modalArea = {};
     $scope.modalEval = {};
-    $scope.modalAssignment = {};
     $scope.oEditPointer = {};
     $scope.deletePointer = {};
     $scope.deleteContainer = {};
 
     $scope.users = {};
-    $scope.idCounter = 0;
     $scope.bShowReceived = false;
 
-    $http.get('json/areasAcademicas.json').success(function (data) {
+    $http.get('php/listarAreasAcademicas.php').success(function (data) {
       $scope.areasAcademicas = data;
-      $scope.idCounter = data[data.length - 1].id;
     });
+
+    $scope.newArea = function () {
+      funciones.closeC();
+      $scope.modalArea = funciones.areaAcademica();
+    };
+
+    $scope.saveArea = function (pArea) {
+      if ($scope.formArea.$valid) {
+        if (pArea.IdArea === "") {
+          appServices.nuevaAreaAcademica(pArea);
+        } else {
+          // pArea.IdArea = parseInt(pArea.IdArea);
+          // appServices.modifcarAreaAcademica(pArea);
+        }
+      } else {
+        console.log($scope.modalArea);
+        return false;
+      }
+    };
 
     $scope.confirmDelete = function () {
       angular.forEach($scope.deleteContainer, function (pValue, pKey) {
@@ -30,12 +46,6 @@
         }
       });
     }
-
-    $scope.newArea = function () {
-      $scope.modalArea.id = $scope.newID();
-      $scope.modalArea.name = '';
-      $scope.modalArea.code = '';
-    };
 
     $scope.saveNewArea = function () {
       var areaTemp = angular.copy($scope.modalArea);
@@ -53,17 +63,6 @@
       $scope.modalArea = angular.copy(pArea);
     };
 
-    $scope.saveArea = function () {
-      if ($scope.modalArea.name && $scope.modalArea.code) {
-        angular.forEach($scope.modalArea, function (pValue, pKey) {
-          $scope.oEditPointer[pKey] = pValue;
-        });
-        $scope.modalArea = {};
-        $("#modalArea").modal('hide');
-      } else {
-        return false;
-      }
-    };
 
     $scope.deleteArea = function (pTeam) {
       $scope.deletePointer = pTeam;
@@ -91,7 +90,7 @@
   app.directive('modalAreaNew',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalAreaNew.html',
+      templateUrl: 'templates/partials/areasAcademicas/modalAreaNew.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],
@@ -102,7 +101,7 @@
   app.directive('modalArea',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalArea.html',
+      templateUrl: 'templates/partials/areasAcademicas/modalArea.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],
@@ -113,7 +112,7 @@
   app.directive('modalAreasConfirm',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalAreasConfirm.html',
+      templateUrl: 'templates/partials/areasAcademicas/modalAreasConfirm.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],

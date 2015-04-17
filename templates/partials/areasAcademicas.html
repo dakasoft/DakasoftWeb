@@ -12,14 +12,14 @@
 					<p>Areas</p>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<p><a href="" data-toggle="modal" data-target="#modalAreaNew" ng-click="newArea()" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+					<p><a href="" data-toggle="modal" data-target="#modalArea" ng-click="newArea()" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
 
 				</div>
 			</div>
 			<table id="custom-table" ng-table class="table">
 			    <tr ng-repeat="area in areasAcademicas | filter:searchArea" >
-			        <td data-title="'Nombre'">{{area.name}}</td>
-			        <td data-title="'Código'">{{area.code}}</td>
+			        <td data-title="'Nombre'">{{area.Nombre}}</td>
+			        <td data-title="'Código'">{{area.Codigo}}</td>
 			        <td data-title="'Modificar'">
 			        	<a data-toggle="modal" data-target="#modalArea" ng-click="editArea(area)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 			        </td>
