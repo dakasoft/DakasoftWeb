@@ -95,7 +95,7 @@ app.factory('funciones',function(){
         },
 
         areaAcademica: function () {
-          return {Nombre:"",Codigo:""}
+          return {id:"",Nombre:"",Codigo:""}
         }
     }
 
@@ -370,31 +370,5 @@ app.service('appServices',function($http){
 
     };
     // falta proyectos crear , listas
-
-    this.nuevaAreaAcademica = function (pArea) {
-      $http.post("php/crearAreasAcademicas.php", { "data" : pArea})
-        .success(function (data) {
-          pArea.IdArea = parseInt(data.Insert_Id);
-          $scope.usuarios = funciones.agregarALista($scope.areasAcademicas, pArea);
-          funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-          setTimeout(function(){$("#modalArea").modal('hide')},1000);
-        })
-        .error(function(data, status) {
-          return false;
-        });
-    }
-
-    // this.modificarAreaAcademica = function (pArea) {
-    //   $http.post("php/modificarUsuario.php", { "data" : pArea})
-    //     .success(function(data) {
-    //       $scope.usuarios = funciones.editarDeLista($scope.areasAcademicas, pArea);
-    //       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-    //       setTimeout(function(){$("#modalArea").modal('hide')},1000);   
-    //      })
-    //     .error(function(data, status) {
-    //        return false;
-    //      });
-    // }
-
   });
 })();
