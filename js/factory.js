@@ -96,6 +96,18 @@ app.factory('funciones',function(){
 
         areaAcademica: function () {
           return {id:"",Nombre:"",Codigo:""}
+        },
+
+        repeatCheck: function (pList, pTarget, pUniqueProp) {
+          var bExistence = false;
+
+          angular.forEach(pList, function (value, key) {
+            if (value[pUniqueProp] === pTarget[pUniqueProp]) {
+              bExistence = true;
+            };
+          });
+
+          return bExistence;
         }
     }
 

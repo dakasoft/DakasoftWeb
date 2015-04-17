@@ -25,19 +25,29 @@
       $scope.modalArea = funciones.areaAcademica();
     };
 
+    $scope.editArea = function (pArea) {
+      funciones.closeC();
+      $scope.modalArea = angular.copy(pArea);
+    };
+
     $scope.saveArea = function (pArea) {
+      var bExistence = funciones.repeatCheck($scope.areasAcademicas, pArea, 'Codigo');
       if ($scope.formArea.$valid) {
         if (pArea.id === "") {
-          $http.post("php/crearAreasAcademicas.php", {"data": pArea})
-            .success(function (data) {
-              pArea.id = parseInt(data.Insert_Id);
-              funciones.agregarALista($scope.areasAcademicas, pArea);
-              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-              setTimeout(function(){$("#modalArea").modal('hide')},1000);
-            })
-            .error(function(data, status) {
-              return false;
-            });
+          if (!bExistence) {
+            $http.post("php/crearAreasAcademicas.php", {"data": pArea})
+              .success(function (data) {
+                pArea.id = parseInt(data.Insert_Id);
+                funciones.agregarALista($scope.areasAcademicas, pArea);
+                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                setTimeout(function(){$("#modalArea").modal('hide')},1000);
+              })
+              .error(function(data, status) {
+                return false;
+              });
+          } else {
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> El codigo ingresado ya existe',3500);
+          }
         } else {
           $http.post("php/modificarAreasAcademicas.php", {"data": pArea})
             .success(function (data) {
@@ -50,7 +60,14 @@
              });
         }
       } else {
-        console.log($scope.modalArea);
+        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+        if (!pArea.Codigo || !pArea.Nombre) {
+          funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+        } else {
+          if (pArea.Codigo === undefined){
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> El Codigo ingresado no es válido',3500);
+          }
+        }
         return false;
       }
     };
