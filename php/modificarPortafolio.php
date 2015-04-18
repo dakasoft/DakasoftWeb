@@ -4,7 +4,7 @@ include "conexion.php";
 
 
 
-//$query = "CALL portafolioListar()";
+//$query = "CALL portafolioModificar()";
 $result = mysqli_query($conexion,$query);
 
 

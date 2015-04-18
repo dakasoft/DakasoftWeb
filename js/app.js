@@ -76,7 +76,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   .state('portafolio',{
     url: "/portafolio",
     templateUrl:"templates/portafolio.html",
-    controller: function ($rootScope, $state) {
+    controller: function ($rootScope, $state,funciones) {
       $rootScope.currentStateName = $state.current.name;
       if (!$rootScope.bLoggedIn) {
         $state.go('login');

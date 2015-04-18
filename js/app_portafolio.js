@@ -6,7 +6,7 @@ app.directive('portafolio', function(){
         restrict: 'E',
         templateUrl: 'templates/partials/portafolio/portafolio.html',
         
-       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
+       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
           $scope.estudiantes = [];
           $scope.video= "";
           $scope.editableUser = "";
@@ -61,7 +61,7 @@ app.directive('portafolio', function(){
                   $scope.editableUser.correo =$scope.correo;
                  $scope.editableUser.telefono =$scope.telefono;
                  $scope.editableUser.OtraInfo = $scope.OtraInfo;        
-                      $scope.cursos = funciones.editarDeLista($scope.cursos,curso);
+                      $scope.estudiantes = funciones.editarDeLista($scope.estudiantes,$scope.editableUser);
                       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                       setTimeout(function(){$("#editModal").modal('hide')},1000);  
                    })

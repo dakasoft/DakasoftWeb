@@ -35,6 +35,7 @@ app.factory('funciones',function(){
         area:function(){
           return{id:"",nombre:""};
         },
+       
         agregarALista:function(lista,objeto){
       	  lista.push(objeto);
       	  return lista;
