@@ -46,17 +46,31 @@ app.directive('portafolio', function(){
 
 
          $scope.editar = function(estudiante){
+          $scope.portafolio= [];
           $scope.editableUser = estudiante;
-          $scope.foto = estudiante.foto;
-          $scope.correo = estudiante.correo;
-          $scope.telefono = estudiante.telefono;
-          $scope.OtraInfo = estudiante.OtraInfo;
+          $scope.portafolio.id= estudiante.id
+          $scope.portafolio.foto = estudiante.foto;
+          $scope.portafolio.correo = estudiante.correo;
+          $scope.portafolio.telefono = estudiante.telefono;
+          $scope.portafolio.OtraInfo = estudiante.OtraInfo;
         };
          $scope.guardar = function(){
           if($scope.editableUser != ""){
-            $scope.editableUser.correo =$scope.correo;
-             $scope.editableUser.telefono =$scope.telefono;
-              $scope.editableUser.OtraInfo = $scope.OtraInfo;
+                 $http.post("php/modificarPortafolio.php", { "data" : $scope.portafolio})
+                  .success(function(data) {            
+                  $scope.editableUser.correo =$scope.correo;
+                 $scope.editableUser.telefono =$scope.telefono;
+                 $scope.editableUser.OtraInfo = $scope.OtraInfo;        
+                      $scope.cursos = funciones.editarDeLista($scope.cursos,curso);
+                      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                      setTimeout(function(){$("#editModal").modal('hide')},1000);  
+                   })
+                  .error(function(data, status) {
+                      result = data || "Request failed";//hacer algo con esto.
+                   }); 
+
+
+            
           }
         $("#editModal").modal('hide');
         };

@@ -79,24 +79,40 @@
 
           if($scope.carrerasForm.$valid){
 
-            if(carrera.id==""){//es nuevo carrera
-              //en este vamos a hacer los dos push a base de datos en php,
-              //tanto de carerra como los cursos q esta tiene
-              $http.post("php/crearCarrera.php", { "data" : $scope.carrera})
+            if(carrera.id==""){
+                $http.post("php/crearCarrera.php", { "data" : carrera})
+                .success(function(data) {
+                    console.log(data);
+                    if(data.Insert_Id != ""){
+                      $scope.carrera.id = data.Insert_Id;
+                      console.log("encontre id");
+                      $http.post("php/guardarCursosGrupos.php", { "data" : carrera})
+                      .success(function(data) {     
+                        console.log(data);               
+                          $scope.carreras = funciones.agregarAListaNoRepetido($scope.carreras,carrera);
+                          funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                          setTimeout(function(){$("#modalCarrera").modal('hide')},1000);  
+                       })
+                      .error(function(data, status) {
+                          result = data || "Request failed";//hacer algo con esto.
+                       }); 
+                    }
+                 })
+                .error(function(data, status) {
+                    result = data || "Request failed";//hacer algo con esto.
+                 }); 
+            }else{ //Pending
+
+              $http.post("php/modificarCarrera.php", { "data" : carrera})
               .success(function(data) {
-                  console.log(data);
-                  carrera.id = parseInt(data.Insert_Id); //nos devuelve el id que inserto
-                  $scope.carreras = funciones.agregarALista($scope.carreras,carrera);
-                  funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                  setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
+                console.log(data);
+                $scope.carreras = funciones.editarDeLista($scope.carreras,carrera);
+                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                setTimeout(function(){$("#modalCarrera").modal('hide')},1000);  
                })
               .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.
                }); 
-            }else{ //Pending
-              $scope.carreras = funciones.editarDeLista($scope.carreras,carrera);
-              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-              setTimeout(function(){$("#modalCarrera").modal('hide')},1000);  
             }
 
           }else{

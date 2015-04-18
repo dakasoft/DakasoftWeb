@@ -12,7 +12,7 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     var main = this;
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 5;
+    $rootScope.roleLv = 1;
 
 
     main.logOut = function () {

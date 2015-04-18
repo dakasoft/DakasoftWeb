@@ -3,14 +3,9 @@
     <div class="modal-content">
     <div class="modal-header"><h4>Configuración</h4></div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
+      <div class="modal-body"  id="contentbody">
         <form class="form-horizontal">
-        <div class="form-group">
-          <label class="col-xs-4 control-label" for="">Imagen</label>  
-          <div class="col-xs-8">
-              <input  type="file"  ng-model="foto" name="pic" accept="image/*">
-          </div>
-        </div>
+        
         <div class="form-group">
           <label class="col-xs-4 control-label" for="">Email</label>  
           <div class="col-xs-8">
@@ -30,6 +25,13 @@
           </div>
         </div>
         </form>
+         <div class="form-group">
+         <form action="almacenar.php" method="POST" enctype="multipart/form-data">
+           <label class="col-xs-4 control-label" for="imagen">Imagen:</label>
+           <input type="file" name="imagen" class="inputpor" id="imagen" />
+            <input type="submit" name="subir" value="Subir Imagen"/>
+         </form>
+     </div>
       </div>
       <div class="modal-footer">
        <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar()">Guardar</button>
