@@ -11,26 +11,26 @@
 				<h3 class="soyunpointer">{{estudiante.nombre}} {{estudiante.apellido}}</h3>
 			</div>
 				
-				<div class="divCursosAlumnos clearfix" ng-repeat="curso in estudiante.cursos" ng-show="estudiante.show">
+				<div class="divCursosAlumnos clearfix" ng-repeat="curso in cursos" ng-show="estudiante.show">
 					<div class="row">
 						<div class="col-xs-12 col-sm-8 col-sm-offset-2">							
 						 	<ul class="list-group"> 
 								<li>
 									<a href="">
-								    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow imgLogoEquipo">
+								    	<!-- <img ng-src="{{curso.logoEquipo}}" class="pull-right grow imgLogoEquipo"> -->
 								    </a>
-									<p><b>Curso:</b>{{curso.nombre}}</p>
-									<p><b>Equipo:</b>{{curso.equipo}}</p>
+									<p><b>Curso:</b>{{curso.Nombre}}</p>
+									<!-- <p><b>Equipo:</b>{{curso.equipo}}</p>
 									<p><b>Nota :</b>{{curso.nota}}</p>
-									<p><b>Profesor:</b>{{curso.profesor}}</p>
+									<p><b>Profesor:</b>{{curso.profesor}}</p> -->
 								</li>
 							</ul>
-							<div class="row">
+							<!-- <div class="row">
 									<h5 class="headingIntegrantes"><b>Integrantes</b></h5>
 									<ul class="ulIntegrantes">
 										<li ng-repeat="integrante in curso.integrantes">{{integrante}}</li>
 									</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

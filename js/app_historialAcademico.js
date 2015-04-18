@@ -13,6 +13,17 @@
           $scope.estudiantes = data;
         }); 
 
+        $http.get('php/notaconCurso.php')
+          .success(function (data) {
+            $scope.cursos = data;
+            // console.log(data) no sirve
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+        });
+
+
+        
       $scope.toogleInfo = function(estado){
         if(estado)
         {
