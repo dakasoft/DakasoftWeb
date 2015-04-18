@@ -5,18 +5,15 @@ $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
 $data = $objData->data;
-var_dump($data->id);	
-$query = "CALL portafolioModificar('$data->Descripcion','$data->Telefono,'$data->id')";
+var_dump($data);	
+$query = "CALL portafolioModificar('$data->id','$data->Descripcion','$data->Telefono')";
 $result = mysqli_query($conexion,$query);
 
-
-
-
-// if($result){
-// 	echo true;
-// }else{
-// 	echo false;
-// }
+if($result){
+	echo true;
+}else{
+	echo false;
+}
 
 
 
