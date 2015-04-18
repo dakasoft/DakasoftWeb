@@ -21,7 +21,10 @@ app.factory('funciones',function(){
           return {id:"",Nombre:"",Codigo:"",Cursos:[]};
         },
         curso:function(){
-          return {id:"",Nombre:"",Codigo:"",Areas:[]};
+          return {id:"",Nombre:"",Codigo:"",Areas:[],notanota:""};
+        },
+        nota:function(){
+          return {id:"",Nota:""};
         },
         grupo:function(){
           return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[],cursonombre:""};
