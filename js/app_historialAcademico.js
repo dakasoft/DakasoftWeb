@@ -14,6 +14,7 @@
           $scope.estudiantes = data;
         }); 
         //Json php
+
         // $http.get('php/listarCursos.php')
         //   .success(function (data) {
         //     $scope.cursos = data;;
@@ -22,6 +23,14 @@
         //     result = data || "jiji"
         //   });
 
+        $http.get('php/notaconCurso.php')
+          .success(function (data) {
+            $scope.cursos = data;
+            // console.log(data) no sirve
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+        });
 
       //Acordeón
       $scope.toogleInfo = function(estado){
