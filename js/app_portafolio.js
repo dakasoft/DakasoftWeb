@@ -10,11 +10,24 @@ app.directive('portafolio', function(){
           $scope.estudiantes = [];
           $scope.video= "";
           $scope.editableUser = "";
+
+          //if the person is a student we need change this pa.
         $http.get('php/listarPortafolio.php')
           .success(function (data) {
-         $( ".containerP" ).append(data);
-         console.log(data);
             $scope.estudiantes = data;
+            for (var i = $scope.estudiantes.length - 1; i >= 0; i--) {
+              $scope.estudiantes[i].id;
+              $scope.estudiantes[i].proyectos = [];
+              $scope.puntero = $scope.estudiantes[i];
+              $http.post('php/listarProyectosEstudiante.php', { "data" : $scope.estudiantes[i].id })
+              .success(function (data){
+                $scope.puntero.proyectos = data;
+              })
+              .error(function(data,status){
+                result = data || "jiji"
+              }); 
+            };
+            console.log($scope.estudiantes);
           })
           .error(function(data,status){
             result = data || "jiji"
