@@ -1,24 +1,28 @@
 <?php
 
 include "conexion.php";
+$data = file_get_contents("php://input");
 
-
-
-//$query = "CALL portafolioModificar()";
+$objData = json_decode($data);
+$data = $objData->data;
+var_dump($data->id);	
+$query = "CALL portafolioModificar('$data->Descripcion','$data->Telefono,'$data->id')";
 $result = mysqli_query($conexion,$query);
 
 
-$rows = array();
-
-while($r = mysqli_fetch_assoc($result)){
-	$rows[] = $r;
-}
-	
-mysqli_free_result($result);
 
 
-mysqli_close($conexion);
+// if($result){
+// 	echo true;
+// }else{
+// 	echo false;
+// }
 
-echo json_encode($rows);
+
+
+
+// mysqli_close($conexion);
+
+
 
 ?>

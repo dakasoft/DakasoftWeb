@@ -66,7 +66,7 @@ app.factory('funciones',function(){
         editarDeLista:function(lista,objeto){
         	angular.forEach(lista, function(value, key) {
             if(value.id == objeto.id){
-              console.log("me encontre");
+              console.log(objeto);
               lista[key] = objeto;
             }
           });

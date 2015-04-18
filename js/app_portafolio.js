@@ -27,7 +27,7 @@ app.directive('portafolio', function(){
                 result = data || "jiji"
               }); 
             };
-            console.log($scope.estudiantes);
+          
           })
           .error(function(data,status){
             result = data || "jiji"
@@ -46,27 +46,21 @@ app.directive('portafolio', function(){
 
 
          $scope.editar = function(estudiante){
-          $scope.portafolio= [];
-          $scope.editableUser = estudiante;
-          $scope.portafolio.id= estudiante.id
-          $scope.portafolio.foto = estudiante.foto;
-          $scope.portafolio.correo = estudiante.correo;
-          $scope.portafolio.telefono = estudiante.telefono;
-          $scope.portafolio.OtraInfo = estudiante.OtraInfo;
+          $scope.portafolio = estudiante;
+        
         };
          $scope.guardar = function(){
-          if($scope.editableUser != ""){
+       
+          if($scope.portafolio != ""){
                  $http.post("php/modificarPortafolio.php", { "data" : $scope.portafolio})
-                  .success(function(data) {            
-                  $scope.editableUser.correo =$scope.correo;
-                 $scope.editableUser.telefono =$scope.telefono;
-                 $scope.editableUser.OtraInfo = $scope.OtraInfo;        
-                      $scope.estudiantes = funciones.editarDeLista($scope.estudiantes,$scope.editableUser);
-                      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                      setTimeout(function(){$("#editModal").modal('hide')},1000);  
+                  .success(function(data) {
+                    console.log(data);
+                      // $scope.estudiantes = funciones.editarDeLista($scope.estudiantes,$scope.portafolio);
+                      // funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                      // setTimeout(function(){$("#editModal").modal('hide')},1000);  
                    })
                   .error(function(data, status) {
-                      result = data || "Request failed";//hacer algo con esto.
+                      result = data || "Request failed";
                    }); 
 
 
