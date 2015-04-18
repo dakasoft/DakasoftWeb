@@ -101,6 +101,7 @@
             }else{ //Pending
               $http.post("php/modificarCurso.php", { "data" : $scope.curso})
               .success(function(data) {
+                
                 $scope.cursos = funciones.editarDeLista($scope.cursos,curso);
                 funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                 setTimeout(function(){$("#modalCurso").modal('hide')},1000);  

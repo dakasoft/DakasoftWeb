@@ -12,6 +12,8 @@ app.directive('portafolio', function(){
           $scope.editableUser = "";
         $http.get('php/listarPortafolio.php')
           .success(function (data) {
+         $( ".containerP" ).append(data);
+         console.log(data);
             $scope.estudiantes = data;
           })
           .error(function(data,status){

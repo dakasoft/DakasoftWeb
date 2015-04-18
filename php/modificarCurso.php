@@ -8,23 +8,23 @@ $data = $objData->data;
 
 $query = "CALL cursoModificar('$data->id','$data->Nombre','$data->Codigo')";
 $result = mysqli_query($conexion,$query);
-$Insert_Id = $result->fetch_array(MYSQLI_ASSOC);
+$Areas= $data->Areas;
 
 $query = "CALL areascursoEliminar('$data->id')"; // aqui los borro
 $result = mysqli_query($conexion,$query);
-
+var_dump($result);
 
 if($result){
 	foreach ($data->Areas as &$areas) { 
-		$idAreas = $areas->id;// $idAreas = $areas->id;
-		$qry = "CALL areascursoCrear('$idAreas','$Insert_Id')"; //
-		mysqli_query($conexion,$qry);
-	}
+    	$idAreas = $areas->id;// $idAreas = $areas->id;
+        $qry = "CALL areascursoCrear('$idAreas','$data->id')"; //
+	    mysqli_query($conexion,$qry);
+      }
 	mysqli_free_result($result);
-	echo json_encode($Insert_Id);
-}else{
-	echo false;
-}
+ 	echo json_encode($data->id);
+   }else{
+ 	echo false;
+   }
 
 mysqli_close($conexion);
 
