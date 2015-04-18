@@ -14,13 +14,13 @@
           $scope.estudiantes = data;
         }); 
         //Json php
-        $http.get('php/listarCursos.php')
-          .success(function (data) {
-            $scope.cursos = data;;
-          })
-          .error(function(data,status){
-            result = data || "jiji"
-          });
+        // $http.get('php/listarCursos.php')
+        //   .success(function (data) {
+        //     $scope.cursos = data;;
+        //   })
+        //   .error(function(data,status){
+        //     result = data || "jiji"
+        //   });
 
 
       //Acordeón
