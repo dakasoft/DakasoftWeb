@@ -9,10 +9,14 @@
       controller: ['$scope','$http',function ($scope,$http) {
         $scope.reportes = [];
 
-        $http.get('json/reporteNotas.json').success(function (data) {
-          $scope.reportes = data;
-        }); 
-        
+          $http.get('php/reporteNotas.php')
+          .success(function (data) {
+            console.log(data);
+            $scope.reportes = data;;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
       }]
       }
     });

@@ -11,7 +11,8 @@
 				<tr ng-repeat="proyecto in proyectos track by $index">
 					<td data-title="'Curso'">{{proyecto.Curso}}</td>
 					<td data-title="'Equipo'">{{proyecto.Equipo}}</td>
-					<td data-title="'Nota'"><a data-toggle="modal" data-target="#editModal" ng-click="editarNota(proyecto)">
+					<td data-title="'Nota'">{{proyecto.Nota}}</td>
+					<td data-title="'Editar Nota'"><a data-toggle="modal" data-target="#editModal" ng-click="editarNota(proyecto)">
 				   <i class="fa fa-pencil-square-o fa-2x"></i>
 					</a></td>
 					<td data-title="'Agregar'" ><i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarProyecto(proyecto)"></i></td>

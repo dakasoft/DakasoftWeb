@@ -28,13 +28,15 @@
 				<table class="table table-nonfluid table-responsive table-hover">
 					<tr>
 						<th>Nombre</th>
-						<th>Curso</th>		
+						<th>Curso</th>	
+						<th>Grupo</th>		
 						<th>Nota</th>
 					</tr>
 					<tr ng-repeat="estudiantes in reportes | filter:notas.search:notas">
-						<td>{{estudiantes.nombre}}</td>	
-						<td>{{estudiantes.curso}}</td>	
-						<td>{{estudiantes.nota}}</td>	
+						<td>{{estudiantes.Nombre}}</td>	
+						<td>{{estudiantes.Curso}}</td>	
+						<td>{{estudiantes.Grupo}}</td>	
+						<td>{{estudiantes.Nota}}</td>	
 					</tr>
 				</table>	
 			</div>

@@ -7,12 +7,19 @@
       templateUrl: 'templates/partials/proyectosTabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope, $http, ngTableParams,funciones) {
         $scope.proyectos = [];
-         $scope.nota = "";
+         $scope.Nota = "";
         $scope.proyectosSeleccionados = [];
           $scope.editableProject = "";
           $http.get('php/listarProyectos.php')
           .success(function (data) {
              $scope.proyectos = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
+          $http.get('php/listarProyectosElegidos.php')
+          .success(function (data) {
+              $scope.proyectosSeleccionados = data;
           })
           .error(function(data,status){
             result = data || "jiji"
@@ -27,9 +34,11 @@
                   }
                 });
                 if(ingresar || $scope.proyectosSeleccionados.length == 0){
-                   $scope.proyectosSeleccionados.push(proyecto);
+                
+                  $scope.proyectosSeleccionados = funciones.agregarAListaNoRepetido($scope.proyectosSeleccionados,proyecto);
                    $http.post("php/agregarProyectoE.php", { "data" : proyecto})
                   .success(function(data) {
+                    console.log(data);
                       $scope.proyectosE = data;
                    })
                   .error(function(data, status) {
@@ -39,17 +48,22 @@
           };
 
     $scope.EliminarProyecto=function(proyecto){
-        angular.forEach($scope.proyectosSeleccionados, function(value, key) {
-            if(value.id == proyecto.id){
-              $scope.proyectosSeleccionados.splice(key, 1);
-            }
-          });
+      console.log(proyecto);
+      $http.post("php/borrarProyectosVotacion.php", { "data" : proyecto})
+          .success(function(data) {
+             $scope.proyectosSeleccionados=funciones.borrarDeLista( $scope.proyectosSeleccionados,proyecto); 
+           })
+        // angular.forEach($scope.proyectosSeleccionados, function(value, key) {
+        //     if(value.id == proyecto.id){
+        //       $scope.proyectosSeleccionados.splice(key, 1);
+        //     }
+        //   });
 
     }
      $scope.editarNota = function(proyecto){
       funciones.closeC();
       $scope.editableProject = proyecto;
-      $scope.nota=$scope.editableProject.nota;
+      $scope.Nota=$scope.editableProject.Nota;
   
 
 
@@ -57,12 +71,19 @@
 
 
     $scope.guardarnota = function(){
-    if($scope.nota<=100){
-         if($scope.nota<1){
+    if($scope.Nota<=100){
+         if($scope.Nota<1){
             setTimeout(function(){$("#editModal").modal('hide')},1000);
          }
-          else{
-             $scope.editableProject.nota =angular.copy($scope.nota);
+          else{ 
+            console.log($scope.editableProject);
+            $scope.editableProject.Nota =angular.copy($scope.Nota);
+             $http.post("php/agregarNotaProyecto.php", { "data" : $scope.editableProject})
+          .success(function(data) {
+            console.log(data);
+             $scope.editableProject  = funciones.editarDeLista($scope.proyectos,$scope.editableProject);
+           })
+            // $scope.editableProject.nota =angular.copy($scope.nota);
        funciones.closeC();
       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> Has agregado la nota',3500);
       setTimeout(function(){$("#editModal").modal('hide')},1000);
