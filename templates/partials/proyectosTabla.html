@@ -8,10 +8,9 @@
 				</div>
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table">
-				<tr ng-repeat="proyecto in proyectos">
-					<td data-title="'Curso'">{{proyecto.curso}}</td>
-					<td data-title="'Equipo'">{{proyecto.equipo}}</td>
-					<td data-title="'Imagen'">{{proyecto.imagen}}</td>
+				<tr ng-repeat="proyecto in proyectos track by $index">
+					<td data-title="'Curso'">{{proyecto.Curso}}</td>
+					<td data-title="'Equipo'">{{proyecto.Equipo}}</td>
 					<td data-title="'Nota'"><a data-toggle="modal" data-target="#editModal" ng-click="editarNota(proyecto)">
 				   <i class="fa fa-pencil-square-o fa-2x"></i>
 					</a></td>
@@ -28,9 +27,8 @@
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table">
 				<tr ng-repeat="proyecto in proyectosSeleccionados track by $index">
-					<td data-title="'Curso'">{{proyecto.curso}}</td>
-					<td data-title="'Equipo'">{{proyecto.equipo}}</td>
-					<td data-title="'Imagen'">{{proyecto.imagen}}</td>
+					<td data-title="'Curso'">{{proyecto.Curso}}</td>
+					<td data-title="'Equipo'">{{proyecto.Equipo}}</td>
 					<td data-title="'Eliminar'"> <a><i class="fa fa-times-circle fa-2x" ng-click="EliminarProyecto(proyecto)"></i></a> </td>
 				</tr>
 			</table>

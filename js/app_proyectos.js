@@ -10,10 +10,15 @@
          $scope.nota = "";
         $scope.proyectosSeleccionados = [];
           $scope.editableProject = "";
-        $http.get('json/proyectos.json').success(function (data) {
-        $scope.proyectos = data;
-        });
+          $http.get('php/listarProyectos.php')
+          .success(function (data) {
+             $scope.proyectos = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
      $scope.agregarProyecto = function(proyecto){
+      
              funciones.closeC();
                 var ingresar = true;
                 angular.forEach($scope.proyectosSeleccionados,function(value,key){
@@ -23,9 +28,14 @@
                 });
                 if(ingresar || $scope.proyectosSeleccionados.length == 0){
                    $scope.proyectosSeleccionados.push(proyecto);
-
-                }
-
+                   $http.post("php/agregarProyectoE.php", { "data" : proyecto})
+                  .success(function(data) {
+                      $scope.proyectosE = data;
+                   })
+                  .error(function(data, status) {
+                      result = data || "Request failed";//hacer algo con esto.
+                   });     
+                 }
           };
 
     $scope.EliminarProyecto=function(proyecto){
