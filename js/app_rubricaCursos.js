@@ -97,7 +97,7 @@
   app.directive('modalRubricaCursos',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/evaluacion/modalRubricaCursos.html',
+      templateUrl: 'templates/partials/evaluacion/modalRubrica.html',
       controller: ['$scope','$http',function ($scope,$http) {     
       }],
         controllerAs: 'modalRubriCursos'
