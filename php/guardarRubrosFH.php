@@ -5,7 +5,7 @@ $data = file_get_contents("php://input");
 $objData = json_decode($data);
 $data = $objData->data;
 
-var_dump($data);
+// var_dump($data);
 
 $qry = "CALL rubroCrear('$data')";
 $result = mysqli_query($conexion,$qry);
