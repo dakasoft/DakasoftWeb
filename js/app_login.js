@@ -68,6 +68,7 @@
           };
 
           $rootScope.currentUser = poUser;
+          $rootScope.currentUser.id=7; 
           $rootScope.bLoggedIn = true;
           if($rootScope.currentUser.role=="Estudiante"){
             $rootScope.roleLv = 1;

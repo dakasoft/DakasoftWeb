@@ -6,12 +6,12 @@ app.directive('portafolio', function(){
         restrict: 'E',
         templateUrl: 'templates/partials/portafolio/portafolio.html',
         
-       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
+       controller: ['$scope','$http','ngTableParams','funciones','$rootScope',function ($scope,$http,ngTableParams,funciones,$rootScope) {
           $scope.estudiantes = [];
           $scope.video= "";
           $scope.editableUser = "";
-
-          //if the person is a student we need change this pa.
+         if($rootScope.roleLv != 1){
+           //if the person is a student we need change this pa.
         $http.get('php/listarPortafolio.php')
           .success(function (data) {
             $scope.estudiantes = data;
@@ -32,6 +32,35 @@ app.directive('portafolio', function(){
           .error(function(data,status){
             result = data || "jiji"
           });
+
+
+         }else{
+            //  console.log($rootScope.currentUser.id);
+           $http.post('php/miPortafolio.php', { "data" : $rootScope.currentUser.id })
+          .success(function (data) {
+            console.log(data);
+            $scope.estudiantes=data; 
+              console.log($scope.estudiantes[0]);      
+              //$scope.estudiantes.id;
+              $scope.estudiantes[0].proyectos = [];
+              $scope.puntero = $scope.estudiantes[0];
+             $http.post('php/listarProyectosEstudiante.php', { "data" : $rootScope.currentUser.id })
+             .success(function (data){
+              $scope.puntero.proyectos = data;
+              console.log($scope.estudiantes[0]);
+             })
+             .error(function(data,status){
+              result = data || "jiji"
+             });    
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
+
+
+
+         };
+         
 
         $scope.seleccionar = function(proyecto){
           $scope.video =proyecto.video;
@@ -55,9 +84,9 @@ app.directive('portafolio', function(){
                  $http.post("php/modificarPortafolio.php", { "data" : $scope.portafolio})
                   .success(function(data) {
                     console.log(data);
-                      // $scope.estudiantes = funciones.editarDeLista($scope.estudiantes,$scope.portafolio);
-                      // funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                      // setTimeout(function(){$("#editModal").modal('hide')},1000);  
+                      $scope.estudiantes = funciones.editarDeLista($scope.estudiantes,$scope.portafolio);
+                      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                      setTimeout(function(){$("#editModal").modal('hide')},1000);  
                    })
                   .error(function(data, status) {
                       result = data || "Request failed";

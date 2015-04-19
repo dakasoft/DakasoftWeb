@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 containerP">
       <form class="navbar-form buscador cf " role="search">
-        <div ng-show="roleLv > 2" class="form-group search-parent">
+        <div ng-show="roleLv != 1" class="form-group search-parent">
           <input type="text" class="form-control normal-search" placeholder="Search" ng-model="palabra">
           <i class="fa fa-search normal-search-icon"></i>
         </div>
@@ -19,14 +19,14 @@
           <p class="descripcion"><span >Otra información : </span>
             {{ estudiante.Descripcion }}</p>
             <a class="pdf" href="#" ng-click="">Descargar PDF</a>
-          </div>
+        </div>
           <div class="projects col-xs-12 col-sm-12">
             <h2>Proyectos</h2>
             <div class="line cf col-xs-11 col-sm-11"></div>
 
             <div class="ih-item square new effect6 from_top_and_bottom col-xs-12 col-sm-4" ng-repeat="proyecto in estudiante.proyectos">
               <a data-toggle="modal" ng-click="seleccionar(proyecto)"  data-target="#editModalV"><div class="img"><img class="img-responsive" ng-src="{{proyecto.foto}}"/></div>
-                <div class="info"> <h3>{{ proyecto.nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
+                <div class="info"> <h3>{{ proyecto.Nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
               </a>
             </div>
 
