@@ -63,9 +63,10 @@
                   //hacer un post enviando grupo,
                   //desarmar el post en php y llamar a un pa con idrubrica y id del grupo
                   
-                  $http.post('php/guardarRubricaGrupo.php',{"data" : data.Insert_Id})
+                  $http.post('php/guardarRubricaGrupo.php',{"data" : $scope.grupo})
                     .success(function (data) {
                       // $scope.grupo = data;
+                      console.log(data)
                     }) 
                     .error(function(data, status) {
                         result = data || "Request failed";//hacer algo con esto.
@@ -73,12 +74,6 @@
                   
 
                   
-                  
-                  
-
-
-
-
                   $scope.rubricaId = data.Insert_Id;
                   for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
                   $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
