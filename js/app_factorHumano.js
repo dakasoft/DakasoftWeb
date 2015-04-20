@@ -20,20 +20,6 @@
           .error(function(data,status){
             result = data || "jiji"
           });
-
-         /* Listar cursos*/
-          // $http.get('php/listarCursos.php')
-          // .success(function (data) {
-          //   $scope.cursos = data;
-          // })
-          // .error(function(data,status){
-          //   result = data || "jiji"
-          // });
-
-
-        // $http.get('json/grupos.json').success(function (data) {
-        //   $scope.grupos = data;
-        // });
         
         /*Funciones*/
 
@@ -130,26 +116,6 @@
         $scope.eliminarRubro = function(rubro){
           funciones.borrarDeListaPorNombre($scope.grupo.rubricaFactor,rubro);
         };
-
-        // function esValidoMaxValorRubro($scope){
-        //   var suma = 0;
-        //   var esValido = true;
-        //   var arrayRubros = $scope.rubrosSeleccionados;
-        //   var nuevoValor = $scope.rubroValor;
-
-        //   for(var i = 0; i < arrayRubros.length; i++){
-        //     suma +=  parseInt(arrayRubros[i].valor);
-        //   }
-        //   suma +=  parseInt(nuevoValor);
-          
-        //   if(suma > 100){
-        //     esValido = false;
-        //     funciones.closeC(); 
-        //     funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> La suma de los valores no debe ser mayor a 100',3500);
-        //   }
-
-        //   return esValido;
-        // }
         
       }]
     };
