@@ -26,7 +26,7 @@
 
           $scope.editar = function(curso){
             funciones.closeC();
-            $scope.rubro = funciones.rubro();
+            $scope.rubro = funciones.rubro();//Nomre id valor
             $scope.curso =  angular.copy(curso);
             $scope.curso.cursoRubrica = [];
             $scope.accion = "Editar";
@@ -46,6 +46,7 @@
         //agregar rubro
         $scope.agregarRubro = function(){
           
+
         };
 
 
