@@ -8,10 +8,22 @@
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.rubricaCursos = [];
         $scope.rubrosSeleccionados = [];
+        $scope.cursos = [];
       
         $http.get('json/rubricaCursos.json').success(function (data) {
           $scope.rubricaCursos = data;
         });
+
+
+         /* Listar cursos*/
+          $http.get('php/listarCursos.php')
+          .success(function (data) {
+            $scope.cursos = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
+
 
         $scope.editar = function(grupoRubrica){
            funciones.closeC();
