@@ -7,12 +7,14 @@
       templateUrl: 'templates/partials/evaluacion/tabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         // $scope.rubricaCursos = [];
-        $scope.rubrosSeleccionados = [];
         $scope.cursos = [];
+        $scope.rubrosSeleccionados = [];
+        
+        // $scope.rubro = funciones.rubro();
       
-        $http.get('json/rubricaCursos.json').success(function (data) {
-          $scope.rubricaCursos = data;
-        });
+        // $http.get('json/rubricaCursos.json').success(function (data) {
+        //   $scope.rubricaCursos = data;
+        // });
 
 
          /* Listar cursos*/
@@ -33,21 +35,21 @@
             console.log(curso)
           };
 
-        // $scope.editar = function(grupoRubrica){
-        // funciones.closeC();
-        //   $scope.rubroNombre = "";
-        //   $scope.rubroValor = "";
-        //   $scope.rubricaCursoForm.$setUntouched(true);
-        //   $scope.rubricaCursoForm.$setPristine(true);
-        //   $scope.editableGrupo = grupoRubrica;
-        //   $scope.rubrosSeleccionados = angular.copy(grupoRubrica.rubrica);
-        // };
 
         //agregar rubro
-        $scope.agregarRubro = function(){
-          
+       $scope.agregarRubro = function(rubro){
+          if($scope.rubricaCursoForm.$valid){
+            // $scope.rubro = funciones.rubro();
+            var newRubro = angular.copy(rubro);
+            funciones.agregarAListaNoRepetidoPorNombre($scope.curso.cursoRubrica,newRubro);
+            funciones.closeC();
+          }else{
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
+          }
 
         };
+
+
 
 
         // $scope.agregarRubro = function(){
