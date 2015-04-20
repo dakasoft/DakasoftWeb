@@ -7,7 +7,7 @@
       templateUrl: 'templates/partials/evaluacion/tabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         // $scope.rubricaCursos = [];
-        // $scope.rubrosSeleccionados = [];
+        $scope.rubrosSeleccionados = [];
         $scope.cursos = [];
       
         $http.get('json/rubricaCursos.json').success(function (data) {
@@ -24,6 +24,14 @@
             result = data || "jiji"
           });
 
+          $scope.editar = function(curso){
+            funciones.closeC();
+            $scope.rubro = funciones.rubro();
+            $scope.curso =  angular.copy(curso);
+            $scope.curso.cursoRubrica = [];
+            $scope.accion = "Editar";
+            console.log(curso)
+          };
 
         // $scope.editar = function(grupoRubrica){
         // funciones.closeC();
@@ -34,6 +42,12 @@
         //   $scope.editableGrupo = grupoRubrica;
         //   $scope.rubrosSeleccionados = angular.copy(grupoRubrica.rubrica);
         // };
+
+        //agregar rubro
+        $scope.agregarRubro = function(){
+          
+        };
+
 
         // $scope.agregarRubro = function(){
         // if($scope.rubricaCursoForm.$valid){
