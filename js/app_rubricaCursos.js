@@ -6,8 +6,8 @@
       restrict: 'E',
       templateUrl: 'templates/partials/evaluacion/tabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
-        $scope.rubricaCursos = [];
-        $scope.rubrosSeleccionados = [];
+        // $scope.rubricaCursos = [];
+        // $scope.rubrosSeleccionados = [];
         $scope.cursos = [];
       
         $http.get('json/rubricaCursos.json').success(function (data) {
