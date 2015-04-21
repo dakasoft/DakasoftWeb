@@ -45,12 +45,6 @@
             funciones.borrarDeListaPorNombre($scope.curso.cursoRubrica,rubro);
           };
 
-
-
-
-
-
-
           //GUARDAR rubros en la bd
           $scope.guardarRubrica = function(curso){
             if(curso.Rubrica!=""){
