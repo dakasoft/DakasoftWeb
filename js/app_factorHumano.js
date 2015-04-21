@@ -68,7 +68,7 @@
 
                   .success(function (rubro) {
                     //Rubrica por rubro se fusionan los dos rubros
-                    $http.post('php/guardarRubrosRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                    $http.post('php/guardarRubrosRubricaC.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
                     .success(function (data) {
                       //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
                       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
