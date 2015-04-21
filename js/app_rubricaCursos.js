@@ -84,14 +84,14 @@
 
                     })//success for
                   };//fin for
+                };//fin if2 Insert_Id entre success e if va todo
+              })//fin primer post success
+            }//fin if1
+        };//Guardar
 
                 
 
 
-                };//fin if2 Insert_Id entre success e if va todo
-              })//primer post success
-            }//fin if1
-        };//Guardar
               
 
 

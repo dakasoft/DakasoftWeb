@@ -21,9 +21,9 @@
             result = data || "jiji"
           });
         
-        /*Funciones*/
-
-
+        
+        // Funciones
+        //editar
         $scope.editar = function(grupo){
           funciones.closeC();
           $scope.rubro = funciones.rubro();
@@ -33,79 +33,7 @@
           //si tiene id rubrica buscar rubros
           console.log(grupo)
         };
-        //gardar en bd grupo obj
-        $scope.guardar = function(grupo){
-          if(grupo.Rubrica!=""){
-            $scope.grupo = grupo;
-            $scope.rubros = [];
-            $scope.rubricaId = 0;
-            //se crea primero la rubrica
-            $http.post('php/crearRubricaFactorH.php',{"data" : grupo})
-              .success(function (data) {
-                if (data.Insert_Id!="") {
-                  $scope.grupo.Rubrica = data.Insert_Id;
-                  
-                  //guardar en grupo el id de esta rubrica
-                  //hacer un post enviando grupo,
-                  //desarmar el post en php y llamar a un pa con idrubrica y id del grupo
-                  
-                  //Guardar la rubrica
-                  $http.post('php/guardarRubricaGrupo.php',{"data" : $scope.grupo})
-                    .success(function (data) {
-                      // $scope.grupo = data;
-                      // console.log(data)
-                    }) 
-                    .error(function(data, status) {
-                        result = data || "Request failed";//hacer algo con esto.
-                    }); 
-                  
-
-                  
-                  $scope.rubricaId = data.Insert_Id;
-                  for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
-                  console.log(grupo.rubricaFactor)
-                  $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
-
-                  .success(function (rubro) {
-                    //Rubrica por rubro se fusionan los dos rubros
-                    $http.post('php/guardarRubrosRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
-                    .success(function (data) {
-                      //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
-                      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                      setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
-                    })
-                  })//success
-                };
-
-                };//Segundo if
-              })
-
-
-            // $scope.rubros = [];
-            //  $http.post('php/crearRubricaFactorH.php',{"data" : grupo})
-            //   .success(function (data) {
-            //     if (data.Insert_Id!="") {
-            //       for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) {
-            //         $scope.grupo.rubricaFactor[i].id="";
-            //         $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
-            //         .success(function (rubro) {
-            //           console.log(rubro.Insert_Id);
-            //           $scope.rubros.push(rubro.Insert_Id);
-            //         }) 
-            //       };
-            //     };
-            //     console.log($scope.rubros);
-            //   })
-            // .error(function(data,status){
-            //   result = data || "jiji"
-            // });
-            
-          }//fin if
-          //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
-          //funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-          //setTimeout(function(){$("#modalRubrica").modal('hide')},1000);  
-        };
-
+        //agregar rubro
         $scope.agregarRubro = function(rubro){
           if($scope.rubricaForm.$valid){
             // $scope.rubro = funciones.rubro();
@@ -117,12 +45,65 @@
           }
 
         };
-
+        //eliminar rubro
         $scope.eliminarRubro = function(rubro){
           funciones.borrarDeListaPorNombre($scope.grupo.rubricaFactor,rubro);
         };
         
-      }]
+        //gardar en base de datos la rubrica de grupo obj
+        $scope.guardar = function(grupo){
+          if(grupo.Rubrica!=""){
+            $scope.grupo = grupo;
+            $scope.rubros = [];
+            $scope.rubricaId = 0;
+            
+            //1)--Primero se crea la rubrica
+            $http.post('php/crearRubricaFactorH.php',{"data" : grupo})
+              .success(function (data) {
+                if (data.Insert_Id!="") {
+                  $scope.grupo.Rubrica = data.Insert_Id;
+                  
+                  //2)--Guardar Rubrica
+                  $http.post('php/guardarRubricaGrupo.php',{"data" : $scope.grupo})
+                    .success(function (data) {
+                      // $scope.grupo = data;
+                      // console.log(data)
+                    }) 
+                    .error(function(data, status) {
+                        result = data || "Request failed";//hacer algo con esto.
+                    }); 
+                  
+
+                  //3)--for que recorre los rubros. Esta parte se meteran lo rubro pue
+                  $scope.rubricaId = data.Insert_Id;
+                  
+                  for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
+                  console.log(grupo.rubricaFactor)
+                  
+                  $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
+                  .success(function (rubro) {
+
+                    //Rubrica por rubro se fusionan los dos rubros
+                    $http.post('php/guardarRubrosRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                    .success(function (data) {
+                      //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
+                      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                      setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                    })//success rubrica x rubro
+                    
+                  })//success rubros for
+                };//fin for
+
+                };//Segundo if
+              })//fin primer post success
+          }//fin if1
+        };//fin funcion guardar
+            
+          
+
+
+        
+      }]//fin controlador
     };
   });
 
