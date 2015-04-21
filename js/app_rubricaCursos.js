@@ -46,6 +46,11 @@
           };
 
 
+
+
+
+
+
           //GUARDAR rubros en la bd
           $scope.guardarRubrica = function(curso){
             if(curso.Rubrica!=""){
@@ -56,50 +61,60 @@
               //1)--Primero se crea la rubrica
               $http.post('php/crearRubricaCurso.php',{"data" : curso})
               .success(function (data) {
-              
-              if (data.Insert_Id!="") {
-              $scope.curso.Rubrica = data.Insert_Id;
-                     
-              //2)--Guardar Rubrica
-              $http.post('php/guardarRubricaCurso.php',{"data" : $scope.curso})
-              .success(function (data) {
-              // $scope.curso = data;
-                // console.log(data)
-              }) 
-              .error(function(data, status) {
-              result = data || "Request failed";//hacer algo con esto.
-              });
+                if (data.Insert_Id!="") {
+                  $scope.curso.Rubrica = data.Insert_Id;
+                  
+                  //2)--Guardar Rubrica
+                  $http.post('php/guardarRubricaCurso.php',{"data" : $scope.curso})
+                  .success(function (data) {
+                  // $scope.curso = data;
+                  // console.log(data)
+                  }) 
+                  .error(function(data, status) {
+                  result = data || "Request failed";//hacer algo con esto.
+                  });
 
-              //3)--for que recorre los rubros. Esta parte se meteran lo rubro pue
-              $scope.rubricaId = data.Insert_Id;
-             for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) { 
+                  //3)--for que recorre los rubros. Esta parte se meteran lo rubro pue
+                  $scope.rubricaId = data.Insert_Id;
+
+                  // for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) { 
+                  //   console.log(curso.cursoRubrica)
+                  //   $http.post('php/crearRubrosCurso.php',{"data" : curso.cursoRubrica[i].nombre})
+                  //   .success(function (rubro) { 
+                      
+                  //     $http.post('php/guardarRubrosRubricaC.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                  //     .success(function (data) {
+                  //       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                  //       setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                  //     })//success rubrica x rubro
+
+                  //   })//success for
+                  // };//fin for
+
                 
-                //Aquí se Crean Rubros y se inserta en la tbrubros
-                //cursoRubrica Array de rubros
-                $http.post('php/crearRubrosCurso.php',{"data" : curso.cursoRubrica[i].nombre})  
-                 
-                 .success(function (rubro) {
-                    //Rubrica por rubro se fusionan los dos rubros
-                    $http.post('php/guardarRubrosRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
-                    .success(function (data) {
-                      //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
-                      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                      setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
-                    })
-                  })//success
 
-              };//fin for
+
+                };//fin if2 Insert_Id entre success e if va todo
+              })//primer post success
+            }//fin if1
+        };//Guardar
+              
+
+
+
+              
+                     
+              
+
+            
+         
                   
       
-          };//Segundo if Insert_Id
               
 
                
 
-            })//primer post
 
-            }//fin if
-          };
 
 
       }],

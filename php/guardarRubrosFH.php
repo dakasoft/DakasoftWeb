@@ -7,6 +7,7 @@ $data = $objData->data;
 
 // var_dump($data);
 
+
 $qry = "CALL rubroCrear('$data')";
 $result = mysqli_query($conexion,$qry);
 if($result){

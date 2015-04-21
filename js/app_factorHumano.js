@@ -53,7 +53,7 @@
                   $http.post('php/guardarRubricaGrupo.php',{"data" : $scope.grupo})
                     .success(function (data) {
                       // $scope.grupo = data;
-                      console.log(data)
+                      // console.log(data)
                     }) 
                     .error(function(data, status) {
                         result = data || "Request failed";//hacer algo con esto.
@@ -62,20 +62,20 @@
 
                   
                   $scope.rubricaId = data.Insert_Id;
-                  for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
+                //   for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
+                //   console.log(grupo.rubricaFactor)
+                //   $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
 
-                  $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
-
-                  .success(function (rubro) {
-                    //Rubrica por rubro se fusionan los dos rubros
-                    $http.post('php/guardarRubrosRubricaC.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
-                    .success(function (data) {
-                      //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
-                      funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                      setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
-                    })
-                  })//success
-                };
+                //   .success(function (rubro) {
+                //     //Rubrica por rubro se fusionan los dos rubros
+                //     $http.post('php/guardarRubrosRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                //     .success(function (data) {
+                //       //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
+                //       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                //       setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                //     })
+                //   })//success
+                // };
 
                 };//Segundo if
               })
