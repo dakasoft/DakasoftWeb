@@ -77,7 +77,9 @@
               //3)for que recorre los rubros. Esta parte se meteran lo rubro
               $scope.rubricaId = data.Insert_Id;
               for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) {
-                curso.cursoRubrica.length[i]
+                
+
+                
               };
                   
       
