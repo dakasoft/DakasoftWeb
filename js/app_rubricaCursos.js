@@ -46,7 +46,23 @@
           };
 
           //Guardar rubros en la bd
+          $scope.guardar = function(curso){
+            if(curso.Rubrica!=""){
+              $scope.curso = curso;
+              $scope.rubros = [];
+              $scope.rubricaId = 0;
 
+              $http.post('php/crearRubricaCurso.php',{"data" : $scope.curso})
+                    .success(function (data) {
+                    // $scope.curso = data;
+                      console.log(data)
+                    }) 
+                    .error(function(data, status) {
+                        result = data || "Request failed";//hacer algo con esto.
+                    }); 
+
+            }//fin if
+          };
 
 
       }],
