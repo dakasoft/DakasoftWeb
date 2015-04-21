@@ -9,8 +9,6 @@
         // $scope.rubricaCursos = [];
         $scope.cursos = [];
         $scope.rubrosSeleccionados = [];
-        
-        // $scope.rubro = funciones.rubro();
 
          /* Listar cursos*/
           $http.get('php/listarCursos.php')
@@ -20,6 +18,8 @@
           .error(function(data,status){
             result = data || "jiji"
           });
+
+          // FUNCIONES 
           //editar
           $scope.editar = function(curso){
             funciones.closeC();
@@ -53,17 +53,14 @@
               $scope.rubros = [];
               $scope.rubricaId = 0;
 
-              //1)Primero se crea la rubrica
+              //1)--Primero se crea la rubrica
               $http.post('php/crearRubricaCurso.php',{"data" : curso})
               .success(function (data) {
               
-              if (data.Insert_Id!="") {
-              
+            if (data.Insert_Id!="") {
               $scope.curso.Rubrica = data.Insert_Id;
-                  
-                  
-                  
-              //2)Guardar Rubrica
+                     
+              //2)--Guardar Rubrica
               $http.post('php/guardarRubricaCurso.php',{"data" : $scope.curso})
               .success(function (data) {
               // $scope.curso = data;
@@ -72,18 +69,18 @@
               .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
               });
-                  
 
-              //3)for que recorre los rubros. Esta parte se meteran lo rubro
+              //3)--for que recorre los rubros. Esta parte se meteran lo rubro
               $scope.rubricaId = data.Insert_Id;
               for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) {
-                
+                //Crear Rubros
+                $http.post('php/guardarRubrosCU.php',{"data" : grupo.rubricaFactor[i].nombre})  
 
-                
+
               };
                   
       
-            };//Segundo if Insert_Id
+          };//Segundo if Insert_Id
               
 
                
