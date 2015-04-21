@@ -7,7 +7,7 @@ $data = $objData->data;
 // $data->rubricaFactor;
 // var_dump($data->rubricaFactor);
 
-$query = "CALL rubricaCursoCrear()";
+$query = "CALL rubricaCrear()";
 $result = mysqli_query($conexion,$query);
 
 

@@ -7,6 +7,7 @@ $data = $objData->data;
 // $data->rubricaFactor;
 // var_dump($data->rubricaFactor);
 
+//rubrica factor humano crear y se inserta en la tabla fh 
 $query = "CALL rubricaCrear()";
 $result = mysqli_query($conexion,$query);
 

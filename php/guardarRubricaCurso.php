@@ -7,10 +7,10 @@ $objData = json_decode($data);
 $data = $objData->data;
 
 var_dump($data);
-$qry = "CALL rubricadeGrupo('$data->newid','$data->rubrica')";
+$qry = "CALL rubricadeCurso('$data->newid','$data->rubrica')";
 $result = mysqli_query($conexion,$qry);
 
-// rubricaporGrupo
+// // rubricaporGrupo
 
 
 

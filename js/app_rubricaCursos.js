@@ -45,21 +45,42 @@
             funciones.borrarDeListaPorNombre($scope.curso.cursoRubrica,rubro);
           };
 
-          //Guardar rubros en la bd
-          $scope.guardar = function(curso){
+
+          //GUARDAR rubros en la bd
+          $scope.guardarRubrica = function(curso){
             if(curso.Rubrica!=""){
               $scope.curso = curso;
               $scope.rubros = [];
               $scope.rubricaId = 0;
 
-              $http.post('php/crearRubricaCurso.php',{"data" : $scope.curso})
-                    .success(function (data) {
-                    // $scope.curso = data;
-                      console.log(data)
-                    }) 
-                    .error(function(data, status) {
-                        result = data || "Request failed";//hacer algo con esto.
-                    }); 
+              //1) primero se crea la rubrica
+              $http.post('php/crearRubricaCurso.php',{"data" : curso})
+              .success(function (data) {
+              
+              if (data.Insert_Id!="") {
+                $scope.curso.Rubrica = data.Insert_Id;
+                  
+                  
+                  
+              //2)Guardar Rubrica
+              $http.post('php/guardarRubricaCurso.php',{"data" : $scope.curso})
+              .success(function (data) {
+              // $scope.curso = data;
+                console.log(data)
+              }) 
+              .error(function(data, status) {
+              result = data || "Request failed";//hacer algo con esto.
+              });
+                  
+
+                  
+      
+            };//Segundo if
+              
+
+               
+
+            })//primer post
 
             }//fin if
           };

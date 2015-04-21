@@ -39,7 +39,7 @@
             $scope.grupo = grupo;
             $scope.rubros = [];
             $scope.rubricaId = 0;
-
+            //se crea primero la rubrica
             $http.post('php/crearRubricaFactorH.php',{"data" : grupo})
               .success(function (data) {
                 if (data.Insert_Id!="") {
@@ -49,6 +49,7 @@
                   //hacer un post enviando grupo,
                   //desarmar el post en php y llamar a un pa con idrubrica y id del grupo
                   
+                  //se crea primero la rubrica
                   $http.post('php/guardarRubricaGrupo.php',{"data" : $scope.grupo})
                     .success(function (data) {
                       // $scope.grupo = data;
