@@ -77,19 +77,19 @@
                   //3)--for que recorre los rubros. Esta parte se meteran lo rubro pue
                   $scope.rubricaId = data.Insert_Id;
 
-                  // for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) { 
-                  //   console.log(curso.cursoRubrica)
-                  //   $http.post('php/crearRubrosCurso.php',{"data" : curso.cursoRubrica[i].nombre})
-                  //   .success(function (rubro) { 
+                  for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) { 
+                    console.log(curso.cursoRubrica)
+                    $http.post('php/crearRubrosCurso.php',{"data" : curso.cursoRubrica[i].nombre})
+                    .success(function (rubro) { 
                       
-                  //     $http.post('php/guardarRubrosRubricaC.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
-                  //     .success(function (data) {
-                  //       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                  //       setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
-                  //     })//success rubrica x rubro
+                      $http.post('php/guardarRubrosRubricaC.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                      .success(function (data) {
+                        funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                        setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                      })//success rubrica x rubro
 
-                  //   })//success for
-                  // };//fin for
+                    })//success for
+                  };//fin for
 
                 
 
