@@ -79,7 +79,7 @@
                   
                   for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
                   console.log(grupo.rubricaFactor)
-                  
+                  //Se crea el rubro de evaluación
                   $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
                   .success(function (rubro) {
 
@@ -90,7 +90,7 @@
                       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                       setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
                     })//success rubrica x rubro
-                    
+
                   })//success rubros for
                 };//fin for
 

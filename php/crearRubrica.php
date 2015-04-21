@@ -5,7 +5,7 @@ $data = file_get_contents("php://input");
 $objData = json_decode($data);
 $data = $objData->data;
 // $data->rubricaFactor;
-// var_dump($data->rubricaFactor);
+// var_dump($data->rubricaFactor); 	
 
 $query = "CALL rubricaCrear()";
 $result = mysqli_query($conexion,$query);

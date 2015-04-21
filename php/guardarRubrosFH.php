@@ -6,9 +6,10 @@ $objData = json_decode($data);
 $data = $objData->data;
 
 // var_dump($data);
+//Cambio de tabla en donde insertar
+// $qry = "CALL rubroCrear('$data')";
 
-
-$qry = "CALL rubroCrear('$data')";
+$qry = "CALL rubroEvaluacioncrear('$data')";
 $result = mysqli_query($conexion,$qry);
 if($result){
 	$Insert_Id = $result->fetch_array(MYSQLI_ASSOC); 
