@@ -49,7 +49,7 @@
                   //hacer un post enviando grupo,
                   //desarmar el post en php y llamar a un pa con idrubrica y id del grupo
                   
-                  //se crea primero la rubrica
+                  //Guardar la rubrica
                   $http.post('php/guardarRubricaGrupo.php',{"data" : $scope.grupo})
                     .success(function (data) {
                       // $scope.grupo = data;
@@ -73,7 +73,7 @@
                     })
                   })
                 };
-                };
+                };//Segundo if
               })
 
 
@@ -96,7 +96,7 @@
             //   result = data || "jiji"
             // });
             
-          }
+          }//fin if
           //$scope.grupos = funciones.editarDeLista($scope.grupos,grupo);
           //funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
           //setTimeout(function(){$("#modalRubrica").modal('hide')},1000);  

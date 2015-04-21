@@ -53,12 +53,13 @@
               $scope.rubros = [];
               $scope.rubricaId = 0;
 
-              //1) primero se crea la rubrica
+              //1)Primero se crea la rubrica
               $http.post('php/crearRubricaCurso.php',{"data" : curso})
               .success(function (data) {
               
               if (data.Insert_Id!="") {
-                $scope.curso.Rubrica = data.Insert_Id;
+              
+              $scope.curso.Rubrica = data.Insert_Id;
                   
                   
                   
@@ -66,16 +67,21 @@
               $http.post('php/guardarRubricaCurso.php',{"data" : $scope.curso})
               .success(function (data) {
               // $scope.curso = data;
-                console.log(data)
+                // console.log(data)
               }) 
               .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
               });
                   
 
+              //3)for que recorre los rubros. Esta parte se meteran lo rubro
+              $scope.rubricaId = data.Insert_Id;
+              for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) {
+                curso.cursoRubrica.length[i]
+              };
                   
       
-            };//Segundo if
+            };//Segundo if Insert_Id
               
 
                
