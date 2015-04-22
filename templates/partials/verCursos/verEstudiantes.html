@@ -10,10 +10,10 @@
 		</div>
 		<div class="row">
 			<table id="custom-table" ng-table="tableParams"  class="table">
-				<tr ng-repeat="estudiante in grupo.students | filter:searchStudents">
-					<td data-title="'Nombre'">{{estudiante.name}}</td>
-					<td data-title="'Apellido'">{{estudiante.lastname}}</td>
-					<td data-title="'Rol'">{{estudiante.role}}</td>
+				<tr ng-repeat="estudiante in grupo.estudiantes | filter:searchStudents">
+					<td data-title="'Nombre'">{{estudiante.Nombre}}</td>
+					<td data-title="'Apellido'">{{estudiante.Apellido}}</td>
+					<td data-title="'Rol'">{{estudiante.rol}}</td>
 					<td data-title="'Nota'">
 						<a data-toggle="modal" data-target="#modalRubrica" ng-click="editEval(estudiante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 					</td>

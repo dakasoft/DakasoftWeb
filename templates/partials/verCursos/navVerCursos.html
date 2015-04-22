@@ -1,0 +1,39 @@
+
+<div class="single-nav" ng-repeat="grupo in grupos">
+	<ul class="nav nav-justified nav-cursos-user">
+  <li ng-class="grupo.informacion == true? 'tab-active' : 'tab-no-active' ">
+  	<a ng-click="grupo.informacion =  toogleInfo(grupo,'informacion',grupo.informacion)">{{grupo.Curso}} (Grupo: {{grupo.Nombre}})</a>
+  </li>
+  <li ng-class="grupo.ests == true? 'tab-active' : 'tab-no-active' ">
+  	<a ng-click="grupo.ests =  toogleInfo(grupo,'ests',grupo.ests)">Estudiantes</a>
+  </li>
+  <li ng-class="grupo.eqps == true? 'tab-active' : 'tab-no-active' ">
+  	<a ng-click="grupo.eqps =  toogleInfo(grupo,'eqps',grupo.eqps)">Equipo</a>
+  </li>
+  <li ng-class="grupo.rol == true? 'tab-active' : 'tab-no-active' ">
+  	<a ng-click="grupo.rol =  toogleInfo(grupo,'rol',grupo.rol)">Roles</a>
+  </li>
+  <li>
+  	<a class="config-a">
+  		<i id="btnVerConfig" ng-click="vercursos.showTeam(equipo)" data-toggle="modal" data-target="#modalConfig" class="conf fa fa-cog pull-right"></i>
+  	</a>
+  </li>
+</ul>
+
+<div class="panel" ng-if="grupo.informacion">
+ <h4>Información</h4>
+</div>
+
+<div class="panel"  ng-if="grupo.ests">
+	<ver-estudiantes></ver-estudiantes>
+</div>
+
+<div class="panel" ng-if="grupo.eqps">
+  <ver-equipos></ver-equipos>
+</div>
+
+<div class="panel" ng-if="grupo.rol">
+  <ver-roles></ver-roles>
+</div>
+
+</div>

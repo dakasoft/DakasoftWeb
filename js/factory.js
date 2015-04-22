@@ -35,7 +35,12 @@ app.factory('funciones',function(){
         area:function(){
           return{id:"",nombre:""};
         },
-       
+        equipo:function(){
+          return{id:"",Nombre:"",Integrantes:[]};
+        },
+        rol:function(){
+          return{id:"",Nombre:""};
+        },
         agregarALista:function(lista,objeto){
       	  lista.push(objeto);
       	  return lista;

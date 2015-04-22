@@ -7,11 +7,11 @@
 		</div>
 		<ul class="list-group">
 			<li ng-repeat="estudiante in estudiantes | filter:estudiantes.search:nombre">
-			<div class="divNombre" ng-click="estudiante.show = toogleInfo(estudiante.show)" ng-class="estudiante.show == true? 'tab-active' : 'tab-no-active' ">
+			<div class="divNombre" ng-click="estudiante.show = toogleInfo(estudiante.show,estudiante)" ng-class="estudiante.show == true? 'tab-active' : 'tab-no-active' ">
 				<h3 class="soyunpointer">{{estudiante.nombre}} {{estudiante.apellido}}</h3>
 			</div>
 				
-				<div class="divCursosAlumnos clearfix" ng-repeat="curso in estudiante.cursos" ng-show="estudiante.show">
+				<div class="divCursosAlumnos clearfix" ng-repeat="grupo in estudiante.grupos" ng-show="estudiante.show">
 					<div class="row">
 						<div class="col-xs-12 col-sm-8 col-sm-offset-2">							
 						 	<ul class="list-group"> 
@@ -19,10 +19,11 @@
 									<a href="">
 								    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow imgLogoEquipo">
 								    </a>
-									<p><b>Curso:</b>{{curso.nombre}}</p>
-									<p><b>Equipo:</b>{{curso.equipo}}</p>
-									<p><b>Nota :</b>{{curso.nota}}</p>
-									<p><b>Profesor:</b>{{curso.profesor}}</p>
+									<p><b>Curso:</b>{{grupo.Curso}}</p>
+									<p><b>Curso:</b>{{grupo.Grupo}}</p>
+									<p><b>Equipo:</b>{{grupo.Equipo}}</p>
+									<p><b>Nota :</b>{{grupo.Nota}}</p>
+									<p><b>Profesor:</b>{{grupo.Profesor}}</p>
 								</li>
 							</ul>
 							<div class="row">

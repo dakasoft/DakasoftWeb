@@ -13,7 +13,7 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
     $rootScope.roleLv = 2;
-    $rootScope.currentUser.id=7; 
+    $rootScope.currentUser.id=15; 
 
 
     main.logOut = function () {
@@ -232,28 +232,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-
-    .state('vercursos.entregas', {
-      url: '/entregas',
-      templateUrl:'templates/partials/verEntregas.html'
-    })
-
-    .state('vercursos.estudiantes', {
-      url: '/estudiantes',
-      templateUrl:'templates/partials/verEstudiantes.html'
-    })
-
-    .state('vercursos.equipo', {
-      url: '/equipo',
-      templateUrl:'templates/partials/verEquipo.html'
-    })
-
-    .state('vercursos.roles', {
-      url: '/equipo',
-      templateUrl:'templates/partials/verRoles.html'
-    })
-
-
+    
     .state('areasAcademicas', {
       url: '/areasAcademicas',
       templateUrl:'templates/areasAcademicas.html'

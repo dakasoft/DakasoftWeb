@@ -1,0 +1,27 @@
+<div class="modal fade" id="modalRol" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>{{accion}} Rol</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="contentbody">
+      <div class="row">
+        <form name="rolForm" class="form-horizontal" novalidate >
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+              <label for="modalAssignmentName">Nombre Rol</label>
+              <input type="text" class="form-control" ng-model="rol.Nombre" required>
+            </div>
+        </div>
+        </form>
+      </div>
+      </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-custom btn-sm" ng-click="guardarRol(rol)">Guardar</button>
+        </div>
+    </div>
+  </div>
+</div>

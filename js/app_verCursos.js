@@ -2,223 +2,242 @@
   var app = angular.module('verCursos', ["ui.router"]);
 
 
-  app.controller('verCursos', ['$rootScope','$scope','$http', function ($rootScope, $scope,$http) {
-    var verCursos = this;
+  app.controller('verCursos', ['$rootScope','$scope','$http','funciones', function ($rootScope, $scope,$http,funciones) {
 
-    verCursos.bCourseDisplay = false;
-    verCursos.currentView = '';
+    $scope.grupos = {};
+    $scope.entidad = "";
+    $http.post('php/gruposPorProfesor.php',{ "data" : $rootScope.currentUser.id }).success(function (data) {
+      $scope.grupos = data;
+    });
 
-    $rootScope.courses = {};
+    /*prueba de concepto cambio de pestañas*/
+    $scope.toogleInfo = function(grupo,view,estado){  
+       $scope.grupoActual = grupo;
+      if(view=="informacion"){
+        grupo.ests = false;
+        grupo.eqps = false;
+        grupo.rol = false;
+      }else if(view=="ests"){
+        grupo.informacion = false;
+        grupo.eqps = false;
+        grupo.rol = false;
+      }else if(view=="eqps"){
+        grupo.ests = false;
+        grupo.informacion = false;
+        grupo.rol = false;
+      }else if(view=="rol"){
+        grupo.estudiantes = false;
+        grupo.eqps = false;
+        grupo.informacion = false;
+      }
+
+      if(estado){
+        return false;
+      }else{
+        return true; 
+      }
     
-    $scope.modalTeam = {};
-    $scope.modalEval = {};
-    $scope.modalAssignment = {};
-    $scope.oEditPointer = {};
-    $scope.deletePointer = {};
-    $scope.deleteContainer = {};
-    $scope.editRol= {};
-
-    $scope.users = {};
-    $scope.idCounter = 0;
-    $scope.bShowReceived = false;
-
-    $http.get('json/usuarios.json').success(function (data) {
-      $scope.users = data;
-    });
-
-    $http.get('json/vercursos.json').success(function (data) {
-      $rootScope.courses = data;
-    });
-
-    $http.get('json/verconfig.json').success(function (data) {
-      $scope.config = data;
-      $scope.rubrica = data.rubrica;
-    });
-
-    $scope.saveConfig = function () {
-      if ($scope.config.course.periodStart && $scope.config.course.periodEnd && $scope.config.team.modifStart && $scope.config.team.modifEnd) {
-        $("#modalConfig").modal('hide');
-      }
+    }
+    /*borrar para todos*/
+    $scope.borrarObjeto= function(grupo,curso,entidad){
+      $scope.objeto = curso;
+      $scope.grupoBorrar = grupo;
+      $scope.entidad = entidad;
     }
 
-    $scope.confirmDelete = function (entidad) {
-      console.log(entidad);
-      if(entidad=="rol"){
-        $scope.deleteRol();
-      }else{
-        angular.forEach($scope.deleteContainer, function (pValue, pKey) {
-          if(pValue.id === $scope.deletePointer.id){
-            $scope.deleteContainer.splice(pKey, 1);
-          }
-        });
+    $scope.borrar = function(){
+      if($scope.entidad=="equipo"){
+        /*borrado en cascada incompleto*/
+        $scope.objeto.IdGrupo = $scope.grupoBorrar.id;
+        $http.post("php/borrarEquipo.php", { "data" : $scope.objeto}) // 
+        .success(function(data) {
+            $scope.grupoBorrar.equipos=funciones.borrarDeLista($scope.grupoBorrar.equipos,$scope.objeto);
+          })  
       }
 
-    }
-
-    $scope.newAssignment = function (pGrupo) {
-      $scope.oEditPointer = pGrupo;
-    }
-
-    $scope.addAssignment = function () {
-      var assignmentTemp = angular.copy($scope.modalAssignment);
-      if ($scope.modalAssignment.name && $scope.modalAssignment.start && $scope.modalAssignment.end) {
-        $scope.oEditPointer.entregas.push(assignmentTemp);
-        $scope.modalAssignment = {};
-        $("#modalNuevaEntrega").modal('hide');
-      } else {
-        return false;
+      if($scope.entidad=="rol"){
+        /*borrado en cascada incompleto*/
+        $scope.objeto.IdGrupo = $scope.grupoBorrar.id;
+        $http.post("php/borrarRolEstudiante.php", { "data" : $scope.objeto}) // 
+        .success(function(data) {
+            $scope.grupoBorrar.equipos=funciones.borrarDeLista($scope.grupoBorrar.equipos,$scope.objeto);
+          })  
       }
-    }
+      $("#modalConfirm").modal('hide');
+    };   
 
-    $scope.editEval = function (pStudent) {
-      $scope.oEditPointer = pStudent;
+     /*funciones de rol*/
+    $scope.nuevoRol = function(grupo){
+      funciones.closeC();
+      $scope.rol = funciones.rol()
+      $scope.accion = "Nuevo";
+      $scope.grupoEditando = grupo;
+      /*cargamos los datos respectivos de cada equipo*/
+    }; 
 
-      if (pStudent.evaluacion[0]) {
-        $scope.modalEval = pStudent.evaluacion;
-      } else {
-        $scope.modalEval = angular.copy($scope.rubrica);
-      }
-    }
-
-    $scope.saveEval = function () {
-      var evalTemp = angular.copy($scope.modalEval);
-      $scope.oEditPointer.evaluacion = evalTemp;
-      $("#modalRubrica").modal('hide');
-
-    }
-
-    $scope.courseDisplayToggle = function (psViewSwitch) {
-      if (psViewSwitch !== verCursos.currentView) {
-        verCursos.currentView = psViewSwitch;
-        return true;
-      } else {
-        verCursos.currentView = '';
-        return false;
-      }
+    $scope.editarRol = function(grupo,rol){
+      funciones.closeC();
+      $scope.entidad = "equipo"
+      $scope.grupoEditando = grupo;
+      $scope.rol =  angular.copy(rol);
+      $scope.accion = "Editar";
     };
 
-    $scope.newTeam = function (pGroup) {
-      $scope.oEditPointer = pGroup;
-      $scope.modalTeam.id = $scope.newID();
-      $scope.modalTeam.name = '';
-      $scope.modalTeam.logo = 'img/logomovile.png';
-      $scope.modalTeam.mission = '';
-      $scope.modalTeam.vision = '';
-      $scope.modalTeam.integrantes = [];
-    };
-
-    $scope.saveNewTeam = function () {
-      var teamTemp = angular.copy($scope.modalTeam);
-      if ($scope.modalTeam.name) {
-        $scope.oEditPointer.teams.push(teamTemp);
-        $scope.modalTeam = {};
-        $("#modalNuevoEquipo").modal('hide');
-      } else {
-        return false;
-      }
-    };
-
-    $scope.editTeam = function (pTeam) {
-      $scope.oEditPointer = pTeam;
-      $scope.modalTeam = angular.copy(pTeam);
-    };
-
-    $scope.saveTeam = function () {
-      if ($scope.modalTeam.name) {
-        angular.forEach($scope.modalTeam, function (pValue, pKey) {
-          $scope.oEditPointer[pKey] = pValue;
-        });
-        $scope.modalTeam = {};
-        $("#modalEquipo").modal('hide');
-      } else {
-        return false;
-      }
-    };
-
-    $scope.deleteTeam = function (pGroup, pTeam) {
-      $scope.deletePointer = pTeam;
-      $scope.deleteContainer = pGroup.teams;
-    }
-
-    $scope.addStudent = function(pStudent){
-      var bValidStudent = true;
-
-      angular.forEach($scope.modalTeam.integrantes, function (pValue, pKey) {
-        if(pValue.id === pStudent.id){
-          bValidStudent = false;
+    $scope.guardarRol = function(rol){
+      if($scope.rolForm.$valid){
+        if(rol.id==""){
+          rol.IdGrupo = $scope.grupoEditando.id;
+          $http.post("php/crearRolEquipo.php", { "data" : rol})
+          .success(function(data) {
+             if(data.Insert_Id != ""){
+              rol.id = data.Insert_Id; 
+              $http.post("php/rolParaGrupo.php", { "data" : rol})
+              .success(function(data) {                    
+                $scope.grupoEditando.roles = funciones.agregarAListaNoRepetido($scope.grupoEditando.roles,rol);
+                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                setTimeout(function(){$("#modalRol").modal('hide')},1000); 
+               })
+             }
+           }) 
+        }else{ //falta probar esto a ver si sirve
+          $http.post("php/modificarRolEquipo.php", { "data" : rol})
+          .success(function(data) {
+            $scope.grupoEditando.roles = funciones.editarDeLista($scope.grupoEditando.roles,rol);
+            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+            setTimeout(function(){$("#modalRol").modal('hide')},1000);  
+           })
+          .error(function(data, status) {
+              result = data || "Request failed";//hacer algo con esto.
+           }); 
         }
-      });
-
-      if(bValidStudent){
-        $scope.modalTeam.integrantes.push(pStudent);
+      }else{
+        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
       }
-    };
-
-    $scope.removeStudent = function (pStudent){
-      angular.forEach($scope.modalTeam.integrantes, function (pValue, pKey) {
-        if(pValue.id === pStudent.id){
-          $scope.modalTeam.integrantes.splice(pKey, 1);
-        }
+    }
+    /*funciones de equipo*/
+    $scope.nuevoEquipo = function(grupo){
+      funciones.closeC();
+      $scope.equipo = funciones.equipo()
+      $scope.accion = "Nuevo";
+      $scope.grupoEditando = grupo;
+      /*cargamos los datos respectivos de cada equipo*/
+      $http.post('php/estudiantesPorGrupo.php',{ "data" : grupo.id }).success(function (data) {
+        $scope.grupoEditando.estudiantes = data;
+      });
+      $http.post('php/rolesPorGrupo.php',{ "data" : grupo.id }).success(function (data) {
+        $scope.grupoEditando.roles = data;
       });
     };
 
-    $scope.newID = function () {
-      $scope.idCounter = $scope.idCounter + 1;
-      return $scope.idCounter;
+    $scope.editarEquipo = function(grupo,equipo){
+      funciones.closeC();
+      $scope.entidad = "equipo"
+      $scope.grupoEditando = grupo;
+      $scope.equipo =  angular.copy(equipo);
+      $http.post("php/estudiantesPorEquipo.php", { "data" : $scope.equipo.id})
+      .success(function(data) {
+        $scope.equipo.Integrantes = data; // duda
+       })
+
+      $http.post('php/estudiantesPorGrupo.php',{ "data" : grupo.id }).success(function (data) {
+        $scope.grupoEditando.estudiantes = data;
+      });
+      
+      $http.post('php/rolesPorGrupo.php',{ "data" : grupo.id }).success(function (data) {
+        $scope.grupoEditando.roles = data;
+      });
+      $scope.accion = "Editar";
+    };
+
+    $scope.guardarEquipo = function(equipo){
+      if($scope.equipoForm.$valid){
+        if(equipo.id==""){
+          equipo.IdGrupo = $scope.grupoEditando.id;
+          $http.post("php/crearEquipo.php", { "data" : equipo})
+          .success(function(data) {
+             if(data.Insert_Id != ""){
+              equipo.id = data.Insert_Id; 
+              $http.post("php/equipoParaGrupo.php", { "data" : equipo})
+              .success(function(data) {                    
+               })
+              $http.post("php/guardarIntegrantes.php", { "data" : equipo})
+              .success(function(data) {                    
+                $scope.grupoEditando.equipos = funciones.agregarAListaNoRepetido($scope.grupoEditando.equipos,equipo);
+                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                setTimeout(function(){$("#modalEquipo").modal('hide')},1000);  
+               })
+             }
+           }) 
+        }else{ //falta probar esto a ver si sirve
+          $http.post("php/modificarEquipoGrupo.php", { "data" : equipo})
+          .success(function(data) {
+            $scope.grupoEditando.equipos = funciones.editarDeLista($scope.grupoEditando.equipos,equipo);
+            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+            setTimeout(function(){$("#modalEquipo").modal('hide')},1000);  
+           })
+          .error(function(data, status) {
+              result = data || "Request failed";//hacer algo con esto.
+           }); 
+        }
+      }else{
+        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+      }
     }
 
-    $scope.newRol = function (pGroup) {
-      $scope.oEditPointer = pGroup;
-      $scope.modalRolname = '';
-      $scope.editRol='';
+    $scope.agregarEstudiante = function(estudiante){
+      funciones.agregarAListaNoRepetido($scope.equipo.Integrantes,estudiante);
     };
 
-    $scope.saveRol = function () {
-      if($scope.editRol){
-        $scope.editRol.name = $scope.modalRolname;
-        $scope.editRol='';
-        $("#modalNuevoRol").modal('hide');
-      }else{
-      if ($scope.modalRolname) {
-        var newid = $scope.oEditPointer.roles.length+1;
-        $scope.oEditPointer.roles.push({id:newid,name:$scope.modalRolname});
-        $scope.modalRolname = '';
-        $("#modalNuevoRol").modal('hide');
-      } else {
-        console.log("i'm empty");
-      }
-
-      }
-
+    $scope.borrarEstudiante = function(estudiante){
+      $scope.equipo.Integrantes = funciones.borrarDeLista($scope.equipo.Integrantes,estudiante); 
     };
 
-    $scope.editRoles = function (rol) {//
-      $scope.modalRolname = rol.name;
-      $scope.editRol = rol;
-    };
-
-    $scope.setDelete = function (pGroup, rol) {
-      console.log(rol);
-      $scope.borrarGrupo = pGroup;
-      $scope.borrarRol = rol;
-      $scope.entidad = "rol";
-    }   
-
-    $scope.deleteRol = function () {
-      angular.forEach($scope.borrarGrupo.roles, function(value, key) {
-        if(value.id == $scope.borrarRol.id){
-            $scope.borrarGrupo.roles.splice(key, 1);
-          }
-      });
-    }    
-
-
+  
   }]);
+
+  /*Prueba de concepto 2*/
+  app.directive('verEstudiantes',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/verCursos/verEstudiantes.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+        $http.post('php/estudiantesPorGrupo.php',{ "data" : $scope.grupoActual.id }).success(function (data) {
+          $scope.grupoActual.estudiantes = data;
+        });
+      }]
+    };
+  });
+
+  app.directive('verEquipos',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/verCursos/verEquipos.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+        $http.post('php/equiposPorGrupo.php',{ "data" : $scope.grupoActual.id }).success(function (data) {
+         $scope.grupoActual.equipos = data;
+        });
+      }]
+    };
+  });
+
+  app.directive('verRoles',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/verCursos/verRoles.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+        $http.post('php/rolesPorGrupo.php',{ "data" : $scope.grupoActual.id }).success(function (data) {
+         $scope.grupoActual.roles = data;
+        });
+      }]
+    };
+  });
+
+/*otros feos*/
 
   app.directive('navVerCursos',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/navVerCursos.html',
+      templateUrl: 'templates/partials/verCursos/navVerCursos.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],
@@ -226,10 +245,10 @@
     };
   });
 
-  app.directive('modalVerEquipo',function ($http) {
+  app.directive('modalEquipo',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalVerEquipo.html',
+      templateUrl: 'templates/partials/verCursos/modalEquipo.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],
@@ -237,10 +256,13 @@
     };
   });
 
-  app.directive('modalVerNuevoEquipo',function ($http) {
+
+ 
+
+  app.directive('modalRolEquipo',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/modalVerNuevoEquipo.html',
+      templateUrl: 'templates/partials/verCursos/modalRolEquipo.html',
       controller: ['$scope','$http',function ($scope,$http) {
 
       }],
@@ -248,17 +270,7 @@
     };
   });
 
-  app.directive('modalNuevoRol',function ($http) {
-    return {
-      restrict: 'E',
-      templateUrl: 'templates/partials/modalNuevoRolEquipo.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-
-      }],
-      controllerAs: 'modalCntrl'
-    };
-  });
-
+/*
   app.directive('modalVerConfig',function ($http) {
     return {
       restrict: 'E',
@@ -302,6 +314,6 @@
       controllerAs: 'modalCntrl'
     };
   });
-
+*/
 
 })();
