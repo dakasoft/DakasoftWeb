@@ -78,6 +78,7 @@
                   $scope.rubricaId = data.Insert_Id;
                   
                   for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
+
                   console.log(grupo.rubricaFactor)
                   //Se crea el rubro de evaluación
                   $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
@@ -91,8 +92,13 @@
                       setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
                     })//success rubrica x rubro
 
+
+
                   })//success rubros for
                 };//fin for
+
+
+
 
                 };//Segundo if
               })//fin primer post success
