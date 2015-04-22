@@ -83,10 +83,6 @@
                   //Se crea el rubro de evaluación guardarValorFH
                   $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
                   .success(function (rubro) {
-
-                    $http.post('php/guardarValorFH.php',{"data" : grupo.rubricaFactor[i].valor})
-                    .success(function (rubro) {
-                      
                     //Rubrica por rubro se fusionan los dos rubros
                     $http.post('php/guardarRubrosRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
                     .success(function (data) {
@@ -94,28 +90,32 @@
                       funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                       setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
                     })//success rubrica x rubro
-
-                   })
-
-
                   })//success rubros for
                 };//fin for
 
-
-
-
+                    
                 };//Segundo if
               })//fin primer post success
           }//fin if1
         };//fin funcion guardar
+                 
+                      
+
+                  
+
+      }]//fin controlador
+    };
+  });
+
+
+
+
+
             
           
 
 
         
-      }]//fin controlador
-    };
-  });
 
 
 // ModalDialog
