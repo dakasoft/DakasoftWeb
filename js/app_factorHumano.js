@@ -99,11 +99,11 @@
                 $http.post('php/guardarValorFH.php',{"data" : grupo.rubricaFactor[i].valor})
                     .success(function (rubro) {
                     //Rubrica por valor se fusiona
-                    // $http.post('php/guardarValoresRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
-                    //   .success(function (data) {
-                    //     funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                    //   setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
-                    //   })
+                    $http.post('php/guardarValoresRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                      .success(function (data) {
+                        funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                      setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                      })
                     })
                 };
 

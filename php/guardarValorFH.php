@@ -9,7 +9,7 @@ $data = $objData->data;
 //Cambio de tabla en donde insertar
 // $qry = "CALL rubroCrear('$data')";
 
-$qry = "CALL rubrovalorGuardar('$data')";
+$qry = "CALL valorCrear('$data')";
 $result = mysqli_query($conexion,$qry);
 if($result){
 	$Insert_Id = $result->fetch_array(MYSQLI_ASSOC); 
