@@ -17,19 +17,19 @@
 						 	<ul class="list-group"> 
 								<li>
 									<a href="">
-								    	<img ng-src="{{curso.logoEquipo}}" class="pull-right grow imgLogoEquipo">
+								    	<img ng-src="{{grupo.Logo}}" class="pull-right grow imgLogoEquipo">
 								    </a>
 									<p><b>Curso:</b>{{grupo.Curso}}</p>
 									<p><b>Curso:</b>{{grupo.Grupo}}</p>
 									<p><b>Equipo:</b>{{grupo.Equipo}}</p>
 									<p><b>Nota :</b>{{grupo.Nota}}</p>
-									<p><b>Profesor:</b>{{grupo.Profesor}}</p>
+									<p><b>Profesor:</b>{{grupo.Encargado.Nombre}} {{grupo.Encargado.Apellido}}</p>
 								</li>
 							</ul>
 							<div class="row">
 									<h5 class="headingIntegrantes"><b>Integrantes</b></h5>
 									<ul class="ulIntegrantes">
-										<li ng-repeat="integrante in curso.integrantes">{{integrante}}</li>
+										<li ng-repeat="integrante in grupo.integrantes">{{ integrante.Nombre }} {{ integrante.Apellido }} - {{ integrante.RolNombre }}</li>
 									</ul>
 							</div>
 						</div>

@@ -14,11 +14,23 @@
         }); 
 
       $scope.toogleInfo = function(estado,estudiante){
-        console.log("esa");
         $scope.mostrandoEstudiante = estudiante;
         $http.post('php/historialEstudiante.php',{ "data" : estudiante.id }).success(function (data) {
-          console.log(data);
           $scope.mostrandoEstudiante.grupos = data;
+          //le vamos a meter integrantes a equipo
+          for (var i = $scope.mostrandoEstudiante.grupos.length - 1; i >= 0; i--) {
+            var equipoId = $scope.mostrandoEstudiante.grupos[i].IdEquipo;
+            var encargadoId = $scope.mostrandoEstudiante.grupos[i].ProfesorEncargado;
+            $scope.puntero = $scope.mostrandoEstudiante.grupos[i];
+            $http.post("php/estudiantesPorEquipo.php", { "data" : equipoId})
+            .success(function(data) {
+              $scope.puntero.integrantes = data; // duda
+             })
+            $http.post("php/encargadoObtener.php", { "data" : encargadoId})
+            .success(function(data) {
+              $scope.puntero.Encargado = data; // duda
+             })
+          };
         });
       
         if(estado)
