@@ -15,7 +15,7 @@
         $http.get('php/listargrupoconcurso.php')
           .success(function (data) {
             $scope.grupos = data;
-            console.log(data)
+            // console.log(data)
           })
           .error(function(data,status){
             result = data || "jiji"
@@ -31,7 +31,7 @@
           $scope.grupo.rubricaFactor = [];
           $scope.accion = "Editar";
           //si tiene id rubrica buscar rubros
-          console.log(grupo)
+          // console.log(grupo)
         };
         //agregar rubro
         $scope.agregarRubro = function(rubro){
@@ -99,11 +99,11 @@
                 $http.post('php/guardarValorFH.php',{"data" : grupo.rubricaFactor[i].valor})
                     .success(function (rubro) {
                     //Rubrica por valor se fusiona
-                    $http.post('php/guardarValoresRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
-                      .success(function (data) {
-                        funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                      setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
-                      })
+                    // $http.post('php/guardarValoresRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                    //   .success(function (data) {
+                    //     funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                    //   setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                    //   })
                     })
                 };
 
