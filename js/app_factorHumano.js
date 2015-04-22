@@ -79,7 +79,7 @@
                   
                   for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
 
-                  console.log(grupo.rubricaFactor)
+                  
                   //Se crea el rubro de evaluación guardarValorFH
                   $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i].nombre})
                   .success(function (rubro) {
@@ -92,6 +92,20 @@
                     })//success rubrica x rubro
                   })//success rubros for
                 };//fin for
+
+                for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
+                console.log(grupo.rubricaFactor);
+                //El valor está creado se guarda en la tabla tbrubricaevaluacion
+                $http.post('php/guardarValorFH.php',{"data" : grupo.rubricaFactor[i].valor})
+                    .success(function (rubro) {
+                    //Rubrica por valor se fusiona
+                    $http.post('php/guardarValoresRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                      .success(function (data) {
+                        funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                      setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                      })
+                    })
+                };
 
                     
                 };//Segundo if
