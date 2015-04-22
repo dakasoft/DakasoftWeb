@@ -56,7 +56,7 @@
            })
           .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
-           });        
+           });
           $("#modalConfirm").modal('hide');
         };        
 

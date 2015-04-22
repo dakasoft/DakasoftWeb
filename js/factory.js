@@ -24,7 +24,7 @@ app.factory('funciones',function(){
           return {id:"",Nombre:"",Codigo:"",Areas:[]};
         },
         grupo:function(){
-          return {id:"",nombre:"",curso:"",cursoId:"",encargado:"",encargadoId:"",profesores:[],estudiantes:[]};
+          return {id:"",Nombre:"",Curso:"",IdCurso:"",Encargado: "",EncargadoId:"",profesores:[],estudiantes:[]};
         },
         votacion:function(){
           return {id:"",fecha:"",fechaProyectos:"",fechaCierre:"",activo:0};
@@ -95,6 +95,18 @@ app.factory('funciones',function(){
             }
           });
           return lista;
+        },
+
+        repeatCheck: function (pList, pTarget, pUniqueProp) {
+          var bExistence = false;
+
+          angular.forEach(pList, function (value, key) {
+            if (value[pUniqueProp] === pTarget[pUniqueProp]) {
+              bExistence = true;
+            };
+          });
+
+          return bExistence;
         }
     }
 
