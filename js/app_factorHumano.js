@@ -93,6 +93,7 @@
                   })//success rubros for
                 };//fin for
 
+                //Guardar Valor Factor humano 
                 for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
                 console.log(grupo.rubricaFactor);
                 //El valor está creado se guarda en la tabla tbrubricaevaluacion
