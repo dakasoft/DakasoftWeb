@@ -10,6 +10,13 @@
          $scope.Nota = "";
         $scope.proyectosSeleccionados = [];
           $scope.editableProject = "";
+          $scope.votacionActiva="";
+           $http.get('php/votacionActiva.php')
+          .success(function (data) {
+
+            $scope.votacionActiva = data;
+
+          })
           $http.get('php/listarProyectos.php')
           .success(function (data) {
              $scope.proyectos = data;
@@ -25,7 +32,7 @@
             result = data || "jiji"
           });
      $scope.agregarProyecto = function(proyecto){
-      
+           
              funciones.closeC();
                 var ingresar = true;
                 angular.forEach($scope.proyectosSeleccionados,function(value,key){
@@ -34,12 +41,13 @@
                   }
                 });
                 if(ingresar || $scope.proyectosSeleccionados.length == 0){
-                
+                  proyecto.IdVotacion = $scope.votacionActiva[0].IdVotacion;
+                  console.log($scope.votacionActiva[0].IdVotacion);
                   $scope.proyectosSeleccionados = funciones.agregarAListaNoRepetido($scope.proyectosSeleccionados,proyecto);
                    $http.post("php/agregarProyectoE.php", { "data" : proyecto})
                   .success(function(data) {
                     console.log(data);
-                      $scope.proyectosE = data;
+                      //$scope.proyectosE = data;
                    })
                   .error(function(data, status) {
                       result = data || "Request failed";//hacer algo con esto.

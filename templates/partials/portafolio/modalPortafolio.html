@@ -26,10 +26,11 @@
         </div>
         </form>
          <div class="form-group">
-         <form action="almacenar.php" method="POST" enctype="multipart/form-data">
+        <form name="upload" ng-submit="uploadFile()">
            <label class="col-xs-4 control-label" for="imagen">Imagen:</label>
-           <input type="file" name="imagen" class="inputpor" id="imagen" />
-            <input type="submit" name="subir" value="Subir Imagen"/>
+           <input type="text" ng-model="name"/>
+           <input uploader-model="file" type="file" name="file"/>
+           <input type="submit" value="Enviar" />
          </form>
      </div>
       </div>

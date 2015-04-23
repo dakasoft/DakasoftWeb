@@ -2,7 +2,14 @@
 
 include "conexion.php";
 
-$query = "CALL proyectoActualesListar()";
+$data = file_get_contents("php://input");
+
+$objData = json_decode($data);
+
+$data = $objData->data;
+$votacionid = $data; 
+
+$query = "CALL proyectosEnVotacion('$votacionid')";
 $result = mysqli_query($conexion,$query);
 
 $rows = array();
@@ -10,8 +17,6 @@ $rows = array();
 while($r = mysqli_fetch_assoc($result)){
 	$rows[] = $r;
 }
-
-
 
 
 mysqli_free_result($result);

@@ -1,4 +1,4 @@
-<div class="modal fade" id="elegirVot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal fade" id="elegirVot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <div class="modal-header"><h4>Invitar Usuarios</h4></div>
@@ -17,8 +17,8 @@
               <li class="list-group-item list-g-header">Lista de Usuarios
               </li>
               <li class="list-group-item" ng-repeat="usuario in usuarios | filter:palabra">
-                {{ usuario.name }} {{ usuario.lastname }}<i class="fa fa-plus fa-lg plus-add-icon pull-right" ng-click="agregarUsuarios(usuario)"></i>
-                <span>{{ usuario.role }}</span>
+                {{ usuario.Nombre }} {{ usuario.Apellido }}<i class="fa fa-plus fa-lg plus-add-icon pull-right" ng-click="agregarUsuarios(usuario)"></i>
+                <span>{{ usuario.rol.nombre }}</span>
               </li>
               <li>
               </ul>
@@ -30,8 +30,9 @@
               <ul class="list-group listaEstudiantes Listascroll ListaInvitados">
                 <li class="list-group-item list-g-header">Lista de invitados</li>
                 <li class="list-group-item" ng-repeat="usuario in usuariosSeleccionados">
-                 {{ usuario.name }} {{ usuario.lastname }}
+                 {{ usuario.Nombre }} {{ usuario.Apellido }}
                  <i class="fa fa-times-circle fa pull-right" ng-click="quitarUsuarios(usuario)"></i>
+                   <span>{{ usuario.rol.nombre }}</span>
                  <li>
                  </ul>
                </div>

@@ -9,11 +9,20 @@
         <div class="col-xs-12 col-sm-12">
         <div class="form-group">
           <label for="">Recepción de Proyectos</label>  
-              <input class="form-control" ng-model="votacion.fechaProyectos" type="date" required>   
+              <input class="form-control" ng-model="votacion.FechaRecepcion" type="date" required format-date>   
         </div>
         <div class="form-group">
           <label for="">Fecha de Cierre</label>  
-              <input class="form-control" ng-model="votacion.fechaCierre"  type="date" required>
+              <input class="form-control" ng-model="votacion.FechaCierre"  type="date" required format-date>
+        </div>
+        <div class="form-group">
+         <label class="col-xs-3" for="">Activar Votacion</label>  
+          <div class="col-xs-8">
+            <select ng-model="votacion.Activo" required >
+              <option value="1">Si</option>
+              <option value="0">No</option>
+            </select>
+          </div>
         </div>
         </div> 
         </div>

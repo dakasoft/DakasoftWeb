@@ -5,14 +5,24 @@
   app.directive('votacionesPrivadas',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/proyectosVotacionPrivada.html',
+      templateUrl: 'templates/partials/votacionPrivada/proyectosVotacionPrivada.html',
       controller: ['$scope','$http',function ($scope,$http) {
         $scope.proyectosElegidos = [];
         $scope.votar = false;
+        $scope.votacionActiva= "";
 
-        $http.get('json/proyectosVotacion.json').success(function (data) {
-          $scope.proyectosElegidos = data;
-        }); 
+        $http.get('php/votacionActiva.php')
+          .success(function (data) {
+            $scope.votacionActiva = data;
+            $http.post("php/proyectosEnVotacion.php", { "data" : $scope.votacionActiva[0].IdVotacion})
+              .success(function(data) {
+                $scope.proyectosElegidos = data;
+                for (var i = $scope.proyectosElegidos.length - 1; i >= 0; i--) {
+                  $scope.proyectosElegidos[i].IdEquipo;
+                  //llamada al pa de estudiante por equipo yo ya lo tengo hecho
+                };
+            })
+          })
 
         $scope.seleccionar = function(proyecto){
           $scope.video =proyecto.video;
@@ -97,7 +107,7 @@
   app.directive('estadoVotacion', function(){
     return{
       restrict: 'E',
-      templateUrl: 'templates/partials/estadoVotacion.html',
+      templateUrl: 'templates/partials/votacionPrivada/estadoVotacion.html',
       controller: ['$scope','$http','ngTableParams',function ($scope,$http,ngTableParams) {
         $scope.proyectosElegidos = [];
         $http.get('json/proyectosVotacion.json').success(function (data) {

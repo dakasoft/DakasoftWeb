@@ -7,17 +7,18 @@
       <legend>Votación</legend>
       <p class="pull-right parametro"><a class="add" data-toggle="modal" data-target="#modalVotacion" ng-click="nuevo()" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
       <table id="custom-table" ng-table class="table">
-        <tr ng-repeat="votacion in votaciones">
-          <td data-title="'Fecha'" >{{votacion.fecha}}</td>
-          <td data-title="'Fecha Proyecto'" >{{votacion.fechaProyectos}}</td>
+        <tr ng-repeat="votacion in votaciones track by $index">
+          <td data-title="'Fecha Inicio'" >{{votacion.FechaInicio}}</td>
+          <td data-title="'Recepcion de Proyectos'" >{{votacion.FechaRecepcion}}</td>
           <td data-title="'Fecha Cierre'">
-           {{votacion.fechaCierre}}
+           {{votacion.FechaCierre}}
          </td>
          <td data-title="'Modificar'">
            <a data-toggle="modal" data-target="#modalVotacion" ng-click="editar(votacion)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
          </td>
-         <td data-title="'Votación activa'">               
-          <input type="radio" id="slideOne" name="radioActivo" ng-model="votacion.activo" value="1" ng-click="cambiarEstado(votacion)"/>
+         <td data-title="'Votación activa'">  
+          <div ng-show = "votacion.Activo == 1 "> Activo</div>    
+          <div ng-show = "votacion.Activo == 0 "> Inactivo </div>               
         </td>
       </tr>
     </table>

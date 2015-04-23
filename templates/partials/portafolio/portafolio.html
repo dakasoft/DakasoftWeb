@@ -7,10 +7,10 @@
           <i class="fa fa-search normal-search-icon"></i>
         </div>
       </form> 
-      <div ng-repeat="estudiante in estudiantes | filter:palabra | limitTo: 1">
+      <div ng-repeat="estudiante in estudiantes | filter:palabra | limitTo: 1 ">
         <div  class=" head col-xs-12 col-sm-12"><h2>Portafolio</h2><i ng-show="roleLv == 1" data-toggle="modal"  data-target="#editModal" ng-click="editar(estudiante)" class="conf fa fa-cog fa-2x pull-right"></i></div>
         <div class="fotoI col-xs-12 col-sm-3" >
-          <img ng-src="{{estudiante.foto}}" class="img-responsive img-circle"/>      
+          <img ng-src="{{estudiante.Foto}}" class="img-responsive img-circle"/>      
         </div>
         <div class="tittle col-xs-12 col-sm-5" >
           <h4>{{estudiante.Nombre}} {{estudiante.Apellido}}</h4>
@@ -24,8 +24,8 @@
             <h2>Proyectos</h2>
             <div class="line cf col-xs-11 col-sm-11"></div>
 
-            <div class="ih-item square new effect6 from_top_and_bottom col-xs-12 col-sm-4" ng-repeat="proyecto in estudiante.proyectos">
-              <a data-toggle="modal" ng-click="seleccionar(proyecto)"  data-target="#editModalV"><div class="img"><img class="img-responsive" ng-src="{{proyecto.foto}}"/></div>
+            <div class="ih-item square new effect6 from_top_and_bottom col-xs-12 col-sm-4" ng-repeat="proyecto in estudiante.proyectos ">
+              <a data-toggle="modal" ng-click="seleccionar(proyecto)"  data-target="#editModalV"><div class="img"><img class="img-responsive" ng-src="{{proyecto.Imagen}}"/></div>
                 <div class="info"> <h3>{{ proyecto.Nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
               </a>
             </div>

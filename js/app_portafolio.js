@@ -6,7 +6,7 @@ app.directive('portafolio', function(){
         restrict: 'E',
         templateUrl: 'templates/partials/portafolio/portafolio.html',
         
-       controller: ['$scope','$http','ngTableParams','funciones','$rootScope',function ($scope,$http,ngTableParams,funciones,$rootScope) {
+       controller: ['$scope','$http','ngTableParams','funciones','$rootScope','upload',function ($scope,$http,ngTableParams,funciones,$rootScope,upload) {
           $scope.estudiantes = [];
           $scope.video= "";
           $scope.editableUser = "";
@@ -15,18 +15,18 @@ app.directive('portafolio', function(){
         $http.get('php/listarPortafolio.php')
           .success(function (data) {
             $scope.estudiantes = data;
-            for (var i = $scope.estudiantes.length - 1; i >= 0; i--) {
-              $scope.estudiantes[i].id;
-              $scope.estudiantes[i].proyectos = [];
-              $scope.puntero = $scope.estudiantes[i];
-              $http.post('php/listarProyectosEstudiante.php', { "data" : $scope.estudiantes[i].id })
-              .success(function (data){
-                $scope.puntero.proyectos = data;
-              })
-              .error(function(data,status){
-                result = data || "jiji"
-              }); 
-            };
+            // for (var i = $scope.estudiantes.length - 1; i >= 0; i--) {
+            //   $scope.estudiantes[i].id;
+            //   $scope.estudiantes[i].proyectos = [];
+            //   $scope.puntero = $scope.estudiantes[i];
+            //   $http.post('php/listarProyectosEstudiante.php', { "data" : $scope.estudiantes[i].id })
+            //   .success(function (data){
+            //     $scope.puntero.proyectos = data;
+            //   })
+            //   .error(function(data,status){
+            //     result = data || "jiji"
+            //   }); 
+            // };
           
           })
           .error(function(data,status){
@@ -41,7 +41,7 @@ app.directive('portafolio', function(){
             console.log(data);
             $scope.estudiantes=data; 
               console.log($scope.estudiantes[0]);      
-              //$scope.estudiantes.id;
+              $scope.estudiantes.id;
               $scope.estudiantes[0].proyectos = [];
               $scope.puntero = $scope.estudiantes[0];
              $http.post('php/listarProyectosEstudiante.php', { "data" : $rootScope.currentUser.id })
@@ -61,7 +61,20 @@ app.directive('portafolio', function(){
 
          };
          
+         $scope.uploadFile = function(){
+          var name = $scope.name;
+          var file = $scope.file;
+          upload.uploadFile(file,name).then(function(res){
+            console.log(res.data);
+            var imagen ={id:$scope.portafolio.IdPortafolio,url:res.data}
+            $http.post("php/agregarImagenPortafolio.php", { "data" : imagen})
+                  .success(function(data) {
+                    console.log(data);
+                     
+                   })
+          })
 
+         }
         $scope.seleccionar = function(proyecto){
           $scope.video =proyecto.video;
           $("#video").attr("src", $scope.video); /* dinamic iframe */
@@ -76,6 +89,7 @@ app.directive('portafolio', function(){
 
          $scope.editar = function(estudiante){
           $scope.portafolio = estudiante;
+          console.log($scope.portafolio);
         
         };
          $scope.guardar = function(){
@@ -98,6 +112,7 @@ app.directive('portafolio', function(){
         $("#editModal").modal('hide');
         };
 
+
       }]
     };
   });
@@ -114,6 +129,40 @@ app.directive('portafolio', function(){
       templateUrl: 'templates/partials/shared/modalVideo.html'
     };
   });
+app.directive('uploaderModel',function ($http,$parse) {
+   return{
+  restrict : 'A',
+  link: function (scope,iElement,iAttrs){
+   iElement.on("change",function(e){
+        $parse(iAttrs.uploaderModel).assign(scope,iElement[0].files[0]);
+ });
+  }
+};
 
+  });
+
+app.service('upload',function($http,$q){
+    this.uploadFile = function(file,name){
+      var deferred =$q.defer();
+      var formData = new FormData();
+      formData.append("name",name);
+      formData.append("file",file);
+      return $http.post("server.php",formData,{
+        headers:{
+          "Content-type":undefined
+        },
+        transformRequest:formData
+      })
+      .success(function(res){
+        deferred.resolve(res);
+      })
+      .error(function(msg,code){
+        deferred.reject(msg);
+      })
+      return deferred.promise;
+    }
+
+
+})
 
 })();

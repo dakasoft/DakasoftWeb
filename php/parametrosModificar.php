@@ -5,8 +5,8 @@ $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
 $data = $objData->data;
-
-$query = "CALL portafolioModificar('$data->id','$data->Descripcion','$data->Telefono')";
+var_dump($data);
+$query = "CALL parametrosModificar('$data->FechaCierre','$data->FechaRecepcion','$data->Activo','$data->id')";
 $result = mysqli_query($conexion,$query);
 
 if($result){
@@ -15,11 +15,6 @@ if($result){
 	echo false;
 }
 
-
-
-
-// mysqli_close($conexion);
-
-
+mysqli_close($conexion);
 
 ?>

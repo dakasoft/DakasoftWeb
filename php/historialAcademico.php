@@ -2,7 +2,7 @@
 
 include "conexion.php";
 
-$query = "CALL proyectoActualesListar()";
+$query = "CALL reportesNotas()";
 $result = mysqli_query($conexion,$query);
 
 $rows = array();
@@ -10,8 +10,6 @@ $rows = array();
 while($r = mysqli_fetch_assoc($result)){
 	$rows[] = $r;
 }
-
-
 
 
 mysqli_free_result($result);

@@ -9,9 +9,8 @@
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table">
 				<tr ng-repeat="proyecto in proyectos">
-					<td data-title="'Curso'">{{proyecto.curso}}</td>
-					<td data-title="'Equipo'">{{proyecto.equipo}}</td>
-					<td data-title="'Imagen'">{{proyecto.imagen}}</td>
+					<td data-title="'Curso'">{{proyecto.Curso}}</td>
+					<td data-title="'Equipo'">{{proyecto.Equipo}}</td>
 					<td data-title="'Agregar'" ><i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarProyecto(proyecto)"></i></td>
 				</tr>			
 
@@ -25,9 +24,8 @@
 			</div>
 			<table id="custom-table" ng-table="tableParams"  class="table" >
 				<tr ng-repeat="proyecto in proyectosSeleccionados track by $index">
-					<td data-title="'Curso'">{{proyecto.curso}}</td>
-					<td data-title="'Equipo'">{{proyecto.equipo}}</td>
-					<td data-title="'Imagen'">{{proyecto.imagen}}</td>
+					<td data-title="'Curso'">{{proyecto.Curso}}</td>
+					<td data-title="'Equipo'">{{proyecto.Equipo}}</td>
 					<td data-title="'Eliminar'"> <a><i class="fa fa-times-circle fa" data-toggle="modal"  data-target="#modalConfirm" ng-click="borrarEste(proyecto)" ></i></a> </td>
 				</tr>
 			</table>
