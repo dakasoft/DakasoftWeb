@@ -6,14 +6,15 @@ $data = file_get_contents("php://input");
 $objData = json_decode($data);
 $data = $objData->data;
 
-$query = "CALL enviarInvitados('$data->IdVotacion',$data->id')";
+//var_dump($data);
+$query = "CALL enviarInvitados($data->IdVotacion,$data->id)";
 $result = mysqli_query($conexion,$query);
 
-// if($result){
-// 	echo true;
-// }else{
-// 	echo false;
-// }
+if($result){
+	echo true;
+}else{
+	echo false;
+}
 
 mysqli_close($conexion);
 

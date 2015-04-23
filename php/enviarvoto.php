@@ -6,7 +6,7 @@ $data = file_get_contents("php://input");
 $objData = json_decode($data);
 $data = $objData->data;
 
-$query = "CALL enviarVotacion('$data->id')";
+$query = "CALL enviarVotacion('$data->IdVotacion','$data->id')";
 $result = mysqli_query($conexion,$query);
 
 if($result){

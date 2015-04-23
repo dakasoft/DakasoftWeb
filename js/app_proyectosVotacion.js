@@ -112,18 +112,15 @@
 
      }; 
 
-     $scope.guardar= function(){
-      // angular.forEach($scope.usuariosSeleccionados, function(value, key) {
-      //   value.IdVotacion = $scope.votacionActiva[key].IdVotacion;
-      //   console.log(value);
-      var karo = {id:1,IdVotacion:1}
-          $http.post("php/enviarInvitados.php", { "data" : karo })
-          .success(function(data) {
-              console.log(data);
-           })
+     $scope.guardar = function(){
 
-                       
-      // });         
+      angular.forEach($scope.usuariosSeleccionados, function(value, key) {
+        value.IdVotacion = $scope.votacionActiva[0].IdVotacion;
+          $http.post("php/enviarInvitados.php", { "data" : value })
+          .success(function(data) {
+             console.log(data);
+          })                
+      });         
 
       $("#elegirVot").modal('hide');
 
