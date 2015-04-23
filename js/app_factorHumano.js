@@ -93,9 +93,9 @@
                 };//fin for
 
                 //Modificar ó borrar
-                $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i]})
-                .success(function (rubro){ 
-                   })//success mdificar
+                // $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i]})
+                // .success(function (rubro){ 
+                //    })//success mdificar
                 
 
                 
