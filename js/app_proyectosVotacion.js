@@ -11,6 +11,13 @@
         $scope.usuarios = [];
         $scope.usuariosSeleccionados = [];
         $scope.proyectosSeleccionados = [];
+          $scope.votacionActiva="";
+           $http.get('php/votacionActiva.php')
+          .success(function (data) {
+
+            $scope.votacionActiva = data;
+
+          })
          $http.get('php/listarProyectosElegidos.php')
           .success(function (data) {
               $scope.proyectos= data;
@@ -106,7 +113,20 @@
      }; 
 
      $scope.guardar= function(){
+      // angular.forEach($scope.usuariosSeleccionados, function(value, key) {
+      //   value.IdVotacion = $scope.votacionActiva[key].IdVotacion;
+      //   console.log(value);
+      var karo = {id:1,IdVotacion:1}
+          $http.post("php/enviarInvitados.php", { "data" : karo })
+          .success(function(data) {
+              console.log(data);
+           })
+
+                       
+      // });         
+
       $("#elegirVot").modal('hide');
+
 
     }
 

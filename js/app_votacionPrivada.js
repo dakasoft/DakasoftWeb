@@ -19,6 +19,11 @@
                 $scope.proyectosElegidos = data;
                 for (var i = $scope.proyectosElegidos.length - 1; i >= 0; i--) {
                   $scope.proyectosElegidos[i].IdEquipo;
+                    $scope.puntero = $scope.proyectosElegidos[i];
+                     $http.post('php/estudiantesPorEquipo.php', { "data" : $scope.proyectosElegidos[i].IdEquipo})
+                     .success(function (data){
+                     $scope.puntero.Integrantes = data;
+                     })
                   //llamada al pa de estudiante por equipo yo ya lo tengo hecho
                 };
             })

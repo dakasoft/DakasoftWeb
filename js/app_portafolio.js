@@ -15,18 +15,18 @@ app.directive('portafolio', function(){
         $http.get('php/listarPortafolio.php')
           .success(function (data) {
             $scope.estudiantes = data;
-            // for (var i = $scope.estudiantes.length - 1; i >= 0; i--) {
-            //   $scope.estudiantes[i].id;
-            //   $scope.estudiantes[i].proyectos = [];
-            //   $scope.puntero = $scope.estudiantes[i];
-            //   $http.post('php/listarProyectosEstudiante.php', { "data" : $scope.estudiantes[i].id })
-            //   .success(function (data){
-            //     $scope.puntero.proyectos = data;
-            //   })
-            //   .error(function(data,status){
-            //     result = data || "jiji"
-            //   }); 
-            // };
+            for (var i = $scope.estudiantes.length - 1; i >= 0; i--) {
+              $scope.estudiantes[i].id;
+              $scope.estudiantes[i].proyectos = [];
+              $scope.puntero = $scope.estudiantes[i];
+              $http.post('php/listarProyectosEstudiante.php', { "data" : $scope.estudiantes[i].id })
+              .success(function (data){
+                $scope.puntero.proyectos = data;
+              })
+              .error(function(data,status){
+                result = data || "jiji"
+              }); 
+            };
           
           })
           .error(function(data,status){

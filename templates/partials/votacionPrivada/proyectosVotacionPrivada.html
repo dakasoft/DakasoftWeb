@@ -8,7 +8,7 @@
 			<div class="ih-item square new effect6 from_top_and_bottom">
 				<a data-toggle="modal" ng-click="seleccionar(proyecto)" data-target="#editModalV">
 					<div class="img"><img class="img-responsive" ng-src="{{proyecto.Imagen}}" alt=""></div>
-			     	<div class="info"> <h3>{{ proyecto.nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
+			     	<div class="info"> <h3>{{ proyecto.Nombre }}</h3><p><i class="fa fa-play-circle"></i></p></div>
 			   </a>
 			</div>
 						<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
@@ -20,7 +20,8 @@
 				<img class="star" ng-src="{{currentRate5(proyecto)}}" ng-click="addRate(proyecto)">
 			</div>
 			<div class="item-votacion-contenido">
-				<p ng-repeat="estudiante in proyecto.integrantes">{{estudiante}}</p>		
+			<p> Integrantes </p>
+				<p ng-repeat="estudiante in proyecto.Integrantes">{{estudiante.Nombre}} {{ estudiante.Apellido}} - {{ estudiante.RolNombre}} </p>		
 			</div>
 			<div class="item-votacion-footer"><button type="submit" class="btn btn-custom btn-sm" ng-click="enviarVotacion(proyecto)">Enviar votación</button></div>
 
