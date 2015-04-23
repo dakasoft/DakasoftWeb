@@ -74,16 +74,13 @@
                     }); 
                   
 
-                  //3)--for que recorre los rubros. Esta parte se meteran lo rubro pue
+                  //3)--for que recorre los rubros. Esta parte se meteran lo rubro 
                   $scope.rubricaId = data.Insert_Id;
                   
                   for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
-
-                  
-                  //Se crea el rubro de evaluación guardarValorFH
+                  //Se crean los rubros de evaluación
                   $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i]})
-                
-                  .success(function (rubro) {  
+                  .success(function (rubro){  
                     console.log(grupo.rubricaFactor)
                     //Rubrica por rubro se fusionan los dos rubros
                     $http.post('php/guardarRubrosRubricaFH.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
@@ -95,16 +92,22 @@
                   })//success rubros for
                 };//fin for
 
+                //Modificar ó borrar
+                $http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i]})
+                .success(function (rubro){ 
+                   })//success mdificar
+                
+
                 
                     
               };//Segundo if
-
-
-
-
               })//fin primer post success
           }//fin if1
         };//fin funcion guardar
+
+
+
+
                  
                       
 
