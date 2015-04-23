@@ -8,8 +8,12 @@ $data = $objData->data;
 // var_dump($data);
 //Cambio de tabla en donde insertar
 // $qry = "CALL rubroCrear('$data')";
+// $data->nombre
+// $data->valor
+// $data->rubrica','$data->id
 
-$qry = "CALL rubroEvaluacioncrear('$data')";
+
+$qry = "CALL rubroEvaluacioncrear('$data->nombre','$data->valor')";
 $result = mysqli_query($conexion,$qry);
 if($result){
 	$Insert_Id = $result->fetch_array(MYSQLI_ASSOC); 
