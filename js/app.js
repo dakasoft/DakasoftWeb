@@ -12,7 +12,7 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     var main = this;
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 1;
+    $rootScope.roleLv = 2;
     $rootScope.currentUser.id=7; 
 
     main.logOut = function () {
@@ -204,21 +204,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
           $state.go('login');
         }
       }
-    })
-
-    .state('miscursos.equipo', {
-      url: '/equipo',
-      templateUrl:'templates/partials/miEquipo.html'
-    })
-
-    .state('miscursos.curso', {
-      url: "/curso",
-      templateUrl:"templates/partials/miCurso.html"
-    })
-
-    .state('miscursos.cursos', {
-      url: '/curso',
-      templateUrl:'templates/partials/misCursos.html'
     })
 
     .state('vercursos',{

@@ -1,0 +1,22 @@
+<div class="single-nav" ng-repeat="grupo in grupos">
+	<ul class="nav nav-justified nav-cursos-user">
+  <li ng-class="grupo.informacion == true? 'tab-active' : 'tab-no-active' ">
+  	<a ng-click="grupo.informacion =  toogleInfo(grupo,'informacion',grupo.informacion)">{{grupo.Curso}} (Grupo: {{grupo.Nombre}})</a>
+  </li>
+  <li ng-class="grupo.eqps == true? 'tab-active' : 'tab-no-active' ">
+  	<a ng-click="grupo.eqps =  toogleInfo(grupo,'eqps',grupo.eqps)">Equipo</a>
+  </li>
+</ul>
+
+	<div class="panel" ng-if="grupo.informacion">
+	 <h4>Información</h4>
+	</div>
+
+	<div class="panel" ng-if="grupo.eqps">
+	  <mi-equipo></mi-equipo>
+	</div>
+
+</div>
+
+
+

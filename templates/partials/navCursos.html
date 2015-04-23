@@ -1,9 +1,0 @@
-<div class="single-nav" ng-repeat="curso in estudiante.cursos">
-	<ul class="nav nav-justified nav-cursos-user">
-	  <li><a ui-sref="miscursos.curso" ng-click="miscursos.bCourseDisplay = courseDisplayToggle('course')">{{ curso.nombre}}</a></li>
-	  <li><a ui-sref="miscursos.equipo" ng-click="miscursos.bCourseDisplay = courseDisplayToggle('team')">Equipo</a></li>
-	</ul>
-	<div ng-show="miscursos.bCourseDisplay" ui-view></div>
-</div>
-
-
