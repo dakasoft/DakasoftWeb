@@ -60,7 +60,7 @@
             //1)--Primero se crea la rubrica
             $http.post('php/crearRubricaFactorH.php',{"data" : grupo})
               .success(function (data) {
-                if (data.Insert_Id!="") {
+                if (data.Insert_Id!="") {//nos devuelve el id que inserto
                   $scope.grupo.Rubrica = data.Insert_Id;
                   
                   //2)--Guardar Rubrica
@@ -110,8 +110,17 @@
 
                     
                 };//Segundo if
+
+
+
+
               })//fin primer post success
           }//fin if1
+          // Modificar
+          else{
+            
+                  
+          }
         };//fin funcion guardar
                  
                       
