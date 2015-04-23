@@ -8,7 +8,7 @@
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
         $scope.grupos = [];
         $scope.rubrosSeleccionados = [];
-        // $scope.rubro = funciones.rubro();
+        $scope.rubro = funciones.rubro();
         
         // json php
         /* Listar grupos*/
@@ -36,7 +36,7 @@
         //agregar rubro
         $scope.agregarRubro = function(rubro){
           if($scope.rubricaForm.$valid){
-            // $scope.rubro = funciones.rubro();
+            $scope.rubro = funciones.rubro();
             var newRubro = angular.copy(rubro);
             funciones.agregarAListaNoRepetidoPorNombre($scope.grupo.rubricaFactor,newRubro);
             funciones.closeC();
