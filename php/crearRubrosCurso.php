@@ -8,7 +8,7 @@ $data = $objData->data;
 // var_dump($data);
 
 
-$qry = "CALL rubroCrear('$data')";
+$qry = "CALL rubroCrear('$data->nombre','$data->valor')";
 $result = mysqli_query($conexion,$qry);
 if($result){
 	$Insert_Id = $result->fetch_array(MYSQLI_ASSOC); 

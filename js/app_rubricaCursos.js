@@ -72,10 +72,9 @@
                   $scope.rubricaId = data.Insert_Id;
 
                   for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) { 
-                    console.log(curso.cursoRubrica)
-                    $http.post('php/crearRubrosCurso.php',{"data" : curso.cursoRubrica[i].nombre})
+                    $http.post('php/crearRubrosCurso.php',{"data" : curso.cursoRubrica[i]})
                     .success(function (rubro) { 
-                      
+                      console.log(curso.cursoRubrica);
                       $http.post('php/guardarRubrosRubricaC.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
                       .success(function (data) {
                         funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);

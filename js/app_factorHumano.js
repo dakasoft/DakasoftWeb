@@ -97,37 +97,15 @@
                 // .success(function (rubro){ 
                 //    })//success mdificar
                 
-
-                
-                    
               };//Segundo if
               })//fin primer post success
           }//fin if1
         };//fin funcion guardar
-
-
-
-
-                 
-                      
-
-                  
-
       }]//fin controlador
     };
   });
 
-
-
-
-
-            
-          
-
-
-        
-
-
+                
 // ModalDialog
 app.directive('modalRubrica',function ($http) {
     return {
@@ -140,3 +118,24 @@ app.directive('modalRubrica',function ($http) {
 
 
 })();
+                    
+
+
+
+
+                 
+                      
+
+                  
+
+
+
+
+
+
+            
+          
+
+
+        
+
