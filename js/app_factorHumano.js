@@ -128,6 +128,7 @@
               })//fin primer post success
           }//fin if1
            //Modificar ó borrar
+           
           //$http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i]})
          //.success(function (rubro){ 
         //})//success mdificar
