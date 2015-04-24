@@ -94,7 +94,7 @@
               $http.post("php/rolParaGrupo.php", { "data" : rol})
               .success(function(data) {                    
                 $scope.grupoEditando.roles = funciones.agregarAListaNoRepetido($scope.grupoEditando.roles,rol);
-                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                funciones.alert("contentbody3","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                 setTimeout(function(){$("#modalRol").modal('hide')},1000); 
                })
              }
@@ -103,7 +103,7 @@
           $http.post("php/modificarRolEquipo.php", { "data" : rol})
           .success(function(data) {
             $scope.grupoEditando.roles = funciones.editarDeLista($scope.grupoEditando.roles,rol);
-            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+            funciones.alert("contentbody3","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
             setTimeout(function(){$("#modalRol").modal('hide')},1000);  
            })
           .error(function(data, status) {
@@ -111,7 +111,7 @@
            }); 
         }
       }else{
-        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+        funciones.alert("contentbody3","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
       }
     }
     /*funciones de equipo*/
@@ -163,7 +163,7 @@
               $http.post("php/guardarIntegrantes.php", { "data" : equipo})
               .success(function(data) {                    
                 $scope.grupoEditando.equipos = funciones.agregarAListaNoRepetido($scope.grupoEditando.equipos,equipo);
-                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                funciones.alert("contentbody1","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                 setTimeout(function(){$("#modalEquipo").modal('hide')},1000);  
                })
              }
@@ -172,7 +172,7 @@
           $http.post("php/modificarEquipoGrupo.php", { "data" : equipo})
           .success(function(data) {
             $scope.grupoEditando.equipos = funciones.editarDeLista($scope.grupoEditando.equipos,equipo);
-            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+            funciones.alert("contentbody1","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
             setTimeout(function(){$("#modalEquipo").modal('hide')},1000);  
            })
           .error(function(data, status) {
@@ -180,7 +180,7 @@
            }); 
         }
       }else{
-        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+        funciones.alert("contentbody1","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
       }
     }
 
@@ -191,6 +191,48 @@
     $scope.borrarEstudiante = function(estudiante){
       $scope.equipo.Integrantes = funciones.borrarDeLista($scope.equipo.Integrantes,estudiante); 
     };
+
+    /*evaluacion de nota*/
+    $scope.editarEvaluacion = function(grupo,estudiante){
+      
+        $scope.grupoEditable = grupo;
+        funciones.closeC();
+        grupo.IdEstudianteEvaluado = estudiante.id;
+        $http.post("php/rubrosPorRubrica.php", { "data" : grupo.Rubrica})
+         .success(function(data) {
+          grupo.Rubros=data;
+        })
+    };
+
+    $scope.guardarEvaluacion = function(grupo,estudiante){
+      if($scope.rubricaForm.$valid){
+        $scope.nota = 0;  
+        $scope.IdEstudiantePorGrupo = 0;
+        $http.post("php/estudianteFactorGrupo.php", { "data" : grupo})
+          .success(function(data) {  
+          $scope.IdEstudiantePorGrupo = data.IdEstudiantePorGrupo;  
+          for (var i = grupo.Rubros.length - 1; i >= 0; i--) {
+            grupo.Rubros[i].IdEstudiantePorGrupo = data.IdEstudiantePorGrupo;
+            $scope.nota += grupo.Rubros[i].valor;
+            //$http.post("php/guardarEvaluacionFactor.php", { "data" : grupo.Rubros[i]})
+            //.success(function(data) {
+
+            //})
+          };
+          var notaev = {Nota:$scope.nota,IdEstudiantePorGrupo:$scope.IdEstudiantePorGrupo} 
+          $http.post("php/guardarNotaEvaluacion.php", { "data" : notaev})
+          .success(function(data) { 
+            console.log(data);
+            funciones.alert("contentbody2","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+            setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+          })
+          
+        })    
+      }else{
+        funciones.alert("contentbody2","danger",'<strong>'+"Ops!.."+'</strong>  Debes ingresar valores válidos',3500);
+      }
+
+    }
 
   
   }]);
@@ -256,8 +298,16 @@
     };
   });
 
+  app.directive('modalRubricaEv',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/verCursos/modalRubricaEv.html',
+      controller: ['$scope','$http',function ($scope,$http) {
 
- 
+      }],
+      controllerAs: 'modalCntrl'
+    };
+  });
 
   app.directive('modalRolEquipo',function ($http) {
     return {

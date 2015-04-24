@@ -1,21 +1,27 @@
 <?php
 
 include "conexion.php";
+
 $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
-$data = $objData->data;
 
-var_dump($data);
-$query = "CALL guardarEvaluacionFactor('$data->IdEstudiantePorGrupo','$data->Nombre','$data->valor')";
+$data = $objData->data;
+$IdRubrica = $data; 
+
+$query = "CALL rubrosPorRubrica('$IdRubrica')";
 $result = mysqli_query($conexion,$query);
 
-if($result){
-	echo true;
-}else{
-	echo false;
+$rows = array();
+
+while($r = mysqli_fetch_assoc($result)){
+	$rows[] = $r;
 }
 
+
+mysqli_free_result($result);
 mysqli_close($conexion);
+
+echo json_encode($rows);
 
 ?>

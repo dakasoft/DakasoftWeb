@@ -14,8 +14,9 @@
 					<td data-title="'Nombre'">{{estudiante.Nombre}}</td>
 					<td data-title="'Apellido'">{{estudiante.Apellido}}</td>
 					<td data-title="'Rol'">{{estudiante.rol}}</td>
-					<td data-title="'Nota'">
-						<a data-toggle="modal" data-target="#modalRubrica" ng-click="editEval(estudiante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+					<td data-title="'Nota'">{{estudiante.Nota}}</td>
+					<td data-title="'Evaluar'">
+						<a data-toggle="modal" data-target="#modalRubrica" ng-click="editarEvaluacion(grupo,estudiante)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
 					</td>
 				</tr>
 			</table>

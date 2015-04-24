@@ -12,8 +12,8 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     var main = this;
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 1;
-    $rootScope.currentUser.id=16; 
+    $rootScope.roleLv = 2;
+    $rootScope.currentUser.id=2; 
 
     main.logOut = function () {
       $rootScope.currentUser = {};

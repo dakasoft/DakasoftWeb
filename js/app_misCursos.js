@@ -30,34 +30,44 @@
     }
 
     $scope.guardarEvaluacion = function(grupo){
-      console.log(grupo);
       if($scope.rubricaForm.$valid){
         //traer estudiante grupo
-                
+        $scope.nota = 0;  
+        $scope.IdEstudiantePorGrupo = 0;  
         $http.post("php/estudianteFactorGrupo.php", { "data" : grupo})
-          .success(function(data) {    
-            console.log(data.IdEstudiantePorGrupo);
+          .success(function(data) {  
+          $scope.IdEstudiantePorGrupo = data.IdEstudiantePorGrupo;  
+          for (var i = grupo.Rubros.length - 1; i >= 0; i--) {
+            grupo.Rubros[i].IdEstudiantePorGrupo = data.IdEstudiantePorGrupo;
+            $scope.nota += grupo.Rubros[i].valor;
+            //$http.post("php/guardarEvaluacionFactor.php", { "data" : grupo.Rubros[i]})
+            //.success(function(data) {
+
+            //})
+          };
+          var nota ={Nota:$scope.nota,IdEstudiantePorGrupo:$scope.IdEstudiantePorGrupo} 
+          $http.post("php/guardarNotaFactorHumano.php", { "data" : nota})
+          .success(function(data) { 
+            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+            setTimeout(function(){$("#modalIntegrante").modal('hide')},1000); 
+          })
+          
         })    
-          //guardar cada rubro y su respectiva id en la tabla
-        // $http.post("php/guardarEvaluacionFactor.php", { "data" : grupo})
-        //   .success(function(data) {
-        //     funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-        //     setTimeout(function(){$("#modalIntegrante").modal('hide')},1000); 
-        //   })
+
+
       }else{
-        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes ingresar valores válidos',3500);
       }
 
     }
 
     $scope.editarEvaluacion = function(grupo,estudiante){
         $scope.grupoEditable = grupo;
-        console.log(grupo);
-        console.log(estudiante);
+        funciones.closeC();
+        grupo.IdEstudianteEvaluado = estudiante.id;
         $http.post("php/rubrosFactorPorRubrica.php", { "data" : grupo.IdRubricaEvaluacion})
          .success(function(data) {
           grupo.Rubros=data;
-          console.log(grupo);
         })
     };
     

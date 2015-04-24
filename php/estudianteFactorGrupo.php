@@ -8,7 +8,7 @@ $objData = json_decode($data);
 
 $data = $objData->data;
 
-$query = "CALL estudianteFactorGrupo('$data->IdEstudiante','$data->id')";
+$query = "CALL estudianteFactorGrupo('$data->IdEstudianteEvaluado','$data->id')";
 $result = mysqli_query($conexion,$query);
 
 if($result){

@@ -1,0 +1,29 @@
+<div class="modal fade" id="modalRubrica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div  class="modal-header"><h4>Agregar Nota</h4></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body" id="contentbody2">
+        <form name="rubricaForm" class="form-horizontal" novalidate>
+          <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+              <table id="custom-table" class="table" ng-table="tableParams" >
+                <tr ng-repeat="rubro in grupoEditable.Rubros">
+                  <td data-title="'Rubro'">{{rubro.Nombre}}({{rubro.Valor}})</td>
+                  <td data-title="'Valor'">
+                    <input required type="number" min="0" max="{{rubro.Valor}}" class="form-control" ng-model="rubro.valor" >
+                  </td>
+                </tr>
+                </table>   
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-custom btn-sm pull-right" ng-click="guardarEvaluacion(grupoEditable)">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
