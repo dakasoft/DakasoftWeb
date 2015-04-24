@@ -86,6 +86,19 @@
                 };//fin if2 Insert_Id entre success e if va todo
               })//fin primer post success
             }//fin if1
+            else{
+               if(curso.Rubrica!=""){ 
+               $http.post('php/rubrosModificar.php',{"data" : curso.cursoRubrica[i]})
+                             .success(function (rubro) { 
+                              $scope.curso = funciones.editarDeLista($scope.curso.cursoRubrica[i]);
+                             })
+                             .error(function(data, status) {
+                                result = data || "Request failed";//hacer algo con esto.
+                             });
+
+               };
+              
+            }
         };//Guardar
 
                 
