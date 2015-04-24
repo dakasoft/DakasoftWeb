@@ -38,16 +38,13 @@ app.directive('portafolio', function(){
             //  console.log($rootScope.currentUser.id);
            $http.post('php/miPortafolio.php', { "data" : $rootScope.currentUser.id })
           .success(function (data) {
-            console.log(data);
-            $scope.estudiantes=data; 
-              console.log($scope.estudiantes[0]);      
+            $scope.estudiantes=data;      
               $scope.estudiantes.id;
               $scope.estudiantes[0].proyectos = [];
               $scope.puntero = $scope.estudiantes[0];
              $http.post('php/listarProyectosEstudiante.php', { "data" : $rootScope.currentUser.id })
              .success(function (data){
               $scope.puntero.proyectos = data;
-              console.log($scope.estudiantes[0]);
              })
              .error(function(data,status){
               result = data || "jiji"

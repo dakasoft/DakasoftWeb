@@ -2,7 +2,7 @@
   var app = angular.module('misCursos', ["ui.router"]);
 
 
-  app.controller('misCursos', ['$rootScope','$scope','$http', function ($rootScope,$scope,$http) {
+  app.controller('misCursos', ['$rootScope','$scope','$http','funciones', function ($rootScope,$scope,$http,funciones) {
 
     $scope.grupos = {};
     $scope.entidad = "";
@@ -27,8 +27,40 @@
       }else{
         return true; 
       }
-    
     }
+
+    $scope.guardarEvaluacion = function(grupo){
+      console.log(grupo);
+      if($scope.rubricaForm.$valid){
+        //traer estudiante grupo
+                
+        $http.post("php/estudianteFactorGrupo.php", { "data" : grupo})
+          .success(function(data) {    
+            console.log(data.IdEstudiantePorGrupo);
+        })    
+          //guardar cada rubro y su respectiva id en la tabla
+        // $http.post("php/guardarEvaluacionFactor.php", { "data" : grupo})
+        //   .success(function(data) {
+        //     funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+        //     setTimeout(function(){$("#modalIntegrante").modal('hide')},1000); 
+        //   })
+      }else{
+        funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
+      }
+
+    }
+
+    $scope.editarEvaluacion = function(grupo,estudiante){
+        $scope.grupoEditable = grupo;
+        console.log(grupo);
+        console.log(estudiante);
+        $http.post("php/rubrosFactorPorRubrica.php", { "data" : grupo.IdRubricaEvaluacion})
+         .success(function(data) {
+          grupo.Rubros=data;
+          console.log(grupo);
+        })
+    };
+    
 
   }]);
 
@@ -58,13 +90,18 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/misCursos/miEquipo.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-      console.log($scope.grupoActual);
-      //buscamos si ese grupo tiene un equipo y si tiene entonces le metemos integrantes
-      $http.post("php/estudiantesPorEquipo.php", { "data" : $scope.grupoActual.IdEquipo})
+      controller: ['$rootScope','$scope','$http',function ($rootScope,$scope,$http) {
+      $scope.grupoActual.IdEstudiante =  $rootScope.currentUser.id;
+      $http.post("php/estudianteConEquipoEnGrupo.php", { "data" : $scope.grupoActual})
       .success(function(data) {
-          $scope.grupoActual.Integrantes = data; 
-          console.log($scope.grupoActual.Integrantes);
+        $scope.grupoActual.Equipo = data.Nombre;
+        $scope.grupoActual.Mision = data.Vision;
+        $scope.grupoActual.Vision = data.Mision;
+        $scope.grupoActual.IdEquipo = data.IdEquipo;
+        $http.post("php/estudiantesPorEquipo.php", { "data" : data.IdEquipo})
+        .success(function(data) {
+            $scope.grupoActual.Integrantes = data; 
+         })
        })
 
       }],

@@ -7,7 +7,7 @@ include "conexion.php";
  $data = $objData->data;
 
 //var_dump($data);
- $query = "CALL miPortafolio('7')";
+ $query = "CALL miPortafolio('$data')";
 $result = mysqli_query($conexion,$query);
 $rows = array();
 

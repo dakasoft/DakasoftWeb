@@ -3,24 +3,24 @@
     <div class="modal-content">
     <div class="modal-header"><h4>Evaluación de Equipo</h4></div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-          <div class="row">
-            <form class="form-horizontal" ng-submit="saveEval()">
+      <div class="modal-body" id="contentbody">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <form name="rubricaForm" class="form-horizontal" novalidate>
               <div class="form-group">
                 <div class="row">
                   <table id="custom-table" class="table" ng-table="tableParams" >
-                    <tr ng-repeat="rubro in modalEval">
-                      <td data-title="'Rubro'">{{rubro.rubro}}</td>
+                    <tr ng-repeat="rubro in grupoEditable.Rubros">
+                      <td data-title="'Rubro'">{{rubro.Nombre}}({{rubro.Valor}})</td>
                       <td data-title="'Valor'">
-                        <input type="number" min="0" max="100" class="form-control" ng-model="rubro.valor">
+                        <input required type="number" min="0" max="{{rubro.Valor}}" class="form-control" ng-model="rubro.valor" >
                       </td>
                     </tr>
                   </table>
                 </div>
               </div>
-              <div class="row">
-                <button type="submit" class="btn btn-custom btn-sm pull-right">Guardar</button>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-custom btn-sm pull-right" ng-click="guardarEvaluacion(grupoEditable)">Guardar</button>
               </div>
             </form>
           </div>
