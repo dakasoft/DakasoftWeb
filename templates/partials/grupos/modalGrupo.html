@@ -31,9 +31,6 @@
                 <select id="curso" required ng-model="modalGroup.Curso" ng-init="cursos" class="form-control" ng-options="obj.Nombre for obj in cursos track by obj.id">
                   <option value="">--Curso--</option>
                 </select>
-                <div ng-bind="modalGroup.Curso">
-                  add: {{modalGroup.Curso.Nombre}}
-                </div>
               </div>      
           </div>
           <div class="row">
@@ -48,12 +45,6 @@
                   <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(profesor)"></i>
                 <li>
               </ul>
-              <div ng-repeat="user in targetUsers.toAdd">
-                add: {{user.Nombre}}
-              </div>
-              <div ng-repeat="user in targetUsers.toDelete">
-                delete: {{user.Nombre}}
-              </div>
             </div>
           </div> 
         </form>   

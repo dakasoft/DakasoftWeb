@@ -102,7 +102,8 @@
               grupo.IdCurso = grupo.Curso.id;
               $http.post('php/crearGrupo.php', {"data":grupo}).success(function (data) {
 
-                grupo.id = data;
+                grupo.id = data.Insert_Id;
+                console.log(data);
 
                 $scope.grupos = funciones.agregarALista($scope.grupos, grupo);
                 $scope.guardarProfesor(grupo);
@@ -253,7 +254,7 @@
               .success(function (data) {});
           });
           angular.forEach($scope.targetUsers.toAdd, function (value, key) {
-            $http.post("php/crearEstudianteGrupo.php", {"IdGrupo": grupo.id, "IdEstudiante": value.id})
+            $http.post("php/crearEstudianteGrupo.php", {"IdGrupo": grupo.id, "IdEstudiante": value.id, "FechaIngreso": funciones.getDate(new Date())})
               .success(function (data) {});
           });
 

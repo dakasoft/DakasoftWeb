@@ -7,8 +7,9 @@ $objData = json_decode($data);
 
 $IdGrupo = $objData->IdGrupo;
 $IdEstudiante = $objData->IdEstudiante;
+$FechaIngreso = $objData->FechaIngreso;
 
-$query = "CALL estudiantePorGrupoCrear('$IdGrupo','$IdEstudiante')";
+$query = "CALL estudiantePorGrupoCrear('$IdGrupo','$IdEstudiante', '$FechaIngreso')";
 
 $result = mysqli_query($conexion,$query);
 

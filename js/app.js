@@ -11,14 +11,22 @@ var app = angular.module('universidad', ["ui.router","factory","ngTable","usuari
 app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
     var main = this;
     $rootScope.currentUser = {};
-    $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 1;
+    $rootScope.bLoggedIn = false; //cambiar para deslogear
+    $rootScope.roleLv = 0;
 
+    if (localStorage.userData) {
+      console.log(JSON.parse(localStorage.getItem('userData')));
+      $rootScope.currentUser = JSON.parse(localStorage.getItem('userData'));
+      console.log($rootScope.currentUser.Nombre);
+      $rootScope.bLoggedIn = true;
+      $state.go('home');
+    }
 
     main.logOut = function () {
       $rootScope.currentUser = {};
       $rootScope.bLoggedIn = false;
       $rootScope.roleLv = 0;
+      localStorage.removeItem('userData');
       $state.go('login');
     }
 

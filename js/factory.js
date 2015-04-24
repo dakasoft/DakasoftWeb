@@ -107,6 +107,14 @@ app.factory('funciones',function(){
           });
 
           return bExistence;
+        },
+        getDate: function (psDate) {
+          var fixedDate = '',
+              year = psDate.getFullYear(),
+              month = psDate.getMonth(),
+              day = psDate.getDate();
+          fixedDate = year + '-' + month + '-' + day;
+          return fixedDate;
         }
     }
 
