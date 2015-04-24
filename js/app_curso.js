@@ -50,7 +50,7 @@
         }
 
         $scope.borrar = function(){
-            $http.post("php/borrarCurso.php", { "data" : $scope.curso}) //
+          $http.post("php/borrarCurso.php", { "data" : $scope.curso}) //
           .success(function(data) {
             $scope.cursos=funciones.borrarDeLista($scope.cursos,$scope.curso); 
            })
