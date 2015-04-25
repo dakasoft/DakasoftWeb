@@ -25,7 +25,7 @@
           .error(function(data,status){
             result = data || "jiji"
           });
-          $http.get('php/listarUsuarios.php')
+          $http.get('php/invitadosListar.php')
           .success(function (data) {
                $scope.usuarios = data;
                $scope.cambioExtrategico($scope.usuarios);
@@ -35,24 +35,25 @@
           });
 
 
+
            $scope.cambioExtrategico = function(usuarios){
           angular.forEach(usuarios, function(value, key) {
             if(value.IdRol == 1){
-              value.rol = {id:1,nombre:"Admin"};
+              value.rol = {id:1,nombre:"Estudiante"};
             }else if(value.IdRol == 2){
-              value.rol = {id:2,nombre:"Decano"};
+              value.rol = {id:2,nombre:"Profesor"};
             }else if(value.IdRol == 3){
               value.rol = {id:3,nombre:"Director académico"};
             }else if(value.IdRol == 4){
-              value.rol = {id:4,nombre:"Profesor"};
+              value.rol = {id:4,nombre:"Decano"};
             }else if(value.IdRol == 5){
-              value.rol = {id:5,nombre:"Estudiante"};
+              value.rol = {id:5,nombre:"Admin"};
             }
           });
           $scope.usuarios = usuarios;
         };
         $scope.agregarProyecto = function(proyecto){
-
+           funciones.closeC();
           var ingresar = true;
           angular.forEach($scope.proyectosSeleccionados,function(value,key){
             if(value.id == proyecto.id){
@@ -90,10 +91,6 @@
 
 
       $scope.agregarUsuarios = function(usuario){
-         // $http.post("php/actualizarProyectosElegidos.php", { "data" : usuario})
-         //  .success(function(data) {
-         //     $scope.usuariosSeleccionados=funciones.agregarAListaNoRepetido( $scope.usuariosSeleccionados,usuario); 
-         //   })
        $scope.usuariosSeleccionados.push(usuario);
        angular.forEach($scope.usuarios, function(value, key) {
         if(value.id == usuario.id){
@@ -118,11 +115,12 @@
         value.IdVotacion = $scope.votacionActiva[0].IdVotacion;
           $http.post("php/enviarInvitados.php", { "data" : value })
           .success(function(data) {
-             console.log(data);
+              funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> se ha enviado la invitacion',3500);
+                setTimeout(function(){$("#elegirVot").modal('hide')},2000);   
           })                
       });         
 
-      $("#elegirVot").modal('hide');
+       funciones.closeC();
 
 
     }
@@ -132,6 +130,8 @@
   controllerAs: 'proyectoCtrl'
 };
 });
+
+
 
 app.directive('modalProyectosvotacion',function ($http) {
   return {

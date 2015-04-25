@@ -29,15 +29,15 @@
         $scope.cambioExtrategico = function(usuarios){
           angular.forEach(usuarios, function(value, key) {
             if(value.IdRol == 1){
-              value.rol = {id:1,nombre:"Admin"};
+              value.rol = {id:1,nombre:"Estudiante"};
             }else if(value.IdRol == 2){
-              value.rol = {id:2,nombre:"Decano"};
+              value.rol = {id:2,nombre:"Profesor"};
             }else if(value.IdRol == 3){
               value.rol = {id:3,nombre:"Director académico"};
             }else if(value.IdRol == 4){
-              value.rol = {id:4,nombre:"Profesor"};
+              value.rol = {id:4,nombre:"Decano"};
             }else if(value.IdRol == 5){
-              value.rol = {id:5,nombre:"Estudiante"};
+              value.rol = {id:5,nombre:"Admin"};
             }
           });
           $scope.usuarios = usuarios;

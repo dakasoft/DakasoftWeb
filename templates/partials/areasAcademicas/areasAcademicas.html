@@ -1,0 +1,34 @@
+<div class="container-fluid">
+	<div class="row">
+	<div class="col-xs-10 col-xs-offset-1 ">
+	<div class="pagetittle1 col-xs-5 col-sm-7"><h2>Areas Academicas</h2></div>
+	<div class="form-group search-parent  col-xs-11 col-sm-4">
+      <input type="text" class="form-control normal-search" placeholder="Search" ng-model="searchArea">
+      <i class="fa fa-search normal-search-icon"></i>
+    </div>
+    </div>
+		<div class="col-xs-10 col-xs-offset-1 ">
+			<div class="table-header">
+
+				<div class="col-xs-12 col-sm-6">
+					<p>Areas</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p><a href="" data-toggle="modal" data-target="#modalArea" ng-click="newArea()" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+
+				</div>
+			</div>
+			<table id="custom-table" ng-table class="table">
+			    <tr ng-repeat="area in areasAcademicas | filter:searchArea" >
+			        <td data-title="'Nombre'">{{area.Nombre}}</td>
+			        <td data-title="'Modificar'">
+			        	<a data-toggle="modal" data-target="#modalArea" ng-click="editArea(area)"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+			        </td>
+			        <td data-title="'Eliminar'">
+			        <a><i class="fa fa-times-circle fa-2x" data-toggle="modal" data-target="#modalConfirm"  ng-click="deleteArea(area)"></i></a>
+			        </td>
+			    </tr>
+			</table>
+		</div>
+	</div>
+</div>

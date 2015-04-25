@@ -6,10 +6,12 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/votacionPrivada/proyectosVotacionPrivada.html',
-      controller: ['$scope','$http',function ($scope,$http) {
+      controller: ['$scope','$http','$rootScope',function ($scope,$http,$rootScope) {
         $scope.proyectosElegidos = [];
         $scope.votar = false;
+       $scope.voto = 0;
         $scope.votacionActiva= "";
+        $scope.usuarios = [];
 
         $http.get('php/votacionActiva.php')
           .success(function (data) {
@@ -17,6 +19,7 @@
             $http.post("php/proyectosEnVotacion.php", { "data" : $scope.votacionActiva[0].IdVotacion})
               .success(function(data) {
                 $scope.proyectosElegidos = data;
+                console.log( $scope.proyectosElegidos);
                 for (var i = $scope.proyectosElegidos.length - 1; i >= 0; i--) {
                   $scope.proyectosElegidos[i].IdEquipo;
                     $scope.puntero = $scope.proyectosElegidos[i];
@@ -29,6 +32,14 @@
             })
           })
 
+          $http.get('php/invitadosListar.php')
+          .success(function (data) {
+               $scope.usuarios = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
+          });
+
         $scope.seleccionar = function(proyecto){
           $scope.video =proyecto.video;
           $("#video").attr("src", $scope.video); /* dinamic iframe */
@@ -36,17 +47,25 @@
         };
 
         $scope.enviarVotacion = function(proyecto){
-          if($scope.votar){
-            alert("Ya ud voto");
-            angular.forEach($scope.proyectosElegidos, function(value, key) {
-              value.rate = 0
+           $http.post('php/votoverificar.php', { "data" : $rootScope.currentUser.id})
+                     .success(function (data){
+                    $scope.voto = data.Voto;
+                    console.log($scope.voto);
+
+                       if($scope.voto != 1){
+                 $http.post('php/enviarvoto.php', { "data" : proyecto})
+                 .success(function (data){
+                        $http.post('php/updateVoto.php', { "data" : $rootScope.currentUser.id})
+                       .success(function (data){
+                             
+                         });
+                 }); 
+              }else{
+                
+              }
+
             });
-          }else{
-            $scope.votar = true;
-            angular.forEach($scope.proyectosElegidos, function(value, key) {
-              value.rate = 0
-            });
-          }
+                   
         };
 
         $scope.addRate = function(protecto){

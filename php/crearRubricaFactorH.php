@@ -1,0 +1,33 @@
+<?php
+include "conexion.php";
+$data = file_get_contents("php://input");
+
+$objData = json_decode($data);
+$data = $objData->data;
+// $data->rubricaFactor;
+// var_dump($data->rubricaFactor);
+
+//rubrica factor humano crear y se inserta en la tabla fh 
+//$query = "CALL rubricaCrear()";Esta era la anterior, ahora la está usando cursos
+
+$query = "CALL rubricaFactorhumanoCrear()";
+$result = mysqli_query($conexion,$query);
+
+
+if($result){
+	$Insert_Id = $result->fetch_array(MYSQLI_ASSOC);
+	echo json_encode($Insert_Id);
+	
+	
+}else{
+	echo false;
+}
+
+mysqli_free_result($result);
+
+
+mysqli_close($conexion);
+
+?>
+
+

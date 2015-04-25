@@ -1501,14 +1501,21 @@ color:#a32068;
 	cursor: pointer;
 }
 
-.pagetittle {
+.pagetittle{
 	margin-left: 15px;
 	margin-right:50px;
 	padding: 0;
 	background-color: #722d7b ;
 	opacity: 0.9; 
 }
-.pagetittle h2, h3{
+.pagetittle1 {
+   margin-right:50px;
+	padding: 0;
+	background-color: #722d7b ;
+	opacity: 0.9; 
+
+}
+.pagetittle h2,.pagetittle1 h2, h3{
    float:none;
 	margin: 0;
 	text-align: center;
@@ -1703,3 +1710,10 @@ line-height:2em;
   font-weight: 600;
 }
 
+.cantidad{
+	padding:  3px;
+}
+
+.item-votacion{
+	 	padding:  6px;
+}

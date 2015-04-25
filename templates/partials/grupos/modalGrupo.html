@@ -11,24 +11,24 @@
           <div class="col-xs-12 col-sm-6">
             <div class="form-group">
               <label for="nombreGrupo">Nombre Grupo</label>
-              <input type="text" class="form-control" id="nombre" ng-model="grupo.nombre" required>
+              <input type="text" class="form-control" id="nombre" ng-model="modalGroup.Nombre" required>
             </div>
               <div class="form-group">
                 <label for="profesor">Profesor</label>  
-                <select id="profesor" ng-model="profesor" ng-init="profesores" class="form-control plus-add" ng-options="obj.nombre+' '+obj.apellido for obj in profesores track by obj.id">
+                <select id="profesor" ng-model="profesor" ng-init="profesores" class="form-control plus-add" ng-options="obj.Nombre+' '+obj.apellido for obj in modalTeachers track by obj.id">
                   <option value="">--Profesor--</option>
                 </select>
                 <i class="fa fa-plus fa-lg plus-add-icon" ng-click="agregarProfesor(profesor)"></i>
               </div>
               <div class="form-group">
                 <label for="encargado">Profesor encargado</label> 
-                <select id="encargado" required class="form-control" ng-model="grupo.encargado" ng-init="profesores" ng-options="obj.nombre+' '+obj.apellido for obj in profesores track by obj.id">
+                <select id="encargado" required class="form-control" ng-model="modalGroup.Encargado" ng-init="profesores" ng-options="obj.Nombre+' '+obj.Apellido for obj in profesores track by obj.id">
                   <option value="">--Profesor--</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="curso">Curso</label>  
-                <select id="curso" required ng-model="grupo.curso" ng-init="cursos" class="form-control" ng-options="obj.nombre for obj in cursos track by obj.id">
+                <select id="curso" required ng-model="modalGroup.Curso" ng-init="cursos" class="form-control" ng-options="obj.Nombre for obj in cursos track by obj.id">
                   <option value="">--Curso--</option>
                 </select>
               </div>      
@@ -37,12 +37,12 @@
             <div class="col-xs-12 col-sm-6">
               <ul class="list-group listaProfesores">
                 <li class="list-group-item list-g-header">Profesores</li>
-                <li class="list-group-item" ng-repeat="profesorS in grupo.profesores">
-                  {{ profesorS.nombre }} {{ profesorS.apellido }}
-                  <select class="form-control li-select" ng-model="profesorS.area" ng-init="profesorS.area" ng-change="cambiarArea(profesorS,profesorS.area)"required ng-options="obj.id as obj.nombre for obj in areasAcademicas">
+                <li class="list-group-item" ng-repeat="profesor in modalGroup.profesores track by $index">
+                  {{ profesor.Nombre }} {{ profesor.Apellido }}
+                  <select class="form-control li-select" ng-model="profesor.area" ng-init="profesor.area" ng-change="cambiarArea(profesor, profesor.area)"required ng-options="obj as obj.Nombre for obj in areasAcademicas track by obj.id">
                       <option value="">--Área--</option>
                   </select>
-                  <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(profesorS)"></i>
+                  <i class="fa fa-times-circle pull-right" ng-click="quitarProfesor(profesor)"></i>
                 <li>
               </ul>
             </div>
@@ -50,7 +50,7 @@
         </form>   
       </div>
        <div class="row modal-footer">
-            <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar(grupo)">Guardar</button>
+            <button type="submit" class="btn btn-custom btn-sm" ng-click="guardar(modalGroup)">Guardar</button>
           </div>
 
     </div>

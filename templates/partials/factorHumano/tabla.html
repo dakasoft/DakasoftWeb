@@ -10,13 +10,15 @@
 			<th>Acciones</th>
 		</tr>
 		<tr ng-repeat="grupo in grupos">
-		  <td>{{grupo.nombre}}</td>
-		  <td>{{grupo.curso.nombre}}</td>
-			<td class="tdModal">
-				 <a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(grupo)" title="Agregar Rúbrica!" data-toggle="tooltip" data-placement="right" tooltip>
-					<i class="fa fa-pencil-square-o fa-2x"></i>Rubrica
-				 </a>
-			</td>
+		  <td>{{grupo.Nombre}}</td>
+	      <td>{{grupo.Curso}}</td>
+	      
+		  
+		  <td class="tdModal"><!-- editar grupo -->
+				<a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(grupo)" title="Agregar Rúbrica!" data-toggle="tooltip" data-placement="right" tooltip>
+				<i class="fa fa-pencil-square-o fa-2x"></i>Rubrica
+				</a>
+		  </td>
 		</tr>
 	</table>
 </div><!-- fin divTabla -->

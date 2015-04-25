@@ -11,14 +11,21 @@ var app = angular.module('universidad', ["ui.router","factory","ngTable","usuari
 app.controller('mainController', ['$scope','$http', '$state','$rootScope', function ($scope, $http, $state, $rootScope) {
     var main = this;
     $rootScope.currentUser = {};
-    $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.roleLv = 2;
-    $rootScope.currentUser.id=2; 
+    $rootScope.bLoggedIn = false; //cambiar para deslogear
+
+    if (localStorage.userData) {
+      console.log(JSON.parse(localStorage.getItem('userData')));
+      $rootScope.currentUser = JSON.parse(localStorage.getItem('userData'));
+      console.log($rootScope.currentUser.Nombre);
+      $rootScope.bLoggedIn = true;
+      $state.go('home');
+    }
 
     main.logOut = function () {
       $rootScope.currentUser = {};
       $rootScope.bLoggedIn = false;
       $rootScope.roleLv = 0;
+      localStorage.removeItem('userData');
       $state.go('login');
     }
 
@@ -76,7 +83,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   .state('portafolio',{
     url: "/portafolio",
     templateUrl:"templates/portafolio.html",
-    controller: function ($rootScope, $state,funciones) {
+    controller: function ($rootScope, $state) {
       $rootScope.currentStateName = $state.current.name;
       if (!$rootScope.bLoggedIn) {
         $state.go('login');
@@ -206,6 +213,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
+    .state('miscursos.equipo', {
+      url: '/equipo',
+      templateUrl:'templates/partials/miEquipo.html'
+    })
+
+    .state('miscursos.curso', {
+      url: "/curso",
+      templateUrl:"templates/partials/miCurso.html"
+    })
+
+    .state('miscursos.cursos', {
+      url: '/curso',
+      templateUrl:'templates/partials/misCursos.html'
+    })
+
     .state('vercursos',{
       url: '/vercursos',
       templateUrl:'templates/verCursos.html',
@@ -216,7 +238,28 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    
+
+    .state('vercursos.entregas', {
+      url: '/entregas',
+      templateUrl:'templates/partials/verEntregas.html'
+    })
+
+    .state('vercursos.estudiantes', {
+      url: '/estudiantes',
+      templateUrl:'templates/partials/verEstudiantes.html'
+    })
+
+    .state('vercursos.equipo', {
+      url: '/equipo',
+      templateUrl:'templates/partials/verEquipo.html'
+    })
+
+    .state('vercursos.roles', {
+      url: '/equipo',
+      templateUrl:'templates/partials/verRoles.html'
+    })
+
+
     .state('areasAcademicas', {
       url: '/areasAcademicas',
       templateUrl:'templates/areasAcademicas.html'
@@ -275,18 +318,7 @@ app.directive('tooltip', function(){
             });
         }
     };
-}); 
-app.directive('formatDate',formatDate);
-  function formatDate(){
-    return {
-     require: 'ngModel',
-      link: function(scope, elem, attr, modelCtrl) {
-        modelCtrl.$formatters.push(function(modelValue){
-          return new Date(modelValue);
-        })
-      }
-    }
-   }  
+});   
 
 
 })();

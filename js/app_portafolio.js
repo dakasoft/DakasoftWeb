@@ -90,7 +90,7 @@ app.directive('portafolio', function(){
         
         };
          $scope.guardar = function(){
-       
+           $scope.uploadFile();
           if($scope.portafolio != ""){
                  $http.post("php/modificarPortafolio.php", { "data" : $scope.portafolio})
                   .success(function(data) {

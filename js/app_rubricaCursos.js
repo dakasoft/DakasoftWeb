@@ -6,88 +6,100 @@
       restrict: 'E',
       templateUrl: 'templates/partials/evaluacion/tabla.html',
       controller: ['$scope','$http','ngTableParams','funciones',function ($scope,$http,ngTableParams,funciones) {
-        $scope.rubricaCursos = [];
+        // $scope.rubricaCursos = [];
+        $scope.cursos = [];
         $scope.rubrosSeleccionados = [];
-      
-        $http.get('json/rubricaCursos.json').success(function (data) {
-          $scope.rubricaCursos = data;
-        });
 
-        $scope.editar = function(grupoRubrica){
-           funciones.closeC();
-            $scope.rubroNombre = "";
-             $scope.rubroValor = "";
-          $scope.rubricaCursoForm.$setUntouched(true);
-          $scope.rubricaCursoForm.$setPristine(true);
-          $scope.editableGrupo = grupoRubrica;
-          $scope.rubrosSeleccionados = angular.copy(grupoRubrica.rubrica);
-        };
-
-        $scope.agregarRubro = function(){
-        if($scope.rubricaCursoForm.$valid){
-          //Si ésta función lo que valida está bien agrege la nueva fila.
-          //La función valida que la suma no sea mayor de 100
-          //El scope tiene el array y valor que se va a meter
-          if(esValidoMaxValorRubro($scope)){
-
-            $scope.rubricaCursoForm.$setUntouched(true);
-            $scope.rubricaCursoForm.$setPristine(true);
-
-            var lastRubro = $scope.rubrosSeleccionados[$scope.rubrosSeleccionados.length - 1];
-            var newId = 1;
-            if(lastRubro != null){
-               newId = lastRubro.id + 1;
-            }
-            $scope.rubrosSeleccionados.push({ id:newId,nombre: $scope.rubroNombre, valor:$scope.rubroValor });
-            funciones.closeC();
-            funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-            $scope.rubroNombre = "";
-            $scope.rubroValor = "";
-
-          }else{
-             
-          }
-
-          }else{
-            funciones.closeC(); 
-            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
-          }
-        };
-
-        $scope.eliminarRubro = function(rubro){
-
-          angular.forEach($scope.rubrosSeleccionados, function(value, key) {
-            if(value.id == rubro.id){
-              $scope.rubrosSeleccionados.splice(key, 1);
-            }
+         /* Listar cursos*/
+          $http.get('php/listarCursos.php')
+          .success(function (data) {
+            $scope.cursos = data;
+          })
+          .error(function(data,status){
+            result = data || "jiji"
           });
 
-        };
+          // FUNCIONES 
+          //editar
+          $scope.editar = function(curso){
+            funciones.closeC();
+            $scope.rubro = funciones.rubro();//Nombre id valor
+            $scope.curso =  angular.copy(curso);
+            $scope.curso.cursoRubrica = [];
+            $scope.accion = "Editar";
+            console.log(curso)
+          };
+          //agregar rubro
+          $scope.agregarRubro = function(rubro){
+            if($scope.rubricaCursoForm.$valid){
+              // $scope.rubro = funciones.rubro();
+              var newRubro = angular.copy(rubro);
+              funciones.agregarAListaNoRepetidoPorNombre($scope.curso.cursoRubrica,newRubro);
+              funciones.closeC();
+            }else{
+              funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
+            }
+          };
+          //eliminar rubro
+          $scope.eliminarRubro = function(rubro){
+            funciones.borrarDeListaPorNombre($scope.curso.cursoRubrica,rubro);
+          };
 
-        $scope.guardarRubrica = function(){
-          $scope.editableGrupo.rubrica = $scope.rubrosSeleccionados
-         setTimeout(function(){$("#modalRubrica").modal('hide')},1000);
-        };
+          //GUARDAR rubros en la bd
+          $scope.guardarRubrica = function(curso){
+            if(curso.Rubrica!=""){
+              $scope.curso = curso;
+              $scope.rubros = [];
+              $scope.rubricaId = 0;
 
-         function esValidoMaxValorRubro($scope){
-          var suma = 0;
-          var esValido = true;
-          var arrayRubros = $scope.rubrosSeleccionados;
-          var nuevoValor = $scope.rubroValor;
+              //1)--Primero se crea la rubrica
+              $http.post('php/crearRubricaCurso.php',{"data" : curso})
+              .success(function (data) {
+                if (data.Insert_Id!="") {
+                  $scope.curso.Rubrica = data.Insert_Id;
+                  
+                  //2)--Guardar Rubrica
+                  $http.post('php/guardarRubricaCurso.php',{"data" : $scope.curso})
+                  .success(function (data) {
+                  // $scope.curso = data;
+                  // console.log(data)
+                  }) 
+                  .error(function(data, status) {
+                  result = data || "Request failed";//hacer algo con esto.
+                  });
 
-          for(var i = 0; i < arrayRubros.length; i++){
-            suma +=  parseInt(arrayRubros[i].valor);
-          }
-          suma +=  parseInt(nuevoValor);
-          
-          if(suma > 100){
-            esValido = false;
-             funciones.closeC(); 
-            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> La suma de los valores no debe ser mayor a 100',3500);
-          }
+                  //3)--for que recorre los rubros. Esta parte se meteran lo rubro pue
+                  $scope.rubricaId = data.Insert_Id;
 
-          return esValido;
-        }
+                  for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) { 
+                    $http.post('php/crearRubrosCurso.php',{"data" : curso.cursoRubrica[i]})
+                    .success(function (rubro) { 
+                      console.log(curso.cursoRubrica);
+                      $http.post('php/guardarRubrosRubricaC.php',{"data" : {rubrica:$scope.rubricaId,id:rubro.Insert_Id} })
+                      .success(function (data) {
+                        funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                        setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+                      })//success rubrica x rubro
+
+                    })//success for
+                  };//fin for
+                };//fin if2 Insert_Id entre success e if va todo
+              })//fin primer post success
+            }//fin if1
+            // else{
+            //    if(curso.Rubrica!=""){ 
+            //    $http.post('php/rubrosModificar.php',{"data" : curso.cursoRubrica[i]})
+            //                  .success(function (rubro) { 
+            //                   $scope.curso = funciones.editarDeLista($scope.curso.cursoRubrica[i]);
+            //                  })
+            //                  .error(function(data, status) {
+            //                     result = data || "Request failed";//hacer algo con esto.
+            //                  });
+
+            //    };
+              
+            // }
+        };//Guardar
 
       }],
       controllerAs: 'factorH'
@@ -97,7 +109,7 @@
   app.directive('modalRubricaCursos',function ($http) {
     return {
       restrict: 'E',
-      templateUrl: 'templates/partials/evaluacion/modalRubricaCursos.html',
+      templateUrl: 'templates/partials/evaluacion/modalRubrica.html',
       controller: ['$scope','$http',function ($scope,$http) {     
       }],
         controllerAs: 'modalRubriCursos'
@@ -110,3 +122,24 @@
 
 
 })();
+                
+
+
+              
+
+
+
+              
+                     
+              
+
+            
+         
+                  
+      
+              
+
+               
+
+
+

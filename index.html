@@ -19,7 +19,7 @@
             <a ui-sref="home" ><img class="logo cf" src="img/logo.png"/></a>
          </div>
           <div class="col-xs-12 col-sm-3 col-md-2 pull-right" ng-show="$root.bLoggedIn" ng-class=" $root.currentStateName=='home' ? '' : 'hidden-sm hidden-xs'">
-            <div class="usuario pull-right"><p ng-bind="">{{$root.currentUser.name}}</p>
+            <div class="usuario pull-right"><p ng-bind="$root.currentUser.Nombre"></p>
              <button type="button" class="btn btn-default btn-xs" ng-click="main.logOut()">Cerrar Sesión</button>
             </div>
           </div>

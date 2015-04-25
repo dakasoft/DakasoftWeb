@@ -12,40 +12,40 @@
 
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-         	<li ng-show="roleLv > 1" id="configuracionM"class="dropdown">
+         	<li ng-show="currentUser.IdRol > 1" id="configuracionM"class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Configuración<span class="caret"></span></a>
             <ul class="subMenuMovil dropdown-menu">
-              <li ng-show="roleLv > 4"><a ui-sref="usuarios">Usuarios</a></li>
-              <li ng-show="roleLv > 2"><a ui-sref="carreras">Carreras</a></li>
-              <li ng-show="roleLv > 2"><a ui-sref="cursos">Cursos</a></li>
-              <li ng-show="roleLv > 2"><a ui-sref="grupos">Grupos</a></li>
-              <li ng-show="roleLv > 2"><a ui-sref="parametros">Parametros</a></li>
-              <li ng-show="roleLv > 1"><a ui-sref="factorhumano">Factor Humano</a></li>
-              <li ng-show="roleLv > 1"><a ui-sref="rubricacursos">Rúbricas</a></li>
-              <li ng-show="roleLv > 4"><a ui-sref="proyectosvotacion">Votación</a></li>
+              <li ng-show="currentUser.IdRol > 4"><a ui-sref="usuarios">Usuarios</a></li>
+              <li ng-show="currentUser.IdRol > 2"><a ui-sref="carreras">Carreras</a></li>
+              <li ng-show="currentUser.IdRol > 2"><a ui-sref="cursos">Cursos</a></li>
+              <li ng-show="currentUser.IdRol > 2"><a ui-sref="grupos">Grupos</a></li>
+              <li ng-show="currentUser.IdRol > 2"><a ui-sref="parametros">Parametros</a></li>
+              <li ng-show="currentUser.IdRol > 1"><a ui-sref="factorhumano">Factor Humano</a></li>
+              <li ng-show="currentUser.IdRol > 1"><a ui-sref="rubricacursos">Rúbricas</a></li>
+              <li ng-show="currentUser.IdRol > 4"><a ui-sref="proyectosvotacion">Votación</a></li>
             </ul>
           </li>
           <li id="administracionM"class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administración<span class="caret"></span>
             </a>
             <ul class="subMenuMovil dropdown-menu cf">
-              <li ng-show="roleLv == 1"><a ui-sref="miscursos">Mis Cursos</a></li>
-              <li ng-show="roleLv == 2"><a ui-sref="vercursos">Ver Cursos</a></li>
-              <li ng-show="roleLv == 2"><a ui-sref="verproyectos">Proyectos</a></li>
-              <li ng-show="roleLv == 5"><a ui-sref="votacionprivada">En Votación</a></li>
-              <li ng-show="roleLv < 100"><a ui-sref="areasAcademicas">Areas Académicas</a></li>
+              <li ng-show="currentUser.IdRol == 1"><a ui-sref="miscursos">Mis Cursos</a></li>
+              <li ng-show="currentUser.IdRol == 2"><a ui-sref="vercursos">Ver Cursos</a></li>
+              <li ng-show="currentUser.IdRol == 2"><a ui-sref="verproyectos">Proyectos</a></li>
+              <li ng-show="currentUser.IdRol == 5"><a ui-sref="votacionprivada">En Votación</a></li>
+              <li ng-show="currentUser.IdRol < 100"><a ui-sref="areasAcademicas">Areas Académicas</a></li>
             </ul>
           </li>
           <li id="portafolioM">
-            <a ng-show="roleLv >= 3 || roleLv == 1 " ui-sref="portafolio" >Portafolio <span ></span>
+            <a ng-show="currentUser.IdRol >= 3 || currentUser.IdRol == 1 " ui-sref="portafolio" >Portafolio <span ></span>
             </a>
           </li>
-          <li ng-show="roleLv > 1" id="reportesM"class="dropdown">
+          <li ng-show="currentUser.IdRol > 1" id="reportesM"class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span>
             </a>
             <ul class="subMenuMovil dropdown-menu cf">
-              <li ng-show="roleLv > 1"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>
-              <li ng-show="roleLv > 1"><a ui-sref="historialacademico" ng-click="">Historial Acádemico</a></li>
+              <li ng-show="currentUser.IdRol > 1"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>
+              <li ng-show="currentUser.IdRol > 1"><a ui-sref="historialacademico" ng-click="">Historial Acádemico</a></li>
             </ul>
           </li>
         </ul>

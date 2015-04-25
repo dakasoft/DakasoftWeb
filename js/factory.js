@@ -111,6 +111,28 @@ app.factory('funciones',function(){
             }
           });
           return lista;
+        },
+        areaAcademica: function () {
+          return {id:"", Nombre:"", Codigo:""}
+        },
+        repeatCheck: function (pList, pTarget, pUniqueProp) {
+          var bExistence = false;
+
+          angular.forEach(pList, function (value, key) {
+            if (value[pUniqueProp] === pTarget[pUniqueProp]) {
+              bExistence = true;
+            };
+          });
+
+          return bExistence;
+        },
+        getDate: function (psDate) {
+          var fixedDate = '',
+              year = psDate.getFullYear(),
+              month = psDate.getMonth(),
+              day = psDate.getDate();
+          fixedDate = year + '-' + month + '-' + day;
+          return fixedDate;
         }
     }
 

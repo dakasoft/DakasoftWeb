@@ -5,27 +5,28 @@
 			</div>
 	</div>
 
-<div class="content clearfix" ng-repeat="gana in ganador">
+<div class="content clearfix">
 	
 	<div class="divGainer clearfix" >
-	
-		<img class="img-responsive imgGainer" ng-src="{{gana.imagen}}"/>
-
+		<img class="img-responsive imgGainer" ng-src="{{proyectosElegidos2.Imagen}}"/>
 		<div class="col-sm-4">
 		<div class="mainTitle">
 			<div class="center-block gain">
 				<a href="">
 					<i class="fa fa-trophy fa-2x trophy1"></i>
 				</a>
-
 			</div>
-			<p><b>{{gana.posicion}}</b></p>
+			<p><b>Votos:{{proyectosElegidos2.Votos}}</b></p>
 			</div>
 	  </div>
 	  <div class="frase col-sm-8">
-	  <h4><b>{{gana.name}}</b></h4>
-		<p><span>{{gana.frase}}</span></p>
+	  <h4><b>{{proyectosElegidos2.Equipo}}</b></h4>
+		<p><span>{{proyectosElegidos2.Curso}}</span></p>
 	 </div>
+	 	<div class="item-votacion-contenido">
+			<p> Integrantes </p>
+				<p ng-repeat="estudiante in proyectosElegidos2.Integrantes">{{estudiante.Nombre}} {{ estudiante.Apellido}} - {{ estudiante.RolNombre}} </p>		
+			</div>
 	</div>
 	
 </div>	

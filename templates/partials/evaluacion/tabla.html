@@ -1,0 +1,21 @@
+<div class="container-fluid">
+<div class="divTitle table-header">
+	<h3>Rúbrica cursos</h3>
+</div>
+<div class="clearfix divTabla" >
+	<table class="table table-nonfluid table-hover">
+		<tr>
+			<th>Curso</th>		
+			<th>Acciones</th>
+		</tr>
+		<tr ng-repeat="curso in cursos">
+		  <td>{{curso.Nombre}}</td>
+			<td class="tdModal"> <!-- editar curso -->
+			<a href="" data-toggle="modal" data-target="#modalRubrica" ng-click="editar(curso)" title="Agregar Rúbrica!" data-toggle="tooltip" data-placement="right" tooltip>
+				<i class="fa fa-pencil-square-o fa-2x"></i>Rubrica
+			</a>
+			</td>
+		</tr>
+	</table>
+</div><!-- fin divTabla -->
+</div><!-- finContainer -->
