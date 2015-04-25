@@ -14,7 +14,7 @@
 					<p><a class="add" data-toggle="modal" data-target="#modalGrupo" ng-click="nuevo()" ><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
 				</div>
 			</div>
-			<table id="custom-table" ng-table="tableParams"  class="table">
+			<table id="custom-table" class="table">
 				<tr ng-repeat="grupo in grupos | filter:palabra">
 					<td data-title="'Nombre'">{{grupo.Nombre}}</td>
 					<td data-title="'Curso'">{{grupo.Curso.Nombre}}</td>

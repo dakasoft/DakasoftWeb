@@ -1717,3 +1717,14 @@ line-height:2em;
 .item-votacion{
 	 	padding:  6px;
 }
+
+/*Arreglos .divInput .search2*/
+@media screen and (max-width:416px){
+	.titleH2{background:#722D7B;width:100%  }
+}  
+@media screen and (max-width:420px){
+	/*.divInput{background:#ccc;}*/
+	.divInput .txtSearcher{width:80%  }
+	.divInput p{margin-bottom: 10px }
+	.divInput .search2{position:absolute;top:42px;left:276px;/* 520px*/ }
+} 
