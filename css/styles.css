@@ -1728,3 +1728,9 @@ line-height:2em;
 	.divInput p{margin-bottom: 10px }
 	.divInput .search2{position:absolute;top:42px;left:276px;/* 520px*/ }
 } 
+.col1 .sub2{
+text-indent: 0;padding: 0;padding-left:10px;
+}
+.col1 .sub2 li a:last-child{
+/*background:#666;*/margin-left:30px;text-align:left;  
+}
