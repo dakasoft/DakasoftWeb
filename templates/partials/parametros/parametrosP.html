@@ -6,6 +6,7 @@
      <form class="form-horizontal formP">
       <legend>Votación</legend>
       <p class="pull-right parametro"><a class="add" data-toggle="modal" data-target="#modalVotacion" ng-click="nuevo()" href=""><i class="fa fa-plus fa-lg"></i>Agregar</a></p>
+      <div class="table-responsive">
       <table id="custom-table" ng-table class="table">
         <tr ng-repeat="votacion in votaciones track by $index">
           <td data-title="'Fecha Inicio'" >{{votacion.FechaInicio}}</td>
@@ -22,6 +23,8 @@
         </td>
       </tr>
     </table>
+        
+      </div>
     </form>
   </div>
 </div>
