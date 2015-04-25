@@ -19,7 +19,6 @@ while($r = mysqli_fetch_assoc($result)){
 }
 
 
-mysqli_free_result($result);
 mysqli_close($conexion);
 
 echo json_encode($rows);

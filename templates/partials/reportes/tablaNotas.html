@@ -33,7 +33,7 @@
 						<th>Nota</th>
 					</tr>
 					<tr ng-repeat="estudiantes in reportes | filter:notas.search:notas">
-						<td>{{estudiantes.Nombre}}</td>	
+						<td>{{estudiantes.Nombre}} {{estudiantes.Apellido}}</td>	
 						<td>{{estudiantes.Curso}}</td>	
 						<td>{{estudiantes.Grupo}}</td>	
 						<td>{{estudiantes.Nota}}</td>	

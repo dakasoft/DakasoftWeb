@@ -17,10 +17,13 @@
         $scope.mostrandoEstudiante = estudiante;
         $http.post('php/historialEstudiante.php',{ "data" : estudiante.id }).success(function (data) {
           $scope.mostrandoEstudiante.grupos = data;
-          //le vamos a meter integrantes a equipo
-          for (var i = $scope.mostrandoEstudiante.grupos.length - 1; i >= 0; i--) {
+          if($scope.mostrandoEstudiante.grupos==""){
+            console.log("la puta");
+          }else{
+            console.log($scope.mostrandoEstudiante.grupos);
+            for (var i = $scope.mostrandoEstudiante.grupos.length - 1; i >= 0; i--) {
             var equipoId = $scope.mostrandoEstudiante.grupos[i].IdEquipo;
-            var encargadoId = $scope.mostrandoEstudiante.grupos[i].ProfesorEncargado;
+            var encargadoId = $scope.mostrandoEstudiante.grupos[i].EncargadoId;
             $scope.puntero = $scope.mostrandoEstudiante.grupos[i];
             $http.post("php/estudiantesPorEquipo.php", { "data" : equipoId})
             .success(function(data) {
@@ -30,7 +33,10 @@
             .success(function(data) {
               $scope.puntero.Encargado = data; // duda
              })
-          };
+          };           
+          }
+
+
         });
       
         if(estado)
