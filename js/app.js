@@ -12,16 +12,17 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     var main = this;
     $rootScope.currentUser = {};
     $rootScope.bLoggedIn = true; //cambiar para deslogear
-    $rootScope.currentUser.id = 16 ; //16  
+    $rootScope.usuarios = [];
     $rootScope.currentUser.IdRol = 1;
-
-    // if (localStorage.userData) {
-    //   console.log(JSON.parse(localStorage.getItem('userData')));
-    //   $rootScope.currentUser = JSON.parse(localStorage.getItem('userData'));
-    //   console.log($rootScope.currentUser.Nombre);
-    //   $rootScope.bLoggedIn = true;
-    //   $state.go('home');
-    // }
+    $rootScope.roleLv = 1;
+    
+    if (localStorage.userData) {
+      console.log(JSON.parse(localStorage.getItem('userData')));
+      $rootScope.currentUser = JSON.parse(localStorage.getItem('userData'));
+      console.log($rootScope.currentUser.Nombre);
+      $rootScope.bLoggedIn = true;
+      $state.go('home');
+    }
 
     main.logOut = function () {
       $rootScope.currentUser = {};
@@ -196,11 +197,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('votacionprivada',{
       url: "/votacionprivada",
       templateUrl:"templates/votacionPrivada.html",
-      controller: function($rootScope, $state){
+      controller: function($rootScope, $state,$http,$scope){
         $rootScope.currentStateName = $state.current.name;
-        if (!$rootScope.bLoggedIn) {
-          $state.go('login');
-        }
+         var existo = false;
+        $http.get('php/invitadosListar.php')
+          .success(function (data) {
+               $rootScope.usuarios = data;
+                  angular.forEach($rootScope.usuarios, function(value, key) {
+                    if(value.id == $rootScope.currentUser.id || $rootScope.currentUser.id == 1 ){
+                      existo = true;    
+                    }
+                });
+            if(!existo){
+               $state.go('home');
+            }
+          })
       }
     })
 

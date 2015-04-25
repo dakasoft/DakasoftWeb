@@ -48,8 +48,17 @@
                          $scope.id = i;
                        }
                 }
+
+        
                 console.log($scope.proyectosElegidos[$scope.id]);
                 $scope.proyectosElegidos2 =$scope.proyectosElegidos[$scope.id];
+                $scope.proyectosElegidos2.votacion = $scope.votacionActiva[0].IdVotacion;
+                console.log( $scope.proyectosElegidos2 );
+                  $http.post('php/proyectoGanador.php', { "data" : $scope.proyectosElegidos2})
+                     .success(function (data){
+                      console.log(data);
+                    
+                  })
 
 
         }

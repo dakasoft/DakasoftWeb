@@ -119,10 +119,11 @@
                 setTimeout(function(){$("#elegirVot").modal('hide')},2000);   
           })                
       });         
-
+        $http.get('php/enviarEmail.php')
+          .success(function (data) {
+              console.log(data);
+          })
        funciones.closeC();
-
-
     }
 
 

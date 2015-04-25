@@ -141,6 +141,19 @@
       }]
     };
   });
+  
+   app.directive('modalcerrar',function ($http) {
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/partials/votacionPrivada/modalcerrar.html',
+    controller: ['$scope','$http',function ($scope,$http) {
+
+    }],
+    controllerAs: 'modalConfirm'
+  };
+});
+
+
 
 
 })();
