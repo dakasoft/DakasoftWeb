@@ -32,7 +32,7 @@
           $scope.grupo.rubricaFactor = [];
           $scope.accion = "Editar";
           //si tiene id rubrica buscar rubros
-          // console.log(grupo)
+          console.log(grupo)
         };
 
         //agregar rubro
@@ -49,20 +49,10 @@
             funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
           }
         };
-
         //eliminar rubro
         $scope.eliminarRubro = function(rubro){
           funciones.borrarDeListaPorNombre($scope.grupo.rubricaFactor,rubro);
         };
-
-            
-           
-
-      
-       
-
-
-
 
         //gardar en base de datos la rubrica de grupo obj
         $scope.guardar = function(grupo){
