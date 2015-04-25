@@ -14,9 +14,10 @@
           if (login.loginRequest.email && login.loginRequest.password) {
             $http.post('php/loginRequest.php', {"email":login.loginRequest.email, "password": login.loginRequest.password})
             .success(function (data) {
+              console.log(data);
               var userData = {};
               if (data.Error) {
-                funciones.alert("divLogin","error",'<strong>Fail!...</strong>' + data.Error,3500);
+                funciones.alert("divLogin","danger",'<strong>Fail!...</strong>' + data.Error,3500);
               } else {
                 $rootScope.currentUser = data;
 

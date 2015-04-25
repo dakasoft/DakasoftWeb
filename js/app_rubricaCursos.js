@@ -56,13 +56,13 @@
               $http.post('php/crearRubricaCurso.php',{"data" : curso})
               .success(function (data) {
                 if (data.Insert_Id!="") {
-                  $scope.curso.Rubrica = data.Insert_Id;
-                  
+                  $scope.curso.IdRubrica = data.Insert_Id;
+                  console.log($scope.curso);
                   //2)--Guardar Rubrica
                   $http.post('php/guardarRubricaCurso.php',{"data" : $scope.curso})
                   .success(function (data) {
                   // $scope.curso = data;
-                  // console.log(data)
+                    console.log(data)
                   }) 
                   .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.
@@ -86,19 +86,9 @@
                 };//fin if2 Insert_Id entre success e if va todo
               })//fin primer post success
             }//fin if1
-            // else{
-            //    if(curso.Rubrica!=""){ 
-            //    $http.post('php/rubrosModificar.php',{"data" : curso.cursoRubrica[i]})
-            //                  .success(function (rubro) { 
-            //                   $scope.curso = funciones.editarDeLista($scope.curso.cursoRubrica[i]);
-            //                  })
-            //                  .error(function(data, status) {
-            //                     result = data || "Request failed";//hacer algo con esto.
-            //                  });
+            else{
 
-            //    };
-              
-            // }
+            }
         };//Guardar
 
       }],

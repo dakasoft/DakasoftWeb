@@ -2,8 +2,8 @@
 
    $file = $_FILES["file"]["name"];
 
-   if(!is_dir("files/"))
-   	mkdir("files/",0777);
+   if(!is_dir("files2/"))
+   	mkdir("files2/",0777);
    $existe=false;
     $i=0;
    while(!$existe){

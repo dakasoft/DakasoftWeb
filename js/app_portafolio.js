@@ -10,7 +10,7 @@ app.directive('portafolio', function(){
           $scope.estudiantes = [];
           $scope.video= "";
           $scope.editableUser = "";
-         if($rootScope.roleLv != 1){
+         if($rootScope.currentUser.IdRol != 1){
            //if the person is a student we need change this pa.
         $http.get('php/listarPortafolio.php')
           .success(function (data) {
@@ -61,6 +61,8 @@ app.directive('portafolio', function(){
          $scope.uploadFile = function(){
           var name = $scope.name;
           var file = $scope.file;
+                console.log($scope.file);
+      console.log($scope.name);
           upload.uploadFile(file,name).then(function(res){
             console.log(res.data);
             var imagen ={id:$scope.portafolio.IdPortafolio,url:res.data}
@@ -90,7 +92,7 @@ app.directive('portafolio', function(){
         
         };
          $scope.guardar = function(){
-           $scope.uploadFile();
+          $scope.uploadFile();
           if($scope.portafolio != ""){
                  $http.post("php/modificarPortafolio.php", { "data" : $scope.portafolio})
                   .success(function(data) {
@@ -126,12 +128,13 @@ app.directive('portafolio', function(){
       templateUrl: 'templates/partials/shared/modalVideo.html'
     };
   });
+
 app.directive('uploaderModel',function ($http,$parse) {
    return{
   restrict : 'A',
   link: function (scope,iElement,iAttrs){
    iElement.on("change",function(e){
-        $parse(iAttrs.uploaderModel).assign(scope,iElement[0].files[0]);
+        //$parse(iAttrs.uploaderModel).assign(scope,iElement[0].files[0]);
  });
   }
 };

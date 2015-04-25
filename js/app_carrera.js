@@ -51,14 +51,21 @@
         }
 
         $scope.borrar = function(){
-          $http.post("php/borrarCarrera.php", { "data" : $scope.usuario})
+
+          $http.post("php/cursosPorCarreraEliminar.php", {"IdCarrera": $scope.carrera.id})
           .success(function(data) {
-            $scope.carreras=funciones.borrarDeLista($scope.carreras,$scope.carrera); 
+            $http.post("php/borrarCarrera.php", { "IdCarrera" : $scope.carrera.id})
+            .success(function(data) {
+              $scope.carreras = funciones.borrarDeLista($scope.carreras,$scope.carrera); 
+             })
+            .error(function(data, status) {
+                result = data || "Request failed";//hacer algo con esto.
+             });
+            $("#modalConfirm").modal('hide');
            })
           .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
            });        
-          $("#modalConfirm").modal('hide');
         };
 
         $scope.borrarCurso = function(curso){

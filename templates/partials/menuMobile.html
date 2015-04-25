@@ -19,10 +19,10 @@
               <li ng-show="currentUser.IdRol > 2"><a ui-sref="carreras">Carreras</a></li>
               <li ng-show="currentUser.IdRol > 2"><a ui-sref="cursos">Cursos</a></li>
               <li ng-show="currentUser.IdRol > 2"><a ui-sref="grupos">Grupos</a></li>
-              <li ng-show="currentUser.IdRol > 2"><a ui-sref="parametros">Parametros</a></li>
-              <li ng-show="currentUser.IdRol > 1"><a ui-sref="factorhumano">Factor Humano</a></li>
-              <li ng-show="currentUser.IdRol > 1"><a ui-sref="rubricacursos">Rúbricas</a></li>
-              <li ng-show="currentUser.IdRol > 4"><a ui-sref="proyectosvotacion">Votación</a></li>
+              <li ng-show="currentUser.IdRol == 5"><a ui-sref="parametros">Parametros</a></li>
+              <li ng-show="currentUser.IdRol == 2"><a ui-sref="factorhumano">Factor Humano</a></li>
+              <li ng-show="currentUser.IdRol > 2"><a ui-sref="rubricacursos">Rúbricas</a></li>
+              <li ng-show="currentUser.IdRol == 5"><a ui-sref="proyectosvotacion">Votación</a></li>
             </ul>
           </li>
           <li id="administracionM"class="dropdown">
@@ -33,19 +33,19 @@
               <li ng-show="currentUser.IdRol == 2"><a ui-sref="vercursos">Ver Cursos</a></li>
               <li ng-show="currentUser.IdRol == 2"><a ui-sref="verproyectos">Proyectos</a></li>
               <li ng-show="currentUser.IdRol == 5"><a ui-sref="votacionprivada">En Votación</a></li>
-              <li ng-show="currentUser.IdRol < 100"><a ui-sref="areasAcademicas">Areas Académicas</a></li>
+              <li ng-show="currentUser.IdRol >= 3"><a ui-sref="areasAcademicas">Areas Académicas</a></li>
             </ul>
           </li>
           <li id="portafolioM">
             <a ng-show="currentUser.IdRol >= 3 || currentUser.IdRol == 1 " ui-sref="portafolio" >Portafolio <span ></span>
             </a>
           </li>
-          <li ng-show="currentUser.IdRol > 1" id="reportesM"class="dropdown">
+          <li ng-show="currentUser.IdRol > 2" id="reportesM"class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reporte <span class="caret"></span>
             </a>
             <ul class="subMenuMovil dropdown-menu cf">
-              <li ng-show="currentUser.IdRol > 1"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>
-              <li ng-show="currentUser.IdRol > 1"><a ui-sref="historialacademico" ng-click="">Historial Acádemico</a></li>
+              <li ng-show="currentUser.IdRol > 2"><a ui-sref="reportenotas" ng-click="">Reporte Notas</a></li>
+              <li ng-show="currentUser.IdRol > 2"><a ui-sref="historialacademico" ng-click="">Historial Acádemico</a></li>
             </ul>
           </li>
         </ul>

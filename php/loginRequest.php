@@ -10,10 +10,14 @@
 	$query = "CALL loginRequest('$pEmail')";
 	$result = mysqli_query($conexion,$query);
 
+	// var_dump($pEmail);
+	// var_dump($pPassword);
+	// var_dump($result);
+
 	if($result){
 		$user = $result->fetch_array(MYSQLI_ASSOC);
 		$Password = $user['Password'];
-		if ($Password === $pPassword) {
+		if ($Password == $pPassword) {
 			session_start();
 			$_SESSION['CurrentUser'] = $user;
 			mysqli_free_result($result);

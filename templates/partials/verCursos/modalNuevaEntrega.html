@@ -8,8 +8,9 @@
         </button>
       </div>
       <div class="modal-body" id="contentbody4">
+      <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-          <form name="entregaForm" class="form-horizontal" novalidate>
+          <form name="entregaSForm" class="form-horizontal" novalidate>
             <div class="form-group">
               <label for="modalAssignmentName">Nombre Entrega</label>
               <input type="text" class="form-control" id="modalAssignmentName" ng-model="entrega.Nombre" required>
@@ -26,6 +27,7 @@
               <button type="submit" class="btn btn-custom btn-sm pull-right" ng-click="guardarEntrega(entrega)">Guardar</button>
             </div>
           </form>
+        </div>
         </div>
       </div>
       <div class="modal-footer">

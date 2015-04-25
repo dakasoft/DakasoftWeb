@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-xs-12 containerP">
       <form class="navbar-form buscador cf " role="search">
-        <div ng-show="roleLv != 1" class="form-group search-parent">
+        <div ng-show="currentUser.IdRol!= 1" class="form-group search-parent">
           <input type="text" class="form-control normal-search" placeholder="Search" ng-model="palabra">
           <i class="fa fa-search normal-search-icon"></i>
         </div>
       </form> 
       <div ng-repeat="estudiante in estudiantes | filter:palabra | limitTo: 1 ">
-        <div  class=" head col-xs-12 col-sm-12"><h2>Portafolio</h2><i ng-show="roleLv == 1" data-toggle="modal"  data-target="#editModal" ng-click="editar(estudiante)" class="conf fa fa-cog fa-2x pull-right"></i></div>
+        <div  class=" head col-xs-12 col-sm-12"><h2>Portafolio</h2><i ng-show="currentUser.IdRol == 1" data-toggle="modal"  data-target="#editModal" ng-click="editar(estudiante)" class="conf fa fa-cog fa-2x pull-right"></i></div>
         <div class="fotoI col-xs-12 col-sm-3" >
           <img ng-src="{{estudiante.Foto}}" class="img-responsive img-circle"/>      
         </div>

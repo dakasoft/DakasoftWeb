@@ -151,12 +151,16 @@
 
     $scope.guardarEquipo = function(equipo){
       if($scope.equipoForm.$valid){
-        if(equipo.id==""){
+        if(equipo.id==""){  //tengo el id del curso en grupo editando idequopo IdCurso fecha//pending
           equipo.IdGrupo = $scope.grupoEditando.id;
           $http.post("php/crearEquipo.php", { "data" : equipo})
           .success(function(data) {
              if(data.Insert_Id != ""){
               equipo.id = data.Insert_Id; 
+              var insert = {IdCurso:$scope.grupoEditando.IdCurso,IdEquipo:equipo.id,Fecha:$scope.obtenerFecha(new Date())};
+              $http.post("php/crearProyectoEquipo.php", { "data" : insert})
+              .success(function(data) {                    
+              })
               $http.post("php/equipoParaGrupo.php", { "data" : equipo})
               .success(function(data) {                    
                })
@@ -242,18 +246,27 @@
 
     $scope.guardarEntrega = function(entrega){
       console.log($scope.grupoEditando);
-      if($scope.entregaForm.$valid){
+     // if($scope.entregaSForm.$valid){
         var entrega = {id:$scope.grupoEditando.id,Nombre:entrega.Nombre};
         $http.post("php/crearEntrega.php", { "data" : entrega})
            .success(function(data) {
             funciones.alert("contentbody4","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-            setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+            setTimeout(function(){$("#modalNuevaEntrega").modal('hide')},1000); 
           })
-      }else{
+      //}else{
         funciones.alert("contentbody2","danger",'<strong>'+"Ops!.."+'</strong>  Debes ingresar valores válidos',3500);
-      }
+     // }
 
     };
+
+    $scope.obtenerFecha = function(Fecha){
+          var dia=Fecha.getDate();
+          var mes=Fecha.getMonth()+1 ;
+          var año=Fecha.getFullYear();
+          FechaObtenida = año+"-"+mes+"-"+dia;
+          return FechaObtenida;
+        }
+
   }]);
 
   /*Prueba de concepto 2*/
@@ -276,6 +289,7 @@
       controller: ['$scope','$http',function ($scope,$http) {
         $http.post('php/equiposPorGrupo.php',{ "data" : $scope.grupoActual.id }).success(function (data) {
          $scope.grupoActual.equipos = data;
+         console.log($scope.grupoActual.equipos);
         });
       }]
     };

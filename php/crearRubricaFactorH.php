@@ -4,11 +4,6 @@ $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
 $data = $objData->data;
-// $data->rubricaFactor;
-// var_dump($data->rubricaFactor);
-
-//rubrica factor humano crear y se inserta en la tabla fh 
-//$query = "CALL rubricaCrear()";Esta era la anterior, ahora la está usando cursos
 
 $query = "CALL rubricaFactorhumanoCrear()";
 $result = mysqli_query($conexion,$query);

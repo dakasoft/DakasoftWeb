@@ -40,7 +40,7 @@
            })
           .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
-           });     
+           });
           $scope.accion = "Editar";
         };
 
@@ -50,13 +50,22 @@
         }
 
         $scope.borrar = function(){
-            $http.post("php/borrarCurso.php", { "data" : $scope.curso}) // 
+          $http.post("php/cursosPorCarreraEliminar.php", { "IdCurso" : $scope.curso.id}) // 
           .success(function(data) {
+            console.log($scope.curso);
+            console.log(data);
             $scope.cursos=funciones.borrarDeLista($scope.cursos,$scope.curso);
-           })
+            $http.post("php/borrarCurso.php", { "IdCurso" : $scope.curso.id}) // 
+            .success(function(data) {
+              $scope.cursos=funciones.borrarDeLista($scope.cursos,$scope.curso);
+            })
+            .error(function(data, status) {
+              result = data || "Request failed";//hacer algo con esto.
+            });
+          })
           .error(function(data, status) {
               result = data || "Request failed";//hacer algo con esto.
-           });        
+          });
           $("#modalConfirm").modal('hide');
         };        
 

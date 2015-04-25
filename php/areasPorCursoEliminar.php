@@ -5,13 +5,11 @@ $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
 
-$IdCurso = $objData->IdCurso;
+$IdCarrera = $objData->IdCarrera;
 
-$query = "CALL cursoEliminar('$IdCurso')";
+$query = "CALL cursosPorCarreraEliminar('$IdCarrera')";
 
 $result = mysqli_query($conexion,$query);
-
-var_dump($IdCurso);
 
 if($result){
 	echo true;

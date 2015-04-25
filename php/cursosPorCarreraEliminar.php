@@ -7,11 +7,9 @@ $objData = json_decode($data);
 
 $IdCurso = $objData->IdCurso;
 
-$query = "CALL cursoEliminar('$IdCurso')";
+$query = "CALL areasPorCursoEliminar('$IdCurso')";
 
 $result = mysqli_query($conexion,$query);
-
-var_dump($IdCurso);
 
 if($result){
 	echo true;

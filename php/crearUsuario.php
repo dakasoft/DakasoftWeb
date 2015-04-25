@@ -5,7 +5,8 @@ $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
 $data = $objData->data;
-$rolid = $data->rol->id;
+$rol = $data->rol;
+$rolid = $rol->id;
 $query = "CALL usuarioCrear('$data->Nombre','$data->Apellido','$data->Email','$data->Password','$rolid')";
 
 $result = mysqli_query($conexion,$query);

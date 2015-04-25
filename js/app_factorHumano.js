@@ -66,12 +66,12 @@
               .success(function (data) {
                 if (data.Insert_Id!="") {//nos devuelve el id que inserto
                   $scope.grupo.Rubrica = data.Insert_Id;
-                  
+                  console.log($scope.grupo.Rubrica);
                   //2)--Guardar Rubrica
                   $http.post('php/guardarRubricaGrupo.php',{"data" : $scope.grupo})
                     .success(function (data) {
                       // $scope.grupo = data;
-                      // console.log(data)
+                      console.log(data)
                     }) 
                     .error(function(data, status) {
                         result = data || "Request failed";//hacer algo con esto.
@@ -102,16 +102,8 @@
               })//fin primer post success
           }//fin if1
           else{
-            //Borrar
-            for (var i = grupo.rubricaFactor.length - 1; i >= 0; i--) { 
-              // $http.post('php/borrarRubrosxRubrica.php',{"data" : grupo.rubricaFactor[i]})
-            };
 
           }
-          //Modificar ó borrar
-         //$http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i]})
-         //.success(function (rubro){ 
-        //})//success mdificar
 
         };//fin funcion guardar
       }]//fin controlador

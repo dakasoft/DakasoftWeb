@@ -54,15 +54,19 @@
           $scope.entidad = "usuario";
         }
 
-        $scope.borrar = function(entidad){  
-          $http.post("php/borrarUsuario.php", { "data" : $scope.usuario})
+        $scope.borrar = function(entidad){
+          $http.post("php/borrarPortafolio.php", {"IdEstudiante": $scope.usuario.id})
           .success(function(data) {
-            $scope.usuarios=funciones.borrarDeLista($scope.usuarios,$scope.usuario);
-           })
-          .error(function(data, status) {
-              result = data || "Request failed";//hacer algo con esto.
-           });      
-          $("#modalConfirm").modal('hide');
+            console.log($scope.usuario);
+            $http.post("php/borrarUsuario.php", {"data": $scope.usuario})
+            .success(function(data) {
+              $scope.usuarios=funciones.borrarDeLista($scope.usuarios,$scope.usuario);
+            })
+            .error(function(data, status) {
+                result = data || "Request failed";//hacer algo con esto.
+             });      
+            $("#modalConfirm").modal('hide');
+          });
         };
 
         $scope.nuevo = function(){
@@ -74,13 +78,19 @@
         $scope.guardar = function(usuario){
           if($scope.usuariosForm.$valid){
             if(usuario.id==""){
-              $http.post("php/crearUsuario.php", { "data" : $scope.usuario})
+              $http.post("php/crearUsuario.php", { "data" : usuario})
               .success(function(data) {
-                  usuario.id = parseInt(data.Insert_Id);
-                  $scope.usuarios = funciones.agregarALista($scope.usuarios,usuario);
-                  funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
-                  setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
-               })
+                console.log(usuario);
+                if (data.IdRol == '1') {
+                  $http.post("php/crearNuevoPortafolio.php", {"IdEstudiante": data.id})
+                  .success(function(data) {
+                  });
+                }
+                usuario.id = parseInt(data.Insert_Id);
+                $scope.usuarios = funciones.agregarALista($scope.usuarios,usuario);
+                funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+                setTimeout(function(){$("#modalUsuario").modal('hide')},1000);  
+              })
               .error(function(data, status) {
                   result = data || "Request failed";//hacer algo con esto.
                });  
@@ -88,7 +98,6 @@
               $scope.usuario.id = parseInt($scope.usuario.id );
               $http.post("php/modificarUsuario.php", { "data" : $scope.usuario})
               .success(function(data) {
-                console.log(data);
                 $scope.usuarios = funciones.editarDeLista($scope.usuarios,usuario);
                 funciones.alert("contentbody","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
                 setTimeout(function(){$("#modalUsuario").modal('hide')},1000);   
