@@ -38,17 +38,25 @@
         //agregar rubro
         $scope.agregarRubro = function(rubro){
           if($scope.rubricaForm.$valid){
+             
+              if(esValidoMaxValorRubro($scope)){
+              console.log($scope.rubricaForm);
+              $scope.rubricaForm.$setUntouched(true);
+              $scope.rubricaForm.$setPristine(true);
+             
               $scope.rubro = funciones.rubro();
               var newRubro = angular.copy(rubro);
               funciones.agregarAListaNoRepetidoPorNombre($scope.grupo.rubricaFactor,newRubro);
               funciones.closeC();
 
-            // }//Valida
+            }//Valida
           }//fin rubri form
           else{
             funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Debes llenar todos los campos',3500);
           }
         };
+
+         
         //eliminar rubro
         $scope.eliminarRubro = function(rubro){
           funciones.borrarDeListaPorNombre($scope.grupo.rubricaFactor,rubro);
@@ -108,12 +116,26 @@
             };
 
           }
-          //Modificar ó borrar
-         //$http.post('php/guardarRubrosFH.php',{"data" : grupo.rubricaFactor[i]})
-         //.success(function (rubro){ 
-        //})//success mdificar
-
         };//fin funcion guardar
+        
+
+ function esValidoMaxValorRubro($scope){
+          var suma = 0;
+          var esValido = true;
+          var arrayRubros = $scope.grupo.rubricaFactor;
+         //  console.log('hola');
+         // console.log($scope.grupo.rubricaFactor);
+          for(var i = 0; i < arrayRubros.length; i++){
+            suma +=  (arrayRubros[i].valor);
+              // alert(suma);
+          }
+          if(suma >=100){
+            esValido = false;
+             funciones.closeC(); 
+            funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> La suma de los valores no debe ser mayor a 100',3500);
+          }
+          return esValido;
+        }
       }]//fin controlador
     };
   });
