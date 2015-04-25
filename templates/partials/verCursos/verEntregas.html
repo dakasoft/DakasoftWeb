@@ -1,0 +1,23 @@
+<modal-nueva-entrega></modal-nueva-entrega>
+<div id="divVerEntregas" class="container-fluid equipoContent">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-2">
+			<p>Entregables</p>
+		</div>
+		<div class="col-xs-12 col-sm-2">
+			<button type="button" ng-click="nuevaEntrega(grupo)" class="btn btn-custom pull-right" data-toggle="modal" data-target="#modalNuevaEntrega" >Nueva Entrega</button>
+		</div>
+	</div>
+	<div class="row" ng-repeat="entrega in grupoActual.entregas">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+			<div class="row divAssignment" ng-click="bShowReceived = !bShowReceived">
+				<div class="col-xs-10">
+					<p>{{entrega.Nombre}}</p>
+				</div>
+				<div class="col-xs-2">
+					<p><a href=""><i class="fa fa-upload"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -229,12 +229,31 @@
           
         })    
       }else{
-        funciones.alert("contentbody2","danger",'<strong>'+"Ops!.."+'</strong>  Debes ingresar valores válidos',3500);
+        funciones.alert("contentbody2","danger",'<strong>'+"Ops!.."+'</strong>  Debes llenar todos los campos',3500);
       }
 
     }
 
-  
+    /*Entregas*/
+    $scope.nuevaEntrega = function(grupo){
+      $scope.grupoEditando = grupo;
+      //$scope.equipo.Integrantes = funciones.borrarDeLista($scope.equipo.Integrantes,estudiante); 
+    };
+
+    $scope.guardarEntrega = function(entrega){
+      console.log($scope.grupoEditando);
+      if($scope.entregaForm.$valid){
+        var entrega = {id:$scope.grupoEditando.id,Nombre:entrega.Nombre};
+        $http.post("php/crearEntrega.php", { "data" : entrega})
+           .success(function(data) {
+            funciones.alert("contentbody4","success",'<strong>'+"Bien!.."+'</strong> guardado con exito',3500);
+            setTimeout(function(){$("#modalRubrica").modal('hide')},1000); 
+          })
+      }else{
+        funciones.alert("contentbody2","danger",'<strong>'+"Ops!.."+'</strong>  Debes ingresar valores válidos',3500);
+      }
+
+    };
   }]);
 
   /*Prueba de concepto 2*/
@@ -273,6 +292,20 @@
       }]
     };
   });
+
+  app.directive('verEntregas',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/verCursos/verEntregas.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+        $http.post('php/cargarEntregasGrupo.php',{ "data" : $scope.grupoActual.id }).success(function (data) {
+          console.log(data);
+         $scope.grupoActual.entregas = data;
+        });
+      }]
+    };
+  });
+
 
 /*otros feos*/
 
@@ -320,6 +353,17 @@
     };
   });
 
+  app.directive('modalNuevaEntrega',function ($http) {
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/partials/verCursos/modalNuevaEntrega.html',
+      controller: ['$scope','$http',function ($scope,$http) {
+
+      }],
+      controllerAs: 'modalCntrl'
+    };
+  });
+
 /*
   app.directive('modalVerConfig',function ($http) {
     return {
@@ -343,16 +387,7 @@
     };
   });
 
-  app.directive('modalNuevaEntrega',function ($http) {
-    return {
-      restrict: 'E',
-      templateUrl: 'templates/partials/modalNuevaEntrega.html',
-      controller: ['$scope','$http',function ($scope,$http) {
 
-      }],
-      controllerAs: 'modalCntrl'
-    };
-  });
 
   app.directive('modalVerConfirmacion',function ($http) {
     return {

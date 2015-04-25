@@ -123,8 +123,12 @@
     return {
       restrict: 'E',
       templateUrl: 'templates/partials/misCursos/miCurso.html',
-      controller: ['$scope','$http',function ($scope,$http) {
-
+      controller: ['$rootScope','$scope','$http',function ($rootScope,$scope,$http) {
+        $scope.grupoActual.IdEstudiante =  $rootScope.currentUser.id;
+        $http.post('php/cargarEntregasGrupo.php',{ "data" : $scope.grupoActual.id }).success(function (data) {
+          console.log(data);
+          $scope.grupoActual.entregas = data;
+        });
       }],
       controllerAs: 'modalCntrl'
     };
