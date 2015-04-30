@@ -53,8 +53,8 @@
               $scope.rubricaId = 0;
 
               var total = 0;
-             for (var i = grupo.cursoRubrica.length - 1; i >= 0; i--) { 
-                total+=grupo.cursoRubrica[i].valor;
+             for (var i = curso.cursoRubrica.length - 1; i >= 0; i--) { 
+                total+=curso.cursoRubrica[i].valor;
              }
             if(total<100){
               $http.post('php/crearRubricaCurso.php',{"data" : curso})
@@ -96,9 +96,7 @@
 
 
             }//fin if1
-            else{
-
-            }
+          
         };//Guardar
 
       }],
