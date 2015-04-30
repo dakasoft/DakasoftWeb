@@ -72,31 +72,11 @@
     };
 
     $scope.guardarEquipo = function(grupo){
-        //$scope.uploadFile();
         $http.post("php/guardarEquipo.php", { "data" : grupo})
          .success(function(data) {
 
         })
     };
-
-    // $scope.uploadFile = function(){
-    //   var name = $scope.name;
-    //   var file = $scope.file;
-    //   console.log($scope.file);
-    //   console.log($scope.name);
-    //   // upload.uploadFile(file,name).then(function(res){
-    //   //   console.log(res.data);
-    //   //   console.log($scope.grupoActual.IdEquipo);
-    //   //   var imagen ={id:$scope.grupoActual.IdEquipo,url:res.data}
-    //   //   $http.post("php/agregarImagenProyecto.php", { "data" : imagen})
-    //   //         .success(function(data) {
-    //   //           console.log(data);
-                 
-    //   //          })
-    //   // })
-
-    //  }
-      
 
   }]);
 
@@ -159,41 +139,5 @@
       controllerAs: 'modalCntrl'
     };
   });
-
-  // app.directive('uploaderModel',function ($http,$parse) {
-  //  return{
-  //     restrict : 'A',
-  //     link: function (scope,iElement,iAttrs){
-  //      iElement.on("change",function(e){
-  //           $parse(iAttrs.uploaderModel).assign(scope,iElement[0].files[0]);
-  //    });
-  //     }
-  // };
-
-  // });
-
-  // app.service('upload',function($http,$q){
-  //   this.uploadFile = function(file,name){
-  //     var deferred =$q.defer();
-  //     var formData = new FormData();
-  //     formData.append("name",name);
-  //     formData.append("file",file);
-  //      console.log(formData);
-  //     return $http.post("server2.php",formData,{
-  //       headers:{
-  //         "Content-type":undefined
-  //       },
-  //       transformRequest:formData
-  //     })
-  //     .success(function(res){
-
-  //       deferred.resolve(res);
-  //     })
-  //     .error(function(msg,code){
-  //       deferred.reject(msg);
-  //     })
-  //     return deferred.promise;
-  //   }
-  // })
 
 })();

@@ -17,9 +17,9 @@ app.controller('mainController', ['$scope','$http', '$state','$rootScope', funct
     // $rootScope.roleLv = 1;
     
     if (localStorage.userData) {
-      console.log(JSON.parse(localStorage.getItem('userData')));
+      //console.log(JSON.parse(localStorage.getItem('userData')));
       $rootScope.currentUser = JSON.parse(localStorage.getItem('userData'));
-      console.log($rootScope.currentUser.Nombre);
+      //console.log($rootScope.currentUser);
       $rootScope.bLoggedIn = true;
       $state.go('home');
     }
@@ -202,12 +202,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
          $scope.existo = false;
         $http.get('php/invitadosListar2.php')
           .success(function (data) {
-               $rootScope.usuarios = data;
-              
-                  angular.forEach($rootScope.usuarios, function(value, key) {
+               $scope.usuarios = data;
+                  console.log($scope.usuarios );
+                  angular.forEach($scope.usuarios, function(value, key) {
                     console.log(value.id);
                     console.log($rootScope.currentUser.id);
-                    if(value.IdUsuario == $rootScope.currentUser.id || $rootScope.currentUser.id == 1 ){
+                    if(value.IdUsuario == $rootScope.currentUser.id || $rootScope.currentUser.IdRol == 5 ){
                       $scope.existo = true;   
                       console.log("asd"); 
                     }
@@ -309,9 +309,7 @@ app.directive('menu', function(){
                $rootScope.usuarios = data;
                $rootScope.votante = false; 
                   angular.forEach($rootScope.usuarios, function(value, key) {
-                    console.log(value.id);
-                    console.log($rootScope.currentUser.id);
-                    if(value.IdUsuario == $rootScope.currentUser.id || $rootScope.currentUser.id == 1 ){
+                    if(value.IdUsuario == $rootScope.currentUser.id || $rootScope.currentUser.IdRol == 5  ){
                       $rootScope.votante = true;   
                     }
                 });

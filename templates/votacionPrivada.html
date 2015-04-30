@@ -1,10 +1,10 @@
 <modalcerrar></modalcerrar>
-<div ng-show="roleLv == 5">
+<div ng-show="currentUser.IdRol != 5">
   <modal-votacion></modal-votacion>
 	<modal-video></modal-video>
 	<votaciones-privadas></votaciones-privadas>
 </div>
-<div ng-show="roleLv != 5">
+<div ng-show="currentUser.IdRol == 5">
 	<estado-votacion></estado-votacion>
 </div>
 
