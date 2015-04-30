@@ -52,7 +52,11 @@
               $scope.rubros = [];
               $scope.rubricaId = 0;
 
-              //1)--Primero se crea la rubrica
+              var total = 0;
+             for (var i = grupo.cursoRubrica.length - 1; i >= 0; i--) { 
+                total+=grupo.cursoRubrica[i].valor;
+             }
+            if(total<100){
               $http.post('php/crearRubricaCurso.php',{"data" : curso})
               .success(function (data) {
                 if (data.Insert_Id!="") {
@@ -85,6 +89,12 @@
                   };//fin for
                 };//fin if2 Insert_Id entre success e if va todo
               })//fin primer post success
+            }else{
+              funciones.alert("contentbody","danger",'<strong>'+"Ops!.."+'</strong> Los valores no pueden ser superiores a 100',3500);
+
+            }
+
+
             }//fin if1
             else{
 

@@ -26,7 +26,7 @@
         grupo.informacion = false;
         grupo.rol = false;
       }else if(view=="rol"){
-        grupo.estudiantes = false;
+        grupo.ests = false;
         grupo.eqps = false;
         grupo.informacion = false;
       }

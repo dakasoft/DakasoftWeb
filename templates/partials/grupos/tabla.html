@@ -16,12 +16,12 @@
 			</div>
 			<table id="custom-table" class="table">
 				<tr ng-repeat="grupo in grupos | filter:palabra">
-					<td data-title="'Nombre'">{{grupo.Nombre}}</td>
-					<td data-title="'Curso'">{{grupo.Curso.Nombre}}</td>
+					<td data-title="Nombre">{{grupo.Nombre}}</td>
+					<td data-title="Curso">{{grupo.Curso.Nombre}}</td>
 					<td data-title="'Agregar Estudiantes'">						
 						<a data-toggle="modal" data-target="#modalEstudiantes" ><i class="fa fa-user-plus fa-2x" ng-click="editar(grupo)"></i></a>
 					</td>
-					<td data-title="'Modificar'">
+					<td data-title="Modificar">
 					<a data-toggle="modal" data-target="#modalGrupo" ng-click="editar(grupo)"><i class="fa fa-pencil-square-o fa-2x"></i></a>	
 					</td>
 					<td data-title="'Eliminar'">

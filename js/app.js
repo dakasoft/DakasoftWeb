@@ -199,16 +199,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl:"templates/votacionPrivada.html",
       controller: function($rootScope, $state,$http,$scope){
         $rootScope.currentStateName = $state.current.name;
-         var existo = false;
-        $http.get('php/invitadosListar.php')
+         $scope.existo = false;
+        $http.get('php/invitadosListar2.php')
           .success(function (data) {
                $rootScope.usuarios = data;
+              
                   angular.forEach($rootScope.usuarios, function(value, key) {
-                    if(value.id == $rootScope.currentUser.id || $rootScope.currentUser.id == 1 ){
-                      existo = true;    
+                    console.log(value.id);
+                    console.log($rootScope.currentUser.id);
+                    if(value.IdUsuario == $rootScope.currentUser.id || $rootScope.currentUser.id == 1 ){
+                      $scope.existo = true;   
+                      console.log("asd"); 
                     }
                 });
-            if(!existo){
+            if(!$scope.existo){
                $state.go('home');
             }
           })
@@ -297,7 +301,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.directive('menu', function(){
 	return{
 		restrict: 'E',
-		templateUrl: 'templates/partials/menu.html'
+		templateUrl: 'templates/partials/menu.html',
+    controller: ['$scope','$http','$rootScope',function ($scope,$http,$rootScope) {
+      $scope.existo = false;
+        $http.get('php/invitadosListar2.php')
+          .success(function (data) {
+               $rootScope.usuarios = data;
+               $rootScope.votante = false; 
+                  angular.forEach($rootScope.usuarios, function(value, key) {
+                    console.log(value.id);
+                    console.log($rootScope.currentUser.id);
+                    if(value.IdUsuario == $rootScope.currentUser.id || $rootScope.currentUser.id == 1 ){
+                      $rootScope.votante = true;   
+                    }
+                });
+          })
+    }]
+
 	};
 });
 

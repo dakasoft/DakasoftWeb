@@ -32,7 +32,7 @@
               <li ng-show="currentUser.IdRol == 1"><a ui-sref="miscursos">Mis Cursos</a></li>
               <li ng-show="currentUser.IdRol == 2"><a ui-sref="vercursos">Ver Cursos</a></li>
               <li ng-show="currentUser.IdRol == 2"><a ui-sref="verproyectos">Proyectos</a></li>
-              <li ng-show="currentUser.IdRol == 5"><a ui-sref="votacionprivada">En Votación</a></li>
+              <li ng-show="currentUser.IdRol == 5 || votante == true"><a ui-sref="votacionprivada">En Votación</a></li>
               <li ng-show="currentUser.IdRol >= 3"><a ui-sref="areasAcademicas">Areas Académicas</a></li>
             </ul>
           </li>

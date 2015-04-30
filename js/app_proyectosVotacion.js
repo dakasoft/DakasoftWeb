@@ -89,8 +89,12 @@
         $scope.proyectob=proyecto;
       }
 
+      $scope.limpiar = function(){
+        funciones.closeC();   
+      }
 
       $scope.agregarUsuarios = function(usuario){
+        funciones.closeC();
        $scope.usuariosSeleccionados.push(usuario);
        angular.forEach($scope.usuarios, function(value, key) {
         if(value.id == usuario.id){
